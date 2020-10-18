@@ -85,6 +85,7 @@
     <Content Include="photos\ravioloi_sweetpotato.jpg" />
     <Content Include="photos\rustic_salad.jpg" />
     <Content Include="photos\table.jpg" />
+    <Content Include="photos\table2.jpg" />
     <Content Include="photos\tomato_salad.jpg" />
     <Content Include="HomePage.aspx" />
     <Content Include="Menu.aspx" />
