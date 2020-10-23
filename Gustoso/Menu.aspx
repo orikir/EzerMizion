@@ -92,15 +92,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<div id="nav-placeholder">
-
-    </div>
-    <script>
-    $(function () {
-        $("#nav-placeholder").load("Nav.html");
-    });
-
-    </script>
+	
 	<section class="menu_list mt-60 mb-60">
 	 <div class="container">
 		<div class="row">

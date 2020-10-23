@@ -36,15 +36,8 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="nav-placeholder">
 
-    </div>
-    <script>
-    $(function () {
-        $("#nav-placeholder").load("Nav.html");
-    });
-
-    </script>
+   
     <div class="container">
     <h3 class="h3">עיקריות </h3>
     <div class="row">
@@ -52,7 +45,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#">
-                        <img class="pic-1" src="Photos/pizza.jpg" />
+                        <img class="pic-1" src="Photos/pizza.jpg"  />
                     </a>
                     <ul class="social">
                         <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
@@ -102,7 +95,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#">
-                        <img class="pic-1"  src="Photos/bagel.jpg" />
+                        <img class="pic-1"  src="Photos/bagel.jpg"  />
                     </a>
                     <ul class="social">
                         <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
@@ -155,7 +148,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#">
-                        <img class="pic-1"  src="Photos/caesar_salad.jpg" />
+                        <img class="pic-1"  src="Photos/caesar_salad.jpg"  />
                     </a>
                     <ul class="social">
                         <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
@@ -180,7 +173,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#">
-                         <img class="pic-1"  src="Photos/lettuce_salad.jpg" />
+                         <img class="pic-1"  src="Photos/lettuce_salad.jpg"  />
                     </a>
                     <ul class="social">
                         <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
@@ -205,7 +198,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#">
-                        <img class="pic-1"  src="Photos/rustic_salad.jpg" />
+                        <img class="pic-1"  src="Photos/rustic_salad.jpg"  />
                     </a>
                     <ul class="social">
                         <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
