@@ -11,25 +11,24 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
         
     </asp:ContentPlaceHolder>
-
 </head>
 <body>
     <form id="form1" runat="server">
         
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="Photos/logo3.jpg" style="width:40px; height:40px;" />
-        <a class="navbar-brand" href="#">עזר מציון</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >חיפוש</button>
+            <input class="form-control " style="width: 500px; direction:rtl;" type="search" placeholder="חיפוש"  aria-label="Search">
+            <ul class="navbar-nav mr-auto" style="direction:rtl; " >
                 <li class="nav-item active">
                     <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="RegisterD.aspx">רישום</a>
+                    <a class="nav-link" href="RegisterForm.aspx">רישום</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">השכרת ציוד</a>
@@ -41,23 +40,9 @@
                     <a class="nav-link" href="">התנדבות</a>
                 </li>
                 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                
             </ul>
-           
-                <input class="form-control " style="width: 800px;" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-           
+        <img   src="Photos/logo.png" style="width:40px; height:40px; " />
+        <a class="navbar-brand" href="#">עזר מציון</a>
         </div>
     </nav>
         <div>

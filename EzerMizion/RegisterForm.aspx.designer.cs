@@ -11,7 +11,7 @@ namespace EzerMizion
 {
 
 
-    public partial class RegisterD
+    public partial class RegisterForm
     {
     }
 }

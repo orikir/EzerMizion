@@ -7,9 +7,8 @@
       <div class="container">
      <div class="jumbotron p-3 p-md-5 text-black center  ">
         <div class="row">
-           <div class="col-md-6 px-0"></div>
+            <div class="col-md-6 px-0 "><img  style="width:400px; height: 450px; " src="Photos/logo.png" /> </div>
             <div class="col-md-6 px-0">
-             
                 <img src="Photos/logo2.png" />
                 <br>
               <p class="lead my-3 " style="direction: rtl; text-align: justify;"> המוטו של "עזר מציון" הינו הבחירה בחיים: הרצון האמיתי והמאמץ האדיר לתת לכל אדם באשר הוא, ויהיה מצבו קשה ככל שיהיה, את ההזדמנות לבחור בחיים.

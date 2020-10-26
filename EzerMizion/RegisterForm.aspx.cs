@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EzerMizion
 {
-    public partial class RegisterD : System.Web.UI.Page
+    public partial class RegisterForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
