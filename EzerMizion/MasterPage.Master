@@ -31,7 +31,7 @@
                     <a class="nav-link" href="RegisterForm.aspx">רישום</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">השכרת ציוד</a>
+                    <a class="nav-link" href="rentEq.aspx">השכרת ציוד</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">מאגר מח עצם</a>

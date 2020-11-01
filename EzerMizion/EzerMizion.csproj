@@ -76,6 +76,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Photos\chair.png" />
+    <Content Include="rentEq.aspx" />
     <Content Include="HomeP.aspx" />
     <Content Include="Photos\bdika.jpg" />
     <Content Include="Photos\donations.jpg" />
@@ -195,6 +197,14 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\DAL.cs" />
+    <Compile Include="rentEq.aspx.cs">
+      <DependentUpon>rentEq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rentEq.aspx.designer.cs">
+      <DependentUpon>rentEq.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.aspx.cs">
       <DependentUpon>RegisterForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,7 +212,6 @@
     <Compile Include="RegisterForm.aspx.designer.cs">
       <DependentUpon>RegisterForm.aspx</DependentUpon>
     </Compile>
-    <Content Include="App_Code\DAL.cs" />
     <Compile Include="HomeP.aspx.cs">
       <DependentUpon>HomeP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
