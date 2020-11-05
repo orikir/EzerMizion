@@ -48,7 +48,8 @@
     margin-top: 10%;
 }
 .btnRegister{
-    float: right;
+    position:center;
+    text-align:center;
     margin-top: 10%;
     border: none;
     border-radius: 1.5rem;
@@ -110,32 +111,29 @@
                                             <input type="text" class="form-control" placeholder="Last Name *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                            <input type="text" class="form-control" placeholder="User Name *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
+                                            <input type="birthDay" class="form-control"  placeholder="Your Birthday *" value="" />
                                         </div>
                                         
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                                            <input type="id" class="form-control" placeholder="ID *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="id" class="form-control"  placeholder="Confirm ID *" value="" />
                                         </div>
                                         <div class="form-group">
                                             <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                                <option>What is your Birthdate?</option>
-                                                <option>What is Your old Phone Number</option>
-                                                <option>What is your Pet Name?</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
-                                        </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                            
+                                      <div id="register-link" class="text-center">
+                                             <a href="#" class="text-info">Submit</a>
+                                      </div>
+                                    <button   ID="submit" ruant="server" Text="Button" type="submit" class="btnRegister"  value="Register"  />Sign Up</button>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -143,10 +141,14 @@
                     </div>    
                     <div class="col-md-3 register-left">
                         <br>
+                        <br />
                         <h3 >ברוכים הבאים</h3>
                         <p >אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
                         <br>
-                        <input type="submit" name="" value="Login"/><br/>
+                        <div id="register-link" class="text-center">
+                                <a href="LoginForm.aspx" class="text-info">Login</a>
+                        </div>
+                        <br/>
                     </div>
                 </div>
 

@@ -68,7 +68,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#">
-                         <img class="pic-1" src="Photos/pasta_alfredo.jpg" />
+                         <img class="pic-1" src="Photos/kabaim.jpg" />
                     </a>
                     <ul class="social">
                         <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
@@ -82,7 +82,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
                     <li class="fa fa-star"></li>
                 </ul>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">פסטה שמנת פטריות</a></h3>
+                    <h3 class="title"><a href="#">קביים</a></h3>
                     <div class="price">56.00₪
                     </div>
                     <a class="add-to-cart" href="">+ Add To Cart</a>

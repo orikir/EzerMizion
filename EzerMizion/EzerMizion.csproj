@@ -69,14 +69,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\DataBaseAMI.accdb" />
+    <Content Include="App_Data\DatabaseEM.accdb" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="LoginForm.aspx" />
     <Content Include="Photos\chair.png" />
+    <Content Include="Photos\kabaim.jpg" />
     <Content Include="rentEq.aspx" />
     <Content Include="HomeP.aspx" />
     <Content Include="Photos\bdika.jpg" />
@@ -198,6 +200,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\DAL.cs" />
+    <Content Include="App_Code\donorsLogic.cs" />
+    <Content Include="App_Code\usersLogic.cs" />
+    <Compile Include="LoginForm.aspx.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginForm.aspx.designer.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="rentEq.aspx.cs">
       <DependentUpon>rentEq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
