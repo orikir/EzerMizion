@@ -12,7 +12,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
 .product-grid .pic-2{opacity:0;position:absolute;top:0;left:0;transition:all .3s ease-out 0s}
 .product-grid:hover .pic-2{opacity:1}
 .product-grid .social{width:150px;padding:0;margin:0;list-style:none;opacity:0;transform:translateY(-50%) translateX(-50%);position:absolute;top:60%;left:50%;z-index:1;transition:all .3s ease 0s}
-.product-grid:hover .social{opacity:1;top:50%}
+.product-grid:hover .social{opa    city:1;top:50%}
 .product-grid .social li{display:inline-block}
 .product-grid .social li a{color:#fff;background-color:#333;font-size:16px;line-height:40px;text-align:center;height:40px;width:40px;margin:0 2px;display:block;position:relative;transition:all .3s ease-in-out}
 .product-grid .social li a:hover{color:#fff;background-color:#ef5777}

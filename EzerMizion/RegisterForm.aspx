@@ -105,34 +105,34 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <asp:TextBox ID="first_name" runat="server" class="form-control" placeholder="First Name *" value=""></asp:TextBox>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                           <asp:TextBox ID="last_name" runat="server" class="form-control" placeholder="Last Name *" value=""></asp:TextBox>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" value="" />
+                                             <asp:TextBox ID="user_name" runat="server" class="form-control" placeholder="User Name *" value=""></asp:TextBox>
                                         </div>
                                         <div class="form-group">
-                                            <input type="birthDay" class="form-control"  placeholder="Your Birthday *" value="" />
+                                             <asp:TextBox ID="birthDay" runat="server" class="form-control" placeholder="Your Birthday *" value=""></asp:TextBox>
                                         </div>
                                         
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="id" class="form-control" placeholder="ID *" value="" />
+                                            <asp:TextBox ID="id" runat="server" class="form-control" placeholder="ID *" value=""></asp:TextBox>
+                         
                                         </div>
                                         <div class="form-group">
-                                            <input type="id" class="form-control"  placeholder="Confirm ID *" value="" />
+                                           <asp:TextBox ID="identify" runat="server" class="form-control" placeholder="Confirm ID *" value=""></asp:TextBox>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
-                                        </div>
-                                            
+                                           <asp:TextBox ID="phone_num" runat="server" class="form-control" placeholder="Your Phone *" value=""></asp:TextBox>
+                                        </div>   
                                       <div id="register-link" class="text-center">
-                                             <a href="#" class="text-info">Submit</a>
+                                          <asp:Button ID="submit" runat="server" Text="Submit" OnClick="submit_Click" type="submit" class="btnRegister"  value="Register" />
                                       </div>
-                                    <button   ID="submit" ruant="server" Text="Button" type="submit" class="btnRegister"  value="Register"  />Sign Up</button>
+                                   
                                        
                                     </div>
                                 </div>

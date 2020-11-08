@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EzerMizion.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,12 @@ namespace EzerMizion
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void submit_Click(object sender, EventArgs e)
+        {
+            usersLogic ul = new usersLogic();
+           ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text);
         }
     }
 }

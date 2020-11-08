@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -12,9 +13,10 @@ namespace EzerMizion.App_Code
         public void newUser(string id, string firstName, string LastName, DateTime birthDay, string phoneNum ,string userName)
         {
             {
-                string sql = "INSERT INTO users(id, firstName, LastName, birthDay, phoneNum, userName ) VALUES('" + id + "','" + firstName + "','" + LastName + "','" + birthDay + "','" + phoneNum + "','" + userName + "'";
-                string sql1 = String.Format("INSERT INTO users (id, firstName, LastName, birthDay, phoneNum, userName) VALUES('{0}', '{0}', '{0}', '{0}','{0}','{0}') ");
-                dal.excuteQuery(sql);
+               
+                string sql = String.Format("INSERT INTO users (id, firstName, LastName, birthDay, phoneNum, usName) VALUES('{0}', '{1}', '{2}', '{3}','{4}','{5}')",id, firstName, LastName, birthDay, phoneNum, userName );
+                DataSet ds=dal.excuteQuery(sql);
+
             } 
         }
     }

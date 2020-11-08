@@ -200,8 +200,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\DAL.cs" />
-    <Content Include="App_Code\donorsLogic.cs" />
-    <Content Include="App_Code\usersLogic.cs" />
+    <Compile Include="App_Code\donorsLogic.cs" />
+    <Compile Include="App_Code\usersLogic.cs" />
     <Compile Include="LoginForm.aspx.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
