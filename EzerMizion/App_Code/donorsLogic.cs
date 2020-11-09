@@ -10,12 +10,15 @@ namespace EzerMizion.App_Code
 
     {
         DAL d = new DAL();
-       // public donorsLogic speDonations (string id)
-        //{
-           
-         //   string sql = String.Format(" SELECT donCode, orgCode, Sum, firstName, lastName, donDate FROM donors WHERE(((donors.id) =id)); ", id);
-          //  DataSet ds = d.excuteQuery(sql);
-        //}
-
+        public DataSet donHistory (string id)
+        {
+            string sql = String.Format("SELECT * FROM donors WHERE donors.id ='{0}'", id);
+            return d.excuteQuery(sql);
+        }
+        public DataSet allDonations()
+        {
+            string sql = " SELECT * FROM donors";
+            return d.excuteQuery(sql);
+        }
     }
 }

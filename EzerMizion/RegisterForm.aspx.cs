@@ -18,7 +18,9 @@ namespace EzerMizion
         protected void submit_Click(object sender, EventArgs e)
         {
             usersLogic ul = new usersLogic();
-           ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text);
+           if(!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))
+                Console.WriteLine("this id is unavailable");
+
         }
     }
 }

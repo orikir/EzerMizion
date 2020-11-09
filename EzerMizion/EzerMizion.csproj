@@ -76,9 +76,13 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="donHistory.aspx" />
     <Content Include="LoginForm.aspx" />
+    <Content Include="Photos\bed.jpg" />
     <Content Include="Photos\chair.png" />
+    <Content Include="Photos\halichon.jpg" />
     <Content Include="Photos\kabaim.jpg" />
+    <Content Include="Photos\oxigen.jpg" />
     <Content Include="rentEq.aspx" />
     <Content Include="HomeP.aspx" />
     <Content Include="Photos\bdika.jpg" />
@@ -201,7 +205,15 @@
   <ItemGroup>
     <Compile Include="App_Code\DAL.cs" />
     <Compile Include="App_Code\donorsLogic.cs" />
+    <Content Include="App_Code\ordersLogic.cs" />
     <Compile Include="App_Code\usersLogic.cs" />
+    <Compile Include="donHistory.aspx.cs">
+      <DependentUpon>donHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="donHistory.aspx.designer.cs">
+      <DependentUpon>donHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.aspx.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
