@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="rentEq.aspx.cs" Inherits="EzerMizion.eqRent" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="rentEq.aspx.cs" Inherits="EzerMizion.rentEq" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style> 
@@ -36,210 +36,36 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <div class="container">
-    <h3 class="h3">ציוד המסייע לתנועה </h3>
+    <div class="container">
+    <h3 class="h3">ציוד רפואי </h3>
     <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="pic-1" src="Photos/chair.png"  />
-                    </a>
-                    <ul class="social">
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star disable"></li>
-                </ul>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">כסא גלגלים</a></h3>
-                    <div class="price">56.00₪
-                    </div>
-                    <a class="add-to-cart" href="">+ Add To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                         <img class="pic-1" src="Photos/kabaim.jpg" />
-                    </a>
-                    <ul class="social">
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                </ul>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">קביים</a></h3>
-                    <div class="price">56.00₪
-                    </div>
-                    <a class="add-to-cart" href="">+ Add To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="pic-1"  src="Photos/bagel.jpg"  />
-                    </a>
-                    <ul class="social">
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                </ul>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">בייגל</a></h3>
-                    <div class="price">56.00₪
-                    </div>
-                    <a class="add-to-cart" href="">+ Add To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="pic-1"  src="Photos/ravioloi_sweetpotato.jpg" />
-                    </a>
-                    <ul class="social">
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                </ul>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">רביולי בטטה</a></h3>
-                    <div class="price">56.00₪
-                    </div>
-                    <a class="add-to-cart" href="">+ Add To Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-        <h3 class="h3">סלטים </h3>
-    <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="pic-1"  src="Photos/caesar_salad.jpg"  />
-                    </a>
-                    <ul class="social">
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star disable"></li>
-                </ul>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">סלט קיסר</a></h3>
-                    <div class="price">56.00₪
-                    </div>
-                    <a class="add-to-cart" href="">+ Add To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                         <img class="pic-1"  src="Photos/lettuce_salad.jpg"  />
-                    </a>
-                    <ul class="social">
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                </ul>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">סלט חסה</a></h3>
-                    <div class="price">56.00₪
-                    </div>
-                    <a class="add-to-cart" href="">+ Add To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="pic-1"  src="Photos/rustic_salad.jpg"  />
-                    </a>
-                    <ul class="social">
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                </ul>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">סלט כפרי</a></h3>
-                    <div class="price">56.00₪
-                    </div>
-                    <a class="add-to-cart" href="">+ Add To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="pic-1"  src="Photos/tomato_salad.jpg" />
-                    </a>
-                    <ul class="social">
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                </ul>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">סלט עגבניות</a></h3>
-                    <div class="price">56.00₪
-                    </div>
-                    <a class="add-to-cart" href="">+ Add To Cart</a>
-                </div>
-            </div>
-        </div>
+          <asp:Repeater ID="Repeater1" runat="server">
+             <ItemTemplate>
+                 <div class="col-md-3 col-sm-6">
+                       <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#">
+                                    <asp:Image ID="Image1" class="pic-1" runat="server" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
+
+                                </a>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="product-content">
+                                <asp:Label ID="Label1" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
+                                <div >
+                                    <asp:Label ID="Label2" class="price" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
+                                    
+                                </div>
+                                <a class="add-to-cart" href="">+ Add To Cart</a>
+                            </div>
+                        </div>
+                 </div>
+               
+             </ItemTemplate>
+          </asp:Repeater>
+     </div>
+     </div>
 </asp:Content>

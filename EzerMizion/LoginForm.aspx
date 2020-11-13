@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="LoginForm.aspx.cs" Inherits="EzerMizion.LoginForm" %>
+﻿<%@ Page Title="" Language="C#"  MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="LoginForm.aspx.cs" UnobtrusiveValidationMode="None" Inherits="EzerMizion.LoginForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
      .btnRegister{
@@ -29,19 +29,20 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <form id="login-form" class="form"  method="post">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="us_name" class="text-info">Username:</label><br>
                                  <asp:TextBox ID="us_name" type="text" name="us_name"  class="form-control" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="us_name"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label for="id" class="text-info">ID:</label><br>
                                 <asp:TextBox ID="id" type="text" name="id"  class="form-control" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <asp:Button ID="loggin" runat="server" Text="Sign In" class="btnRegister" OnClick="loggin_Click" />
+                               <asp:Button ID="loggin" runat="server" Text="Sign In" class="btnRegister" OnClick="loggin_Click" />
                                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                             </div>
                             <div id="register-link" class="text-right">

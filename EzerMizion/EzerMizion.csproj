@@ -206,6 +206,7 @@
     <Compile Include="App_Code\DAL.cs" />
     <Compile Include="App_Code\donorsLogic.cs" />
     <Content Include="App_Code\ordersLogic.cs" />
+    <Compile Include="App_Code\productsLogic.cs" />
     <Compile Include="App_Code\usersLogic.cs" />
     <Compile Include="donHistory.aspx.cs">
       <DependentUpon>donHistory.aspx</DependentUpon>
