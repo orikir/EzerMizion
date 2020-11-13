@@ -44,6 +44,7 @@
                             <div class="form-group">
                                <asp:Button ID="loggin" runat="server" Text="Sign In" class="btnRegister" OnClick="loggin_Click" />
                                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                             </div>
                             <div id="register-link" class="text-right">
                                 <a href="RegisterForm.aspx" class="text-info">Register here</a>

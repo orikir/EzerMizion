@@ -26,13 +26,13 @@
                     <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="RegisterForm.aspx">רישום</a>
+                    <a class="nav-link" href="LoginForm.aspx">התחברות</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="rentEq.aspx">השכרת ציוד</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">מאגר מח עצם</a>
+                    <a class="nav-link" href="donHistory.aspx">תרומות</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">התנדבות</a>
