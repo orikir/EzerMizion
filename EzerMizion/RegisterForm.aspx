@@ -98,7 +98,6 @@
     <div class="container register">
                 <div class="row">
                     <div class="col-md-9 register-right">
-                
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">רישום</h3>
@@ -106,46 +105,45 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:TextBox ID="first_name" runat="server" class="form-control" placeholder="First Name *" value=""></asp:TextBox>
-                                        </div>
+                                            </div>
                                         <div class="form-group">
                                            <asp:TextBox ID="last_name" runat="server" class="form-control" placeholder="Last Name *" value=""></asp:TextBox>
-                                        </div>
+                                         </div>
                                         <div class="form-group">
                                              <asp:TextBox ID="user_name" runat="server" class="form-control" placeholder="User Name *" value=""></asp:TextBox>
-                                        </div>
+                                             </div>
                                         <div class="form-group">
                                              <asp:TextBox ID="birthDay" runat="server" class="form-control" placeholder="Your Birthday *" value=""></asp:TextBox>
-                                        </div>
-                                        
+                                             </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:TextBox ID="id" runat="server" class="form-control" placeholder="ID *" value=""></asp:TextBox>
-                         
+                                            
                                         </div>
                                         <div class="form-group">
                                            <asp:TextBox ID="identify" runat="server" class="form-control" placeholder="Confirm ID *" value=""></asp:TextBox>
-                                        </div>
+                                           </div>
                                         <div class="form-group">
                                            <asp:TextBox ID="phone_num" runat="server" class="form-control" placeholder="Your Phone *" value=""></asp:TextBox>
-                                        </div>   
+                                           </div>
                                       <div id="register-link" class="text-center">
-                                          <asp:Button ID="submit" runat="server" Text="Submit" OnClick="submit_Click" type="submit" class="btnRegister"  value="Register" />
+                                          <asp:Button ID="submit" runat="server" Text="Sign Up" OnClick="submit_Click" type="submit" class="btnRegister"  value="Register" />
+                                          <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                       </div>
-                                   
-                                       
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                         </div>
-                    </div>    
+                    </div> 
+                    
                     <div class="col-md-3 register-left">
                         <br>
                         <br />
                         <h3 >ברוכים הבאים</h3>
                         <p >אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
                         <br>
-                        <div id="register-link" class="text-center">
+                        <div id="register-link1" class="text-center">
                                 <a href="LoginForm.aspx" class="text-info">Login</a>
                         </div>
                         <br/>
