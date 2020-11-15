@@ -34,10 +34,15 @@ namespace EzerMizion.App_Code
             else
                 return false;
         }
-        public bool checkId(string id)
+       // public bool isManeger(string id)
+        //{
+            //bool sql = ("SELECT isManger FROM users WHERE users.id ='{0}'", id);
+            //return sql;
+        //}
+        public bool checkId (string id)
         {
-            string sql = String.Format("SELECT id FROM users WHERE users.id ='{0}'", id);
-            return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
+           string sql = String.Format("SELECT id FROM users WHERE users.id ='{0}'", id);
+           return dal.excuteQuery(sql).Tables[0].Rows.Count!=0;    
         }
         public bool checkUserName(string name)
         {

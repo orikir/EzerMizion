@@ -45,7 +45,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
                        <div class="product-grid">
                             <div class="product-image">
                                 <a href="#">
-                                    <asp:Image ID="Image1" class="pic-1" runat="server" Width="200" hight="400" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
+                                    <asp:Image ID="Image1" class="pic-1" runat="server" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
 
                                 </a>
                                 <ul class="social">
@@ -57,14 +57,14 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
                                 <asp:Label ID="Label1" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
                                 <div >
                                     <asp:Label ID="Label2" class="price" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
+                                    
                                 </div>
+                                <a class="add-to-cart" href="">+ Add To Cart</a>
                             </div>
-                           <a class="add-to-cart" href="">+ Add To Cart</a>
                         </div>
                  </div>
                
              </ItemTemplate>
-              
           </asp:Repeater>
      </div>
      </div>

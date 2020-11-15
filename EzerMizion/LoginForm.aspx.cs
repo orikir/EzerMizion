@@ -19,9 +19,16 @@ namespace EzerMizion
         {
             usersLogic ul = new usersLogic();
             if (!(ul.isUser(id.Text, us_name.Text)))
-                Label1.Text = "user name or id are wrong";
+               Label1.Text = "user name or id are wrong";
             else
+            {
                 Label1.Text = "you have successfully loggin";
+                
+                //if (ul.isManeger(id.Text))
+                    //Label2.Text = "manger";
+            }
+               
+
         }
     }
 }
