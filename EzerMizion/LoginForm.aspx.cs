@@ -18,14 +18,19 @@ namespace EzerMizion
         protected void loggin_Click(object sender, EventArgs e)
         {
             usersLogic ul = new usersLogic();
-            if (!(ul.isUser(id.Text, us_name.Text)))
-               Label1.Text = "user name or id are wrong";
-            else
+            if (ul.isUser(id.Text, us_name.Text))
             {
                 Label1.Text = "you have successfully loggin";
+
+                if (ul.isManeger(id.Text))
+                    Label2.Text = "maneger";
+                else
+                    Label2.Text = "not maneger";
+            }
+            else
+            {
+                Label1.Text = "user name or id are wrong";
                 
-                //if (ul.isManeger(id.Text))
-                    //Label2.Text = "manger";
             }
                
 

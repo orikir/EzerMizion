@@ -41,12 +41,13 @@
                                 <asp:TextBox ID="id" type="text" name="id"  class="form-control" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
                             </div>
-                            <div class="form-group">
-                               <asp:Button ID="loggin" runat="server" Text="Sign In" class="btnRegister" OnClick="loggin_Click" />
-                                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                            <div class="form-group text-center">
+                               <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                               <br>
+                               <asp:Button ID="loggin" runat="server" Text="Sign In" class="btnRegister" OnClick="loggin_Click" />
                             </div>
-                            <div id="register-link" class="text-right">
+                            <div id="register-link" class="text-center">
                                 <a href="RegisterForm.aspx" class="text-info">Register here</a>
                             </div>
                         </form>
