@@ -23,9 +23,16 @@ namespace EzerMizion
                 Label1.Text = "you have successfully loggin";
 
                 if (ul.isManeger(id.Text))
+                {
                     Label2.Text = "maneger";
+                    Response.Redirect("donHistory.aspx");
+                }
+                   
                 else
+                {
                     Label2.Text = "not maneger";
+                    Response.Redirect("HomeP.aspx");
+                }
             }
             else
             {

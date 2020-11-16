@@ -15,5 +15,10 @@ namespace EzerMizion.App_Code
             string sql = " SELECT * FROM products";
             return d.excuteQuery(sql);
         }
+        public void updatePro( double price, string id)
+        {
+            string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, id);
+            d.excuteQuery(sql);
+        }
     }
 }

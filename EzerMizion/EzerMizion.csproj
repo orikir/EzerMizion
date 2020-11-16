@@ -83,6 +83,7 @@
     <Content Include="Photos\halichon.jpg" />
     <Content Include="Photos\kabaim.jpg" />
     <Content Include="Photos\oxigen.jpg" />
+    <Content Include="ProductsList.aspx" />
     <Content Include="rentEq.aspx" />
     <Content Include="HomeP.aspx" />
     <Content Include="Photos\bdika.jpg" />
@@ -221,6 +222,13 @@
     </Compile>
     <Compile Include="LoginForm.aspx.designer.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsList.aspx.cs">
+      <DependentUpon>ProductsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductsList.aspx.designer.cs">
+      <DependentUpon>ProductsList.aspx</DependentUpon>
     </Compile>
     <Compile Include="rentEq.aspx.cs">
       <DependentUpon>rentEq.aspx</DependentUpon>

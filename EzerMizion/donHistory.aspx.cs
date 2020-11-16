@@ -18,8 +18,6 @@ namespace EzerMizion
         }
         protected void button_Click(object sender, EventArgs e)
         {
-   
-           
             GridView2.DataSource = dl.donHistory(text1.Text);
             GridView2.DataBind();
         }
