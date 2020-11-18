@@ -28,7 +28,7 @@ namespace EzerMizion
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-           
+                
                 //כשיש אפשרות עריכה בעצם נוספת תיבת טקס וממנה צריך לקחת את הנתון
                 string price = ((TextBox)(GridView1.Rows[e.RowIndex].Cells[6].Controls[0])).Text;
                 //עדכון הנתונים במסד הנתונים
