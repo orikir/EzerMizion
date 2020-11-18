@@ -20,17 +20,19 @@
       #login .container #login-row #login-column #login-box #login-form #register-link {
           margin-top: -85px;
         }
+      
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
+        <h3 class="text-center pt-5" style="color:black">Login form</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form"  method="post">
-                            <h3 class="text-center text-info">Login</h3>
+                            <br />
+                            <br />
                             <div class="form-group">
                                 <label for="us_name" class="text-info">Username:</label><br>
                                  <asp:TextBox ID="us_name" type="text" name="us_name"  class="form-control" runat="server"></asp:TextBox>

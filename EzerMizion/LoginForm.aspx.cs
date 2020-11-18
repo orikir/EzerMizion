@@ -22,15 +22,15 @@ namespace EzerMizion
             {
                 Label1.Text = "you have successfully loggin";
 
-                if (ul.isManeger(id.Text))
+                if (ul.isManager(id.Text))
                 {
-                    Label2.Text = "maneger";
+                    Label2.Text = "manager";
                     Response.Redirect("donHistory.aspx");
                 }
                    
                 else
                 {
-                    Label2.Text = "not maneger";
+                    Label2.Text = "not manager";
                     Response.Redirect("HomeP.aspx");
                 }
             }

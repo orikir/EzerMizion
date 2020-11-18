@@ -34,9 +34,9 @@ namespace EzerMizion.App_Code
             else
                 return false;
         }
-        public bool isManeger(string id)
-        {
-            string sql = String.Format("SELECT id FROM users WHERE isManeger is TRUE and id='{0}'", id);
+        public bool isManager(string id)
+        {//מקבלת תעודת זהות מחזירה אמת אם המשתמש מנהל ושקר אחרת
+            string sql = String.Format("SELECT isManager FROM users WHERE(((users.isManager) = True) AND((users.id) ='{0}'))",id);
             return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
         public bool checkId (string id)

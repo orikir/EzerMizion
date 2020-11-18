@@ -21,5 +21,10 @@ namespace EzerMizion
             GridView2.DataSource = dl.donHistory(text1.Text);
             GridView2.DataBind();
         }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
