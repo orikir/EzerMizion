@@ -15,34 +15,30 @@
 <body>
     <form id="form1" runat="server">
         
-        <nav class="navbar navbar-expand-lg navbar-light bg-light  ">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-       
-            <ul class="navbar-nav  mr-auto " style="direction:rtl;  " >
-                <li class="nav-item active">
-                    <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="LoginForm.aspx">התחברות</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="rentEq.aspx">השכרת ציוד</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="donHistory.aspx">תרומות</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ProductsList.aspx">מוצרים</a>
-                </li>
-                
-            </ul>
-        <img   src="Photos/logo.png" style="width:40px; height:40px; " />
-        <a class="navbar-brand" href="#">עזר מציון</a>
-        </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  " style=" padding-left: 50%  "  >
+        
+               <div style="direction:rtl;"  >
+                    <ul class="navbar-nav  mr-auto " style="direction:rtl " >
+                        <li class="nav-item active">
+                            <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="LoginForm.aspx">התחברות</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rentEq.aspx">השכרת ציוד</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="donHistory.aspx">תרומות</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ProductsList.aspx">מוצרים</a>
+                        </li>
+                    </ul>
+                </div>
+                    <img   src="Photos/logo.png" style="width:40px; height:40px; " />
+                <a class="navbar-brand" href="#">עזר מציון</a>
+            </nav>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                
