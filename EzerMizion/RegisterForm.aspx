@@ -124,13 +124,12 @@
                                         <div class="form-group">
                                             <asp:TextBox ID="id" runat="server" class="form-control" placeholder="ID *" value=""></asp:TextBox>
                                              <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
-                                            
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>                      
                                         </div>
                                         <div class="form-group">
                                            <asp:TextBox ID="identify" runat="server" class="form-control" placeholder="Confirm ID *" value=""></asp:TextBox>
                                              <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="  יש להקיש תעודת זהות פעם נוספת" ControlToValidate="identify"></asp:RequiredFieldValidator>
-                                           <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות שגויה" ValidationExpression="id" ControlToValidate="identify"></asp:RegularExpressionValidator>
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תז שגויה" ValidationExpression="\d{9}" ControlToValidate="identify"></asp:RegularExpressionValidator>
                                         </div>
                                         <div class="form-group">
                                            <asp:TextBox ID="phone_num" runat="server" class="form-control" placeholder="Your Phone *" value=""></asp:TextBox>

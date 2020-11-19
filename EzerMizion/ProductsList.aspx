@@ -5,6 +5,8 @@
     <asp:GridView ID="GridView1" runat="server" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" AutoGenerateColumns="False" Width="921px"  OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" Height="729px" CellSpacing="2">
         <Columns>
            
+            <asp:BoundField DataField="proCode" HeaderText="קוד מוצר" ReadOnly="True" />
+           
             <asp:BoundField HeaderText="שם מוצר" DataField="proName" ReadOnly="true"/>
             <asp:CheckBoxField HeaderText="האם במלאי?" DataField="isInStock" ReadOnly="true" />
             <asp:BoundField HeaderText="כמות" DataField="quantity" ReadOnly="true"/>
