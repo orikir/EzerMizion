@@ -13,10 +13,15 @@ namespace EzerMizion
         productsLogic pl = new productsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if(!IsPostBack&&(Session["uType"].Equals("manager")))
             {
                 GridView1.DataSource = pl.allProducts();
                 GridView1.DataBind();
+            }
+            else
+            {
+                if(!(Session["uType"].Equals("manager")))
+                    Response.Redirect("HomeP.aspx");
             }
         }
 

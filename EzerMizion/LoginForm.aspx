@@ -1,40 +1,39 @@
 ﻿<%@ Page Title="" Language="C#"  MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="LoginForm.aspx.cs" UnobtrusiveValidationMode="None" Inherits="EzerMizion.LoginForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-     .btnRegister{
-    position:center;
-    text-align:center;
-    margin-top: 10%;
-    border: none;
-    border-radius: 1.5rem;
-    padding: 2%;
-    background: #f8f9fa;
-    color: #000;
-    font-weight: 600;
-    width: 50%;
-    cursor: pointer;
-}
-  body {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  height: 100vh;
+         .btnRegister{
+        position:center;
+        text-align:center;
+        margin-top: 10%;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        background: #f8f9fa;
+        color: #000;
+        font-weight: 600;
+        width: 50%;
+        cursor: pointer;
+        }
+          body {
+          margin: 0;
+          padding: 0;
+          background-color: white;
+          height: 100vh;
  
-}
-#login .container #login-row #login-column #login-box {
-  margin-top: 85px;
-  max-width: 600px;
-  height: 320px;
-  border-radius: 0.5rem;
-  background-color: #f8f9fa;
-
-}
-#login .container #login-row #login-column #login-box #login-form {
-  padding: 20px;
-}
-#login .container #login-row #login-column #login-box #login-form #register-link {
-  margin-top: -85px;
-}
+        }
+        #login .container #login-row #login-column #login-box {
+          margin-top: 85px;
+          max-width: 600px;
+          height: 320px;
+          border-radius: 0.5rem;
+          background-color: #f8f9fa;
+        }
+        #login .container #login-row #login-column #login-box #login-form {
+          padding: 20px;
+        }
+        #login .container #login-row #login-column #login-box #login-form #register-link {
+          margin-top: -85px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -75,6 +74,4 @@
             </div>
         </div>
     </div>
-     
-   
 </asp:Content>
