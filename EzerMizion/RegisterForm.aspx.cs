@@ -18,10 +18,16 @@ namespace EzerMizion
         protected void submit_Click(object sender, EventArgs e)
         {
             usersLogic ul = new usersLogic();
-            if (!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))
-                alarm_lable.Text = "this id is unavailable";
+            if (!(identify.Text.Equals(id.Text)))
+                alarm_lable.Text = "תעודת זהות שגויה";
             else
-                alarm_lable.Text = "you have successfully registered";
+            {
+                if (!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))
+                    alarm_lable.Text = "use already exsist";
+                else
+                    alarm_lable.Text = "you have successfully registered";
+            }
+            
         }
     }
 }
