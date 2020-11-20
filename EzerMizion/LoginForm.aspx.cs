@@ -24,21 +24,19 @@ namespace EzerMizion
                 Session["uId"] = id.Text;
                 if (ul.isManager(id.Text))
                 {
-                    Label2.Text = "manager";
                     Session["uType"] = "manager";
                     Response.Redirect("donHistory.aspx");
                 }
                    
                 else
                 {
-                    Label2.Text = "not manager";
                     Session["uType"] = "ordinary";
                     Response.Redirect("HomeP.aspx");
                 }
             }
             else
             {
-                Label1.Text = "user name or id are wrong";
+                Label1.Text = "שם משתמש ו/או תעודת זהות שגויים";
             }
                
 

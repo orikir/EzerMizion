@@ -55,13 +55,13 @@
                                 <label for="id" class="text-info">ID:</label><br>
                                 <asp:TextBox ID="id" type="text" name="id"  class="form-control" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                             </div>
                             <div class="form-group text-center">
                                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                                <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                                <br>
                                <asp:Button ID="Button1" runat="server" Text="Sign In" class="btnRegister" OnClick="loggin_Click" />
                             </div>

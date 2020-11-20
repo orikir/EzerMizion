@@ -45,9 +45,17 @@ namespace EzerMizion
 
             }
 
+
             protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+            GridView1.DataSource = pl.allProducts();
+            GridView1.DataBind();
         }
     }
 }

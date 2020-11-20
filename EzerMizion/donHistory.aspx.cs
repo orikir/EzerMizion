@@ -13,8 +13,7 @@ namespace EzerMizion
         donorsLogic dl = new donorsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = dl.allDonations();
-            GridView1.DataBind();
+            
         }
         protected void button_Click(object sender, EventArgs e)
         {

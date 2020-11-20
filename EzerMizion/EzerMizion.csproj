@@ -76,6 +76,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DonationsList.aspx" />
     <Content Include="donHistory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="LoginForm.aspx" />
@@ -210,6 +211,13 @@
     <Content Include="App_Code\ordersLogic.cs" />
     <Compile Include="App_Code\productsLogic.cs" />
     <Compile Include="App_Code\usersLogic.cs" />
+    <Compile Include="DonationsList.aspx.cs">
+      <DependentUpon>DonationsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonationsList.aspx.designer.cs">
+      <DependentUpon>DonationsList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="donHistory.aspx.cs">
       <DependentUpon>donHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
