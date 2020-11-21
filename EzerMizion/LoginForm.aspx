@@ -8,44 +8,39 @@
         border: none;
         border-radius: 1.5rem;
         padding: 2%;
-        background: #f8f9fa;
+        background-color: white;
         color: #000;
         font-weight: 600;
         width: 50%;
         cursor: pointer;
         }
           body {
-          margin: 0;
-          padding: 0;
           background-color: white;
-          height: 100vh;
- 
         }
-        #login .container #login-row #login-column #login-box {
-          margin-top: 85px;
-          max-width: 600px;
-          height: 320px;
-          border-radius: 0.5rem;
-          background-color: #f8f9fa;
+        .login-box 
+        {
+             position:center;
+             border-radius: 0.5rem;
+             background-color: #f8f9fa;
+             
         }
-        #login .container #login-row #login-column #login-box #login-form {
-          padding: 20px;
-        }
-        #login .container #login-row #login-column #login-box #login-form #register-link {
-          margin-top: -85px;
+       
+        .login-row {
+            padding-top:5%;
+           
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="login">
-        <br />
-        <br />
-        <h3 class="text-center text-info text-black" >Login</h3>
+        
         <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" >
+            <div  class="row justify-content-center align-items-center login-row">
+              <div class="col-4 "></div>
+                    <div class="col-4 login-box">
+                        <h3 class="text-center text-info text-black" >Login</h3>
+                        <br />
+                           <form  class="form " >
                            <div class="form-group">
                                 <label for="us_name" class="text-info " >Username:</label><br>
                                  <asp:TextBox ID="us_name" type="text" name="us_name"  class="form-control" runat="server"></asp:TextBox>
@@ -68,9 +63,9 @@
                             <div id="register-link" class="text-center">
                                 <a href="RegisterForm.aspx" class="text-info">Register here</a>
                             </div>
-                        </form>
-                    </div>
+                        </form>    
                 </div>
+                <div class="col-4"></div>
             </div>
         </div>
     </div>
