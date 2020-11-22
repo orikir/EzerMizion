@@ -25,7 +25,7 @@ namespace EzerMizion
                 if (ul.isManager(id.Text))
                 {
                     Session["uType"] = "manager";
-                    Response.Redirect("donHistory.aspx");
+                    Response.Redirect("HomeP.aspx");
                 }
                    
                 else

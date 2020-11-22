@@ -48,12 +48,12 @@
                         <br />
                            <form  class="form " >
                            <div class="form-group" >
-                                <label for="us_name" class="tColor" >שם משתמש:</label><br>
+                                <label for="us_name" class="tColor" style="float:right;" >שם משתמש:</label><br>
                                  <asp:TextBox ID="us_name" type="text" name="us_name"  class="form-control" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="us_name"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
-                                <label for="id" class="tColor">תעודת זהות:</label><br>
+                                <label for="id" class="tColor" style="float:right;">תעודת זהות:</label><br>
                                 <asp:TextBox ID="id" type="text" name="id"  class="form-control" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
@@ -64,7 +64,7 @@
                                <asp:Button ID="Button1" runat="server" Text="התחבר" class="btnRegister" OnClick="loggin_Click" />
                             </div>
                             <div id="register-link" class="text-center">
-                                <a href="RegisterForm.aspx" class="tColor">לחץ כאן כדי להירשם</a>
+                                <a href="RegisterForm.aspx" class="tColor" >לחץ כאן כדי להירשם</a>
                             </div>
                         </form>    
                 </div>
