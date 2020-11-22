@@ -8,36 +8,51 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
-        
+       
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         
-        <nav class="navbar navbar-expand-lg navbar-light bg-light  " style=" padding-left: 50%  "  >
-        
-               <div style="direction:rtl;"  >
-                    <ul class="navbar-nav  mr-auto " style="direction:rtl " >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  " style="direction:rtl;" >
+            <div>
+                <a class="navbar-brand" href="#"> עזר מציון </a>
+                <img   src="Photos/logo.png" style="width:40px; height:40px; " />
+            </div>
+            <div   >
+                    <ul class="navbar-nav  " style="direction:rtl;" >
                         <li class="nav-item active">
                             <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="LoginForm.aspx">התחברות</a>
+                            <a class="nav-link" href="LoginForm.aspx" >
+                                <asp:Label ID="Label1" runat="server" Text="התחברות"></asp:Label>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="rentEq.aspx">השכרת ציוד</a>
+                            <a class="nav-link" href="rentEq.aspx">
+                                 <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="donHistory.aspx">
+                                 <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="DonationsList.aspx">תרומות</a>
+                            <a class="nav-link" href="DonationsList.aspx">
+                                 <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="ProductsList.aspx">מוצרים</a>
+                            <a class="nav-link" href="ProductsList.aspx">
+                                 <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+                            </a>
                         </li>
                     </ul>
                 </div>
-                    <img   src="Photos/logo.png" style="width:40px; height:40px; " />
-                <a class="navbar-brand" href="#">עזר מציון</a>
             </nav>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

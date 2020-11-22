@@ -11,7 +11,16 @@ namespace EzerMizion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["uType"].Equals("manager"))
+            {
+                Label3.Text = "רשימת תרומות";
+                Label4.Text = "רשימת מוצרים";
+            }
+            if(Session["uType"].Equals("ordinary"))
+            {
+                Label2.Text = "השכרת מוצרים";
+                Label5.Text = "היסטורית תרומות";
+            }
         }
     }
 }
