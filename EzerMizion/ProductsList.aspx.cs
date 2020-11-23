@@ -57,5 +57,7 @@ namespace EzerMizion
             GridView1.DataSource = pl.allProducts();
             GridView1.DataBind();
         }
+
+        
     }
 }
