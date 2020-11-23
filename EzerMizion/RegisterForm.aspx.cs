@@ -27,7 +27,7 @@ namespace EzerMizion
                 else
                     alarm_lable.Text = "you have successfully registered";
             }
-            
+
         }
     }
 }

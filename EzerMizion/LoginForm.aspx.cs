@@ -27,7 +27,7 @@ namespace EzerMizion
                     Session["uType"] = "manager";
                     Response.Redirect("HomeP.aspx");
                 }
-                   
+
                 else
                 {
                     Session["uType"] = "ordinary";
@@ -38,7 +38,7 @@ namespace EzerMizion
             {
                 Label1.Text = "שם משתמש ו/או תעודת זהות שגויים";
             }
-               
+
 
         }
     }

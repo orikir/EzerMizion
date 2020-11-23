@@ -13,14 +13,14 @@ namespace EzerMizion
         productsLogic pl = new productsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack&&(Session["uType"].Equals("manager")))
+            if (!IsPostBack && (Session["uType"].Equals("manager")))
             {
                 GridView1.DataSource = pl.allProducts();
                 GridView1.DataBind();
             }
             else
             {
-                if(!(Session["uType"].Equals("manager")))
+                if (!(Session["uType"].Equals("manager")))
                     Response.Redirect("HomeP.aspx");
             }
         }
@@ -33,20 +33,20 @@ namespace EzerMizion
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-                
-                //כשיש אפשרות עריכה בעצם נוספת תיבת טקס וממנה צריך לקחת את הנתון
-                string price = ((TextBox)(GridView1.Rows[e.RowIndex].Cells[6].Controls[0])).Text;
-                //עדכון הנתונים במסד הנתונים
-                pl.updatePro(double.Parse(price), GridView1.Rows[e.RowIndex].Cells[0].Text);
-                //יציאה ממצב עריכה
-                GridView1.EditIndex = -1;
-                GridView1.DataSource = pl.allProducts();
-                GridView1.DataBind();
 
-            }
+            //כשיש אפשרות עריכה בעצם נוספת תיבת טקס וממנה צריך לקחת את הנתון
+            string price = ((TextBox)(GridView1.Rows[e.RowIndex].Cells[6].Controls[0])).Text;
+            //עדכון הנתונים במסד הנתונים
+            pl.updatePro(double.Parse(price), GridView1.Rows[e.RowIndex].Cells[0].Text);
+            //יציאה ממצב עריכה
+            GridView1.EditIndex = -1;
+            GridView1.DataSource = pl.allProducts();
+            GridView1.DataBind();
+
+        }
 
 
-            protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -58,6 +58,9 @@ namespace EzerMizion
             GridView1.DataBind();
         }
 
-        
+        protected void addP_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addPro.aspx");
+        }
     }
 }

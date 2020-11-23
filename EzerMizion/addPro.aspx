@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" UnobtrusiveValidationMode="None" CodeBehind="RegisterForm.aspx.cs" Inherits="EzerMizion.RegisterForm" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="addPro.aspx.cs"  UnobtrusiveValidationMode="None" Inherits="EzerMizion.addPro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
+     <style>
         .register {
             background: -webkit-linear-gradient(left, #f8f9fa, #f8f9fa);
             margin-top: 3%;
@@ -80,48 +79,42 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container register">
+      <div class="container register">
         <div class="row">
             <div class="col-md-9 register-right">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading ">רישום</h3>
+                        <h3 class="register-heading ">הוספת מוצר</h3>
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="first_name" runat="server" class="form-control" placeholder="שם פרטי *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם פרטי" ControlToValidate="first_name"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="proName" runat="server" class="form-control" placeholder="שם מוצר *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם מוצר" ControlToValidate="proName"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="last_name" runat="server" class="form-control" placeholder="שם משפחה *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס שם משפחה" ControlToValidate="last_name"></asp:RequiredFieldValidator>
+                                    
+                                    <asp:CheckBox ID="isInStock1" class="form-control"  runat="server" />
+                                    
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="user_name" runat="server" class="form-control" placeholder="שם משתמש *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="user_name"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="birthDay" runat="server" class="form-control" placeholder="תאריך לידה *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תאריך לידה" ControlToValidate="birthDay"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="branchCode" runat="server" class="form-control" placeholder="קוד סניף *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס קוד סניף" ControlToValidate="branchCode"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="id" runat="server" class="form-control" placeholder="תעודת זהות *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="proPhoto" runat="server" class="form-control" placeholder="תמונה *" value=""></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="identify" runat="server" class="form-control" placeholder="אשר תעודת זהות *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="  יש להקיש תעודת זהות פעם נוספת" ControlToValidate="identify"></asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="identify"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="proPrice" runat="server" class="form-control" placeholder="מחיר *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="יש להכניס מחיר" ControlToValidate="proPrice"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="phone_num" runat="server" class="form-control" placeholder="מספר פלאפון *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="יש להכניס מספר פלאפון" ControlToValidate="phone_num"></asp:RequiredFieldValidator>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Button ID="submit" runat="server" Text="הירשם" OnClick="submit_Click" type="submit" class="btnRegister" value="Register" />
+                                    <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnRegister" value="Register" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>

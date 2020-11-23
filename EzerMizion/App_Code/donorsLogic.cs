@@ -10,7 +10,7 @@ namespace EzerMizion.App_Code
 
     {
         DAL d = new DAL();
-        public DataSet donHistory (string id)
+        public DataSet donHistory(string id)
         {
             string sql = String.Format("SELECT * FROM donors WHERE donors.id ='{0}'", id);
             return d.excuteQuery(sql);

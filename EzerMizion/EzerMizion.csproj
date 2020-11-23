@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addPro.aspx" />
     <Content Include="App_Data\DatabaseEM.accdb" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -206,6 +207,13 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addPro.aspx.cs">
+      <DependentUpon>addPro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addPro.aspx.designer.cs">
+      <DependentUpon>addPro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\DAL.cs" />
     <Compile Include="App_Code\donorsLogic.cs" />
     <Content Include="App_Code\ordersLogic.cs" />

@@ -9,13 +9,13 @@ namespace EzerMizion.App_Code
     public class productsLogic
     {
         DAL d = new DAL();
-        
+
         public DataSet allProducts()
         {
             string sql = " SELECT * FROM products";
             return d.excuteQuery(sql);
         }
-        public void updatePro( double price, string id)
+        public void updatePro(double price, string id)
         {
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, id);
             d.excuteQuery(sql);
@@ -25,7 +25,7 @@ namespace EzerMizion.App_Code
             {
                 if (!isExsist(proName, bCode))
                 {
-                    string sql = String.Format("INSERT INTO productss (proName,isInStock,quantity,branchCode,proPhoto,proPrice) VALUES('{0}', '{1}', '{2}', '{3}','{4}','{5}')", proName, isInStock, quantity, bCode, proPhoto, proPrice);
+                    string sql = String.Format("INSERT INTO products (proName,isInStock,quantity,branchCode,proPhoto,proPrice) VALUES('{0}', '{1}', '{2}', '{3}','{4}','{5}')", proName, isInStock, quantity, bCode, proPhoto, proPrice);
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -37,19 +37,19 @@ namespace EzerMizion.App_Code
         }
         public bool isExsist(string name, string bCode)
         {
-            if (checkProName(name)&& checkBranchCode(bCode))
+            if (checkBranchCode(bCode) && checkProName(name, bCode))
                 return true;
             else
                 return false;
         }
         public bool checkBranchCode(string bCode)
         {
-            string sql = String.Format("SELECT branchCode FROM products WHERE branchCode ='{0}'", bCode);
+            string sql = String.Format("SELECT branchCode FROM branches WHERE branchCode ='{0}'", bCode);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
-        public bool checkProName(string name)
+        public bool checkProName(string name, string bCode)
         {
-            string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}'", name);
+            string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}' AND branchCode ='{1}' ", name, bCode);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
     }
