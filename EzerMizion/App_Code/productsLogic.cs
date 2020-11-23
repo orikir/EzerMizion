@@ -20,12 +20,12 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, id);
             d.excuteQuery(sql);
         }
-        public bool newPro(string proName, bool isInStock, string quantity, string bCode, string proPhoto, string proPrice)
+        public bool newPro(string proName, string quantity, string bCode, string proPhoto)
         {
             {
                 if (!isExsist(proName, bCode))
                 {
-                    string sql = String.Format("INSERT INTO products (proName,isInStock,quantity,branchCode,proPhoto,proPrice) VALUES('{0}', '{1}', '{2}', '{3}','{4}','{5}')", proName, isInStock, quantity, bCode, proPhoto, proPrice);
+                    string sql = String.Format("INSERT INTO products (proName,quantity,branchCode,proPhoto) VALUES('{0}', '{1}', '{2}', '{3}')", proName, quantity, bCode, proPhoto);
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }

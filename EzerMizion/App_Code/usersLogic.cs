@@ -13,7 +13,7 @@ namespace EzerMizion.App_Code
         public bool newUser(string id, string firstName, string LastName, DateTime birthDay, string phoneNum, string userName)
         {
             {
-                if (!checkId(id))
+                if (!checkId(id) && !checkUserName(userName))//במידה ושם המשתמש ותעודת הזהות לא תפוסים
                 {
                     string sql = String.Format("INSERT INTO users (id, firstName, LastName, birthDay, phoneNum, usName) VALUES('{0}', '{1}', '{2}', '{3}','{4}','{5}')", id, firstName, LastName, birthDay, phoneNum, userName);
                     DataSet ds = dal.excuteQuery(sql);
@@ -23,13 +23,11 @@ namespace EzerMizion.App_Code
                 {
                     return false;
                 }
-
-
             }
         }
         public bool isUser(string id, string name)
-        {
-            if (checkId(id) && checkUserName(name, id))
+        {//השיטה תבדוק האם המשתמש שמור במערכת
+            if (checkId(id) && nameMatchId(id, name))//אם תעודת הזהות קיימת
                 return true;
             else
                 return false;
@@ -40,13 +38,18 @@ namespace EzerMizion.App_Code
             return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
         public bool checkId(string id)
-        {
+        {//מקבלת תעודת זהות מחזירה אמת אם קיימת במערכת ושקר אחרת
             string sql = String.Format("SELECT id FROM users WHERE users.id ='{0}'", id);
             return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
-        public bool checkUserName(string name, string id)
+        public bool checkUserName(string name)
+        {//מקבלת שם משתמש מחזירה אמת אם קיים במערכת ושקר אחרת
+            string sql = String.Format("SELECT usName FROM users WHERE users.usName ='{0}' ", name);
+            return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
+        }
+        public bool nameMatchId(string id, string name)
         {
-            string sql = String.Format("SELECT usName FROM users WHERE users.usName ='{0}' AND users.id='{1}'", name, id);
+            string sql = String.Format("SELECT usName FROM users WHERE users.usName ='{0}' AND users.id='{1}'", name, id);//בדיקה האם שם המשתמש תואם את תעודת הזהות
             return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
     }

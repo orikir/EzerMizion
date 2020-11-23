@@ -1,20 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="addPro.aspx.cs"  UnobtrusiveValidationMode="None" Inherits="EzerMizion.addPro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <style>
-        .register {
+        .adding {
             background: -webkit-linear-gradient(left, #f8f9fa, #f8f9fa);
             margin-top: 3%;
             padding: 3%;
         }
 
-        .register-left {
+        .adding-left {
             text-align: center;
             color: #000;
             margin-top: 4%;
             direction: rtl;
         }
 
-            .register-left input {
+            .adding-left input {
                 border: none;
                 border-radius: 1.5rem;
                 padding: 2%;
@@ -27,13 +27,13 @@
                 cursor: pointer;
             }
 
-        .register-right {
+        .adding-right {
             background: #f8f9fa;
             border-top-left-radius: 10% 50%;
             border-bottom-left-radius: 10% 50%;
         }
 
-        .register-left img {
+        .adding-left img {
             margin-top: 15%;
             margin-bottom: 5%;
             width: 25%;
@@ -41,18 +41,18 @@
             animation: mover 1s infinite alternate;
         }
 
-        .register-left p {
+        .adding-left p {
             font-weight: lighter;
             padding: 12%;
             margin-top: -9%;
         }
 
-        .register .register-form {
+        .adding .adding-form {
             padding: 10%;
             margin-top: 10%;
         }
 
-        .btnRegister {
+        .btnadding {
             position: center;
             text-align: center;
             margin-top: 10%;
@@ -66,7 +66,7 @@
             cursor: pointer;
         }
 
-        .register-heading {
+        .adding-heading {
             text-align: center;
             margin-top: 8%;
             margin-bottom: -15%;
@@ -79,22 +79,17 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <div class="container register">
+      <div class="container adding">
         <div class="row">
-            <div class="col-md-9 register-right">
+            <div class="col-md-9 adding-right">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading ">הוספת מוצר</h3>
-                        <div class="row register-form">
+                        <h3 class="adding-heading ">הוספת מוצר</h3>
+                        <div class="row adding-form">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox ID="proName" runat="server" class="form-control" placeholder="שם מוצר *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם מוצר" ControlToValidate="proName"></asp:RequiredFieldValidator>
-                                </div>
-                                <div class="form-group">
-                                    
-                                    <asp:CheckBox ID="isInStock1" class="form-control"  runat="server" />
-                                    
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
@@ -109,12 +104,9 @@
                                 <div class="form-group">
                                     <asp:TextBox ID="proPhoto" runat="server" class="form-control" placeholder="תמונה *" value=""></asp:TextBox>
                                 </div>
+                                
                                 <div class="form-group">
-                                    <asp:TextBox ID="proPrice" runat="server" class="form-control" placeholder="מחיר *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="יש להכניס מחיר" ControlToValidate="proPrice"></asp:RequiredFieldValidator>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnRegister" value="Register" />
+                                    <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>
@@ -123,13 +115,13 @@
                 </div>
             </div>
 
-            <div class="col-md-3 register-left">
+            <div class="col-md-3 adding-left">
                 <br>
                 <br />
                 <h3>ברוכים הבאים</h3>
                 <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
                 <br>
-                <div id="register-link1" class="text-center">
+                <div id="adding-link1" class="text-center">
                     <a href="LoginForm.aspx" class="tColor">להתחברות לחץ כאן</a>
                 </div>
                 <br />
