@@ -69,7 +69,7 @@
 
         .register-heading {
             text-align: center;
-            margin-top: 8%;
+            margin-top: -1%;
             margin-bottom: -15%;
             color: #000;
         }

@@ -82,7 +82,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container adding">
         <div class="row">
-            <div class="col-md-9 adding-right">
+            <div class="col-md-12 adding-right">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="adding-heading ">הוספת מוצר</h3>
@@ -106,7 +106,7 @@
                                     <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group text-center">
                                     <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>
@@ -116,17 +116,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3 adding-left">
-                <br>
-                <br />
-                <h3>ברוכים הבאים</h3>
-                <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
-                <br>
-                <div id="adding-link1" class="text-center">
-                    <a href="LoginForm.aspx" class="tColor">להתחברות לחץ כאן</a>
-                </div>
-                <br />
-            </div>
+            
         </div>
 
     </div>
