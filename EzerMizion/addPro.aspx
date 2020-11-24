@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="addPro.aspx.cs"  UnobtrusiveValidationMode="None" Inherits="EzerMizion.addPro" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="addPro.aspx.cs" UnobtrusiveValidationMode="None" Inherits="EzerMizion.addPro" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     <style>
+    <style>
         .adding {
             background: -webkit-linear-gradient(left, #f8f9fa, #f8f9fa);
             margin-top: 3%;
@@ -79,7 +80,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <div class="container adding">
+    <div class="container adding">
         <div class="row">
             <div class="col-md-9 adding-right">
                 <div class="tab-content" id="myTabContent">
@@ -95,16 +96,12 @@
                                     <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
-                                    <asp:TextBox ID="branchCode" runat="server" class="form-control" placeholder="קוד סניף *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס קוד סניף" ControlToValidate="branchCode"></asp:RequiredFieldValidator>
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="proPhoto" runat="server" class="form-control" placeholder="תמונה *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="proPrice" runat="server" class="form-control" placeholder="מחיר *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס מחיר" ControlToValidate="proPrice"></asp:RequiredFieldValidator>
                                 </div>
-                                
                                 <div class="form-group">
                                     <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>

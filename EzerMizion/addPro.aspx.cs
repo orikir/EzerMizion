@@ -18,15 +18,15 @@ namespace EzerMizion
         protected void submit_Click(object sender, EventArgs e)
         {
             productsLogic pl = new productsLogic();
-            if (!(pl.checkBranchCode(branchCode.Text)))
-                alarm_lable.Text = "קוד סניף שגוי";
+            //if (!(pl.checkBranchCode(branchCode.Text)))
+            //  alarm_lable.Text = "קוד סניף שגוי";
+            //else
+            // {
+            if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text)))
+                alarm_lable.Text = "המוצר קיים";
             else
-            {
-                if (!(pl.newPro(proName.Text , quantity.Text, branchCode.Text, proPhoto.Text)))
-                    alarm_lable.Text = "המוצר קיים";
-                else
-                    alarm_lable.Text = "המוצר נוסף בהצלחה";
-            }
+                alarm_lable.Text = "המוצר נוסף בהצלחה";
+            // }
         }
     }
 }

@@ -20,12 +20,12 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, id);
             d.excuteQuery(sql);
         }
-        public bool newPro(string proName, string quantity, string bCode, string proPhoto)
+        public bool newPro(string proName, string quantity , double proPrice)
         {
             {
-                if (!isExsist(proName, bCode))
+                if (!checkProName(proName))
                 {
-                    string sql = String.Format("INSERT INTO products (proName,quantity,branchCode,proPhoto) VALUES('{0}', '{1}', '{2}', '{3}')", proName, quantity, bCode, proPhoto);
+                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice) VALUES('{0}', '{1}', '{2}')", proName, quantity, proPrice);
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -35,22 +35,27 @@ namespace EzerMizion.App_Code
                 }
             }
         }
-        public bool isExsist(string name, string bCode)
+        public bool isExsist(string name)
         {
-            if (checkBranchCode(bCode) && checkProName(name, bCode))
+            if (checkProName(name))
                 return true;
             else
                 return false;
         }
-        public bool checkBranchCode(string bCode)
+        //public bool checkBranchCode(string bCode)
+       // {
+        //    string sql = String.Format("SELECT branchCode FROM branches WHERE branchCode ='{0}'", bCode);
+        //    return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
+       // }
+        public bool checkProName(string name)
         {
-            string sql = String.Format("SELECT branchCode FROM branches WHERE branchCode ='{0}'", bCode);
+            string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}' ", name);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
-        public bool checkProName(string name, string bCode)
-        {
-            string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}' AND branchCode ='{1}' ", name, bCode);
-            return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
-        }
+        //public bool checkProCode(string id)
+        //{
+        //    string sql = String.Format("SELECT proCode FROM products WHERE proName ='{0}'",id);
+        //    return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
+       // }
     }
 }

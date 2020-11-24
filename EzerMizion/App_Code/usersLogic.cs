@@ -27,7 +27,7 @@ namespace EzerMizion.App_Code
         }
         public bool isUser(string id, string name)
         {//השיטה תבדוק האם המשתמש שמור במערכת
-            if (checkId(id) && nameMatchId(id, name))//אם תעודת הזהות קיימת
+            if (checkId(id) && nameMatchId(id, name))//אם תעודת הזהות קיימת ושם המשתמש תואם 
                 return true;
             else
                 return false;
