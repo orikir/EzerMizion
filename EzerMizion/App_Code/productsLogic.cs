@@ -20,12 +20,12 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, id);
             d.excuteQuery(sql);
         }
-        public bool newPro(string proName, string quantity , double proPrice)
+        public bool newPro(string proName, string quantity , double id, string branchName)
         {
             {
                 if (!checkProName(proName))
                 {
-                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice) VALUES('{0}', '{1}', '{2}')", proName, quantity, proPrice);
+                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice) VALUES('{0}', '{1}', '{2}')", proName, quantity, id);
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -42,20 +42,16 @@ namespace EzerMizion.App_Code
             else
                 return false;
         }
-        //public bool checkBranchCode(string bCode)
-       // {
-        //    string sql = String.Format("SELECT branchCode FROM branches WHERE branchCode ='{0}'", bCode);
-        //    return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
-       // }
+        public bool checkBranchName(string branchName)
+        {
+            string sql = String.Format("SELECT branchName FROM branches WHERE branchName ='{0}'", branchName);
+            return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
+        }
         public bool checkProName(string name)
         {
             string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}' ", name);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
-        //public bool checkProCode(string id)
-        //{
-        //    string sql = String.Format("SELECT proCode FROM products WHERE proName ='{0}'",id);
-        //    return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
-       // }
+        
     }
 }

@@ -214,6 +214,7 @@
     <Compile Include="addPro.aspx.designer.cs">
       <DependentUpon>addPro.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\branchesLogic.cs" />
     <Compile Include="App_Code\DAL.cs" />
     <Compile Include="App_Code\donorsLogic.cs" />
     <Content Include="App_Code\ordersLogic.cs" />

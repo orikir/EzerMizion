@@ -39,6 +39,25 @@
         .login-row {
             padding-top: 5%;
         }
+        .brand_logo_container {
+			position: absolute;
+			height: 27%;
+			width: 40%;
+			top: -10%;
+			border-radius: 60%;
+			background: #c6f1ff;
+			padding: 2%;
+			text-align: center;
+		}
+		.brand_logo {
+			height: 100%;
+			width: 100%;
+			border-radius: 50%;
+			border: 2PX solid white;
+		}
+		.form_container {
+			margin-top: 100px;
+		}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -48,6 +67,12 @@
             <div class="row justify-content-center align-items-center login-row">
                 <div class="col-4 "></div>
                 <div class="col-4 login-box" style="color: black;">
+                    <div class="d-flex justify-content-center">
+                        <div class="brand_logo_container">
+                            <img src="Photos/logo.png" class="brand_logo" alt="Logo">
+                        </div>
+                    </div>
+                    <div class=" form_container">
                     <h3 class="text-center h3S">התחברות</h3>
                     <br />
                     <form class="form ">
@@ -71,6 +96,7 @@
                             <a href="RegisterForm.aspx" class="tColor">לחץ כאן כדי להירשם</a>
                         </div>
                     </form>
+                </div>
                 </div>
                 <div class="col-4"></div>
             </div>

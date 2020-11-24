@@ -22,7 +22,7 @@ namespace EzerMizion
             //  alarm_lable.Text = "קוד סניף שגוי";
             //else
             // {
-            if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text)))
+            if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text))
                 alarm_lable.Text = "המוצר קיים";
             else
                 alarm_lable.Text = "המוצר נוסף בהצלחה";

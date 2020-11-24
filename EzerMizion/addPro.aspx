@@ -93,14 +93,18 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם מוצר" ControlToValidate="proName"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="branchName" runat="server" class="form-control" placeholder="שם סניף *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס שם סניף" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox ID="proPrice" runat="server" class="form-control" placeholder="מחיר *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס מחיר" ControlToValidate="proPrice"></asp:RequiredFieldValidator>
+                                </div>
+                                <div class="form-group">
+                                    <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
