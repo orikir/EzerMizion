@@ -62,6 +62,11 @@
         .form_container {
             margin-top: 100px;
         }
+        .vStyle{
+            direction: rtl;
+            float:right;
+            padding: 0.2%;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -79,16 +84,18 @@
                     </div>
                     <div class=" form_container">
                         <form class="form ">
-                            <div class="form-group" style="direction: rtl">
+                            <div class="form-group">
                                 <label for="us_name" class="tColor" style="float: right;">שם משתמש:</label><br>
                                 <asp:TextBox ID="us_name" type="text" name="us_name" class="form-control" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="us_name"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="us_name"></asp:RequiredFieldValidator>
                             </div>
+                            <br />
                             <div class="form-group">
                                 <label for="id" class="tColor" style="float: right;">תעודת זהות:</label><br>
                                 <asp:TextBox ID="id" type="text" name="id" class="form-control" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
+                                <br />
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="vStyle" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group text-center">
                                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>

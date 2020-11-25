@@ -16,7 +16,7 @@
         }
 
             .adding-left input {
-                border: none;
+               border: none;
                 border-radius: 1.5rem;
                 padding: 2%;
                 width: 60%;
@@ -32,10 +32,10 @@
             background: #f8f9fa;
             border-top-left-radius: 10% 50%;
             border-bottom-left-radius: 10% 50%;
-        }
+     }
 
         .adding-left img {
-            margin-top: 15%;
+           margin-top: 15%;
             margin-bottom: 5%;
             width: 25%;
             -webkit-animation: mover 2s infinite alternate;
@@ -44,28 +44,29 @@
 
         .adding-left p {
             font-weight: lighter;
-            padding: 12%;
+           padding: 12%;
             margin-top: -9%;
         }
 
         .adding .adding-form {
-            padding: 10%;
+           padding: 10%;
             margin-top: 10%;
         }
 
         .btnadding {
             position: center;
             text-align: center;
-            margin-top: 10%;
+          margin-top: 10%;
             border: none;
             border-radius: 1.5rem;
-            padding: 2%;
+           padding: 2%;
             background: white;
             color: #000;
             font-weight: 600;
-            width: 50%;
+           width: 50%;
             cursor: pointer;
-        }
+        direction: rtl;
+         }
 
         .adding-heading {
             text-align: center;
@@ -77,6 +78,16 @@
         .tColor {
             color: #73d3f2;
         }
+
+        .vStyle {
+            direction: rtl;
+            float: right;
+            padding: 0.2%;
+        }
+
+        .form-control {
+            direction: rtl;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -87,36 +98,34 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="adding-heading ">הוספת מוצר</h3>
                         <div class="row adding-form">
+                            <div class="col-md-3"></div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox ID="proName" runat="server" class="form-control" placeholder="שם מוצר *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם מוצר" ControlToValidate="proName"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם מוצר" ControlToValidate="proName"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="branchName" runat="server" class="form-control" placeholder="שם סניף *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס שם סניף" ControlToValidate="quantity"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם סניף" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox ID="proPrice" runat="server" class="form-control" placeholder="מחיר *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס מחיר" ControlToValidate="proPrice"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מחיר" ControlToValidate="proPrice"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group text-center">
+                                <div class="form-group ">
                                     <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>
+                            <div class="col-md-3"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
         </div>
 
     </div>

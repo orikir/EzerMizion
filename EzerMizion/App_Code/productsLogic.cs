@@ -47,6 +47,11 @@ namespace EzerMizion.App_Code
             string sql = String.Format("SELECT branchName FROM branches WHERE branchName ='{0}'", branchName);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
+        //public string getBranchCode(string branchName)
+        //{
+            //string sql = String.Format("SELECT branchCode FROM branches WHERE branchName ='{0}'", branchName);
+            //return d.excuteQuery(sql).Tables[0].Rows.Cast<string>;
+        //}
         public bool checkProName(string name)
         {
             string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}' ", name);
