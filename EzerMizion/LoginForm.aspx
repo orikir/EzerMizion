@@ -64,8 +64,7 @@
         }
         .vStyle{
             direction: rtl;
-            float:right;
-            padding: 0.2%;
+            float: right;
         }
     </style>
 </asp:Content>
@@ -98,6 +97,7 @@
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="vStyle" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group text-center">
+                                <br>
                                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                                 <br>
                                 <asp:Button ID="Button1" runat="server" Text="התחבר" class="btnRegister" OnClick="loggin_Click" />

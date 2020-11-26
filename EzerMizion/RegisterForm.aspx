@@ -77,6 +77,15 @@
         .tColor {
             color: #73d3f2;
         }
+
+        .vStyle {
+            direction: rtl;
+            float: right;
+        }
+
+        .form-control {
+            direction: rtl;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -90,35 +99,35 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox ID="first_name" runat="server" class="form-control" placeholder="שם פרטי *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם פרטי" ControlToValidate="first_name"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם פרטי" CssClass="vStyle" ControlToValidate="first_name"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="last_name" runat="server" class="form-control" placeholder="שם משפחה *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס שם משפחה" ControlToValidate="last_name"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס שם משפחה" CssClass="vStyle" ControlToValidate="last_name"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="user_name" runat="server" class="form-control" placeholder="שם משתמש *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="user_name"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס שם משתמש" CssClass="vStyle" ControlToValidate="user_name"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="birthDay" runat="server" class="form-control" placeholder="תאריך לידה *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תאריך לידה" ControlToValidate="birthDay"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תאריך לידה" CssClass="vStyle" ControlToValidate="birthDay"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox ID="id" runat="server" class="form-control" placeholder="תעודת זהות *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="id"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="identify" runat="server" class="form-control" placeholder="אשר תעודת זהות *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="  יש להקיש תעודת זהות פעם נוספת" ControlToValidate="identify"></asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="identify"></asp:RegularExpressionValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="  יש להקיש תעודת זהות פעם נוספת" CssClass="vStyle" ControlToValidate="identify"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="identify"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="phone_num" runat="server" class="form-control" placeholder="מספר פלאפון *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="יש להכניס מספר פלאפון" ControlToValidate="phone_num"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="יש להכניס מספר פלאפון" CssClass="vStyle" ControlToValidate="phone_num"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:Button ID="submit" runat="server" Text="הירשם" OnClick="submit_Click" type="submit" class="btnRegister" value="Register" />
@@ -129,7 +138,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-3 register-left">
                 <br>
                 <br />
