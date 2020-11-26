@@ -26,5 +26,11 @@ namespace EzerMizion
         {
 
         }
+
+        /*protected void click_Click(object sender, EventArgs e)
+        {
+            GridView1.DataSource = dl.allDonAccDate(DateTime.Parse(text1.Text));
+            GridView1.DataBind();
+        }*/
     }
 }

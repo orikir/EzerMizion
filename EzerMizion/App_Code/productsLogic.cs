@@ -23,9 +23,9 @@ namespace EzerMizion.App_Code
         public bool newPro(string proName, string quantity , double id, string branchName)
         {
             {
-                if (!checkProName(proName))
+                if (!isExsist(proName, branchName))
                 {
-                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice) VALUES('{0}', '{1}', '{2}')", proName, quantity, id );
+                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode) VALUES('{0}', '{1}', '{2}', '{3}')", proName, quantity, id, getBranchCode(branchName) );
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -35,28 +35,27 @@ namespace EzerMizion.App_Code
                 }
             }
         }
-        public bool isExsist(string name)
+        public bool isExsist(string name, string branchName)
         {
-            if (checkProName(name))
-                return true;
-            else
-                return false;
+            string sql = String.Format("SELECT branchCode FROM products WHERE branchCode ='{0}' AND proName ='{1}' ", getBranchCode(branchName), name);
+            return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
         public bool checkBranchName(string branchName)
         {
             string sql = String.Format("SELECT branchName FROM branches WHERE branchName ='{0}'", branchName);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
-      //  public string getBranchCode(string branchName)
-       // {
-           // string sql = String.Format("SELECT branchCode FROM branches WHERE branchName ='{0}'", branchName);
-            //return d.excuteQuery(sql).Tables[0].Rows[].ItemArray.GetValue(0).ToString();
-       // }
-        public bool checkProName(string name)
+        public string getBranchCode(string branchName)
+        {
+            string sql = String.Format("SELECT branchCode FROM branches WHERE branchName ='{0}'", branchName);
+            DataSet ds = d.excuteQuery(sql);
+            string s= ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
+            return s;
+        }
+        /*public bool checkProName(string name)
         {
             string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}' ", name);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
-        }
-        
+        }*/
     }
 }

@@ -20,10 +20,10 @@ namespace EzerMizion.App_Code
             string sql = " SELECT * FROM donors";
             return d.excuteQuery(sql);
         }
-        public DataSet donDetailes()
+        /*public DataSet allDonAccDate(DateTime donDate)
         {
-            string sql = " SELECT sum, donDate FROM donors";
+            string sql = String.Format(" SELECT * FROM donors WERE donDate ='{0}'", donDate);
             return d.excuteQuery(sql);
-        }
+        }*/
     }
 }

@@ -27,10 +27,8 @@ namespace EzerMizion.App_Code
         }
         public bool isUser(string id, string name)
         {//השיטה תבדוק האם המשתמש שמור במערכת
-            if (checkId(id) && nameMatchId(id, name))//אם תעודת הזהות קיימת ושם המשתמש תואם 
-                return true;
-            else
-                return false;
+            string sql = String.Format("SELECT usName FROM users WHERE users.usName ='{0}' AND users.id='{1}'", name, id);//בדיקה האם שם המשתמש תואם את תעודת הזהות
+            return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
         public bool isManager(string id)
         {//מקבלת תעודת זהות מחזירה אמת אם המשתמש מנהל ושקר אחרת
@@ -45,11 +43,6 @@ namespace EzerMizion.App_Code
         public bool checkUserName(string name)
         {//מקבלת שם משתמש מחזירה אמת אם קיים במערכת ושקר אחרת
             string sql = String.Format("SELECT usName FROM users WHERE users.usName ='{0}' ", name);
-            return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
-        }
-        public bool nameMatchId(string id, string name)
-        {
-            string sql = String.Format("SELECT usName FROM users WHERE users.usName ='{0}' AND users.id='{1}'", name, id);//בדיקה האם שם המשתמש תואם את תעודת הזהות
             return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
     }
