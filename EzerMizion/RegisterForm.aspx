@@ -11,8 +11,12 @@
         .register-left {
             text-align: center;
             color: #000;
-            margin-top: 4%;
+            padding-top:15%;
+            padding-bottom:15%;
             direction: rtl;
+            border-top-left-radius: 10% 50%;
+            border-bottom-left-radius: 10% 50%;
+            background-color: white;
         }
 
             .register-left input {
@@ -32,6 +36,7 @@
             background: #f8f9fa;
             border-top-left-radius: 10% 50%;
             border-bottom-left-radius: 10% 50%;
+            padding-top:7%;
         }
 
         .register-left img {
@@ -75,7 +80,7 @@
             margin-bottom: -15%;
             color: #000;
         }
-
+        
         .tColor {
             color: #73d3f2;
         }
@@ -141,15 +146,16 @@
                 </div>
             </div>
             <div class="col-md-3 register-left">
-                <br>
-                <br />
-                <h3>ברוכים הבאים</h3>
-                <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
-                <br>
-                <div id="register-link1" class="text-center">
-                    <a href="LoginForm.aspx" class="tColor">להתחברות לחץ כאן</a>
+                <div class="re-box">
+                    <h3>ברוכים הבאים</h3>
+                    <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
+                    <br>
+                    <div id="register-link1" class="text-center">
+                        <a href="LoginForm.aspx" class="tColor">להתחברות לחץ כאן</a>
+                    </div>
+                    <br />
                 </div>
-                <br />
+
             </div>
         </div>
 
