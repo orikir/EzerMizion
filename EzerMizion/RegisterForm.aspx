@@ -57,6 +57,8 @@
             position: center;
             text-align: center;
             margin-top: 10%;
+            margin-left: 25%;
+            margin-right: 50%;
             border: none;
             border-radius: 1.5rem;
             padding: 2%;

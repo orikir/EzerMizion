@@ -3,70 +3,34 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .adding {
-            background: -webkit-linear-gradient(left, #f8f9fa, #f8f9fa);
-            margin-top: 3%;
+            margin-top: 1%;
             padding: 3%;
         }
-
-        .adding-left {
-            text-align: center;
-            color: #000;
-            margin-top: 4%;
-            direction: rtl;
-        }
-
-            .adding-left input {
-               border: none;
-                border-radius: 1.5rem;
-                padding: 2%;
-                width: 60%;
-                background: #f8f9fa;
-                font-weight: bold;
-                color: #383d4;
-                margin-top: 30%;
-                margin-bottom: 3%;
-                cursor: pointer;
-            }
 
         .adding-right {
             background: #f8f9fa;
             border-top-left-radius: 10% 50%;
             border-bottom-left-radius: 10% 50%;
-     }
-
-        .adding-left img {
-           margin-top: 15%;
-            margin-bottom: 5%;
-            width: 25%;
-            -webkit-animation: mover 2s infinite alternate;
-            animation: mover 1s infinite alternate;
-        }
-
-        .adding-left p {
-            font-weight: lighter;
-           padding: 12%;
-            margin-top: -9%;
         }
 
         .adding .adding-form {
-           padding: 10%;
+            padding: 10%;
             margin-top: 10%;
         }
 
         .btnadding {
-            position: center;
-            text-align: center;
-          margin-top: 10%;
+            margin-top:10%;
+            margin-left: 25%;
+            margin-right: 50%;
             border: none;
             border-radius: 1.5rem;
-           padding: 2%;
+            padding: 2%;
             background: white;
             color: #000;
             font-weight: 600;
-           width: 50%;
-            cursor: pointer;
-        direction: rtl;
-         }
+            width: 50%;
+            direction: rtl;
+        }
 
         .adding-heading {
             text-align: center;
@@ -116,7 +80,7 @@
                                     <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group ">
+                                <div class="form-group">
                                     <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>

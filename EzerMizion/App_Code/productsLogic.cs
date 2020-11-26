@@ -25,7 +25,7 @@ namespace EzerMizion.App_Code
             {
                 if (!checkProName(proName))
                 {
-                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice) VALUES('{0}', '{1}', '{2}')", proName, quantity, id);
+                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice) VALUES('{0}', '{1}', '{2}')", proName, quantity, id );
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -47,11 +47,11 @@ namespace EzerMizion.App_Code
             string sql = String.Format("SELECT branchName FROM branches WHERE branchName ='{0}'", branchName);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
-        //public string getBranchCode(string branchName)
-        //{
-            //string sql = String.Format("SELECT branchCode FROM branches WHERE branchName ='{0}'", branchName);
-            //return d.excuteQuery(sql).Tables[0].Rows.Cast<string>;
-        //}
+      //  public string getBranchCode(string branchName)
+       // {
+           // string sql = String.Format("SELECT branchCode FROM branches WHERE branchName ='{0}'", branchName);
+            //return d.excuteQuery(sql).Tables[0].Rows[].ItemArray.GetValue(0).ToString();
+       // }
         public bool checkProName(string name)
         {
             string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}' ", name);
