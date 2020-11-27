@@ -69,7 +69,8 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם מוצר" ControlToValidate="proName"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="branchName" runat="server" class="form-control" placeholder="שם סניף *" value=""></asp:TextBox>
+                                    <asp:ListBox ID="branchName" runat="server" DataMember="DefaultView"  DataSourceID="SqlDataSource1" DataTextField="branchName"  onchange="ListBox1_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="branchName" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" Width="300px" Rows="1"></asp:ListBox>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [branchName] FROM [branches]"></asp:SqlDataSource>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם סניף" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">

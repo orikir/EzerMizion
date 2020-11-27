@@ -18,9 +18,9 @@ namespace EzerMizion
         protected void submit_Click(object sender, EventArgs e)
         {
             productsLogic pl = new productsLogic();
-            if (!(pl.checkBranchName(branchName.Text)))
-                alarm_lable.Text = "שם הסניף שהזנת שגוי";
-            else
+            //if (!(pl.checkBranchName(branchName.Text)))
+            //    alarm_lable.Text = "שם הסניף שהזנת שגוי";
+            //else
             {
                 if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text))
                     alarm_lable.Text = "המוצר קיים";
@@ -28,5 +28,11 @@ namespace EzerMizion
                     alarm_lable.Text = "המוצר נוסף בהצלחה";
             }
         }
+
+        protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            branchName.Text = branchName.SelectedValue;
+        }
     }
 }
+//                                    <asp:TextBox ID="branchName" runat="server" class="form-control" placeholder="שם סניף *" value=""></asp:TextBox>
