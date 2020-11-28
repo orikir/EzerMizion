@@ -11,7 +11,8 @@ namespace EzerMizion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!(Session["uType"].Equals("manager")|| Session["uType"].Equals("ordinary")))
+                Response.Redirect("HomeP.aspx");
         }
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)

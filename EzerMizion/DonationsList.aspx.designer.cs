@@ -15,24 +15,6 @@ namespace EzerMizion
     {
 
         /// <summary>
-        /// text1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox text1;
-
-        /// <summary>
-        /// click control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button click;
-
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>

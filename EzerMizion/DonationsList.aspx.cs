@@ -27,6 +27,11 @@ namespace EzerMizion
 
         }
 
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
         /*protected void click_Click(object sender, EventArgs e)
         {
             GridView1.DataSource = dl.allDonAccDate(DateTime.Parse(text1.Text));

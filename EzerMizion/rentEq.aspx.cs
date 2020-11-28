@@ -13,8 +13,14 @@ namespace EzerMizion
         productsLogic pl = new productsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Repeater1.DataSource = pl.allProducts();
-            Repeater1.DataBind();
+            if ((Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
+            {
+                Repeater1.DataSource = pl.allProducts();
+                Repeater1.DataBind();
+            }
+            else
+                Response.Redirect("HomeP.aspx");
+            
         }
     }
 }

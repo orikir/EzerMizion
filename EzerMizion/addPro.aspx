@@ -69,7 +69,7 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם מוצר" ControlToValidate="proName"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:ListBox ID="branchName" runat="server" DataMember="DefaultView"  DataSourceID="SqlDataSource1" DataTextField="branchName"  onchange="ListBox1_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="branchName" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" Width="300px" Rows="1"></asp:ListBox>
+                                    <asp:ListBox ID="branchName" CssClass="form-control" runat="server" DataMember="DefaultView"  DataSourceID="SqlDataSource1" DataTextField="branchName"  onchange="ListBox1_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="branchName" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" Width="410px" Rows="1" Height="40px"></asp:ListBox>
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [branchName] FROM [branches]"></asp:SqlDataSource>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם סניף" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
