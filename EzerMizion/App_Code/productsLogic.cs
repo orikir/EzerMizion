@@ -20,6 +20,12 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, id);
             d.excuteQuery(sql);
         }
+        public void deletePro(string proCode)
+        {
+            string sql = string.Format(("DELETE * FROM products WHERE proCode={0}"), proCode);
+            d.excuteQuery(sql);
+        }
+
         public bool newPro(string proName, string quantity , double id, string branchName)
         {
             {
