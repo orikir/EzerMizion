@@ -11,7 +11,7 @@ namespace EzerMizion.App_Code
         DAL dal = new DAL();
 
         public bool newUser(string id, string firstName, string LastName, DateTime birthDay, string phoneNum, string userName)
-        {
+        {//create new user
             {
                 if (!checkId(id) && !checkUserName(userName))//במידה ושם המשתמש ותעודת הזהות לא תפוסים
                 {

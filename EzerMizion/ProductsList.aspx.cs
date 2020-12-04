@@ -65,7 +65,7 @@ namespace EzerMizion
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            pl.deletePro( GridView1.Rows[e.RowIndex].Cells[0].Text);
+            pl.deletePro(GridView1.Rows[e.RowIndex].Cells[0].Text);
             GridView1.EditIndex = -1;
             GridView1.DataSource = pl.allProducts();
             GridView1.DataBind();
