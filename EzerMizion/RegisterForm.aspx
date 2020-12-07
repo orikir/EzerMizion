@@ -105,19 +105,19 @@
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="first_name" runat="server" class="form-control" placeholder="שם פרטי *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="first_name" runat="server" class="form-control" placeholder="שם פרטי *" value="" MaxLength="20"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="יש להכניס שם פרטי" CssClass="vStyle" ControlToValidate="first_name"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="last_name" runat="server" class="form-control" placeholder="שם משפחה *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="last_name" runat="server" class="form-control" placeholder="שם משפחה *" value="" MaxLength="20"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס שם משפחה" CssClass="vStyle" ControlToValidate="last_name"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="user_name" runat="server" class="form-control" placeholder="שם משתמש *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="user_name" runat="server" class="form-control" placeholder="שם משתמש *" value="" MaxLength="20"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="יש להכניס שם משתמש" CssClass="vStyle" ControlToValidate="user_name"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="birthDay" runat="server" class="form-control" placeholder="תאריך לידה *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="birthDay" runat="server" class="form-control" placeholder="תאריך לידה *" TextMode="Date" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תאריך לידה" CssClass="vStyle" ControlToValidate="birthDay"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="identify"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="phone_num" runat="server" class="form-control" placeholder="מספר פלאפון *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="phone_num" runat="server" class="form-control" placeholder="מספר פלאפון *" value="" MaxLength="10"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="יש להכניס מספר פלאפון" CssClass="vStyle" ControlToValidate="phone_num"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">

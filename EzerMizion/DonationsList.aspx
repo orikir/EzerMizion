@@ -1,6 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DonationsList.aspx.cs" Inherits="EzerMizion.DonationsList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .btnDonCh {
+            border-width: medium;
+            position: center;
+            text-align: center;
+            margin-top: 0%;
+            border-radius: 1.5rem;
+            padding: 0.5%;
+            background: #000000;
+            color: white;
+            font-weight: 600;
+            width: 20%;
+            cursor: pointer;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <td>
@@ -8,7 +23,7 @@
             <asp:GridView ID="GridView1" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="sum" HeaderText="סכום תרומה" />
-                    <asp:BoundField DataField="orgCode" HeaderText="קוד ארגון" />
+                    <asp:BoundField DataField="orgName" HeaderText=":תרם מטעם" />
                     <asp:BoundField DataField="donDate" HeaderText="תאריך " />
                     <asp:BoundField DataField="id" HeaderText="תעודת זהות" />
                     <asp:BoundField DataField="firstName" HeaderText="שם פרטי" />
@@ -25,7 +40,8 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#383838" />
             </asp:GridView>
+            <asp:Button ID="donCh" runat="server" CssClass="btnDonCh" Text="גרף פיזור תרומות" OnClick="donCh_Click" />
         </center>
     </td>
-
+    
 </asp:Content>

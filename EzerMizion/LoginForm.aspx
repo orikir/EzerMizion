@@ -85,9 +85,9 @@
                         <form class="form ">
                             <div class="form-group">
                                 <label for="us_name" class="tColor" style="float: right;">שם משתמש:</label><br>
-                                <asp:TextBox ID="us_name" type="text" name="us_name" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="us_name" type="text" name="us_name" class="form-control" runat="server" MaxLength="20"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="us_name"></asp:RequiredFieldValidator>
-                            </div>
+                                </div>
                             <br />
                             <div class="form-group">
                                 <label for="id" class="tColor" style="float: right;">תעודת זהות:</label><br>

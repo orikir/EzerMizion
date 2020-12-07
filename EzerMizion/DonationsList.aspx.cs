@@ -32,6 +32,11 @@ namespace EzerMizion
 
         }
 
+        protected void donCh_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("donChart.aspx");
+        }
+
         /*protected void click_Click(object sender, EventArgs e)
         {
             GridView1.DataSource = dl.allDonAccDate(DateTime.Parse(text1.Text));
