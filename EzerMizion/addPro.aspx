@@ -65,7 +65,7 @@
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="proName" runat="server" class="form-control" placeholder="שם מוצר *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="proName" runat="server"  MaxLength="10" class="form-control" placeholder="שם מוצר *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם מוצר" ControlToValidate="proName"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
@@ -74,11 +74,11 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם סניף" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="proPrice" runat="server" class="form-control" placeholder="מחיר *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="proPrice" MaxLength="9" runat="server" class="form-control"   placeholder="מחיר *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מחיר" ControlToValidate="proPrice"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="quantity" runat="server" class="form-control" placeholder="כמות *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="quantity" runat="server" class="form-control" MaxLength="9" placeholder="כמות *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
