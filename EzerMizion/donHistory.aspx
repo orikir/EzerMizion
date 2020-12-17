@@ -28,7 +28,9 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#383838" />
             </asp:GridView>
+            <a  href="AddDonor.aspx" >לתרומה לחץ כאן</a>
         </center>
+        
     </td>
 </asp:Content>
 
