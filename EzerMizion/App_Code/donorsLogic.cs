@@ -25,8 +25,8 @@ namespace EzerMizion.App_Code
             string sql = String.Format(" SELECT * FROM donors WERE donDate ='{0}'", donDate);
             return d.excuteQuery(sql);
         }*/
-        public bool newDonor(string id, string orgName, double sum, DateTime donDate)
-        {//creating new donors and adding it to the donor's table
+        public bool newDonor(string id, string orgName, double sum, DateTime  donDate)
+        {//creating new donor and adding it to the donor's table
             {
                     string sql = String.Format("INSERT INTO donors ( id, orgCode, sum, donDate ) VALUES('{0}', '{1}', '{2}', '{3}')", id, getOrgCode(orgName), sum, donDate);
                     DataSet ds = d.excuteQuery(sql);

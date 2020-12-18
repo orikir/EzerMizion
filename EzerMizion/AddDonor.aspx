@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddDonor.aspx.cs" Inherits="EzerMizion.AddDonor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" UnobtrusiveValidationMode="None" CodeBehind="AddDonor.aspx.cs" Inherits="EzerMizion.AddDonor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -103,8 +103,10 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading ">תרומה</h3>
                         <div class="row register-form">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <center>
+                                <td>
                                  <div class="form-group">
                                     <asp:TextBox ID="id" runat="server" class="form-control" placeholder="תעודת זהות *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="id"></asp:RequiredFieldValidator>
@@ -116,7 +118,7 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="identify"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:ListBox ID="orgName" CssClass="form-control" runat="server" DataMember="DefaultView"  DataSourceID="SqlDataSource1" DataTextField="orgName"  onchange="ListBox1_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="orgName" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" Width="410px" Rows="1" Height="40px"></asp:ListBox>
+                                    <asp:ListBox ID="orgName" CssClass="form-control" runat="server" DataMember="DefaultView"  DataSourceID="SqlDataSource1" DataTextField="orgName"  onchange="ListBox1_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="orgName" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" Width="420px" Rows="1" Height="40px"></asp:ListBox>
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [orgName] FROM [organizations]"></asp:SqlDataSource>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש לבחור שם ארגון" ControlToValidate="orgName"></asp:RequiredFieldValidator>
                                 </div>
@@ -129,11 +131,13 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תאריך" CssClass="vStyle" ControlToValidate="donDate"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnregister" value="register" />
+                                    <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnRegister" value="register" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>
+                                </td>
+                            </center>
                             </div>
-                            <div class="col-md-3"></div>
+                             <div class="col-md-1"></div>
                         </div>
                     </div>
                 </div>

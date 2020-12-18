@@ -90,6 +90,7 @@
     <Content Include="donHistory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="LoginForm.aspx" />
+    <Content Include="loginWGoogle.aspx" />
     <Content Include="Photos\bed.jpg" />
     <Content Include="Photos\chair.png" />
     <Content Include="Photos\halichon.jpg" />
@@ -266,6 +267,13 @@
     </Compile>
     <Compile Include="LoginForm.aspx.designer.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginWGoogle.aspx.cs">
+      <DependentUpon>loginWGoogle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginWGoogle.aspx.designer.cs">
+      <DependentUpon>loginWGoogle.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductsList.aspx.cs">
       <DependentUpon>ProductsList.aspx</DependentUpon>
