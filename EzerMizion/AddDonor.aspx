@@ -123,8 +123,8 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש לבחור שם ארגון" ControlToValidate="orgName"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="sum" MaxLength="9" runat="server" class="form-control"   placeholder="סכום *" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס סכום" ControlToValidate="sum"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="dSum" MaxLength="20" runat="server" class="form-control"   placeholder="סכום *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס סכום" ControlToValidate="dSum"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="donDate" runat="server" class="form-control" placeholder="תאריך  *" TextMode="Date" value=""></asp:TextBox>
