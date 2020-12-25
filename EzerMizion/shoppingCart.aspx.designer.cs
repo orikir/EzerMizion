@@ -10,7 +10,7 @@
 
 namespace EzerMizion
 {
-    public partial class loginWGoogle
+    public partial class shoppingCart
     {
     }
 }

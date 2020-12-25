@@ -90,7 +90,6 @@
     <Content Include="donHistory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="LoginForm.aspx" />
-    <Content Include="loginWGoogle.aspx" />
     <Content Include="Photos\bed.jpg" />
     <Content Include="Photos\chair.png" />
     <Content Include="Photos\halichon.jpg" />
@@ -204,6 +203,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="shoppingCart.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -230,6 +230,13 @@
     </Compile>
     <Compile Include="addPro.aspx.designer.cs">
       <DependentUpon>addPro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shoppingCart.aspx.cs">
+      <DependentUpon>shoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shoppingCart.aspx.designer.cs">
+      <DependentUpon>shoppingCart.aspx</DependentUpon>
     </Compile>
     <Content Include="App_Code\branchesLogic.cs" />
     <Compile Include="App_Code\DAL.cs" />
@@ -267,13 +274,6 @@
     </Compile>
     <Compile Include="LoginForm.aspx.designer.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="loginWGoogle.aspx.cs">
-      <DependentUpon>loginWGoogle.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="loginWGoogle.aspx.designer.cs">
-      <DependentUpon>loginWGoogle.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductsList.aspx.cs">
       <DependentUpon>ProductsList.aspx</DependentUpon>

@@ -250,7 +250,7 @@
                                     <asp:Label ID="Label2" class="price" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
                                 </div>
                             </div>
-                            <a class="add-to-cart" href="">+ Add To Cart</a>
+                            <asp:Button ID="addTcart" class="add-to-cart" runat="server" CommandName='<%# Eval("proCode")%>' Text="הוסף לעגלה" OnClick="addTcart_Click" />
                         </div>
                     </div>
 

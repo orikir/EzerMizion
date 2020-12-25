@@ -22,5 +22,11 @@ namespace EzerMizion
                 Response.Redirect("HomeP.aspx");
             
         }
+
+        protected void addTcart_Click(object sender, EventArgs e)
+        {
+            string pCode = ((sender as Button).CommandName).ToString();//
+            Response.Redirect("++.aspx?pCode=" + pCode);//
+        }
     }
 }
