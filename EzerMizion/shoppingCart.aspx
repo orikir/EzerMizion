@@ -10,7 +10,6 @@
         }
 
         .main-heading {
-            font-size: 19px;
             margin-bottom: 1%;
         }
 
@@ -19,14 +18,13 @@
         }
 
         .table-cart thead {
-            border-bottom: 1% solid #e5e5e5;
-            margin-bottom: 1%;
+            border-bottom: 5px solid #e5e5e5;
+            margin-bottom: 0.1%;
         }
 
             .table-cart thead tr th {
-                padding: 8% 0 5%;
+                padding: 5% 0 3% 5%;
                 color: #484848;
-                font-size: 15px;
                 font-weight: 400;
             }
 
@@ -104,10 +102,12 @@
 
         .product-count .qtyminus {
             border-radius: 3px 0 0 3px;
+            border: 1% #000;
         }
 
         .product-count .qtyplus {
             border-radius: 0 3px 3px 0;
+            border: 1% #000;
         }
 
         .product-count .qty {
@@ -125,7 +125,7 @@
         .total {
             font-size: 24px;
             font-weight: 600;
-            color: #8660e9;
+            color: #000;
         }
 
         .display-flex {
@@ -137,22 +137,21 @@
         }
 
         .coupon-box {
-            padding: 63px 0 58px;
+            padding: 5%;
             text-align: center;
-            border: 2px dotted #e5e5e5;
-            border-radius: 10px;
-            margin-top: 55px;
+            border-top: 5px dotted  #e5e5e5;
+            margin-top: 1%;
         }
 
             .coupon-box form input {
                 display: inline-block;
-                width: 264px;
-                margin-right: 13px;
-                height: 44px;
-                border-radius: 25px;
-                border: solid 2px #cccccc;
-                padding: 5px 15px;
-                font-size: 14px;
+                width: 40%;
+                margin-right: 3%;
+                //height: 70%;
+               
+                border: solid 1px #cccccc;
+                padding: 2% 10%;
+                font-size: 100%;
             }
 
         input:focus {
@@ -161,14 +160,14 @@
         }
 
         .round-black-btn {
-            border-radius: 25px;
+            
             background: #212529;
             color: #fff;
-            padding: 8px 35px;
+            padding: 2% 10%;
             display: inline-block;
-            border: solid 2px #212529;
-            transition: all 0.5s ease-in-out 0s;
-            cursor: pointer;
+            border: solid 1px #212529;
+            //transition: all 0.5s ease-in-out 0s;
+            //cursor: pointer;
         }
 
             .round-black-btn:hover,
@@ -223,7 +222,7 @@
                 .cart-totals table tr td.price-total {
                     font-size: 24px;
                     font-weight: 600;
-                    color: #8660e9;
+                    color: #000;
                 }
 
         .btn-cart-totals {
