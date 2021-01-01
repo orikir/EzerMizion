@@ -14,22 +14,25 @@ namespace EzerMizion
         productsLogic pl = new productsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
-          /* if(! IsPostBack)
+            if (! IsPostBack)
             {
                 string pCode = Request.QueryString["pCode"];
-<<<<<<< HEAD
-                //if (! pCode.Equals(" "))
+                if (pCode != null)
                 {
-                    Repeater1.DataSource = pl.oneProduct(1);
+                    Repeater1.DataSource = pl.oneProduct(pCode);
                     Repeater1.DataBind();
                     //totalP.Text =pl.pTotal( Double.Parse(pPrice.Text), Int32.Parse(qty.Text));
                 }
-=======
-               DataSet ds=pl.____ //זימון השאילתה
-               שם הפקד.text = Tables[0].rows[0][שם השדה].ToString(); //הצבת הנתונים בפקדים
->>>>>>> 77b2f0e7cbadfacf5b25e3b35f55c69b49c5c40d
             }
-          */
+           
+
+            /* if(! IsPostBack)
+              {
+                  string pCode = Request.QueryString["pCode"];
+                 DataSet ds=pl.____ //זימון השאילתה
+                 שם הפקד.text = Tables[0].rows[0][שם השדה].ToString(); //הצבת הנתונים בפקדים
+              }
+            */
         }
     }
 }
