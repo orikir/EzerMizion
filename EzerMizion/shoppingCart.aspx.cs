@@ -17,9 +17,9 @@ namespace EzerMizion
             if (! IsPostBack)
             {
                 string pCode = Request.QueryString["pCode"];
-                if (pCode != null)
+                //if (! pCode.Equals(" "))
                 {
-                    Repeater1.DataSource = pl.oneProduct(pCode);
+                    Repeater1.DataSource = pl.oneProduct(2);
                     Repeater1.DataBind();
                     //totalP.Text =pl.pTotal( Double.Parse(pPrice.Text), Int32.Parse(qty.Text));
                 }
