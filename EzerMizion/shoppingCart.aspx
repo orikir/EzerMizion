@@ -10,7 +10,7 @@
         }
 
         .main-heading {
-            margin-bottom: 1%;
+            margin-bottom: 1% ;
         }
 
         .table-cart table {
