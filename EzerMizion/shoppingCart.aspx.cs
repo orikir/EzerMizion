@@ -17,8 +17,20 @@ namespace EzerMizion
           /* if(! IsPostBack)
             {
                 string pCode = Request.QueryString["pCode"];
+<<<<<<< HEAD
+<<<<<<< HEAD
                DataSet ds=pl.____ //זימון השאילתה
                שם הפקד.text = Tables[0].rows[0][שם השדה].ToString(); //הצבת הנתונים בפקדים
+=======
+=======
+>>>>>>> parent of 6cadc89... t
+                if (pCode != null)
+                {
+                    Repeater1.DataSource = pl.oneProduct(pCode);
+                    Repeater1.DataBind();
+                    //totalP.Text =pl.pTotal( Double.Parse(pPrice.Text), Int32.Parse(qty.Text));
+                }
+>>>>>>> parent of 6cadc89... t
             }
           */
         }

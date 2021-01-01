@@ -15,6 +15,22 @@ namespace EzerMizion.App_Code
             string sql = " SELECT * FROM products";
             return d.excuteQuery(sql);
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 6cadc89... t
+        public DataSet oneProduct(string proCode)
+        {
+            string sql = string.Format(" SELECT  proName, proPhoto, proPrice FROM products WHERE proCode='{0}'", proCode);
+            return d.excuteQuery(sql);
+        }
+        public double pTotal (double pPrice, int qty)
+        {
+            double ptotal = pPrice * qty;
+            return (ptotal);
+        }
+>>>>>>> parent of 6cadc89... t
         public void updatePro(double price, string proCode)
         {//update product price according to what the user entered
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, proCode);
