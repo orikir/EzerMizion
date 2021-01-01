@@ -25,8 +25,8 @@ namespace EzerMizion
 
         protected void addTcart_Click(object sender, EventArgs e)
         {
-            string pCode = ((sender as Button).CommandName).ToString();//
-            Response.Redirect("++.aspx?pCode=" + pCode);//
+            string proCode = ((sender as Button).CommandName).ToString();//
+            Response.Redirect("shoppingCart.aspx?pCode=" + proCode);//
         }
     }
 }
