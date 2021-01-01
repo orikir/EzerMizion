@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master"  AutoEventWireup="true" CodeBehind="shoppingCart.aspx.cs" Inherits="EzerMizion.shoppingCart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="shoppingCart.aspx.cs" Inherits="EzerMizion.shoppingCart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -252,52 +252,52 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <asp:Repeater ID="Repeater1" runat="server"></asp:Repeater>
-                            <itemtemplate>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="display-flex align-center">
-                                                <div class="img-product">
-                                                    <asp:Image ID="Image1" class="mCS_img_loaded" runat="server" Width="100" hight="100" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
-                                                </div>
-                                                <div class="product-content">
-                                                     <asp:Label ID="pName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
-                                                     <div class="price">
-                                                     <asp:Label ID="pPrice" class="price" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
+                            <tbody>
+                                <asp:Repeater ID="Repeater1" runat="server">
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td>
+                                                <div class="display-flex align-center">
+                                                    <div class="img-product">
+                                                        <asp:Image ID="Image1" class="mCS_img_loaded" runat="server" Width="100" hight="100" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <asp:Label ID="pName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
+                                                        <div class="price">
+                                                            <asp:Label ID="pPrice" class="price" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="product-count">
-                                            <form action="#" class="count-inlineflex">
-                                                <div class="qtyminus">-</div>
-                                                <asp:TextBox class="qty" ID="qty" Text="" runat="server"></asp:TextBox>
-                                                <div class="qtyplus">+</div>
-                                            </form>
-                                        </td>
-                                        <td>
-                                            <div class="total">
-                                                <asp:Label ID="totalP" runat="server" Text=""></asp:Label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#" title="">
-                                                <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                </itemtemplate>
-                            </asp:Repeater>
+                                            </td>
+                                            <td class="product-count">
+                                                <form action="#" class="count-inlineflex">
+                                                    <div class="qtyminus">-</div>
+                                                    <asp:TextBox class="qty" ID="qty" Text="" runat="server"></asp:TextBox>
+                                                    <div class="qtyplus">+</div>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <div class="total">
+                                                    <asp:Label ID="totalP" runat="server" Text=""></asp:Label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#" title="">
+                                                    <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </tbody>
                         </table>
                         <div class="coupon-box">
-                           
-                                <div class="coupon-input">
-                                    <asp:TextBox ID="couponCode" placeholder="Coupon Code" Width="40%" Height="70%" runat="server" type="text"></asp:TextBox>
-                                    <asp:Button ID="submit" class="round-black-btn" runat="server" Width="40%"  Height="70%" Text="Apply Coupon" />
-                                </div>
-                            
+
+                            <div class="coupon-input">
+                                <asp:TextBox ID="couponCode" placeholder="Coupon Code" Width="40%" Height="70%" runat="server" type="text"></asp:TextBox>
+                                <asp:Button ID="submit" class="round-black-btn" runat="server" Width="40%" Height="70%" Text="Apply Coupon" />
+                            </div>
+
                         </div>
                     </div>
                     <!-- /.table-cart -->

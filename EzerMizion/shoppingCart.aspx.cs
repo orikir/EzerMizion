@@ -14,17 +14,18 @@ namespace EzerMizion
         productsLogic pl = new productsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (! IsPostBack)
+            if (!IsPostBack)
             {
                 string pCode = Request.QueryString["pCode"];
+
                 if (pCode != null)
                 {
-                    Repeater1.DataSource = pl.oneProduct(pCode);
+                    Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
                     Repeater1.DataBind();
                     //totalP.Text =pl.pTotal( Double.Parse(pPrice.Text), Int32.Parse(qty.Text));
                 }
             }
-           
+
 
             /* if(! IsPostBack)
               {

@@ -13,14 +13,18 @@ namespace EzerMizion
         productsLogic pl = new productsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
+            if (!IsPostBack)
             {
-                Repeater1.DataSource = pl.allProducts();
-                Repeater1.DataBind();
+                if ((Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
+                {
+                    Repeater1.DataSource = pl.allProducts();
+                    Repeater1.DataBind();
+                }
+                else
+                    Response.Redirect("HomeP.aspx");
+
             }
-            else
-                Response.Redirect("HomeP.aspx");
-            
+
         }
 
         protected void addTcart_Click(object sender, EventArgs e)
