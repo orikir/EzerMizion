@@ -271,6 +271,8 @@
                                             </td>
                                             <td class="product-count">
                                                 <form action="#" class="count-inlineflex">
+                                                    <asp:ListBox ID="quan" runat="server" Rows="1" SelectionMode="Single" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged">
+                                                    </asp:ListBox>
                                                     <div class="qtyminus">-</div>
                                                     <asp:TextBox class="qty" ID="qty" Text="" runat="server"></asp:TextBox>
                                                     <div class="qtyplus">+</div>
@@ -285,7 +287,7 @@
                                                 <a href="#" title="">
                                                     <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
                                                 </a>
-                                            </td>
+                                            &nbsp;&nbsp;</td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
@@ -311,7 +313,7 @@
                                 <tbody>
                                     <tr>
                                         <td>Subtotal</td>
-                                        <td class="subtotal">$2,589.00</td>
+                                        <td class="subtotal">$</td>
                                     </tr>
                                     <tr>
                                         <td>Shipping</td>
@@ -319,7 +321,7 @@
                                     </tr>
                                     <tr class="total-row">
                                         <td>Total</td>
-                                        <td class="price-total">$1,591.00</td>
+                                        <td class="price-total">$</td>
                                     </tr>
                                 </tbody>
                             </table>

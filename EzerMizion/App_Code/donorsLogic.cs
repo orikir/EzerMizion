@@ -29,8 +29,7 @@ namespace EzerMizion.App_Code
         {//creating new donor and adding it to the donor's table
             if (checkId(id))
             {
-                //string sql = String.Format("INSERT INTO donors ( id, orgCode, sum, donDate)  VALUES ('{0}', '{1}', '{2}', '{3}')", id, getOrgCode(orgName), sum, donDate);
-                string sql = String.Format("INSERT INTO donors (id, orgCode,donSum, donDate) VALUES ('{0}', '{1}', '{2}', '{3}') ", id, getOrgCode(orgName), dSum, donDate);
+                string sql = String.Format("INSERT INTO donors (id, orgCode,donSum, donDate) VALUES ('{0}', '{1}', '{2}', #{3}#) ", id, getOrgCode(orgName), dSum, donDate);
                 d.excuteQuery(sql);
                 return true;
             }

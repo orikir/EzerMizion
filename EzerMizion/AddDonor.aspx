@@ -127,10 +127,6 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס סכום" ControlToValidate="dSum"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="donDate" runat="server" class="form-control" placeholder="תאריך  *" TextMode="Date" value=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="יש להכניס תאריך" CssClass="vStyle" ControlToValidate="donDate"></asp:RequiredFieldValidator>
-                                </div>
-                                <div class="form-group">
                                     <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnRegister" value="register" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>
