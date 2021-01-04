@@ -31,5 +31,22 @@ namespace EzerMizion
         {
             branchName.Text = branchName.SelectedValue;
         }
+
+        protected void SavePicture(object sender, EventArgs e)
+        {/*
+            //save image name
+            string imageName = FileUpload1.PostedFile.FileName;
+            //מחזיר את הנתיב של התיקיה בשרת
+            string path = Server.MapPath(@"~/Images/");
+            //בדיקה שקובץ התמונה שהמשתמש הזין לא קיים כבר במערכת 
+            if (File.Exists(path + imageName))
+                lblMessage.Text = "הקובץ כבר קיים במערכת";
+            else
+            {
+                //שמירה של קובץ התמונה בתיקיה של האתר
+                FileUpload1.PostedFile.SaveAs(path + imageName);
+                lblMessage.Text = "הקובץ נשמר בהצלחה";
+            }*/
+        }
     }
 }
