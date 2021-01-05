@@ -31,6 +31,19 @@
             width: 50%;
             direction: rtl;
         }
+        .btnUp {
+            margin-top: 0%;
+            margin-left: 50%;
+            margin-right: 50%;
+            margin-bottom: 2%;
+            border: none;
+            border-radius: 1.5rem;
+            padding:  1% 0 1% 0;
+            color: #000;
+            font-weight: 600;
+            width: 50%;
+            direction: rtl;
+        }
 
         .adding-heading {
             text-align: center;
@@ -82,8 +95,12 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="SavePicture" />
-                                <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label>
+                                <asp:Button ID="Button1" runat="server" CssClass="btnUp" Text="uploud" OnClick="SavePicture" />
+                                <asp:Label ID="lblMessage" runat="server" CssClass="align-items-center" Text="Label"></asp:Label>
+                                <div class="form-group">
+                                    <asp:TextBox ID="photo" runat="server" class="form-control"  placeholder="תמונה *" value=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תמונה" ControlToValidate="quantity"></asp:RequiredFieldValidator>
+                                </div>
                                 <div class="form-group">
                                     <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>

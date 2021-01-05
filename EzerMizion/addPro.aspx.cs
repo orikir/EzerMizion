@@ -1,6 +1,7 @@
 ﻿using EzerMizion.App_Code;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,7 +21,7 @@ namespace EzerMizion
         {
             productsLogic pl = new productsLogic();
             {
-                if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text))
+                if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text))
                     alarm_lable.Text = "המוצר קיים";
                 else
                     alarm_lable.Text = "המוצר נוסף בהצלחה";
@@ -33,11 +34,11 @@ namespace EzerMizion
         }
 
         protected void SavePicture(object sender, EventArgs e)
-        {/*
+        {
             //save image name
             string imageName = FileUpload1.PostedFile.FileName;
             //מחזיר את הנתיב של התיקיה בשרת
-            string path = Server.MapPath(@"~/Images/");
+            string path = Server.MapPath(@"~/Photos/");
             //בדיקה שקובץ התמונה שהמשתמש הזין לא קיים כבר במערכת 
             if (File.Exists(path + imageName))
                 lblMessage.Text = "הקובץ כבר קיים במערכת";
@@ -46,7 +47,7 @@ namespace EzerMizion
                 //שמירה של קובץ התמונה בתיקיה של האתר
                 FileUpload1.PostedFile.SaveAs(path + imageName);
                 lblMessage.Text = "הקובץ נשמר בהצלחה";
-            }*/
+            }
         }
     }
 }

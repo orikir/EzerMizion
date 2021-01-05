@@ -36,12 +36,12 @@ namespace EzerMizion.App_Code
             d.excuteQuery(sql);
         }
 
-        public bool newPro(string proName, string quantity, double price, string branchName)
+        public bool newPro(string proName, string quantity, double price, string branchName, string photo)
         {//creating new product and adding it to the product's table
             {
                 if (!isExsist(proName, branchName))
                 {
-                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode) VALUES('{0}', '{1}', '{2}', '{3}')", proName, quantity, price, getBranchCode(branchName));
+                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode, proPhoto) VALUES('{0}', '{1}', '{2}', '{3}','{4}')", proName, quantity, price, getBranchCode(branchName), photo);
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -56,6 +56,12 @@ namespace EzerMizion.App_Code
             string sql = String.Format("SELECT branchCode FROM products WHERE branchCode ='{0}' AND proName ='{1}' ", getBranchCode(branchName), name);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
+        /*public bool photoExs ( string path, string imageName)
+        {//check if image already exist
+            
+            string sql = String.Format("SELECT proCode FROM products WHERE proPhoto ='{0}' ", imageName);
+            return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
+        }*/
         public bool checkBranchName(string branchName)
         {//check if there is branch with this name
             string sql = String.Format("SELECT branchName FROM branches WHERE branchName ='{0}'", branchName);
