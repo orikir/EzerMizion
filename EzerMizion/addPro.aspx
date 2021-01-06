@@ -31,14 +31,14 @@
             width: 50%;
             direction: rtl;
         }
+
         .btnUp {
             margin-top: 0%;
-            margin-left: 50%;
-            margin-right: 50%;
+            margin-left: 25%;
             margin-bottom: 2%;
             border: none;
             border-radius: 1.5rem;
-            padding:  1% 0 1% 0;
+            padding: 1% 0 1% 0;
             color: #000;
             font-weight: 600;
             width: 50%;
@@ -50,6 +50,10 @@
             margin-top: 8%;
             margin-bottom: -15%;
             color: #000;
+        }
+
+        .labStyle {
+            margin-left: 45%;
         }
 
         .tColor {
@@ -94,11 +98,14 @@
                                     <asp:TextBox ID="quantity" runat="server" class="form-control" MaxLength="9" placeholder="כמות *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס כמות" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
-                                <asp:FileUpload ID="FileUpload1" runat="server" />
-                                <asp:Button ID="Button1" runat="server" CssClass="btnUp" Text="uploud" OnClick="SavePicture" />
-                                <asp:Label ID="lblMessage" runat="server" CssClass="align-items-center" Text="Label"></asp:Label>
+                                <div class="form-group  ">
+                                    <asp:FileUpload ID="FileUpload1" CssClass="btnUp" runat="server" />
+                                    <asp:Button ID="Button1" runat="server" CssClass="btnUp" Text="העלאה" OnClick="SavePicture" />
+                                    <asp:Label ID="lblMessage" runat="server" CssClass="labStyle" Text="Label"></asp:Label>
+                                </div>
+
                                 <div class="form-group">
-                                    <asp:TextBox ID="photo" runat="server" class="form-control"  placeholder="תמונה *" value=""></asp:TextBox>
+                                    <asp:TextBox ID="photo" runat="server" class="form-control" placeholder="תמונה *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תמונה" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
