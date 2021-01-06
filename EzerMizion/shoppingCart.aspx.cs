@@ -22,8 +22,9 @@ namespace EzerMizion
                     Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
                     Repeater1.DataBind();
                 }
-                
+
             }
+
             /* if(! IsPostBack)
               {
                   string pCode = Request.QueryString["pCode"];
@@ -33,29 +34,28 @@ namespace EzerMizion
             */
         }
 
+
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
-                string pPrice = "Id: " + (item.FindControl("pPrice") as Label).Text;
-                string qty = "Id: " + (item.FindControl("qty") as Label).Text;
-                Label totalP = item.FindControl("totalP") as Label;
-                    if (totalP != null)
-                    {
-                        totalP.Text =(string)(pl.pTotal(Double.Parse(pPrice), Int32.Parse(qty)));
-
-                    }
             RepeaterItem item = (sender as ListBox).NamingContainer as RepeaterItem;
-            string qty = "Id: " + (item.FindControl("qty") as Label).Text; 
+            DropDownList d = item.FindControl("DDL") as DropDownList;
             ListBox q = item.FindControl("quan") as ListBox;
-            if (q != null)
-                qty = q.SelectedValue;
-            string pPrice = "Id: " + (item.FindControl("pPrice") as Label).Text;
-            Label totalP = item.FindControl("totalP") as Label;
-            if (totalP != null)
+            if (!IsCallback && (!IsPostBack))
             {
-                totalP.Text = (pl.pTotal(Double.Parse(pPrice), Int32.Parse(qty))).ToString();
-
-            }*/
+                for (int a = 1; a <= 30; a++)
+                {
+                    q.Items.Insert(a, a.ToString());
+                }
+            }
+            if (q.SelectedItem != null)
+            {
+                string pPrice = (item.FindControl("pPrice") as Label).Text;
+                Label totalP = item.FindControl("totalP") as Label;
+                if (totalP != null)
+                {
+                    totalP.Text = (pl.pTotal(Double.Parse(pPrice), Int32.Parse(q.SelectedValue))).ToString();
+                }
+            }
         }
     }
 }

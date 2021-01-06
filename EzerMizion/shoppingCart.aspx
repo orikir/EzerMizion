@@ -271,11 +271,9 @@
                                             </td>
                                             <td class="product-count">
                                                 <form action="#" class="count-inlineflex">
-                                                    <asp:ListBox ID="quan" runat="server" Rows="1" SelectionMode="Single" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged">
+                                                    <asp:ListBox ID="quan" runat="server" Rows="1" OnLoad="ListBox1_SelectedIndexChanged" AutoPostBack="True" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"  OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" >
+                                                    <asp:ListItem> בחר כמות</asp:ListItem>
                                                     </asp:ListBox>
-                                                    <div class="qtyminus">-</div>
-                                                    <asp:TextBox class="qty" ID="qty" Text="" runat="server"></asp:TextBox>
-                                                    <div class="qtyplus">+</div>
                                                 </form>
                                             </td>
                                             <td>
@@ -287,7 +285,7 @@
                                                 <a href="#" title="">
                                                     <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
                                                 </a>
-                                            &nbsp;&nbsp;</td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
