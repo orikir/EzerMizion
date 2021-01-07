@@ -17,6 +17,19 @@ namespace EzerMizion
             {
                 GridView1.DataSource = dl.allDonations();
                 GridView1.DataBind();
+                if (!IsPostBack)
+                {
+                    for (int a = 1; a <= 12; a++)
+                    {
+                        Month.Items.Insert(a, a.ToString());
+                    }
+                    for (int a =1990; a<= DateTime.Now.Year; a++)
+                    {
+                        Year.Items.Add(new ListItem(a.ToString(), a.ToString()));
+                    }
+
+                }
+
             }
             else
                 Response.Redirect("HomeP.aspx");
@@ -35,6 +48,22 @@ namespace EzerMizion
         protected void donCh_Click(object sender, EventArgs e)
         {
             Response.Redirect("donChart.aspx");
+        }
+
+        protected void search(object sender, EventArgs e)
+        {
+            GridView2.DataSource = dl.getByMonthAndYear((Month.Text), Year.Text);
+            GridView2.DataBind();
+        }
+
+        protected void Year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Year.Text = Year.SelectedValue;
+        }
+
+        protected void Month_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Month.Text = Month.SelectedValue;
         }
 
         /*protected void click_Click(object sender, EventArgs e)

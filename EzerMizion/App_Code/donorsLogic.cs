@@ -25,6 +25,11 @@ namespace EzerMizion.App_Code
             string sql = String.Format(" SELECT * FROM donors WERE donDate ='{0}'", donDate);
             return d.excuteQuery(sql);
         }*/
+        public DataSet getByMonthAndYear(string dMonth, string dYear)
+        {
+            string sql= string.Format("SELECT * FROM donors WHERE(((Month([donors]![donDate])) ='{0}') AND((Year([donors]![donDate])) ='{1}'))", dMonth, dYear);
+            return d.excuteQuery(sql);
+        }
         public bool newDonor(string id, string orgName, double dSum, DateTime donDate)
         {//creating new donor and adding it to the donor's table
             if (checkId(id))
