@@ -20,7 +20,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <td>
         <center>
-            <asp:GridView ID="GridView1" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView1" runat="server" BackColor="#CCCCCC"  BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="donSum" HeaderText="סכום תרומה" />
                     <asp:BoundField DataField="orgName" HeaderText=":תרם מטעם" />

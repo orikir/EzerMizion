@@ -51,9 +51,16 @@ namespace EzerMizion
             {
                 string pPrice = (item.FindControl("pPrice") as Label).Text;
                 Label totalP = item.FindControl("totalP") as Label;
-                if (totalP != null)
+                if (q.SelectedItem.Text.Equals(" בחר כמות"))
                 {
-                    totalP.Text = (pl.pTotal(Double.Parse(pPrice), Int32.Parse(q.SelectedValue))).ToString();
+                    totalP.Text = "";
+                }
+                else
+                {
+                    if (totalP != null)
+                    {
+                        totalP.Text = (pl.pTotal(Double.Parse(pPrice), Int32.Parse(q.SelectedValue))).ToString();
+                    }
                 }
             }
         }

@@ -52,8 +52,16 @@ namespace EzerMizion
 
         protected void search(object sender, EventArgs e)
         {
-            GridView2.DataSource = dl.getByMonthAndYear((Month.Text), Year.Text);
-            GridView2.DataBind();
+            if(!Month.Text.Equals("בחר חודש ")&& !Year.Text.Equals(" בחר שנה"))
+            {
+                GridView2.DataSource = dl.getByMonthAndYear((Month.Text), Year.Text);
+                GridView2.DataBind();
+            }
+            else
+            {
+                GridView2.DataSource = dl.getByMonthAndYear("0", "0");
+                GridView2.DataBind();
+            }
         }
 
         protected void Year_SelectedIndexChanged(object sender, EventArgs e)
