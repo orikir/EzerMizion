@@ -33,7 +33,6 @@
         }
 
         .btnUp {
-            margin-top: 0%;
             margin-left: 25%;
             margin-bottom: 2%;
             border: none;
@@ -53,7 +52,8 @@
         }
 
         .labStyle {
-            margin-left: 45%;
+            margin-top:5%;
+            margin: 5% 0 0 30%;
         }
 
         .tColor {
@@ -101,16 +101,15 @@
                                 <div class="form-group  ">
                                     <asp:FileUpload ID="FileUpload1" CssClass="btnUp" runat="server" />
                                     <asp:Button ID="Button1" runat="server" CssClass="btnUp" Text="העלאה" OnClick="SavePicture" />
-                                    <asp:Label ID="lblMessage" runat="server" CssClass="labStyle" Text="Label"></asp:Label>
+                                    <asp:Label ID="lblMessage" runat="server" CssClass="labStyle" Text=""></asp:Label>
                                 </div>
-
                                 <div class="form-group">
                                     <asp:TextBox ID="photo" runat="server" class="form-control" placeholder="תמונה *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תמונה" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
-                                    <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
+                                    <asp:Label ID="alarm_lable" runat="server" CssClass="labStyle" Text=""></asp:Label>
                                 </div>
                             </div>
                             <div class="col-md-3"></div>
