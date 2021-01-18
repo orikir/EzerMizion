@@ -35,7 +35,6 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("DELETE * FROM products WHERE proCode={0}"), proCode);
             d.excuteQuery(sql);
         }
-
         public bool newPro(string proName, string quantity, double price, string branchName, string photo)
         {//creating new product and adding it to the product's table
             {
@@ -56,12 +55,6 @@ namespace EzerMizion.App_Code
             string sql = String.Format("SELECT branchCode FROM products WHERE branchCode ='{0}' AND proName ='{1}' ", getBranchCode(branchName), name);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
-        /*public bool photoExs ( string path, string imageName)
-        {//check if image already exist
-            
-            string sql = String.Format("SELECT proCode FROM products WHERE proPhoto ='{0}' ", imageName);
-            return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
-        }*/
         public bool checkBranchName(string branchName)
         {//check if there is branch with this name
             string sql = String.Format("SELECT branchName FROM branches WHERE branchName ='{0}'", branchName);

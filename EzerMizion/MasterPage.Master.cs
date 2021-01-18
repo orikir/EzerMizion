@@ -20,6 +20,7 @@ namespace EzerMizion
             {
                 Label2.Text = "השכרת מוצרים";
                 Label5.Text = "היסטורית תרומות";
+                Label6.Text = "עגלת קניות";
             }
         }
     }

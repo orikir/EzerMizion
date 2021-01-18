@@ -16,13 +16,15 @@ namespace EzerMizion
         {
             if (!IsPostBack)
             {
-                string pCode = Request.QueryString["pCode"];
-                if (pCode != null)
+                if ((Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
                 {
-                    Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
-                    Repeater1.DataBind();
+                    string pCode = Request.QueryString["pCode"];
+                    if (pCode != null)
+                    {
+                        Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
+                        Repeater1.DataBind();
+                    }
                 }
-
             }
 
             /* if(! IsPostBack)

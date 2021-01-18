@@ -41,6 +41,11 @@
                             <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
                         </a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="shoppingCart.aspx">
+                            <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="DonationsList.aspx">
                             <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
