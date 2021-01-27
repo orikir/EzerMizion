@@ -21,19 +21,12 @@ namespace EzerMizion
                     string pCode = Request.QueryString["pCode"];
                     if (pCode != null)
                     {
-                        Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
+                        //Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
+                        Repeater1.DataSource = pl.getCart( Session["uId"].ToString());
                         Repeater1.DataBind();
                     }
                 }
             }
-
-            /* if(! IsPostBack)
-              {
-                  string pCode = Request.QueryString["pCode"];
-                 DataSet ds=pl.____ //זימון השאילתה
-                 שם הפקד.text = Tables[0].rows[0][שם השדה].ToString(); //הצבת הנתונים בפקדים
-              }
-            */
         }
 
 
@@ -61,7 +54,7 @@ namespace EzerMizion
                 {
                     if (totalP != null)
                     {
-                        totalP.Text = (pl.pTotal(Double.Parse(pPrice), Int32.Parse(q.SelectedValue))).ToString();
+                        totalP.Text = ((Double.Parse(pPrice))*(Int32.Parse(q.SelectedValue))).ToString();
                     }
                 }
             }
