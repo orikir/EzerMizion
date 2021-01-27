@@ -30,8 +30,8 @@ namespace EzerMizion
         protected void addTcart_Click(object sender, EventArgs e)
         {
             string proCode = ((sender as Button).CommandName).ToString();
-            pl.intoCart(Session["uId"].ToString(), proCode);
-            Response.Redirect("shoppingCart.aspx?pCode=" + proCode);
+            pl.intoCart( Int32.Parse(proCode), Session["uId"].ToString());
+            //Response.Redirect("shoppingCart.aspx?pCode=" + proCode);
 
         }
     }

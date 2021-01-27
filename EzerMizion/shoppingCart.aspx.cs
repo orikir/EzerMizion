@@ -18,8 +18,8 @@ namespace EzerMizion
             {
                 if ((Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
                 {
-                    string pCode = Request.QueryString["pCode"];
-                    if (pCode != null)
+                    //string pCode = Request.QueryString["pCode"];
+                    //if (pCode != null)
                     {
                         //Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
                         Repeater1.DataSource = pl.getCart( Session["uId"].ToString());
@@ -58,6 +58,13 @@ namespace EzerMizion
                     }
                 }
             }
+        }
+
+        protected void delete_Click(object sender, EventArgs e)
+        {
+           // RepeaterItem item = (sender as ListBox).NamingContainer as RepeaterItem;
+           // string pName = (item.FindControl("pName") as Label).Text;
+            //pl.deleteFromCart((pName), Session["uId"].ToString());
         }
     }
 }

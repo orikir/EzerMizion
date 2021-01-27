@@ -117,9 +117,9 @@
         }
 
         .count-inlineflex {
-            display: inline-flex;
-            border: solid 2px #ccc;
-            border-radius: 20px;
+            //display: inline-flex;
+            //border: solid 2px #ccc;
+            //border-radius: 20px;
         }
 
         .total {
@@ -271,8 +271,8 @@
                                             </td>
                                             <td class="product-count">
                                                 <form action="#" class="count-inlineflex">
-                                                    <asp:ListBox ID="quan" runat="server" Rows="1" OnLoad="ListBox1_SelectedIndexChanged" AutoPostBack="True" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"  OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" >
-                                                    <asp:ListItem> בחר כמות</asp:ListItem>
+                                                    <asp:ListBox ID="quan" runat="server" Rows="1" OnLoad="ListBox1_SelectedIndexChanged" AutoPostBack="True" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit">
+                                                        <asp:ListItem> בחר כמות</asp:ListItem>
                                                     </asp:ListBox>
                                                 </form>
                                             </td>
@@ -282,10 +282,8 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="#" title="">
-                                                    <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
-                                                </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <asp:Button ID="delete" runat="server" Text="הסרה" class="mCS_img_loaded" OnClick="delete_Click" />
+                                            </td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>

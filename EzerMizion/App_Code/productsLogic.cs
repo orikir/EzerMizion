@@ -62,15 +62,38 @@ namespace EzerMizion.App_Code
             string s = ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
             return s;
         }
-        public bool intoCart (string proCode, string userId)
+        public bool isInCart(int proCode, string userId)
+        {//check if is already exist
+            string sql = String.Format("SELECT cartCode FROM cart WHERE proCode={0} AND userId='{1}'", proCode, userId);
+            return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
+        }
+        public bool intoCart (int proCode, string userId)
         {//מכניסה את המוצר הנבחר ויוצרת שורה חדשה בטבלת עגלה
-            string sql = String.Format("INSERT INTO cart (userId,proCode) VALUES('{0}', '{1}')", userId, proCode);
+            if (!isInCart(proCode, userId))
+            {
+                string sql = String.Format("INSERT INTO cart (userId,proCode) VALUES('{0}', {1})", userId, proCode);
+                DataSet ds = d.excuteQuery(sql);
+                return true;
+            }
+            else
+                return false;
+            
+        }
+        public string getProCode(string proName)
+        {//return the code product of this name
+            string sql = String.Format("SELECT proCode FROM products WHERE proName ='{0}'", proName);
             DataSet ds = d.excuteQuery(sql);
-            return true;
+            string s = ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
+            return s;
+        }
+        public void deleteFromCart(string proName, string userId)
+        {//delete product
+            string sql = string.Format(("DELETE * FROM cart WHERE proCode={0} AND userId='{1}'"),  Int32.Parse(getProCode(proName)), userId);
+            d.excuteQuery(sql);
         }
         public DataSet getCart(string userId)
         {//return the cart of the current user
-            string sql = String.Format("SELECT proCode FROM cart WHERE userId ='{0}'", userId);
+            string sql = String.Format("SELECT  products.proName, products.proPhoto, products.proPrice FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
             return d.excuteQuery(sql);
            
         }
