@@ -231,6 +231,7 @@
     <Compile Include="addPro.aspx.designer.cs">
       <DependentUpon>addPro.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\cartLogic.cs" />
     <Compile Include="shoppingCart.aspx.cs">
       <DependentUpon>shoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

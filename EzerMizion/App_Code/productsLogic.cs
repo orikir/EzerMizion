@@ -67,10 +67,17 @@ namespace EzerMizion.App_Code
             string s = ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
             return s;
         }
-        /*public bool checkProName(string name)
-        {
-            string sql = String.Format("SELECT proName FROM products WHERE proName ='{0}' ", name);
-            return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
-        }*/
+        public bool intoCart (string proCode, string userId)
+        {//מכניסה את המוצר הנבחר ויוצרת שורה חדשה בטבלת עגלה
+            string sql = String.Format("INSERT INTO cart (userId,proCode) VALUES('{0}', '{1}')", userId, proCode);
+            DataSet ds = d.excuteQuery(sql);
+            return true;
+        }
+        public DataSet getCart(string userId)
+        {//return the cart of the current user
+            string sql = String.Format("SELECT proCode FROM cart WHERE userId ='{0}'", userId);
+            return d.excuteQuery(sql);
+           
+        }
     }
 }
