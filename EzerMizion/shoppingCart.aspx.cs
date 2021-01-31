@@ -42,20 +42,16 @@ namespace EzerMizion
             RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
             string quan = (item.FindControl("quantity") as Label).Text;
             string proCode = (item.FindControl("proCode") as Label).Text;
-            if (!quan.Equals(1))
+            if (Int32.Parse(quan)>1)
             {
                 pl.updateAmount(-1,Int32.Parse(proCode), Session["uId"].ToString());
             }
-            //else
-            {
-                //הוראה:האם אתה בטוח שהינך רוצה למחוק את המוצר
-                //pl.deleteFromCart(Int32.Parse(pCode), Session["uId"].ToString());
+            else 
+            {//when the amount is 1, and the user click on minus the amount become 0
+                pl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
             }
             Repeater1.DataSource = pl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
-           /* string pPrice = (item.FindControl("pPrice") as Label).Text;
-            Label totalP = item.FindControl("totalP") as Label;
-            totalP.Text = ((Double.Parse(pPrice)) * (Int32.Parse(quan))).ToString();*/
         }
 
         protected void plus_Click(object sender, EventArgs e)

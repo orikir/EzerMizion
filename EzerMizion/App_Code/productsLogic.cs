@@ -71,7 +71,7 @@ namespace EzerMizion.App_Code
         {//מכניסה את המוצר הנבחר ויוצרת שורה חדשה בטבלת עגלה
             if (!isInCart(proCode, userId))
             {//בדיקה האם המוצר קיים
-                string sql = String.Format("INSERT INTO cart (userId,proCode) VALUES('{0}', {1})", userId, proCode);
+                string sql = String.Format("INSERT INTO cart (userId,proCode, amount) VALUES('{0}', {1}, {2})", userId, proCode, 1);
                 DataSet ds = d.excuteQuery(sql);
                 return true;
             }

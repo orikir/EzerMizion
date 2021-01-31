@@ -240,17 +240,17 @@
                         <table>
                             <thead>
                                 <tr style="text-align:center">
-                                    <th class="auto-style2">מוצר</th>
-                                    <th class="auto-style5">כמות</th>
-                                    <th class="auto-style7">מחיר כולל</th>
+                                    <th>מוצר</th>
+                                    <th>כמות</th>
+                                    <th>מחיר כולל</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <asp:Repeater ID="Repeater1" runat="server">
                                     <ItemTemplate>
-                                        <tr>
-                                            <td>
+                                        <tr style="text-align:center">
+                                            <td style="width:30%;">
                                                 <div class="display-flex align-center">
                                                     <div class="img-product">
                                                         <asp:ImageButton ID="ImageButton1"  class="mCS_img_loaded" runat="server" Width="100" hight="100" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
@@ -264,14 +264,14 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="product-count">
+                                            <td class="product-count" style="width:30%;>
                                                 <div class="count-inlineflex">
                                                     <asp:Button ID="minus" class="qtyminus"  runat="server" Text="-" OnClick="minus_Click" />
                                                     <asp:Label ID="quantity" class="qty" runat="server" Text='<%#Eval("amount") %>'></asp:Label>
                                                     <asp:Button ID="plus" class="qtyplus" runat="server" Text="+" OnClick="plus_Click" />
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td style="width:15%;>
                                                 <div class="total">
                                                     <asp:Label ID="totalP" runat="server" Text='<%#Eval("total") %>'></asp:Label>
                                                 </div>
