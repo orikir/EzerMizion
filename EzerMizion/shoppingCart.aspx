@@ -76,7 +76,6 @@
                 margin-right: 40px;
                 color: #989898;
                 font-size: 16px;
-                font-family: 'Nunito';
             }
 
             .table-cart tr td .quanlity {
@@ -85,42 +84,34 @@
 
         .product-count .qtyminus,
         .product-count .qtyplus {
-            width: 34px;
-            height: 34px;
-            background: transparent;
+            width: 10%;
+            height: 10%;
+            padding: 0 1% 1% 1%;
             text-align: center;
-            font-size: 19px;
-            line-height: 34px;
+            font-size: 100%;
+           / border-radius:30% 30%;
+            line-height: 150%;
             color: #000;
-            cursor: pointer;
             font-weight: 600;
         }
 
-        .product-count .qtyminus {
-            line-height: 32px;
-        }
 
         .product-count .qtyminus {
             border-radius: 3px 0 0 3px;
-            border: 1% #000;
+            border: 50px #000;
         }
 
         .product-count .qtyplus {
             border-radius: 0 3px 3px 0;
-            border: 1% #000;
+            border: 50px #000;
         }
 
         .product-count .qty {
-            width: 60px;
+            width: 70%;
             text-align: center;
             border: none;
         }
 
-        .count-inlineflex {
-            //display: inline-flex;
-            //border: solid 2px #ccc;
-            //border-radius: 20px;
-        }
 
         .total {
             font-size: 24px;
@@ -232,6 +223,9 @@
             .btn-cart-totals .round-black-btn {
                 margin: 5% 0;
             }
+            .code{
+                color: white;
+            }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -245,10 +239,10 @@
                     <div class="table-cart">
                         <table>
                             <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
+                                <tr style="text-align:center">
+                                    <th class="auto-style2">מוצר</th>
+                                    <th class="auto-style5">כמות</th>
+                                    <th class="auto-style7">מחיר כולל</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -259,30 +253,31 @@
                                             <td>
                                                 <div class="display-flex align-center">
                                                     <div class="img-product">
-                                                        <asp:Image ID="Image1" class="mCS_img_loaded" runat="server" Width="100" hight="100" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
+                                                        <asp:ImageButton ID="ImageButton1"  class="mCS_img_loaded" runat="server" Width="100" hight="100" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
                                                     </div>
                                                     <div class="product-content">
                                                         <asp:Label ID="pName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
+                                                        <asp:Label ID="proCode" class="code" runat="server" Text='<%#Eval("proCode") %>'></asp:Label>
                                                         <div class="price">
-                                                            <asp:Label ID="pPrice" class="price" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
+                                                            <asp:Label ID="pPrice"  runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="product-count">
-                                                <form action="#" class="count-inlineflex">
-                                                    <asp:ListBox ID="quan" runat="server" Rows="1" OnLoad="ListBox1_SelectedIndexChanged" AutoPostBack="True" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit">
-                                                        <asp:ListItem> בחר כמות</asp:ListItem>
-                                                    </asp:ListBox>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <div class="total">
-                                                    <asp:Label ID="totalP" runat="server" Text=""></asp:Label>
+                                                <div class="count-inlineflex">
+                                                    <asp:Button ID="minus" class="qtyminus"  runat="server" Text="-" OnClick="minus_Click" />
+                                                    <asp:Label ID="quantity" class="qty" runat="server" Text='<%#Eval("amount") %>'></asp:Label>
+                                                    <asp:Button ID="plus" class="qtyplus" runat="server" Text="+" OnClick="plus_Click" />
                                                 </div>
                                             </td>
                                             <td>
-                                                <asp:Button ID="delete" runat="server" Text="הסרה" class="mCS_img_loaded" OnClick="delete_Click" />
+                                                <div class="total">
+                                                    <asp:Label ID="totalP" runat="server" Text='<%#Eval("total") %>'></asp:Label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <asp:Button ID="delete" runat="server" CommandName='<%# Eval("proCode")%>' Text="הסרה" class="mCS_img_loaded" OnClick="delete_Click" />
                                             </td>
                                         </tr>
                                     </ItemTemplate>

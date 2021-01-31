@@ -6,9 +6,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <td>
         <center>
-    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Width="800px" OnLoad="Chart1_Load" BackColor="MenuBar">
+    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Width="1200px" OnLoad="Chart1_Load"  BackColor="Menu" Height="700px">
         <Series>
-            <asp:Series Name="Series1" YValueMembers="donSum" Color="#cccccc"   XValueMember="donDate" ChartType="Area" LegendText="ש&quot;ח" XValueType="Date"></asp:Series>
+            <asp:Series Name="Series1" YValueMembers="donSum" Color="#73d3f2"   XValueMember="donDate"  LegendText="ש&quot;ח" XValueType="Date"></asp:Series>
         </Series>
         <ChartAreas>
             <asp:ChartArea Name="ChartArea1"></asp:ChartArea>

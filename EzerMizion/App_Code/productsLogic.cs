@@ -70,13 +70,16 @@ namespace EzerMizion.App_Code
         public bool intoCart (int proCode, string userId)
         {//מכניסה את המוצר הנבחר ויוצרת שורה חדשה בטבלת עגלה
             if (!isInCart(proCode, userId))
-            {
+            {//בדיקה האם המוצר קיים
                 string sql = String.Format("INSERT INTO cart (userId,proCode) VALUES('{0}', {1})", userId, proCode);
                 DataSet ds = d.excuteQuery(sql);
                 return true;
             }
             else
-                return false;
+            {//אם המוצר קיים, נוסיף לכמות הנוכחית
+                updateAmount(1, proCode, userId);
+                return true;
+            }
             
         }
         public string getProCode(string proName)
@@ -86,16 +89,20 @@ namespace EzerMizion.App_Code
             string s = ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
             return s;
         }
-        public void deleteFromCart(string proName, string userId)
+        public void deleteFromCart(int proCode, string userId)
         {//delete product
-            string sql = string.Format(("DELETE * FROM cart WHERE proCode={0} AND userId='{1}'"),  Int32.Parse(getProCode(proName)), userId);
+            string sql = string.Format(("DELETE * FROM cart WHERE proCode={0} AND userId='{1}'"),  proCode, userId);
             d.excuteQuery(sql);
         }
         public DataSet getCart(string userId)
         {//return the cart of the current user
-            string sql = String.Format("SELECT  products.proName, products.proPhoto, products.proPrice FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
+            string sql = String.Format("SELECT cart.amount, cart.proCode , products.proName, products.proPhoto, products.proPrice, cart.amount*products.proPrice AS total FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
             return d.excuteQuery(sql);
-           
+        }
+        public void updateAmount (int pOm, int proCode, string uId)
+        {
+            string sql = string.Format(("UPDATE cart SET cart.amount=cart.amount+{0} WHERE cart.proCode={1} AND cart.userId='{2}'"), pOm, proCode, uId);
+            d.excuteQuery(sql);
         }
     }
 }

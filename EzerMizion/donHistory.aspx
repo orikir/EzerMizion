@@ -10,7 +10,7 @@
                 <Columns>
                     <asp:BoundField DataField="donSum" HeaderText="סכום תרומה" />
                     <asp:BoundField DataField="orgName" HeaderText=":תרם מטעם" />
-                    <asp:BoundField DataField="donDate" HeaderText="תאריך " />
+                    <asp:BoundField DataField="donDate" DataFormatString="{0:d}" HeaderText="תאריך " />
                     <asp:BoundField DataField="id" HeaderText="תעודת זהות" />
                     <asp:BoundField DataField="firstName" HeaderText="שם פרטי" />
                     <asp:BoundField DataField="lastName" HeaderText="שם משפחה" />

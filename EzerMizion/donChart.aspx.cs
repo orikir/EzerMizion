@@ -11,8 +11,13 @@ namespace EzerMizion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!(Session["uType"].Equals("manager")|| Session["uType"].Equals("ordinary")))
+            if (!(Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
                 Response.Redirect("HomeP.aspx");
+            Chart1.ChartAreas[0].AxisY.Minimum = 0;
+            Chart1.ChartAreas[0].AxisY.Maximum = 5000;
+            //Chart1.ChartAreas[0].AxisX.Minimum = 0;
+            //Chart1.ChartAreas[0].AxisX.Maximum = 10;
+
         }
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
