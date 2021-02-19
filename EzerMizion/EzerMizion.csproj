@@ -90,6 +90,7 @@
     <Content Include="donHistory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="LoginForm.aspx" />
+    <Content Include="payment.aspx" />
     <Content Include="Photos\bed.jpg" />
     <Content Include="Photos\chair.png" />
     <Content Include="Photos\halichon.jpg" />
@@ -232,6 +233,13 @@
       <DependentUpon>addPro.aspx</DependentUpon>
     </Compile>
     <Content Include="App_Code\cartLogic.cs" />
+    <Compile Include="payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="shoppingCart.aspx.cs">
       <DependentUpon>shoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

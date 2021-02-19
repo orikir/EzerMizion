@@ -17,6 +17,8 @@ namespace EzerMizion
             {
                 GridView1.DataSource = dl.allDonations();
                 GridView1.DataBind();
+                Chart1.ChartAreas[0].AxisY.Minimum = 0;
+                Chart1.ChartAreas[0].AxisY.Maximum = 7000;
                 if (!IsPostBack)
                 {
                     for (int a = 1; a <= 12; a++)
@@ -33,6 +35,15 @@ namespace EzerMizion
             }
             else
                 Response.Redirect("HomeP.aspx");
+        }
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void Chart1_Load(object sender, EventArgs e)
+        {
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
