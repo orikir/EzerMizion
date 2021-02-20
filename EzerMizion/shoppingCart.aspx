@@ -317,8 +317,7 @@
                                 </tbody>
                             </table>
                             <div class="btn-cart-totals">
-                                <a href="#" class="update round-black-btn" title="">Update Cart</a>
-                                <a href="#" class="checkout round-black-btn" title="">Proceed to Checkout</a>
+                                <asp:Button ID="checkout" class="checkout round-black-btn" runat="server" Text="אישור ומעבר לתשלום" OnClick="checkout_Click"/>
                             </div>
                             <!-- /.btn-cart-totals -->
                         </form>

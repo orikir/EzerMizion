@@ -12,6 +12,7 @@ namespace EzerMizion
     public partial class shoppingCart : System.Web.UI.Page
     {
         productsLogic pl = new productsLogic();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -70,6 +71,11 @@ namespace EzerMizion
             
             Repeater1.DataSource = pl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
+        }
+
+        protected void checkout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("payment.aspx");
         }
     }
 }

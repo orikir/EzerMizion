@@ -91,12 +91,16 @@
         }
 
         .form-group {
-            margin: 3%;
-            direction:rtl;
+            margin: 2% 2% 2% 2%;
+            direction: rtl;
         }
 
         .form-control {
             direction: rtl;
+        }
+
+        .part {
+            margin: 0% 0.5% 0% 0.5%;
         }
     </style>
 </asp:Content>
@@ -110,44 +114,45 @@
                         <div class="row pay-form">
                             <!-- Name -->
                             <div class="row form-group">
-                                <asp:Label ID="Label1" class="control-label vStyle" runat="server" Text="תעודת זהות"></asp:Label>
-                                <div>
+                                <div class=" col-md-6">
+                                    <asp:Label ID="Label1" class="control-label vStyle" runat="server" Text="תעודת זהות"></asp:Label>
                                     <asp:TextBox ID="ownerId" class="form-control" placeholder="תעודת זהות*" runat="server" Text=""></asp:TextBox>
                                 </div>
-                                <asp:Label ID="Label2" class="control-label vStyle" runat="server" Text="מספר כרטיס"></asp:Label>
-                                <div>
-                                    <asp:TextBox ID="cardNum" class="form-control" runat="server" Text=""></asp:TextBox>
+                                <div class=" col-md-6">
+                                    <asp:Label ID="Label2" class="control-label vStyle" runat="server" Text="מספר כרטיס"></asp:Label>
+                                    <asp:TextBox ID="cardNum" class="form-control " runat="server" Text=""></asp:TextBox>
                                 </div>
                             </div>
-
+                            <div class="row form-group">
                             <!-- Expiry-->
-                            <div class="row form-group">
+                                <div class="col-md-1">
                                     <asp:Label ID="Label3" class="control-label vStyle" runat="server" Text="תוקף"></asp:Label>
-                                    <div>
-                                        <div class="span3" name="expiry_month">
-                                            <asp:DropDownList ID="Month" class="form-control" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Black">
-                                                <asp:ListItem>בחר חודש </asp:ListItem>
-                                            </asp:DropDownList>
-                                        </div>
-                                    </div>
-                                    <div class="span2" name="expiry_year">
-                                        <asp:DropDownList ID="Year" class="form-control" runat="server" OnSelectedIndexChanged="Year_SelectedIndexChanged" ForeColor="Black">
-                                            <asp:ListItem> בחר שנה</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                            </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:DropDownList ID="Month" class="form-control" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Black">
+                                        <asp:ListItem>בחר חודש </asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:DropDownList ID="Year" class="form-control" runat="server" OnSelectedIndexChanged="Year_SelectedIndexChanged" ForeColor="Black">
+                                        <asp:ListItem> בחר שנה</asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
                             <!-- CVV -->
-                            <div class="row form-group">
-                                <asp:Label ID="Label4" class="control-label " runat="server" Text="CVV"></asp:Label>
-                                <div>
+                                <div class=" col-md-1">
+                                    <asp:Label ID="Label4" class="control-label " runat="server" Text="CVV"></asp:Label>
+                                </div>
+                                <div class="col-md-4">
                                     <asp:TextBox ID="cardCvc" class="form-control" runat="server" Text=""></asp:TextBox>
                                 </div>
                             </div>
                             <!-- Submit -->
-                            <div class="row form-group">
-                                <div class="controls">
-                                    <button class="btn btn-success">Pay Now</button>
+                            <div class="row ">
+                                <div class="col-md-2"> </div>
+                                <div class="col-md-8">
+                                    <asp:Button ID="submit" class="btn btn-success" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
                                 </div>
+                                <div class="col-md-2"> </div>
                             </div>
                         </div>
                     </div>
