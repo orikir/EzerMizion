@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace EzerMizion
 {
-    
+
     public partial class payment : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -42,10 +42,11 @@ namespace EzerMizion
         }
 
         protected void submit_Click(object sender, EventArgs e)
-        {/* 
+        { 
             cartLogic cl = new cartLogic();
-            cl.toOrder(Session["uId"].ToString(), cardNum.Text, Month.Text, Year.Text, "039876543", cardCvv.Text, DateTime.Now);
+            cl.toOrder(Session["uId"].ToString(), cardNum.Text, Month.Text, Year.Text, ownerId.Text, cardCvv.Text, DateTime.Now);
 
-        }*/
+        
+        }
     }
 }
