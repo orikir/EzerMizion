@@ -25,12 +25,14 @@ namespace EzerMizion
                     {
                         Month.Items.Insert(a, a.ToString());
                     }
-                    for (int a =1990; a<= DateTime.Now.Year; a++)
+                    for (int a =2000; a<= DateTime.Now.Year; a++)
                     {
                         Year.Items.Add(new ListItem(a.ToString(), a.ToString()));
                     }
-
+                    TextBox1.Text = fromD.SelectedDate.ToString();
+                    TextBox2.Text = toD.SelectedDate.ToString();
                 }
+                
 
             }
             else

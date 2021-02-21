@@ -10,7 +10,9 @@
         }
 
         .main-heading {
-            margin-bottom: 1%;
+            margin-bottom: 5%;
+            text-align: center;
+            font-size: x-small;
         }
 
         .table-cart table {
@@ -89,7 +91,7 @@
             padding: 0 1% 1% 1%;
             text-align: center;
             font-size: 100%;
-           / border-radius:30% 30%;
+            / border-radius:30% 30%;
             line-height: 150%;
             color: #000;
             font-weight: 600;
@@ -223,9 +225,10 @@
             .btn-cart-totals .round-black-btn {
                 margin: 5% 0;
             }
-            .code{
-                color: white;
-            }
+
+        .code {
+            color: white;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -234,68 +237,6 @@
     <div class="cart-wrap">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <div class="main-heading">Shopping Cart</div>
-                    <div class="table-cart">
-                        <table>
-                            <thead>
-                                <tr style="text-align:center">
-                                    <th>מוצר</th>
-                                    <th>כמות</th>
-                                    <th>מחיר כולל</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <asp:Repeater ID="Repeater1" runat="server">
-                                    <ItemTemplate>
-                                        <tr style="text-align:center">
-                                            <td style="width:30%;">
-                                                <div class="display-flex align-center">
-                                                    <div class="img-product">
-                                                        <asp:ImageButton ID="ImageButton1"  class="mCS_img_loaded" runat="server" Width="100" hight="100" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <asp:Label ID="pName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
-                                                        <asp:Label ID="proCode" class="code" runat="server" Text='<%#Eval("proCode") %>'></asp:Label>
-                                                        <div class="price">
-                                                            <asp:Label ID="pPrice"  runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="product-count" style="width:30%;>
-                                                <div class="count-inlineflex">
-                                                    <asp:Button ID="minus" class="qtyminus"  runat="server" Text="-" OnClick="minus_Click" />
-                                                    <asp:Label ID="quantity" class="qty" runat="server" Text='<%#Eval("amount") %>'></asp:Label>
-                                                    <asp:Button ID="plus" class="qtyplus" runat="server" Text="+" OnClick="plus_Click" />
-                                                </div>
-                                            </td>
-                                            <td style="width:15%;>
-                                                <div class="total">
-                                                    <asp:Label ID="totalP" runat="server" Text='<%#Eval("total") %>'></asp:Label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <asp:Button ID="delete" runat="server" CommandName='<%# Eval("proCode")%>' Text="הסרה" class="mCS_img_loaded" OnClick="delete_Click" />
-                                            </td>
-                                        </tr>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </tbody>
-                        </table>
-                        <div class="coupon-box">
-
-                            <div class="coupon-input">
-                                <asp:TextBox ID="couponCode" placeholder="Coupon Code" Width="40%" Height="70%" runat="server" type="text"></asp:TextBox>
-                                <asp:Button ID="submit" class="round-black-btn" runat="server" Width="40%" Height="70%" Text="Apply Coupon" />
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- /.table-cart -->
-                </div>
-
                 <div class="col-md-4">
                     <div class="cart-totals">
                         <h3>Cart Totals</h3>
@@ -317,7 +258,7 @@
                                 </tbody>
                             </table>
                             <div class="btn-cart-totals">
-                                <asp:Button ID="checkout" class="checkout round-black-btn" runat="server" Text="אישור ומעבר לתשלום" OnClick="checkout_Click"/>
+                                <asp:Button ID="checkout" class="checkout round-black-btn" runat="server" Text="אישור ומעבר לתשלום" OnClick="checkout_Click" />
                             </div>
                             <!-- /.btn-cart-totals -->
                         </form>
@@ -325,6 +266,65 @@
                     </div>
                     <!-- /.cart-totals -->
                 </div>
+                <div class="col-md-8">
+                    <div class="main-heading ">
+                        <h3>עגלת קניות</h3>
+                    </div>
+                    <div class="table-cart">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2">
+                                <a>מחיר כולל</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a>כמות</a>
+                            </div>
+                            <div class="col-md-5">
+                                <a>מוצר</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <asp:Button ID="Button1" runat="server" Text="" Height="1px" Width="100%" BorderColor="White" />
+                        </div>
+                        <asp:Repeater ID="Repeater1" runat="server">
+                            <ItemTemplate>
+                                <div class="row display-flex align-center" style="text-align: center;">
+                                    <div class="col-md-2">
+                                        <asp:Button ID="delete" runat="server" CommandName='<%# Eval("proCode")%>' Text="הסרה" class="mCS_img_loaded" OnClick="delete_Click" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="total">
+                                            ₪<asp:Label ID="totalP" runat="server" Text='<%#Eval("total") %>'></asp:Label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 product-count">
+                                        <div class="count-inlineflex">
+                                            <asp:Button ID="minus" class="qtyminus" runat="server" Text="-" OnClick="minus_Click" />
+                                            <asp:Label ID="quantity" class="qty" runat="server" Text='<%#Eval("amount") %>'></asp:Label>
+                                            <asp:Button ID="plus" class="qtyplus" runat="server" Text="+" OnClick="plus_Click" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="product-content">
+                                            <asp:Label ID="pName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
+                                            <asp:Label ID="proCode" class="code" runat="server" Text='<%#Eval("proCode") %>'></asp:Label>
+                                            <div class="price">
+                                                ₪<asp:Label ID="pPrice" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <div class="img-product">
+                                            <asp:ImageButton ID="ImageButton2" class="mCS_img_loaded" runat="server" Width="100" hight="100" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                    <!-- /.table-cart -->
+                </div>
+
                 <!-- /.col-lg-4 -->
             </div>
         </div>

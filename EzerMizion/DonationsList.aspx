@@ -33,12 +33,15 @@
                     <asp:ListItem> בחר שנה</asp:ListItem>
                 </asp:DropDownList>
                 <asp:Button ID="submit" runat="server" Text="חיפוש" OnClick="search" ForeColor="Red" />
-                <asp:Calendar ID="fromd" runat="server"></asp:Calendar>
-                <asp:Calendar ID="toD" runat="server"></asp:Calendar>
+                <asp:ScriptManager runat="server" />
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:Calendar ID="fromD" TargetControlID="TextBox1" Format="dd/MM/yyyy" runat="server"></asp:Calendar>
+                <asp:Calendar ID="toD" TargetControlID="TextBox2" Format="dd/MM/yyyy" runat="server"></asp:Calendar>
              </div>
             <asp:GridView ID="GridView2" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
-            <Columns>
-                     <asp:BoundField DataField="donSum" HeaderText="סכום תרומה" />
+                <Columns>
+                    <asp:BoundField DataField="donSum" HeaderText="סכום תרומה" />
                     <asp:BoundField DataField="orgName" HeaderText=":תרם מטעם" />
                     <asp:BoundField DataField="donDate" DataFormatString="{0:d}" HeaderText="תאריך " />
                     <asp:BoundField DataField="id" HeaderText="תעודת זהות" />
