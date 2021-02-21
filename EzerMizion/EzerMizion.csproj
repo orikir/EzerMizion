@@ -232,7 +232,7 @@
     <Compile Include="addPro.aspx.designer.cs">
       <DependentUpon>addPro.aspx</DependentUpon>
     </Compile>
-    <Content Include="App_Code\cartLogic.cs" />
+    <Compile Include="App_Code\cartLogic.cs" />
     <Compile Include="payment.aspx.cs">
       <DependentUpon>payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -44,9 +44,9 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("UPDATE cart SET cart.amount=cart.amount+{0} WHERE cart.proCode={1} AND cart.userId='{2}'"), pOm, proCode, uId);
             d.excuteQuery(sql);
         }
-        public bool toOrder(string userId ,string cardNum, string cardMonth, string cardYear, string ownerId, string cardCode)
+        public bool toOrder(string userId ,string cardNum, string cardMonth, string cardYear, string ownerId, string cardCode, DateTime orderDate)
         {
-            string sql = String.Format("INSERT INTO orders (userId,orderDate, cardNum, cardMonth, cardYear, ownerId, cardCode) VALUES('{0}', #{1}#, '{2}', '{3}', '{4}', '{5}')", userId, DateTime.Now, cardNum, cardMonth, cardYear, ownerId, cardCode);
+            string sql = String.Format("INSERT INTO orders (userId,orderDate, cardNum, cardMonth, cardYear, ownerId, cardCode) VALUES('{0}', #{1}#, '{2}', '{3}', '{4}', '{5}')", userId,orderDate, cardNum, cardMonth, cardYear, ownerId, cardCode);
             DataSet ds = d.excuteQuery(sql);
             return true;
         }

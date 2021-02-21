@@ -78,19 +78,19 @@
                     <h3 class="text-center h3S" style="padding-top: 2%;">התחברות</h3>
                     <div class="d-flex justify-content-center">
                         <div class="brand_logo_container">
-                            <img src="Photos/logo.png" class="brand_logo" alt="Logo">
+                            <asp:Image ID="logo" runat="server" src="Photos/logo.png" class="brand_logo" alt="Logo" />
                         </div>
                     </div>
                     <div class=" form_container">
                         <form class="form ">
                             <div class="form-group">
-                                <label for="us_name" class="tColor" style="float: right;">שם משתמש:</label><br>
+                                <asp:Label ID="Label2" runat="server" class="tColor" style="float: right;" Text="שם משתמש:"></asp:Label><br>
                                 <asp:TextBox ID="us_name" type="text" name="us_name" class="form-control" runat="server" MaxLength="20"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="us_name"></asp:RequiredFieldValidator>
                                 </div>
                             <br />
                             <div class="form-group">
-                                <label for="id" class="tColor" style="float: right;">תעודת זהות:</label><br>
+                                <asp:Label ID="Label3" runat="server" class="tColor" style="float: right;" Text="תעודת זהות:"></asp:Label><br>
                                 <asp:TextBox ID="id" type="text" name="id" class="form-control" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
                                 <br />

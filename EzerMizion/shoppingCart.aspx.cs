@@ -12,7 +12,7 @@ namespace EzerMizion
     public partial class shoppingCart : System.Web.UI.Page
     {
         productsLogic pl = new productsLogic();
-        
+        cartLogic cl = new cartLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,7 +23,7 @@ namespace EzerMizion
                     //if (pCode != null)
                     {
                         //Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
-                        Repeater1.DataSource = pl.getCart(Session["uId"].ToString());
+                        Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
                         Repeater1.DataBind();
                     }
                 }
@@ -33,8 +33,8 @@ namespace EzerMizion
         protected void delete_Click(object sender, EventArgs e)
         {
             string proCode = ((sender as Button).CommandName).ToString();
-            pl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
-            Repeater1.DataSource = pl.getCart(Session["uId"].ToString());
+            cl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
+            Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
         }
 
@@ -45,13 +45,13 @@ namespace EzerMizion
             string proCode = (item.FindControl("proCode") as Label).Text;
             if (Int32.Parse(quan)>1)
             {
-                pl.updateAmount(-1,Int32.Parse(proCode), Session["uId"].ToString());
+                cl.updateAmount(-1,Int32.Parse(proCode), Session["uId"].ToString());
             }
             else 
             {//when the amount is 1, and the user click on minus the amount become 0
-                pl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
+                cl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
             }
-            Repeater1.DataSource = pl.getCart(Session["uId"].ToString());
+            Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
         }
 
@@ -62,20 +62,21 @@ namespace EzerMizion
             string proCode = (item.FindControl("proCode") as Label).Text;
             if (Int32.Parse(quan)<30)
             {
-                pl.updateAmount(1, Int32.Parse(proCode), Session["uId"].ToString());
+                cl.updateAmount(1, Int32.Parse(proCode), Session["uId"].ToString());
             }
             //else
             {
                 //הוראה:לא ניתן להזמין יותר מ10 מוצרים
             }
             
-            Repeater1.DataSource = pl.getCart(Session["uId"].ToString());
+            Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
         }
 
         protected void checkout_Click(object sender, EventArgs e)
         {
             Response.Redirect("payment.aspx");
+            //Response.Redirect("payment.aspx?uId=" + Session["uId"].ToString());
         }
     }
 }

@@ -11,6 +11,7 @@ namespace EzerMizion
     public partial class rentEq : System.Web.UI.Page
     {
         productsLogic pl = new productsLogic();
+        cartLogic cl = new cartLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -29,7 +30,7 @@ namespace EzerMizion
         protected void addTcart_Click(object sender, EventArgs e)
         {
             string proCode = ((sender as Button).CommandName).ToString();
-            pl.intoCart( Int32.Parse(proCode), Session["uId"].ToString());
+            cl.intoCart( Int32.Parse(proCode), Session["uId"].ToString());
             //Response.Redirect("shoppingCart.aspx?pCode=" + proCode);
 
         }

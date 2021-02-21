@@ -143,7 +143,7 @@
                                     <asp:Label ID="Label4" class="control-label " runat="server" Text="CVV"></asp:Label>
                                 </div>
                                 <div class="col-md-4">
-                                    <asp:TextBox ID="cardCvc" class="form-control" runat="server" Text=""></asp:TextBox>
+                                    <asp:TextBox ID="cardCvv" class="form-control" runat="server" Text=""></asp:TextBox>
                                 </div>
                             </div>
                             <!-- Submit -->

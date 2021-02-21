@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EzerMizion.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,12 +8,12 @@ using System.Web.UI.WebControls;
 
 namespace EzerMizion
 {
-    //cartLogic cl = new cartLogic();
+    
     public partial class payment : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack && (Session["uType"].Equals("ordinary")))
             {
                 for (int a = 1; a <= 12; a++)
                 {
@@ -23,6 +24,11 @@ namespace EzerMizion
                     Year.Items.Add(new ListItem(a.ToString(), a.ToString()));
                 }
 
+            }
+            else
+            {
+                if (!(Session["uType"].Equals("ordinary")))
+                    Response.Redirect("HomeP.aspx");
             }
         }
         protected void Year_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,8 +42,10 @@ namespace EzerMizion
         }
 
         protected void submit_Click(object sender, EventArgs e)
-        {
+        {/* 
+            cartLogic cl = new cartLogic();
+            cl.toOrder(Session["uId"].ToString(), cardNum.Text, Month.Text, Year.Text, "039876543", cardCvv.Text, DateTime.Now);
 
-        }
+        }*/
     }
 }
