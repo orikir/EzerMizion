@@ -15,6 +15,33 @@ namespace EzerMizion
     {
 
         /// <summary>
+        /// bdika control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bdika;
+
+        /// <summary>
+        /// lego control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button lego;
+
+        /// <summary>
+        /// wish control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button wish;
+
+        /// <summary>
         /// id control.
         /// </summary>
         /// <remarks>

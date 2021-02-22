@@ -12,7 +12,7 @@
             text-align: center;
             color: #000;
             padding-top: 15%;
-            padding-bottom: 15%;
+            padding-bottom: 0%;
             direction: rtl;
             border-top-left-radius: 10% 50%;
             border-bottom-left-radius: 10% 50%;
@@ -74,6 +74,18 @@
             cursor: pointer;
         }
 
+        .btnDon {
+            text-align: center;
+            margin: 5% 1% 5% 1%;
+            border: none;
+            padding: 1%;
+            background-color:red;
+            color: white;
+            font-weight: 600;
+            width: 30%;
+            cursor: pointer;
+        }
+
         .register-heading {
             text-align: center;
             margin-top: -1%;
@@ -100,13 +112,20 @@
         <div class="row">
             <div class="col-md-9 register-right">
                 <div class="tab-content" id="myTabContent">
+                            <h3 class="register-heading ">תרומה</h3>
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading ">תרומה</h3>
                         <div class="row register-form">
+
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
+
                                 <center>
                                 <td>
+                                    <div class="row">
+                                        <asp:Button ID="bdika" CssClass="btnDon" runat="server" Text="180 - בדיקת מח עצם" />
+                                        <asp:Button ID="lego" CssClass="btnDon" runat="server" Text="ערכת לגו - 250 " />
+                                        <asp:Button ID="wish" CssClass="btnDon" runat="server" Text="הגשמת משאלה - 540 " />
+                                    </div>
                                  <div class="form-group">
                                     <asp:TextBox ID="id" runat="server" class="form-control" placeholder="תעודת זהות *" value=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="id"></asp:RequiredFieldValidator>
@@ -142,10 +161,7 @@
                 <div class="re-box">
                     <h3>תרמו לעזר מיציון</h3>
                     <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
-                    <br>
-                    <div id="register-link1" class="text-center">
-                        <a href="LoginForm.aspx" class="tColor">אם תרמת בעבר לחץ כאן</a>
-                    </div>
+                    
                     <br />
                 </div>
 

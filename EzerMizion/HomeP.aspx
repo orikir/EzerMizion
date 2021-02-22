@@ -1,15 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HomeP.aspx.cs" Inherits="EzerMizion.HomeP" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+    <style>
+        .firstRow {
+            margin: 2% 0% 2% 0%;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
       <div class="container">
-     <div class="jumbotron p-3 p-md-5 text-black center  ">
+     <div class="jumbotron firstRow center  ">
         <div class="row">
-            <div class="col-md-6 px-0 "><img  style="width:400px; height: 450px; " src="Photos/logo.png" /> </div>
+            <div class="col-md-6 px-0 "><asp:Image ID="Image1" runat="server" style="width:400px; height: 450px; " src="Photos/logo.png" /> </div>
             <div class="col-md-6 px-0">
-                <img src="Photos/logo2.png" />
+                <asp:Image ID="Image2" runat="server" src="Photos/logo2.png" />
                 <br>
               <p class="lead my-3 " style="direction: rtl; text-align: justify;"> המוטו של "עזר מציון" הינו הבחירה בחיים: הרצון האמיתי והמאמץ האדיר לתת לכל אדם באשר הוא, ויהיה מצבו קשה ככל שיהיה, את ההזדמנות לבחור בחיים.
 "עזר מציון" מלווה את הנעזרים בכל שלבי ההתמודדות – עוטפת את החולים ומשפחותיהם בחום, באהבה ובמערך רחב של שירותים ייחודיים וחדשניים הניתנים בצורה מקצועית.
@@ -20,8 +24,8 @@
 
       <div class="row mb-2">
        <div class="col-md-6">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250" >
-            <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="Photos/bdika.jpg" " data-holder-rendered="true" style="width: 200px; height: 250px;">
+          <div class="card flex-md-row mb-4" >
+            <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="Photos/bdika.jpg" " data-holder-rendered="true" style="width: 200px; height: 250px;"/>
               <div class="card-body d-flex flex-column align-items-start" style="direction:rtl;">
               <h3 class="mb-0">
                 <a class="text-dark" style="direction:rtl;" href="#">הצטרפו עכשיו למאגר </a>
@@ -44,6 +48,11 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4"></div>
+          <div class="col-4"></div>
       </div>
     </div>
 </asp:Content>

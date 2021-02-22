@@ -32,6 +32,8 @@
 
         .login-box {
             position: center;
+            margin: 8% 0 10% 0;
+            padding-bottom:2%;
             border-radius: 1rem;
             background-color: #f8f9fa;
         }
@@ -42,8 +44,8 @@
 
         .brand_logo_container {
             position: absolute;
-            height: 27%;
-            width: 37.5%;
+            height: 28%;
+            width: 38%;
             top: -7%;
             border-radius: 60%;
             background: #f8f9fa;
@@ -60,7 +62,7 @@
         }
 
         .form_container {
-            margin-top: 100px;
+            margin-top: 20%;
         }
         .vStyle{
             direction: rtl;
@@ -70,7 +72,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="login">
-
         <div class="container">
             <div class="row justify-content-center align-items-center login-row">
                 <div class="col-4 "></div>

@@ -23,7 +23,7 @@ namespace EzerMizion
             if (Session["uType"].Equals("ordinary"))
             {
                 Label2.Text = "השכרת מוצרים";
-                Label5.Text = "היסטורית תרומות";
+                Label5.Text = "תרומות";
                 Label6.Text = "עגלת קניות";
             }
         }
