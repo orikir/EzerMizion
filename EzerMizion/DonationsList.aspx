@@ -38,6 +38,7 @@
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 <asp:Calendar ID="fromD" TargetControlID="TextBox1" Format="dd/MM/yyyy" runat="server"></asp:Calendar>
                 <asp:Calendar ID="toD" TargetControlID="TextBox2" Format="dd/MM/yyyy" runat="server"></asp:Calendar>
+                
              </div>
             <asp:GridView ID="GridView2" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
                 <Columns>

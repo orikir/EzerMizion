@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <td>
-        <center>
+    <center>
     <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Width="1200px" OnLoad="Chart1_Load"  BackColor="Menu" Height="700px">
         <Series>
             <asp:Series Name="Series1" YValueMembers="donSum" Color="#73d3f2"   XValueMember="donDate"  LegendText="ש&quot;ח" XValueType="Date"></asp:Series>

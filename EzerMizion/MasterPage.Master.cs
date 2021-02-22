@@ -15,6 +15,10 @@ namespace EzerMizion
             {
                 Label3.Text = "רשימת תרומות";
                 Label4.Text = "רשימת מוצרים";
+                Label2.Visible = false;
+                Label5.Visible = false;
+                Label6.Visible = false;
+
             }
             if (Session["uType"].Equals("ordinary"))
             {

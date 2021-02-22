@@ -29,12 +29,12 @@ namespace EzerMizion
                     {
                         Year.Items.Add(new ListItem(a.ToString(), a.ToString()));
                     }
-                    TextBox1.Text = fromD.SelectedDate.ToString();
-                    TextBox2.Text = toD.SelectedDate.ToString();
+                    
                 }
-                
-
+                TextBox1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                TextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             }
+        
             else
                 Response.Redirect("HomeP.aspx");
         }

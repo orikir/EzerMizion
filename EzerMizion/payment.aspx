@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="payment.aspx.cs" Inherits="EzerMizion.payment" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" UnobtrusiveValidationMode="None" CodeBehind="payment.aspx.cs" Inherits="EzerMizion.payment" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -102,6 +102,10 @@
         .part {
             margin: 0% 0.5% 0% 0.5%;
         }
+        .vStyle{
+            direction: rtl;
+            float: right;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -117,10 +121,16 @@
                                 <div class=" col-md-6">
                                     <asp:Label ID="Label1" class="control-label vStyle" runat="server" Text="תעודת זהות"></asp:Label>
                                     <asp:TextBox ID="ownerId" class="form-control" placeholder="תעודת זהות*" runat="server" Text=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="ownerId"></asp:RequiredFieldValidator>
+                                    <br />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="vStyle" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="ownerId"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class=" col-md-6">
                                     <asp:Label ID="Label2" class="control-label vStyle" runat="server" Text="מספר כרטיס"></asp:Label>
                                     <asp:TextBox ID="cardNum" class="form-control " runat="server" Text=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
+                                    <br />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני" ValidationExpression="\d{14}" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
                                 </div>
                             </div>
                             <div class="row form-group">
