@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddDonor.aspx" />
+    <Content Include="addDonSumaspx.aspx" />
     <Content Include="addPro.aspx" />
     <Content Include="App_Data\DatabaseEM.accdb" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="AddDonor.aspx.designer.cs">
       <DependentUpon>AddDonor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addDonSumaspx.aspx.cs">
+      <DependentUpon>addDonSumaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addDonSumaspx.aspx.designer.cs">
+      <DependentUpon>addDonSumaspx.aspx</DependentUpon>
     </Compile>
     <Compile Include="addPro.aspx.cs">
       <DependentUpon>addPro.aspx</DependentUpon>
