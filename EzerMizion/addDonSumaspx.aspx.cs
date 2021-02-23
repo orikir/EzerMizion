@@ -57,7 +57,22 @@ namespace EzerMizion
 
         protected void continue_Click(object sender, EventArgs e)
         {
-            Response.Redirect("addDonPInfo.aspx?dSum"+ dSum.Text);
+            Response.Redirect("addDonPInfo.aspx");
+        }
+
+        protected void paymentBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void priInfoBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void donSumBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

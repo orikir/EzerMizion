@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="addDonSumaspx.aspx.cs" Inherits="EzerMizion.addDonSumaspx" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" UnobtrusiveValidationMode="None" CodeBehind="addDonSumaspx.aspx.cs" Inherits="EzerMizion.addDonSumaspx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -126,17 +126,16 @@
             border-color: black;
             background-color:white;
             color:black;
-            width: 26%;
+            width: 28%;
             height:100%;
             font-weight:600;
             font-size:150%;
             
-            margin: 1% 0% 1% 0%;
+            margin-right:2%;
         }
         
         .btnPM {
             text-align: center;
-            margin: 1% 0% 1% 0%;
             border: 2%;
             border-color: black;
             padding: 1%;
@@ -146,9 +145,10 @@
             width: 8%;
             height:100%;
             font-size:150%;
+            margin-right:2%;
         }
         .rowF{
-            margin:5% 3% 5% 3%;
+            margin:5% 3% 0% 3%;
         }
     </style>
 </asp:Content>
@@ -166,19 +166,19 @@
                                 <center>
                                 <td>
                                     <div class="row rowF">
-                                        <asp:Button ID="donSumBtn" CssClass="btnMenu"  runat="server" Text="3. אישור תשלום " />
-                                        <asp:Button ID="priInfoBtn" CssClass="btnMenu"  runat="server" Text="2. פרטים אישיים"/>
-                                        <asp:Button ID="paymentBtn" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1.סכום תרומה "/>
+                                        <asp:Button ID="donSumBtn" OnClick="donSumBtn_Click" CssClass="btnMenu"  runat="server" Text="3. אישור תשלום " />
+                                        <asp:Button ID="priInfoBtn" OnClick="priInfoBtn_Click" CssClass="btnMenu"  runat="server" Text="2. פרטים אישיים"/>
+                                        <asp:Button ID="paymentBtn" OnClick="paymentBtn_Click" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה "/>
                                     </div>
-                                        <div class="rowF row">
-                                        <div class="col-2"></div>
-                                            <div class="col-8">
+                                     <div class=" row">
+                                            <div class="col-12">
                                                 <asp:Button ID="minus" class="btnPM" runat="server" Text="-" OnClick="minus_Click" />
-                                                <asp:TextBox ID="dSum" MaxLength="20" runat="server" class=" dSum" Text="0"></asp:TextBox>
+                                                <asp:TextBox ID="dSum" MaxLength="20" runat="server" class=" dSum"  Text="0"></asp:TextBox>
                                                 <asp:Button ID="plus" class="btnPM" runat="server" Text="+" OnClick="plus_Click" />
                                             </div>
-                                        <div class="col-2"></div>
                                     </div>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="dSum" ValidationExpression="\d+(?:,\d{1,2})?" ErrorMessage="הזנת ערך לא חוקי"></asp:RegularExpressionValidator>
+                                                
                                     <div class="row rowF">
                                         <asp:Button ID="bdika" CssClass="btnDon" runat="server" Text="180 - בדיקת מח עצם" OnClick="bdika_Click" />
                                         <asp:Button ID="lego" CssClass="btnDon" runat="server" Text="ערכת לגו - 250 " OnClick="lego_Click" />

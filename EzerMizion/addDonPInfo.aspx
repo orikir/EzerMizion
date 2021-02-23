@@ -61,7 +61,7 @@
         .btnRegister {
             position: center;
             text-align: center;
-            margin-top: 5%;
+            margin-top: 1%;
             border: none;
             padding: 2%;
             background: white;
@@ -112,8 +112,9 @@
         }
 
         .vStyle {
-            direction: rtl;
-            float: right;
+            text-align:center;
+            position:center;
+            margin:1% 0 1% 0;
         }
 
         .form-control {
@@ -150,7 +151,7 @@
         }
 
         .rowF {
-            margin: 5% 3% 5% 3%;
+            margin: 5% 0% 2% 0%;
         }
          .line {
              width:100%;
@@ -173,24 +174,24 @@
                                 <td>
                                     <div class="row rowF">
                                         <asp:Button ID="donSumBtn" CssClass="btnMenu"  runat="server" Text="3. אישור תשלום " />
-                                        <asp:Button ID="priInfoBtn" CssClass="btnMenu"  runat="server" Text="2. פרטים אישיים"/>
+                                        <asp:Button ID="priInfoBtn" CssClass="btnMenu"  BorderColor="Red" runat="server" Text="2. פרטים אישיים"/>
                                         <asp:Button ID="paymentBtn" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1.סכום תרומה "/>
                                     </div>
                                         <div class="rowF row">
                                         <div class="col-2"></div>
                                             <div class="col-8">
                                                 <div class="row">
-                                                <div class="col-6">
-                                                    <asp:TextBox ID="id" runat="server" class="form-control" placeholder="תעודת זהות *" value=""></asp:TextBox>
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="id"></asp:RequiredFieldValidator>
-                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
-                                                </div>
-                                                <div class="col-6">
+                                                <div class="col-12">
                                                     <asp:ListBox ID="orgName" CssClass="form-control line" runat="server" DataMember="DefaultView"  DataSourceID="SqlDataSource1" DataTextField="orgName"  onchange="ListBox1_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="orgName" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" Rows="1"></asp:ListBox>
                                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [orgName] FROM [organizations]"></asp:SqlDataSource>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש לבחור שם ארגון" ControlToValidate="orgName"></asp:RequiredFieldValidator>
-                                                </div>
-                                                    </div>
+                                                
+                                                    <asp:TextBox ID="id" runat="server" class="form-control" placeholder="תעודת זהות *" value=""></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="id"></asp:RequiredFieldValidator>
+                                                    <br />
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
+                                                 </div>
+                                                 </div>
                                             </div>
                                         <div class="col-2"></div>
                                     </div>

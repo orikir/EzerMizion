@@ -13,12 +13,6 @@ namespace EzerMizion
         {
             if(!IsPostBack)
             {
-                string dSum = Request.Params["dSum"];
-                if (dSum!=null)
-                {
-                    double donSum = Double.Parse(dSum);
-                    //להכניס נתונים
-                }
             }
         }
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
