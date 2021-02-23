@@ -57,7 +57,7 @@ namespace EzerMizion
 
         protected void continue_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("addDonPInfo.aspx?dSum"+ dSum.Text);
         }
     }
 }

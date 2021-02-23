@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddDonor.aspx" />
+    <Content Include="addDonPInfo.aspx" />
     <Content Include="addDonSumaspx.aspx" />
     <Content Include="addPro.aspx" />
     <Content Include="App_Data\DatabaseEM.accdb" />
@@ -225,6 +226,13 @@
     </Compile>
     <Compile Include="AddDonor.aspx.designer.cs">
       <DependentUpon>AddDonor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addDonPInfo.aspx.cs">
+      <DependentUpon>addDonPInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addDonPInfo.aspx.designer.cs">
+      <DependentUpon>addDonPInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="addDonSumaspx.aspx.cs">
       <DependentUpon>addDonSumaspx.aspx</DependentUpon>

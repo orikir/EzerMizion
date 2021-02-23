@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="addDonSumaspx.aspx.cs" Inherits="EzerMizion.addDonSumaspx" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" UnobtrusiveValidationMode="None" AutoEventWireup="true" CodeBehind="addDonPInfo.aspx.cs" Inherits="EzerMizion.addDonPInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -76,27 +76,28 @@
             margin: 5% 1% 5% 1%;
             border: none;
             padding: 1%;
-            background-color:red;
+            background-color: red;
             color: white;
             font-weight: 600;
             width: 30%;
             cursor: pointer;
         }
+
         .btnMenu {
             text-align: center;
             margin: 5% 1% 8% 1%;
-            border-top:none;
+            border-top: none;
             border-right: none;
-            border-left:none;
-            background-color: #f8f9fa ;
+            border-left: none;
+            background-color: #f8f9fa;
             color: black;
             font-weight: 600;
             width: 30%;
-            height:50%;
-            direction:rtl;
-            border-bottom-color:gray;
-            border-bottom:  3% ;
-            font-size:80%
+            height: 50%;
+            direction: rtl;
+            border-bottom-color: gray;
+            border-bottom: 3%;
+            font-size: 80%
         }
 
         .register-heading {
@@ -118,38 +119,43 @@
         .form-control {
             direction: rtl;
         }
+
         .dSum {
             text-align: center;
-            position:center;
+            position: center;
             padding: 0%;
             border: 2%;
             border-color: black;
-            background-color:white;
-            color:black;
+            background-color: white;
+            color: black;
             width: 26%;
-            height:100%;
-            font-weight:600;
-            font-size:150%;
-            
+            height: 100%;
+            font-weight: 600;
+            font-size: 150%;
             margin: 1% 0% 1% 0%;
         }
-        
+
         .btnPM {
             text-align: center;
             margin: 1% 0% 1% 0%;
             border: 2%;
             border-color: black;
             padding: 1%;
-            background-color:white;
-            color:black;
+            background-color: white;
+            color: black;
             font-weight: 600;
             width: 8%;
-            height:100%;
-            font-size:150%;
+            height: 100%;
+            font-size: 150%;
         }
-        .rowF{
-            margin:5% 3% 5% 3%;
+
+        .rowF {
+            margin: 5% 3% 5% 3%;
         }
+         .line {
+             width:100%;
+             height:100%;
+         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -173,18 +179,21 @@
                                         <div class="rowF row">
                                         <div class="col-2"></div>
                                             <div class="col-8">
-                                                <asp:Button ID="minus" class="btnPM" runat="server" Text="-" OnClick="minus_Click" />
-                                                <asp:TextBox ID="dSum" MaxLength="20" runat="server" class=" dSum" Text="0"></asp:TextBox>
-                                                <asp:Button ID="plus" class="btnPM" runat="server" Text="+" OnClick="plus_Click" />
+                                                <div class="row">
+                                                <div class="col-6">
+                                                    <asp:TextBox ID="id" runat="server" class="form-control" placeholder="תעודת זהות *" value=""></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="id"></asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
+                                                </div>
+                                                <div class="col-6">
+                                                    <asp:ListBox ID="orgName" CssClass="form-control line" runat="server" DataMember="DefaultView"  DataSourceID="SqlDataSource1" DataTextField="orgName"  onchange="ListBox1_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="orgName" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" Rows="1"></asp:ListBox>
+                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [orgName] FROM [organizations]"></asp:SqlDataSource>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש לבחור שם ארגון" ControlToValidate="orgName"></asp:RequiredFieldValidator>
+                                                </div>
+                                                    </div>
                                             </div>
                                         <div class="col-2"></div>
                                     </div>
-                                    <div class="row rowF">
-                                        <asp:Button ID="bdika" CssClass="btnDon" runat="server" Text="180 - בדיקת מח עצם" OnClick="bdika_Click" />
-                                        <asp:Button ID="lego" CssClass="btnDon" runat="server" Text="ערכת לגו - 250 " OnClick="lego_Click" />
-                                        <asp:Button ID="wish" CssClass="btnDon" runat="server" Text="הגשמת משאלה - 540 " OnClick="wish_Click" />
-                                    </div>
-                                
                                 <div class="form-group">
                                     <asp:Button ID="continue" runat="server" Text="המשך" OnClick="continue_Click"  type="submit" class="btnRegister" value="register" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
