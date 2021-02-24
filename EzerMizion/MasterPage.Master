@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="donHistory.aspx">
+                        <a class="nav-link" href="addDonSum.aspx">
                             <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
                         </a>
                     </li>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" UnobtrusiveValidationMode="None" CodeBehind="addDonSumaspx.aspx.cs" Inherits="EzerMizion.addDonSumaspx" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" UnobtrusiveValidationMode="None" CodeBehind="addDonSum.aspx.cs" Inherits="EzerMizion.addDonSum" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -91,7 +91,7 @@
             background-color: #f8f9fa ;
             color: black;
             font-weight: 600;
-            width: 30%;
+            width: 48%;
             height:50%;
             direction:rtl;
             border-bottom-color:gray;
@@ -166,7 +166,6 @@
                                 <center>
                                 <td>
                                     <div class="row rowF">
-                                        <asp:Button ID="donSumBtn" OnClick="donSumBtn_Click" CssClass="btnMenu"  runat="server" Text="3. אישור תשלום " />
                                         <asp:Button ID="priInfoBtn" OnClick="priInfoBtn_Click" CssClass="btnMenu"  runat="server" Text="2. פרטים אישיים"/>
                                         <asp:Button ID="paymentBtn" OnClick="paymentBtn_Click" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה "/>
                                     </div>
@@ -186,7 +185,7 @@
                                     </div>
                                 
                                 <div class="form-group">
-                                    <asp:Button ID="continue" runat="server" Text="המשך" OnClick="continue_Click"  type="submit" class="btnRegister" value="register" />
+                                    <asp:Button ID="continue" runat="server" Text="המשך" CommandName="" OnClick="continue_Click"  type="submit" class="btnRegister" value="register" />
                                     <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>
                                 </td>
@@ -201,8 +200,8 @@
                 <div class="re-box">
                     <h3>תרמו לעזר מציון</h3>
                     <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
-
                     <br />
+                    <a href="donHistory.aspx" >רשימת התרומות שלך</a>
                 </div>
 
             </div>
