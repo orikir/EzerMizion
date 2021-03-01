@@ -26,19 +26,12 @@
     <td>
         <center>
             <div class="byDate">
-                <asp:DropDownList ID="Month" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Red" >
-                <asp:ListItem>בחר חודש </asp:ListItem>
-                </asp:DropDownList>
-                <asp:DropDownList ID="Year" runat="server" OnSelectedIndexChanged="Year_SelectedIndexChanged" ForeColor="Red">
-                    <asp:ListItem> בחר שנה</asp:ListItem>
-                </asp:DropDownList>
-                <asp:Button ID="submit" runat="server" Text="חיפוש" OnClick="search" ForeColor="Red" />
-                <asp:ScriptManager runat="server" />
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                <asp:Calendar ID="fromD" TargetControlID="TextBox1" Format="dd/MM/yyyy" runat="server"></asp:Calendar>
-                <asp:Calendar ID="toD" TargetControlID="TextBox2" Format="dd/MM/yyyy" runat="server"></asp:Calendar>
                 
+                <asp:Button ID="Button1" runat="server" Text="חיפוש" OnClick="byDate" ForeColor="Red" />
+                <asp:TextBox ID="TextBox2" runat="server"  TextMode="Date"></asp:TextBox>
+                <asp:Label ID="Label3" class=" vStyle" runat="server" Text="תאריך התחלה"></asp:Label>
+                <asp:TextBox ID="TextBox1" runat="server"  TextMode="Date"></asp:TextBox>
+                <asp:Label ID="Label1" class=" vStyle" runat="server" Text="תאריך סיום"></asp:Label>
              </div>
             <asp:GridView ID="GridView2" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
                 <Columns>

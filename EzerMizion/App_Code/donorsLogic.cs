@@ -25,7 +25,12 @@ namespace EzerMizion.App_Code
             string sql = String.Format(" SELECT users.firstName, users.lastName, donors.donCode, donors.id, donors.donSum, donors.donDate, organizations.orgName FROM organizations INNER JOIN(users INNER JOIN donors ON users.id = donors.id) ON organizations.orgCode = donors.orgCode WHERE(((Month([donors]![donDate])) ='{0}') AND((Year([donors]![donDate])) ='{1}'))", dMonth, dYear);
             return d.excuteQuery(sql);
         }
-        
+        public DataSet getByDate(DateTime s, DateTime f)
+        {
+            string sql = String.Format(" SELECT users.firstName, users.lastName, donors.donCode, donors.id, donors.donSum, donors.donDate, organizations.orgName FROM organizations INNER JOIN(users INNER JOIN donors ON users.id = donors.id) ON organizations.orgCode = donors.orgCode WHERE(((([donors]![donDate]))>#{0}#) AND((([donors]![donDate]))<#{1}#))", s, f);
+            return d.excuteQuery(sql);
+        }
+
         public bool newDonor(string id, string orgName, double dSum, DateTime donDate)
         {//creating new donor and adding it to the donor's table
             if (checkId(id))

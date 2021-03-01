@@ -23,7 +23,7 @@
                 border: none;
                 border-radius: 1.5rem;
                 padding: 2%;
-                width: 60%;
+                width: 50%;
                 background: #f8f9fa;
                 font-weight: bold;
                 color: #383d4;
@@ -164,15 +164,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container register">
         <div class="row">
-            <div class="col-md-9 register-right">
+            <div class="col-9 register-right">
                 <div class="tab-content" id="myTabContent">
                     <h3 class="register-heading ">תרומה</h3>
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row register-form">
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
-                                    <div class="row rowF">
-                                        
+                                    <div class="row">
                                         <asp:Button ID="priInfoBtn" CssClass="btnMenu"  BorderColor="Red" runat="server" Text="2. פרטים אישיים"/>
                                         <asp:Button ID="paymentBtn" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה "/>
                                     </div>
@@ -233,15 +232,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 register-left">
-            <div class="re-box">
-                <h3>תרמו לעזר מציון</h3>
-                <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
-                <br />
-                <a href="donHistory.aspx" >רשימת התרומות שלך</a>
+            <div class="col-3 register-left">
+                <div class="re-box">
+                    <h3>תרמו לעזר מציון</h3>
+                    <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
+                    <br />
+                    <a href="donHistory.aspx" >רשימת התרומות שלך</a>
+                </div>
             </div>
-        </div>
-    </div>
-
+    `</div>
     </div>
 </asp:Content>

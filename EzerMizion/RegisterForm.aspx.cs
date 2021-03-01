@@ -18,8 +18,8 @@ namespace EzerMizion
         protected void submit_Click(object sender, EventArgs e)
         {
             usersLogic ul = new usersLogic();
-            if (!(identify.Text.Equals(id.Text)))
-                alarm_lable.Text = "תעודת זהות שגויה";
+            if (DateTime.Parse(birthDay.Text) < DateTime.Now)
+                alarm_lable.Text = "תאריך לא חוקי";
             else
             {
                 if (!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))

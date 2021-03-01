@@ -19,20 +19,7 @@ namespace EzerMizion
                 GridView1.DataBind();
                 Chart1.ChartAreas[0].AxisY.Minimum = 0;
                 Chart1.ChartAreas[0].AxisY.Maximum = 7000;
-                if (!IsPostBack)
-                {
-                    for (int a = 1; a <= 12; a++)
-                    {
-                        Month.Items.Insert(a, a.ToString());
-                    }
-                    for (int a =2000; a<= DateTime.Now.Year; a++)
-                    {
-                        Year.Items.Add(new ListItem(a.ToString(), a.ToString()));
-                    }
-                    
-                }
-                TextBox1.Text = DateTime.Now.ToString("dd/MM/yyyy");
-                TextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                
             }
         
             else
@@ -63,34 +50,15 @@ namespace EzerMizion
             Response.Redirect("donChart.aspx");
         }
 
-        protected void search(object sender, EventArgs e)
+        
+        protected void byDate(object sender, EventArgs e)
         {
-            if(!Month.Text.Equals("בחר חודש ")&& !Year.Text.Equals(" בחר שנה"))
+            if (TextBox1.Text!=null && TextBox2!=null)
             {
-                GridView2.DataSource = dl.getByMonthAndYear((Month.Text), Year.Text);
-                GridView2.DataBind();
-            }
-            else
-            {
-                GridView2.DataSource = dl.getByMonthAndYear("0", "0");
+                GridView2.DataSource = dl.getByDate((DateTime.Parse(TextBox1.Text)), (DateTime.Parse(TextBox2.Text)));
                 GridView2.DataBind();
             }
         }
 
-        protected void Year_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Year.Text = Year.SelectedValue;
-        }
-
-        protected void Month_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Month.Text = Month.SelectedValue;
-        }
-
-        /*protected void click_Click(object sender, EventArgs e)
-        {
-            GridView1.DataSource = dl.allDonAccDate(DateTime.Parse(text1.Text));
-            GridView1.DataBind();
-        }*/
     }
 }
