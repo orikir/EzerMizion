@@ -63,12 +63,12 @@
             text-align: center;
             margin: 10% 10% 1% 10%;
             border: none;
-            padding: 1% 0% 1% 0%;
+            padding: 5% 0% 5% 0%;
             background: white;
             color: #000;
             font-weight: 600;
-            width: 80%;
-            height:100%;
+            width: 100%;
+            height: 100%;
             cursor: pointer;
         }
 
@@ -115,7 +115,7 @@
         .vStyle {
             text-align: center;
             position: center;
-            margin:  1% 0% 1% 0%;
+            margin: 1% 0% 1% 0%;
         }
 
         .form-control {
@@ -171,75 +171,95 @@
                         <div class="row register-form">
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
-                                    <div class="row">
-                                        <asp:Button ID="priInfoBtn" CssClass="btnMenu"  BorderColor="Red" runat="server" Text="2. פרטים אישיים"/>
-                                        <asp:Button ID="paymentBtn" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה "/>
+                                <div class="row">
+                                    <asp:Button ID="priInfoBtn" CssClass="btnMenu" BorderColor="Red" runat="server" Text="2. פרטים אישיים" />
+                                    <asp:Button ID="paymentBtn" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה " />
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-3"></div>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="selectOrg" CssClass="form-control"  runat="server" DataMember="DefaultView" DataSourceID="SqlDataSource1" DataTextField="orgName" OnSelectedIndexChanged="selectOrg_SelectedIndexChanged" onchange="selectOrg_SelectedIndexChanged" Rows="1" DataValueField="orgName" ViewStateMode="Inherit" AutoPostBack="true">
+                                            <asp:ListItem>בחר סניף</asp:ListItem>
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [orgName] FROM [organizations]"></asp:SqlDataSource>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש לבחור שם ארגון" ControlToValidate="selectOrg"></asp:RequiredFieldValidator>
                                     </div>
-                                    <div class=" form-group row">
-                                                <div class="col-md-6">
-                                                    <asp:ListBox ID="orgName" CssClass="form-control line" runat="server" DataMember="DefaultView"  DataSourceID="SqlDataSource1" DataTextField="orgName"  onchange="ListBox1_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="orgName" OnTextChanged="ListBox1_SelectedIndexChanged" ViewStateMode="Inherit" Rows="1"></asp:ListBox>
-                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [orgName] FROM [organizations]"></asp:SqlDataSource>
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש לבחור שם ארגון" ControlToValidate="orgName"></asp:RequiredFieldValidator>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <asp:TextBox ID="id" runat="server" class="form-control " placeholder="תעודת זהות *" value=""></asp:TextBox>
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="id"></asp:RequiredFieldValidator>
-                                                    <br />
-                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
-                                                </div>
+                                    <div class="col-3">
+                                       <asp:Label ID="Label1" class=" vStyle" runat="server" Text=":בחר מוסד "></asp:Label> 
                                     </div>
+                                </div>
+                                <div class=" form-group row">
+                                    <div class="col-md-6">
+                                        <asp:TextBox ID="ownerId" runat="server" class="form-control " placeholder="תעודת זהות של בעל הכרטיס *" value=""></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="ownerId"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:TextBox ID="id" runat="server" class="form-control " placeholder=" תעודת זהות של משתמש *" value=""></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="id"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
+                                    </div>
+                                </div>
                                 <div class="row form-group">
-                                <div class=" col-md-6">
-                                   <!-- CVV -->
-                                    <asp:TextBox ID="cardCvv" class="form-control" runat="server" placeholder="CVV*" Text=""></asp:TextBox>
-                                </div>
-                                <div class=" col-md-6">
-                                    <asp:TextBox ID="cardNum" class="form-control " runat="server" placeholder="מספר כרטיס*" Text=""></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
-                                    <br />
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני" ValidationExpression="\d{14}" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                            <!-- Expiry-->
-                                <div class="col-md-4">
-                                    <asp:DropDownList ID="Month" class="form-control" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Black">
-                                        <asp:ListItem>בחר חודש </asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>
-                                <div class="col-md-4">
-                                    <asp:DropDownList ID="Year" class="form-control" runat="server" OnSelectedIndexChanged="Year_SelectedIndexChanged" ForeColor="Black">
-                                        <asp:ListItem> בחר שנה</asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>
-                                <div class="col-md-2">
-                                    <asp:Label ID="Label3" class=" vStyle" runat="server" Text=":תוקף"></asp:Label>
-                                </div>
-                            </div>
-                                   <div class="row form-group">
-                                       <div class="col-md-4"></div>
-                                       <div class="col-md-4">
-                                           <asp:Button ID="continue" runat="server" Text="המשך" OnClick="continue_Click"  type="submit" class="btnRegister" value="register" />
-                                           
-                                       </div>
-                                       <div class="col-md-4"></div>
+                                    <div class=" col-md-6">
+                                        <!-- CVV -->
+                                        <asp:TextBox ID="cardCvv" class="form-control" runat="server" placeholder="CVV*" Text=""></asp:TextBox>
                                     </div>
-                                 <asp:Label ID="alarm_lable" CssClass="" runat="server" Text=""></asp:Label>
+                                    <div class=" col-md-6">
+                                        <asp:TextBox ID="cardNum" class="form-control " runat="server" placeholder="מספר כרטיס*" Text=""></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני" ValidationExpression="\d{14}" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <!-- Expiry-->
+                                    <div class="col-md-4">
+                                        <asp:DropDownList ID="Month" class="form-control" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Black">
+                                            <asp:ListItem>בחר חודש </asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:DropDownList ID="Year" class="form-control" runat="server" OnSelectedIndexChanged="Year_SelectedIndexChanged" ForeColor="Black">
+                                            <asp:ListItem> בחר שנה</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <asp:Label ID="Label3" class=" vStyle" runat="server" Text=":תוקף"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <asp:Button ID="continue" runat="server" Text="המשך" OnClick="continue_Click" type="submit" class="btnRegister" value="register" />
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label ID="alarm_lable" CssClass="" runat="server" Text=""></asp:Label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+
                             </div>
-                        <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
             <div class="col-3 register-left">
                 <div class="re-box">
                     <h3>תרמו לעזר מציון</h3>
                     <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
                     <br />
-                    <a href="donHistory.aspx" >רשימת התרומות שלך</a>
+                    <a href="donHistory.aspx">רשימת התרומות שלך</a>
                 </div>
             </div>
-    `</div>
+            `
+        </div>
     </div>
 </asp:Content>

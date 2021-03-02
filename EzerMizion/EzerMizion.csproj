@@ -249,6 +249,7 @@
       <DependentUpon>addPro.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\cartLogic.cs" />
+    <Compile Include="App_Code\orgLogic.cs" />
     <Compile Include="payment.aspx.cs">
       <DependentUpon>payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -266,7 +267,7 @@
     <Content Include="App_Code\branchesLogic.cs" />
     <Compile Include="App_Code\DAL.cs" />
     <Compile Include="App_Code\donorsLogic.cs" />
-    <Content Include="App_Code\ordersLogic.cs" />
+    <Compile Include="App_Code\ordersLogic.cs" />
     <Compile Include="App_Code\productsLogic.cs" />
     <Compile Include="App_Code\usersLogic.cs" />
     <Compile Include="DonationsList.aspx.cs">

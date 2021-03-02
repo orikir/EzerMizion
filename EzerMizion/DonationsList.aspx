@@ -33,27 +33,8 @@
                 <asp:TextBox ID="TextBox1" runat="server"  TextMode="Date"></asp:TextBox>
                 <asp:Label ID="Label1" class=" vStyle" runat="server" Text="תאריך סיום"></asp:Label>
              </div>
-            <asp:GridView ID="GridView2" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
-                <Columns>
-                    <asp:BoundField DataField="donSum" HeaderText="סכום תרומה" />
-                    <asp:BoundField DataField="orgName" HeaderText=":תרם מטעם" />
-                    <asp:BoundField DataField="donDate" DataFormatString="{0:d}" HeaderText="תאריך " />
-                    <asp:BoundField DataField="id" HeaderText="תעודת זהות" />
-                    <asp:BoundField DataField="firstName" HeaderText="שם פרטי" />
-                    <asp:BoundField DataField="lastName" HeaderText="שם משפחה" />
-                    <asp:BoundField DataField="donCode" HeaderText="קוד תרומה" />
-                </Columns>
-                <FooterStyle BackColor="Red" />
-                <HeaderStyle BackColor="Red" Font-Bold="True" ForeColor="White" CssClass="text-center" />
-                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                <RowStyle BackColor="White" CssClass="text-center" />
-                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                <SortedAscendingHeaderStyle BackColor="#808080" />
-                <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                <SortedDescendingHeaderStyle BackColor="#383838" />
-            </asp:GridView>
-            <asp:GridView ID="GridView1" runat="server" BackColor="#CCCCCC"  BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
+            
+            <asp:GridView ID="GridView1" runat="server" BackColor="#CCCCCC"  BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1200px" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="donSum" HeaderText="סכום תרומה" />
                     <asp:BoundField DataField="orgName" HeaderText=":תרם מטעם" />
@@ -82,7 +63,6 @@
                 </ChartAreas>
             </asp:Chart>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OnSelecting="SqlDataSource1_Selecting" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [donSum] ,[donDate] FROM [donors] ORDER BY [donDate] "></asp:SqlDataSource>
-            <asp:Button ID="donCh" runat="server" CssClass="btnDonCh" Text="גרף פיזור תרומות" OnClick="donCh_Click" />
     </center>
     </td>
 

@@ -239,21 +239,15 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="cart-totals">
-                        <h3>Cart Totals</h3>
+                        <h3 style="text-align:center">סיכום עגלת קניות</h3>
                         <form action="#" method="get" accept-charset="utf-8">
                             <table>
                                 <tbody>
-                                    <tr>
-                                        <td>Subtotal</td>
-                                        <td class="subtotal">$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shipping</td>
-                                        <td class="free-shipping">Free Shipping</td>
-                                    </tr>
                                     <tr class="total-row">
-                                        <td>Total</td>
-                                        <td class="price-total">$</td>
+                                        <td class="price-total">
+                                            ₪<asp:Label ID="cartSum" runat="server" Text=""></asp:Label>
+                                        </td>
+                                        <td style="direction:rtl">סה"כ לתשלום:</td>
                                     </tr>
                                 </tbody>
                             </table>

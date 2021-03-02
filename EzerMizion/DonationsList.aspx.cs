@@ -45,18 +45,14 @@ namespace EzerMizion
 
         }
 
-        protected void donCh_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("donChart.aspx");
-        }
 
         
         protected void byDate(object sender, EventArgs e)
         {
             if (TextBox1.Text!=null && TextBox2!=null)
             {
-                GridView2.DataSource = dl.getByDate((DateTime.Parse(TextBox1.Text)), (DateTime.Parse(TextBox2.Text)));
-                GridView2.DataBind();
+                GridView1.DataSource = dl.getByDate((DateTime.Parse(TextBox1.Text)), (DateTime.Parse(TextBox2.Text)));
+                GridView1.DataBind();
             }
         }
 

@@ -39,16 +39,15 @@ namespace EzerMizion.App_Code
             string sql = String.Format("SELECT cart.amount, cart.proCode , products.proName, products.proPhoto, products.proPrice, cart.amount*products.proPrice AS total FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
             return d.excuteQuery(sql);
         }
+        public string sumCart(string userId)
+        {//return the cart of the current user
+            string sql = String.Format("SELECT Sum(cart.amount*products.proPrice) AS total FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
+            return d.excuteQuery(sql).Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
+        }
         public void updateAmount(int pOm, int proCode, string uId)
-        {
+        {//מעדכנת את כמות מוצר ספציפי בהתאם לערך אותו היא מקבלת
             string sql = string.Format(("UPDATE cart SET cart.amount=cart.amount+{0} WHERE cart.proCode={1} AND cart.userId='{2}'"), pOm, proCode, uId);
             d.excuteQuery(sql);
-        }
-        public bool toOrder(string userId ,string cardNum, string cardMonth, string cardYear, string ownerId, string cardCode, DateTime orderDate)
-        {
-            string sql = String.Format("INSERT INTO orders (userId,orderDate, cardNum, cardMonth, cardYear, ownerId, cardCode) VALUES('{0}', #{1}#, '{2}', '{3}', '{4}', '{5}', '{6}')", userId,orderDate, cardNum, cardMonth, cardYear, ownerId, cardCode);
-            DataSet ds = d.excuteQuery(sql);
-            return true;
         }
     }
 }

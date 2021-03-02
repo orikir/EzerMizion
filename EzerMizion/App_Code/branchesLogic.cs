@@ -7,5 +7,6 @@ namespace EzerMizion.App_Code
 {
     public class branchesLogic
     {
+        DAL d = new DAL();
     }
 }

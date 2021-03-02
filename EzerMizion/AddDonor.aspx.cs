@@ -23,7 +23,7 @@ namespace EzerMizion
                 if (dl.newDonor(id.Text, orgName.Text, double.Parse(dSum.Text), DateTime.Today))
                     alarm_lable.Text = "התרומה התקבלה בהצלחה";
                 else
-                    alarm_lable.Text = "יש להתחבר לפני ביצוע תרומה";
+                    alarm_lable.Text = "יש להירשם לפני ביצוע תרומה";
             }
         }
 

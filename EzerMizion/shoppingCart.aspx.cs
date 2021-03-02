@@ -19,12 +19,10 @@ namespace EzerMizion
             {
                 if ((Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
                 {
-                    //string pCode = Request.QueryString["pCode"];
-                    //if (pCode != null)
                     {
-                        //Repeater1.DataSource = pl.oneProduct(Int32.Parse(pCode));
                         Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
                         Repeater1.DataBind();
+                        cartSum.Text = cl.sumCart(Session["uId"].ToString());
                     }
                 }
             }
@@ -36,6 +34,7 @@ namespace EzerMizion
             cl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
             Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
+            cartSum.Text = cl.sumCart(Session["uId"].ToString());
         }
 
         protected void minus_Click(object sender, EventArgs e)
@@ -51,6 +50,7 @@ namespace EzerMizion
             {//when the amount is 1, and the user click on minus the amount become 0
                 cl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
             }
+            cartSum.Text = cl.sumCart(Session["uId"].ToString());
             Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
         }
@@ -64,13 +64,9 @@ namespace EzerMizion
             {
                 cl.updateAmount(1, Int32.Parse(proCode), Session["uId"].ToString());
             }
-            //else
-            {
-                //הוראה:לא ניתן להזמין יותר מ10 מוצרים
-            }
-            
             Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
+            cartSum.Text = cl.sumCart(Session["uId"].ToString());
         }
 
         protected void checkout_Click(object sender, EventArgs e)

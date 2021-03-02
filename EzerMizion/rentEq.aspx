@@ -172,7 +172,7 @@
                             </div>
                             <div class="product-content">
                                 <asp:Label ID="Label1" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
-                                <asp:Label ID="Label2" class="price" runat="server" Text='<%#Eval("proPrice") %>' ></asp:Label>
+                                <asp:Label ID="Label2" class="price" runat="server" Text='<%#Eval("proPrice") %>' ></asp:Label>₪
                             </div>
                             <asp:Button ID="addTcart" class="add-to-cart" runat="server" CommandName='<%# Eval("proCode")%>' Text="הוסף לעגלה" OnClick="addTcart_Click" />
                         </div>

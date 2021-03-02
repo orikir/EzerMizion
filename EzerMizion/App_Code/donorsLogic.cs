@@ -42,6 +42,19 @@ namespace EzerMizion.App_Code
             else
                 return false;
         }
+        public bool newDonor2(string id, string orgName, double dSum, DateTime donDate, string cardNum, string cardMonth, string cardYear, string ownerId, string cardCode)
+        {//creating new donor and adding it to the donor's table
+            if (checkId(id))
+            {
+                string sql = String.Format("INSERT INTO donors (id, orgCode,donSum, donDate, cardNum, cardMonth, cardYear, ownerId, cardCode) VALUES ('{0}', '{1}', '{2}', #{3}#, '{4}', '{5}', '{6}', '{7}', '{8}') ", id, getOrgCode(orgName), dSum, donDate, cardNum, cardMonth, cardYear, ownerId, cardCode);
+                d.excuteQuery(sql);
+                return true;
+            }
+            else
+                return false;
+            
+        }
+
         public bool checkId(string id)
         {//מקבלת תעודת זהות מחזירה אמת אם קיימת במערכת ושקר אחרת
             string sql = String.Format("SELECT id FROM users WHERE users.id ='{0}'", id);
