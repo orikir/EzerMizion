@@ -23,20 +23,17 @@
             </div>
         </div>
       </div>
-        <div class="row">
-          
-        </div>
+        
       <div class="row firstRow">
        <div class="col-md-6">
           <div class="card flex-md-row mb-4" >
             <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="Photos/bdika.jpg" " data-holder-rendered="true" style="width: 200px; height: 250px;"/>
               <div class="card-body d-flex flex-column align-items-start" style="direction:rtl;">
               <h3 class="mb-0">
-                <a class="text-dark" style="direction:rtl;" href="#">הצטרפו עכשיו למאגר </a>
+                <a class="text-dark" style="direction:rtl;" href="#">אודות המאגר </a>
               </h3>
-              <p class="card-text mb-auto" style="direction:rtl;text-align: justify;">ניתן להצטרף בכל עת למאגר התורמים הפוטנציאליים של "עזר מציון", גם ללא צורך בהגעה למשרדי המאגר.
-                אזרחים המעוניינים להצטרף יכולים להזמין הביתה ערכת הצטרפות.</p>
-              <a href="#">להמשך קריאה</a>
+              <p class="card-text mb-auto" style="direction:rtl;text-align: justify;"> "עזר מציון" הקימה בשנת 1998 את המאגר הלאומי לתורמי מח עצם. המאגר הוקם במטרה לסייע לחולי סרטן ולחולים במחלות קשות אחרות למצוא תורם מח עצם מתאים ובכך להציל את חייהם</p>
+              <a href="info1.aspx">להמשך קריאה</a>
             </div>
           </div>
         </div>
@@ -48,7 +45,7 @@
                 <a class="text-dark" style="direction:rtl;" href="#">מי אנחנו?</a>
               </h3>
               <p class="card-text mb-auto" style="direction:rtl;text-align: justify;">שירותי העמותה ניתנים באמצעות כ – 14 מחלקות ו – 30,000 מתנדבים ב- 58 מוקדי פעילות הפרושים על פני 31 ערים, בכל רחבי המדינה. מעל 720,000 איש מכל הרקעים, המגזרים והגילאים, מסתייעים בשירותי העמותה מדי שנה.</p>
-              <a href="#">להמשך קריאה</a>
+              <a href="info2.aspx">להמשך קריאה</a>
             </div>
           </div>
         </div>

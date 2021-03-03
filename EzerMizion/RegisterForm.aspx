@@ -104,10 +104,12 @@
                                     <div class="form-group">
                                         <asp:TextBox ID="birthDay" runat="server" class="form-control" placeholder="תאריך לידה *" TextMode="Date" value=""></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" placeholder="תאריך לידה *" ErrorMessage="יש להכניס תאריך לידה" CssClass="vStyle" ControlToValidate="birthDay"></asp:RequiredFieldValidator>
+                                        <asp:Label ID="message" runat="server" CssClass="vStyle" Text=""></asp:Label>
                                     </div>
                                     <div class="form-group">
                                         <asp:TextBox ID="phone_num" runat="server" class="form-control" placeholder="מספר פלאפון *" value="" MaxLength="10"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="יש להכניס מספר פלאפון" CssClass="vStyle" ControlToValidate="phone_num"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{10}" ControlToValidate="phone_num"></asp:RegularExpressionValidator>
                                     </div>
                                     <div class="form-group">
                                         <asp:TextBox ID="id" runat="server" class="form-control" placeholder="תעודת זהות *" value=""></asp:TextBox>

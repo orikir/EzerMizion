@@ -12,14 +12,14 @@ namespace EzerMizion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void submit_Click(object sender, EventArgs e)
         {
             usersLogic ul = new usersLogic();
-            if (DateTime.Parse(birthDay.Text) < DateTime.Now)
-                alarm_lable.Text = "תאריך לא חוקי";
+            if (DateTime.Parse(birthDay.Text)>=(DateTime.Now))
+                message.Text = "תאריך לא חוקי";
             else
             {
                 if (!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))
