@@ -62,8 +62,9 @@
             position: center;
             text-align: center;
             margin: 10% 10% 1% 10%;
-            border: none;
-            padding: 5% 0% 5% 0%;
+            border-color:red;
+            border-style:double;
+            padding: 3% 0% 3% 0%;
             background: white;
             color: #000;
             font-weight: 600;
@@ -92,6 +93,7 @@
             border-left: none;
             background-color: #f8f9fa;
             color: black;
+            border-bottom-style:double;
             font-weight: 600;
             width: 48%;
             height: 50%;
@@ -109,7 +111,7 @@
         }
 
         .tColor {
-            color: #73d3f2;
+            color: red;
         }
 
         .vStyle {
@@ -256,7 +258,7 @@
                     <h3>תרמו לעזר מציון</h3>
                     <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
                     <br />
-                    <a href="donHistory.aspx">רשימת התרומות שלך</a>
+                    <a href="donHistory.aspx" class="tColor">רשימת התרומות שלך</a>
                 </div>
             </div>
             `

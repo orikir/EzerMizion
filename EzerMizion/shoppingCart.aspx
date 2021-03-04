@@ -129,12 +129,6 @@
             align-items: center;
         }
 
-        .coupon-box {
-            padding: 5%;
-            text-align: center;
-            border-top: 5px dotted #e5e5e5;
-            margin-top: 1%;
-        }
 
             .coupon-box form input {
                 display: inline-block;
@@ -156,9 +150,7 @@
             color: #fff;
             padding: 2% 10%;
             display: inline-block;
-            border: solid 1px #212529;
-            //transition: all 0.5s ease-in-out 0s;
-            //cursor: pointer;
+            border: solid 1px ;
         }
 
             .round-black-btn:hover,
@@ -169,9 +161,9 @@
             }
 
         .cart-totals {
-            border-radius: 3px;
-            background: #e7e7e7;
-            padding: 25px;
+            border-radius: 3%;
+            background: #e5e5e5;
+            padding: 5%;
         }
 
             .cart-totals h3 {
@@ -196,16 +188,7 @@
                         text-align: right;
                     }
 
-                    .cart-totals table tr td.subtotal {
-                        font-size: 20px;
-                        color: #6f6f6f;
-                    }
-
-                    .cart-totals table tr td.free-shipping {
-                        font-size: 14px;
-                        color: #6f6f6f;
-                    }
-
+                   
                 .cart-totals table tr.total-row td {
                     padding-top: 25px;
                 }
@@ -218,8 +201,7 @@
 
         .btn-cart-totals {
             text-align: center;
-            margin-top: 60px;
-            margin-bottom: 20px;
+            margin: 10% 1% 10% 1%;
         }
 
             .btn-cart-totals .round-black-btn {
@@ -228,6 +210,30 @@
 
         .code {
             color: white;
+        }
+        .btnD{
+            text-align: center;
+            border: none;
+            padding: 5% 0% 5% 0%;
+            background-color: #f8f9fa;
+            color: #000;
+            font-weight: 600;
+            width: 100%;
+            height: 90%;
+            cursor: pointer;
+        }
+        .btnC{
+            text-align: center;
+            color: white;
+            margin: 10% 10% 1% 10%;
+            border: none;
+            padding: 3% 0% 3% 0%;
+            background: red;
+            color: #000;
+            font-weight: 600;
+            width: 70%;
+            height: 60%;
+            cursor: pointer;
         }
     </style>
 </asp:Content>
@@ -252,7 +258,7 @@
                                 </tbody>
                             </table>
                             <div class="btn-cart-totals">
-                                <asp:Button ID="checkout" class="checkout round-black-btn" runat="server" Text="אישור ומעבר לתשלום" OnClick="checkout_Click" />
+                                <asp:Button ID="checkout" class=" btnC" ForeColor="White" runat="server" Text="אישור ומעבר לתשלום" OnClick="checkout_Click" />
                             </div>
                             <!-- /.btn-cart-totals -->
                         </form>
@@ -284,7 +290,7 @@
                             <ItemTemplate>
                                 <div class="row display-flex align-center" style="text-align: center;">
                                     <div class="col-md-2">
-                                        <asp:Button ID="delete" runat="server" CommandName='<%# Eval("proCode")%>' Text="הסרה" class="mCS_img_loaded" OnClick="delete_Click" />
+                                        <asp:Button ID="delete" runat="server" CommandName='<%# Eval("proCode")%>' Text="הסרה" class="mCS_img_loaded" CssClass="btnD" OnClick="delete_Click" />
                                     </div>
                                     <div class="col-md-2">
                                         <div class="total">

@@ -60,7 +60,7 @@
 
             .product-grid4 .product-discount-label, .product-grid4 .product-new-label {
                 color: #fff;
-                background-color: #73d3f2; 
+                background-color: red; 
                 font-size: 13px;
                 font-weight: 800;
                 text-transform: uppercase;
@@ -101,11 +101,11 @@
                 }
 
                     .product-grid4 .title a:hover {
-                        color: #73d3f2
+                        color: red
                     }
 
             .product-grid4 .price {
-                color: #73d3f2;
+                color: red;
                 font-size: 17px;
                 font-weight: 700;
                 margin: 3% 1% 3% 1% ;
@@ -138,7 +138,7 @@
 
             .product-grid4:hover .add-to-cart {
                 border: 1px solid transparent;
-                background: #73d3f2;
+                background: red;
                 color: #fff;
                 margin-bottom: 1%;
             }

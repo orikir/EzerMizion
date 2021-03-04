@@ -59,19 +59,16 @@
         }
 
         .btnPay {
-            position: center;
-            text-align: center;
-            margin-top: 10%;
-            margin-left: 25%;
-            margin-right: 50%;
-            border: none;
-            border-radius: 1.5rem;
-            padding: 2%;
-            background: white;
-            color: #000;
-            font-weight: 600;
-            width: 50%;
-            cursor: pointer;
+        text-align: center;
+        margin: 10% 5% 1% 5%;
+        border:none;
+        padding: 5% 0% 5% 0%;
+        background: red;
+        color: white;
+        font-weight: 600;
+        width: 120%;
+        height: 90%;
+        cursor: pointer;
         }
 
         .pay-heading {
@@ -82,7 +79,7 @@
         }
 
         .tColor {
-            color: #73d3f2;
+            color: red;
         }
 
         .vStyle {
@@ -160,7 +157,7 @@
                             <div class="row ">
                                 <div class="col-md-2"> </div>
                                 <div class="col-md-8">
-                                    <asp:Button ID="submit" class="btn btn-success" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
+                                    <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
                                 </div>
                                 <div class="col-md-2"> </div>
                             </div>

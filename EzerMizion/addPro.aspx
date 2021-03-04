@@ -57,7 +57,7 @@
         }
 
         .tColor {
-            color: #73d3f2;
+            color: red;
         }
 
         .vStyle {

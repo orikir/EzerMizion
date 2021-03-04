@@ -59,15 +59,16 @@
         }
 
         .btnRegister {
-            position: center;
             text-align: center;
-            margin-top: 5%;
-            border: none;
-            padding: 2%;
+            margin: 10% 13% 10% 7%;
+            border-color: red;
+            border-style: double;
+            padding: 1% 0% 1% 0%;
             background: white;
             color: #000;
             font-weight: 600;
-            width: 25%;
+            width: 30%;
+            height: 30%;
             cursor: pointer;
         }
 
@@ -76,27 +77,28 @@
             margin: 5% 1% 5% 1%;
             border: none;
             padding: 1%;
-            background-color:red;
+            background-color: red;
             color: white;
             font-weight: 600;
             width: 30%;
             cursor: pointer;
         }
+
         .btnMenu {
             text-align: center;
             margin: 5% 1% 8% 1%;
-            border-top:none;
+            border-top: none;
             border-right: none;
-            border-left:none;
-            background-color: #f8f9fa ;
+            border-left: none;
+            background-color: #f8f9fa;
             color: black;
             font-weight: 600;
             width: 48%;
-            height:50%;
-            direction:rtl;
-            border-bottom-color:gray;
-            border-bottom:  3% ;
-            font-size:80%
+            height: 50%;
+            direction: rtl;
+            border-bottom: 3%;
+            border-bottom-style: double;
+            font-size: 80%
         }
 
         .register-heading {
@@ -107,7 +109,7 @@
         }
 
         .tColor {
-            color: #73d3f2;
+            color: red;
         }
 
         .vStyle {
@@ -118,37 +120,38 @@
         .form-control {
             direction: rtl;
         }
+
         .dSum {
             text-align: center;
-            position:center;
+            position: center;
             padding: 0%;
             border: 2%;
             border-color: black;
-            background-color:white;
-            color:black;
+            background-color: white;
+            color: black;
             width: 28%;
-            height:100%;
-            font-weight:600;
-            font-size:150%;
-            
-            margin-right:2%;
+            height: 100%;
+            font-weight: 600;
+            font-size: 150%;
+            margin-right: 2%;
         }
-        
+
         .btnPM {
             text-align: center;
             border: 2%;
             border-color: black;
             padding: 1%;
-            background-color:white;
-            color:black;
+            background-color: white;
+            color: black;
             font-weight: 600;
             width: 8%;
-            height:100%;
-            font-size:150%;
-            margin-right:2%;
+            height: 100%;
+            font-size: 150%;
+            margin-right: 2%;
         }
-        .rowF{
-            margin:5% 3% 0% 3%;
+
+        .rowF {
+            margin: 5% 3% 0% 3%;
         }
     </style>
 </asp:Content>
@@ -166,8 +169,8 @@
                                 <center>
                                 <td>
                                     <div class="row rowF">
-                                        <asp:Button ID="priInfoBtn" OnClick="priInfoBtn_Click" CssClass="btnMenu"  runat="server" Text="2. פרטים אישיים"/>
-                                        <asp:Button ID="paymentBtn" OnClick="paymentBtn_Click" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה "/>
+                                        <asp:Button ID="priInfoBtn" OnClick="priInfoBtn_Click" CssClass="btnMenu" BorderColor="gray" runat="server" Text="2. פרטים אישיים"/>
+                                        <asp:Button ID="paymentBtn" OnClick="paymentBtn_Click" CssClass="btnMenu " BorderColor="red" runat="server" Text="1. סכום תרומה "/>
                                     </div>
                                      <div class=" row">
                                             <div class="col-12">
@@ -183,11 +186,12 @@
                                         <asp:Button ID="lego" CssClass="btnDon" runat="server" Text="ערכת לגו - 250 " OnClick="lego_Click" />
                                         <asp:Button ID="wish" CssClass="btnDon" runat="server" Text="הגשמת משאלה - 540 " OnClick="wish_Click" />
                                     </div>
-                                
-                                <div class="form-group">
-                                    <asp:Button ID="continue" runat="server" Text="המשך" CommandName="" OnClick="continue_Click"  type="submit" class="btnRegister" value="register" />
-                                    <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
-                                </div>
+                                    <div class="row rowF">
+                                        <div class="col-12">
+                                                <asp:Button ID="continue" runat="server" Text="המשך" CommandName="" OnClick="continue_Click"  type="submit" class="btnRegister" value="register" />
+                                                <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
+                                        </div>
+                                    </div>
                                 </td>
                             </center>
                             </div>
@@ -201,7 +205,7 @@
                     <h3>תרמו לעזר מציון</h3>
                     <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
                     <br />
-                    <a href="donHistory.aspx" >רשימת התרומות שלך</a>
+                    <a href="donHistory.aspx" class="tColor">רשימת התרומות שלך</a>
                 </div>
 
             </div>
