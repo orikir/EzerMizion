@@ -15,8 +15,8 @@
                     <asp:BoundField DataField="lastName" HeaderText="שם משפחה" />
                     <asp:BoundField DataField="donCode" HeaderText="קוד תרומה" />
                 </Columns>
-                <FooterStyle BackColor="#CCCCCC" />
-                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" CssClass="text-center" />
+                <FooterStyle BackColor="Red" />
+                <HeaderStyle BackColor="Red" Font-Bold="True" ForeColor="White" CssClass="text-center" />
                 <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
                 <RowStyle BackColor="White" CssClass="text-center" />
                 <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />

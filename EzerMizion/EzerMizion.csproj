@@ -99,6 +99,7 @@
     <Content Include="Photos\chair.png" />
     <Content Include="Photos\halichon.jpg" />
     <Content Include="Photos\kabaim.jpg" />
+    <Content Include="Photos\logo -icon.ico" />
     <Content Include="Photos\oxigen.jpg" />
     <Content Include="ProductsList.aspx" />
     <Content Include="rentEq.aspx" />
@@ -375,6 +376,10 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
