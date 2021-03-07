@@ -30,42 +30,73 @@
                     </li>
                     <li class="nav-item">
                         <a>
+                            <% 
+                                if (Session["uType"] == "no")
+                                { %>
+                            <a class="nav-link" href="LoginForm.aspx">התחברות</a>
+                            <%}
+                                else
+                                {%>
+                            <a class="nav-link" href="LoginForm.aspx">התנתקות</a>
+                            <%} %>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a>
                             <% if (Session["uType"] == "ordinary")
-                            { %>
-                        <a class="nav-link" href="LoginForm.aspx">התחברות</a>
-                        <%}
+                                { %>
+                            <a class="nav-link" href="rentEq.aspx">מוצרים</a>
+                            <%}
+                            else
+                            {
+                                {
+                                    if (Session["uType"] == "manager")
+                                    {%>
+                            <a class="nav-link" href="ProductsList.aspx">רשימת מוצרים</a>
+                            <%}
                             else
                             {%>
-                        <a class="nav-link" href="LoginForm.aspx">התנתקות</a>
-                        <%} %>
+                            <a class="nav-link"></a>
+                            <%}
+                                }
+                            }
+
+                            %>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a>
+                            <% if (Session["uType"] == "ordinary")
+                                { %>
+                            <a class="nav-link" href="addDonSum.aspx">תרומה</a>
+                            <%}
+                                else
+                                {
+                                    if (Session["uType"] == "manager")
+                                    {%>
+                            <a class="nav-link" href="DonationsList.aspx">רשימת תורמים</a>
+                            <%}
+                                else
+                                {%>
+                            <a class="nav-link"></a>
+                            <%}
+                                }
+
+                            %>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a>
+                            <% if (Session["uType"] == "ordinary")
+                                { %>
+                            <a class="nav-link" href="shoppingCart.aspx">עגלת קניות</a>
+                            <%}
+
+                            %>
+
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="rentEq.aspx">
-                            <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="addDonSum.aspx">
-                            <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shoppingCart.aspx">
-                            <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="DonationsList.aspx">
-                            <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ProductsList.aspx">
-                            <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>

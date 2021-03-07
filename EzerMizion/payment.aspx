@@ -116,15 +116,15 @@
                             <!-- Name -->
                             <div class="row form-group">
                                 <div class=" col-md-6">
-                                    <asp:Label ID="Label1" class="control-label vStyle" runat="server" Text="תעודת זהות"></asp:Label>
-                                    <asp:TextBox ID="ownerId" class="form-control" placeholder="תעודת זהות*" runat="server" Text=""></asp:TextBox>
+                                    <asp:Label ID="Label1" class="control-label vStyle" runat="server" Text=" תעודת זהות של בעל הכרטיס"></asp:Label>
+                                    <asp:TextBox ID="ownerId" class="form-control" placeholder="תעודת זהות של בעל הכרטיס *"  runat="server" Text=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="ownerId"></asp:RequiredFieldValidator>
                                     <br />
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="vStyle" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="ownerId"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class=" col-md-6">
                                     <asp:Label ID="Label2" class="control-label vStyle" runat="server" Text="מספר כרטיס"></asp:Label>
-                                    <asp:TextBox ID="cardNum" class="form-control " runat="server" Text=""></asp:TextBox>
+                                    <asp:TextBox ID="cardNum" class="form-control " runat="server" Text="" placeholder="מספר כרטיס*"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
                                     <br />
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני" ValidationExpression="\d{14}" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
@@ -133,7 +133,7 @@
                             <div class="row form-group">
                             <!-- Expiry-->
                                 <div class="col-md-1">
-                                    <asp:Label ID="Label3" class="control-label vStyle" runat="server" Text="תוקף"></asp:Label>
+                                    <asp:Label ID="Label3" class="control-label vStyle" runat="server" Text=":תוקף"></asp:Label>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:DropDownList ID="Month" class="form-control" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Black">
@@ -150,7 +150,7 @@
                                     <asp:Label ID="Label4" class="control-label " runat="server" Text="CVV"></asp:Label>
                                 </div>
                                 <div class="col-md-4">
-                                    <asp:TextBox ID="cardCvv" class="form-control" runat="server" Text=""></asp:TextBox>
+                                    <asp:TextBox ID="cardCvv" placeholder="CVV*" class="form-control" runat="server" Text=""></asp:TextBox>
                                 </div>
                             </div>
                             <!-- Submit -->

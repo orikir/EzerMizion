@@ -195,7 +195,7 @@
                                         <asp:TextBox ID="ownerId" runat="server" class="form-control " placeholder="תעודת זהות של בעל הכרטיס *" value=""></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="יש להכניס תעודת זהות" CssClass="vStyle" ControlToValidate="ownerId"></asp:RequiredFieldValidator>
                                         <br />
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="ownerId"></asp:RegularExpressionValidator>
                                     </div>
                                     <div class="col-md-6">
                                         <asp:TextBox ID="id" runat="server" class="form-control " placeholder=" תעודת זהות של משתמש *" value=""></asp:TextBox>

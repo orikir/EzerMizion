@@ -21,10 +21,25 @@ namespace EzerMizion
         {
             productsLogic pl = new productsLogic();
             {
-                if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text))
-                    alarm_lable.Text = "המוצר קיים";
+                //save image name
+                string imageName = photo.Text;
+                //מחזיר את הנתיב של התיקיה בשרת
+                string path = Server.MapPath(@"~/Photos/");
+                //בדיקה שקובץ התמונה שהמשתמש הזין לא קיים כבר במערכת 
+                if (!File.Exists(path + imageName))
+                {
+                    alarm_lable.Text = "יש להעלות את התמונה קודם";
+                }
                 else
-                    alarm_lable.Text = "המוצר נוסף בהצלחה";
+                {
+                    if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text))
+                        alarm_lable.Text = "המוצר קיים";
+                    else
+                        alarm_lable.Text = "המוצר נוסף בהצלחה";
+                }
+                     
+               
+
             }
         }
 
