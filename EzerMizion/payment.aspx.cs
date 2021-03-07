@@ -11,7 +11,8 @@ namespace EzerMizion
 
     public partial class payment : System.Web.UI.Page
     {
-        ordersLogic ol = new ordersLogic(); 
+        ordersLogic ol = new ordersLogic();
+        productsLogic pl = new productsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack && (Session["uType"].Equals("ordinary")))
@@ -46,7 +47,10 @@ namespace EzerMizion
         { 
             cartLogic cl = new cartLogic();
             ol.toOrder(Session["uId"].ToString(), cardNum.Text, Month.Text, Year.Text, ownerId.Text, cardCvv.Text, DateTime.Now);
-
+            ol.toOP(Session["uId"].ToString());
+            pl.updateAmount(Session["uId"].ToString());
+            cl.deleteAllCart(Session["uId"].ToString());
+            
         
         }
     }

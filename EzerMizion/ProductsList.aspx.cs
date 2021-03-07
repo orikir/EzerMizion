@@ -38,7 +38,7 @@ namespace EzerMizion
             //כשיש אפשרות עריכה בעצם נוספת תיבת טקס וממנה צריך לקחת את הנתון
             string price = ((TextBox)(GridView1.Rows[e.RowIndex].Cells[6].Controls[0])).Text;
             //עדכון הנתונים במסד הנתונים
-            pl.updatePro(double.Parse(price), GridView1.Rows[e.RowIndex].Cells[0].Text);
+            pl.updatePro(double.Parse(price),Int32.Parse( GridView1.Rows[e.RowIndex].Cells[0].Text));
             //יציאה ממצב עריכה
             GridView1.EditIndex = -1;
             GridView1.DataSource = pl.allProducts();

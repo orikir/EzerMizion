@@ -34,6 +34,11 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("DELETE * FROM cart WHERE proCode={0} AND userId='{1}'"), proCode, userId);
             d.excuteQuery(sql);
         }
+        public void deleteAllCart( string userId)
+        {//delete product
+            string sql = string.Format(("DELETE * FROM cart WHERE  userId='{0}'"), userId);
+            d.excuteQuery(sql);
+        }
         public DataSet getCart(string userId)
         {//return the cart of the current user
             string sql = String.Format("SELECT cart.amount, cart.proCode , products.proName, products.proPhoto, products.proPrice, cart.amount*products.proPrice AS total FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);

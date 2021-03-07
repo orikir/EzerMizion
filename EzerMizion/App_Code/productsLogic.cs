@@ -20,9 +20,14 @@ namespace EzerMizion.App_Code
             string sql = string.Format(" SELECT  proName, proPhoto, proPrice FROM products WHERE proCode={0}", proCode);
             return d.excuteQuery(sql);
         }
-        public void updatePro(double price, string proCode)
+        public void updatePro(double price, int proCode)
         {//update product price according to what the user entered
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, proCode);
+            d.excuteQuery(sql);
+        }
+        public void updateAmount(string uId)
+        {//update product amount
+            string sql = string.Format(("UPDATE products INNER JOIN cart ON products.proCode = cart.proCode SET products.quantity =  products.quantity-cart.amount WHERE cart.userId='{0}'"), uId);
             d.excuteQuery(sql);
         }
         public void deletePro(string proCode)

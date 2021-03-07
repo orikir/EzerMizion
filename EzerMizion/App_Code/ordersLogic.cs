@@ -17,7 +17,10 @@ namespace EzerMizion.App_Code
         }
         public bool toOP(string userId)
         {//מכניסה את פירוט מוצרי ההזמנה לטבלת מוצרים-הזמנות
-            string sql = String.Format("INSERT INTO ordersProducts ( proCode, amount, orderId ) SELECT cart.proCode, cart.amount, MAX(orders.orderId) FROM cart, orders WHERE cart.userId=orders.userId AND cart.userId ='{0}'", userId);
+            string sql1 = String.Format("SELECT  MAX(orders.orderId) FROM orders WHERE orders.userId ='{0}'", userId);
+            DataSet ds1 = d.excuteQuery(sql1);
+            int x = Int32.Parse(ds1.Tables[0].Rows[0][0].ToString());
+            string sql = String.Format("INSERT INTO ordersProducts ( orderId, proCode, amount )  SELECT {0}, cart.proCode, cart.amount FROM cart  WHERE cart.userId ='{1}'", x , userId);
             DataSet ds = d.excuteQuery(sql);
             return true;
         }
