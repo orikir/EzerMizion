@@ -24,7 +24,7 @@
         </div>
       </div>
         
-      <div class="row firstRow">
+      <div class="row ">
        <div class="col-md-6">
           <div class="card flex-md-row mb-4" >
             <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="Photos/bdika.jpg" " data-holder-rendered="true" style="width: 200px; height: 250px;"/>

@@ -60,7 +60,7 @@
 
         .btnRegister {
             text-align: center;
-            margin: 10% 13% 10% 7%;
+            margin: 5% 13% 5% 7%;
             border-color: red;
             border-style: double;
             padding: 1% 0% 1% 0%;
@@ -68,7 +68,7 @@
             color: #000;
             font-weight: 600;
             width: 30%;
-            height: 30%;
+            height: 50%;
             cursor: pointer;
         }
 
@@ -103,7 +103,7 @@
 
         .register-heading {
             text-align: center;
-            margin-top: -5%;
+            margin-top: -10%;
             margin-bottom: -15%;
             color: #000;
         }
@@ -153,6 +153,10 @@
         .rowF {
             margin: 5% 3% 0% 3%;
         }
+        .rowImage {
+            width:100%;
+            height:50%;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -160,7 +164,9 @@
         <div class="row">
             <div class="col-md-9 register-right">
                 <div class="tab-content" id="myTabContent">
-                    <h3 class="register-heading ">תרומה</h3>
+                    <div class="register-heading ">
+                        <asp:Image ID="Image1" class="rowImage" runat="server" src="Photos/pageDon.jpg" />
+                    </div>
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row register-form">
 

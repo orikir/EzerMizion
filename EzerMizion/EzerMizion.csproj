@@ -98,9 +98,14 @@
     <Content Include="Photos\bed.jpg" />
     <Content Include="Photos\chair.png" />
     <Content Include="Photos\halichon.jpg" />
+    <Content Include="Photos\header_helping_hand.png" />
+    <Content Include="Photos\header_medal1.png" />
+    <Content Include="Photos\header_people.png" />
     <Content Include="Photos\kabaim.jpg" />
     <Content Include="Photos\logo -icon.ico" />
     <Content Include="Photos\oxigen.jpg" />
+    <Content Include="Photos\pageDon.jpg" />
+    <Content Include="Photos\saveLife.jpg" />
     <Content Include="ProductsList.aspx" />
     <Content Include="rentEq.aspx" />
     <Content Include="HomeP.aspx" />
