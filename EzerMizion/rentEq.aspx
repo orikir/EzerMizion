@@ -174,7 +174,7 @@
                                 <asp:Label ID="Label1" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
                                 <asp:Label ID="Label2" class="price" runat="server" Text='<%#Eval("proPrice") %>' ></asp:Label>₪
                             </div>
-                            <asp:Button ID="addTcart" class="add-to-cart" runat="server" CommandName='<%# Eval("proCode")%>' Text="הוסף לעגלה" OnClick="addTcart_Click" />
+                            <asp:Button ID="addTcart" class="add-to-cart" runat="server" OnClientClick = "return confirm('המוצר נוסף בהצלחה!');" CommandName='<%# Eval("proCode")%>' Text="הוסף לעגלה" OnClick="addTcart_Click" />
                         </div>
                     </div>
                 </ItemTemplate>

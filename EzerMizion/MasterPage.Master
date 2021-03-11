@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>עזר מציון</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link rel="icon" href="Photos/logo%20-icon.ico">
     <script src="Scripts/bootstrap.min.js"></script>

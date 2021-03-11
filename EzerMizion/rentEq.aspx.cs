@@ -32,6 +32,8 @@ namespace EzerMizion
             string proCode = ((sender as Button).CommandName).ToString();
             cl.intoCart( Int32.Parse(proCode), Session["uId"].ToString());
             //Response.Redirect("shoppingCart.aspx?pCode=" + proCode);
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('המוצר נוסף בהצלחה!')", true);
+            
 
         }
     }
