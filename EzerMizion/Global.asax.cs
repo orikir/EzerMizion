@@ -21,6 +21,7 @@ namespace EzerMizion
             {
                 Application["countVisits"] = (int)(Application["countVisits"]) + 1;
                 Session["uId"] = null;
+                Session["uName"] = "אורח";
                 Session["uType"] = "no";
             }
             Application.UnLock();
@@ -45,6 +46,7 @@ namespace EzerMizion
         {
             Session["uId"] = null;
             Session["uType"] = "no";
+            Session["uName"] = "אורח";
         }
 
         protected void Application_End(object sender, EventArgs e)

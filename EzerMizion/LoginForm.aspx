@@ -46,10 +46,10 @@
             position: absolute;
             height: 28%;
             width: 38%;
-            top: -7%;
+            top: -10%;
             border-radius: 60%;
             background: #f8f9fa;
-            padding: 3%;
+            padding: 2%;
             text-align: center;
         }
 
@@ -57,8 +57,9 @@
             height: 100%;
             width: 100%;
             border-radius: 50%;
-            border: 4PX solid white;
+            border: 3px solid white;
             background: #e7e9eb;
+            padding: 1% 2% 1% 2%;
         }
 
         .form_container {
