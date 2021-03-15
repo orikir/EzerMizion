@@ -26,6 +26,7 @@ namespace EzerMizion
                     }
                 }
             }
+            
         }
 
         protected void delete_Click(object sender, EventArgs e)
@@ -58,20 +59,41 @@ namespace EzerMizion
         protected void plus_Click(object sender, EventArgs e)
         {
             RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
-            string quan = (item.FindControl("quantity") as Label).Text;
+            //string quan = (item.FindControl("quantity") as Label).Text;
             string proCode = (item.FindControl("proCode") as Label).Text;
-            if (Int32.Parse(quan)<30)
+            string s = (item.FindControl("stock") as Label).Text;
+            string label1 = (item.FindControl("Label1") as Label).Text;
+            if (Int32.Parse(s) < 2)
             {
+                label1 = "המוצר לא במלאי";
+                Label2.Text = "לא ניתן להמשיך לביצוע הזמנה";
+            }
+            else
+            {
+                Label2.Text = " ";
                 cl.updateAmount(1, Int32.Parse(proCode), Session["uId"].ToString());
             }
+
             Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
             cartSum.Text = cl.sumCart(Session["uId"].ToString());
+
         }
 
         protected void checkout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("payment.aspx");
+            /*string s = (item.FindControl("stock") as Label).Text;
+            string alert = (item.FindControl("Label1") as Label).Text;
+            if (Int32.Parse(s) < 1)
+            {
+                alert = "המוצר לא במלאי";
+                Label2.Text = "לא ניתן להמשיך לביצוע הזמנה";
+            }
+            else
+            {*/
+                Response.Redirect("payment.aspx");
+           // }
+            
             //Response.Redirect("payment.aspx?uId=" + Session["uId"].ToString());
         }
     }

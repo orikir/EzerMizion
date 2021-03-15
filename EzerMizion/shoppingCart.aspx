@@ -258,6 +258,7 @@
                                 </tbody>
                             </table>
                             <div class="btn-cart-totals">
+                                <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                                 <asp:Button ID="checkout" class=" btnC" ForeColor="White" runat="server" Text="אישור ומעבר לתשלום" OnClick="checkout_Click" />
                             </div>
                             <!-- /.btn-cart-totals -->
@@ -291,10 +292,15 @@
                                 <div class="row display-flex align-center" style="text-align: center;">
                                     <div class="col-md-2">
                                         <asp:Button ID="delete" runat="server" CommandName='<%# Eval("proCode")%>' Text="הסרה" class="mCS_img_loaded" CssClass="btnD" OnClick="delete_Click" />
+                                        
                                     </div>
                                     <div class="col-md-2">
                                         <div class="total">
                                             ₪<asp:Label ID="totalP" runat="server" Text='<%#Eval("total") %>'></asp:Label>
+                                            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                                        </div>
+                                        <div >
+                                            <asp:Label ID="stock"  runat="server" Text='<%#Eval("stock") %>'></asp:Label>
                                         </div>
                                     </div>
                                     <div class="col-md-3 product-count">
