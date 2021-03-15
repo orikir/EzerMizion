@@ -74,7 +74,7 @@
                                 {
                                     if (Session["uType"] == "manager")
                                     {%>
-                            <a class="nav-link" href="DonationsList.aspx">רשימת תורמים</a>
+                            <a class="nav-link" href="DonationsList.aspx">תרומות</a>
                             <%}
                                 else
                                 {%>
