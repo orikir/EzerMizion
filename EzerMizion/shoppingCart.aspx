@@ -297,10 +297,10 @@
                                     <div class="col-md-2">
                                         <div class="total">
                                             ₪<asp:Label ID="totalP" runat="server" Text='<%#Eval("total") %>'></asp:Label>
-                                            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                                         </div>
                                         <div >
                                             <asp:Label ID="stock"  runat="server" Text='<%#Eval("stock") %>'></asp:Label>
+                                            <asp:Label ID="Label1" runat="server"  Text=''></asp:Label>
                                         </div>
                                     </div>
                                     <div class="col-md-3 product-count">
