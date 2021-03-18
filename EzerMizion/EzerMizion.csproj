@@ -94,6 +94,7 @@
     <Content Include="info1.aspx" />
     <Content Include="info2.aspx" />
     <Content Include="LoginForm.aspx" />
+    <Content Include="logout.aspx" />
     <Content Include="payment.aspx" />
     <Content Include="Photos\bed.jpg" />
     <Content Include="Photos\chair.png" />
@@ -271,6 +272,13 @@
     </Compile>
     <Compile Include="info2.aspx.designer.cs">
       <DependentUpon>info2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="payment.aspx.cs">
       <DependentUpon>payment.aspx</DependentUpon>
