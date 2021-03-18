@@ -12,7 +12,7 @@ namespace EzerMizion.App_Code
        
         public DataSet allProducts()
         {
-            string sql = " SELECT * FROM products";
+            string sql = " SELECT products.proCode, products.proName, products.isInStock, products.quantity, branches.branchName, products.proPhoto, products.proPrice FROM branches INNER JOIN products ON branches.branchCode = products.branchCode";
             return d.excuteQuery(sql);
         }
         public DataSet oneProduct(int proCode)
