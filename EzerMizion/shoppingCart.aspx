@@ -280,9 +280,13 @@
                             <div class="col-md-3">
                                 <a>כמות</a>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-2">
+                                <a>זמינות</a>
+                            </div>
+                            <div class="col-md-3">
                                 <a>מוצר</a>
                             </div>
+                            
                         </div>
                         <div class="row">
                             <asp:Button ID="Button1" runat="server" Text="" Height="1px" Width="100%" BorderColor="White" />
@@ -300,17 +304,19 @@
                                         </div>
                                         <div >
                                             <asp:Label ID="stock"  runat="server" Text='<%#Eval("stock") %>'></asp:Label>
-                                            <asp:Label ID="Label1" runat="server"  Text=''></asp:Label>
                                         </div>
                                     </div>
                                     <div class="col-md-3 product-count">
                                         <div class="count-inlineflex">
                                             <asp:Button ID="minus" class="qtyminus" runat="server" Text="-" OnClick="minus_Click" />
                                             <asp:Label ID="quantity" class="qty" runat="server" Text='<%#Eval("amount") %>'></asp:Label>
-                                            <asp:Button ID="plus" class="qtyplus" runat="server" Text="+" OnClick="plus_Click" />
+                                            <asp:Button ID="plus" class="qtyplus" runat="server" Text="+"  OnClick="plus_Click" />
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                                    </div>
+                                    <div class="col-md-1">
                                         <div class="product-content">
                                             <asp:Label ID="pName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
                                             <asp:Label ID="proCode" class="code" runat="server" Text='<%#Eval("proCode") %>'></asp:Label>

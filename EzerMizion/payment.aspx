@@ -157,7 +157,12 @@
                             <div class="row ">
                                 <div class="col-md-2"> </div>
                                 <div class="col-md-8">
-                                    <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
+                                    <div class="row">
+                                        <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
+                                    </div>
+                                    <div class="row">
+                                        <asp:Label ID="Label5" class="control-label " runat="server" Text=""></asp:Label>
+                                    </div>
                                 </div>
                                 <div class="col-md-2"> </div>
                             </div>

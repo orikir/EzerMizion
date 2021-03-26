@@ -46,7 +46,7 @@ namespace EzerMizion.App_Code
         }
         public DataSet getAmount(string userId)
         {//return the differece between how many products in stock to how many the customer wants
-            string sql = String.Format("SELECT cart.amount-products.quantity AS stock FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
+            string sql = String.Format("SELECT products.quantity-cart.amount AS stock FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
             return d.excuteQuery(sql);
         }
         public string sumCart(string userId)

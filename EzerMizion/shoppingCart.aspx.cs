@@ -44,10 +44,8 @@ namespace EzerMizion
             string quan = (item.FindControl("quantity") as Label).Text;
             string proCode = (item.FindControl("proCode") as Label).Text;
             string s = (item.FindControl("stock") as Label).Text;
-            string label1 = (item.FindControl("Label1") as Label).Text;
-            if (Int32.Parse(s) >0)
+            if (Int32.Parse(s) >-1)
             {
-                label1 = "";
                 Label2.Text = "";
             }
             if (Int32.Parse(quan)>1)
@@ -68,11 +66,10 @@ namespace EzerMizion
             RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
             string proCode = (item.FindControl("proCode") as Label).Text;
             string s = (item.FindControl("stock") as Label).Text;
-            string label1 = (item.FindControl("Label1") as Label).Text;
-            if (Int32.Parse(s) < 2)
+            if (Int32.Parse(s) < 1)
             {
-                label1 = "אין מספיק מוצרים במלאי";
                 Label2.Text = "לא ניתן להמשיך לביצוע הזמנה";
+                
             }
             else
             {
@@ -89,7 +86,7 @@ namespace EzerMizion
         protected void checkout_Click(object sender, EventArgs e)
         {
             
-            if (!Label2.Text.Equals("לא ניתן להמשיך לביצוע הזמנה"))
+            //if (!Label2.Text.Equals("לא ניתן להמשיך לביצוע הזמנה"))
             {
                 Response.Redirect("payment.aspx");
             }

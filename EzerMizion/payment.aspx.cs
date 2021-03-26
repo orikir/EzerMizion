@@ -46,12 +46,18 @@ namespace EzerMizion
         protected void submit_Click(object sender, EventArgs e)
         { 
             cartLogic cl = new cartLogic();
-            ol.toOrder(Session["uId"].ToString(), cardNum.Text, Month.Text, Year.Text, ownerId.Text, cardCvv.Text, DateTime.Now);
-            ol.toOP(Session["uId"].ToString());
-            pl.updateAmount(Session["uId"].ToString());
-            cl.deleteAllCart(Session["uId"].ToString());
-            
-        
+            if(pl.getDifference(Session["uId"].ToString()))
+            {
+                ol.toOrder(Session["uId"].ToString(), cardNum.Text, Month.Text, Year.Text, ownerId.Text, cardCvv.Text, DateTime.Now);
+                ol.toOP(Session["uId"].ToString());
+                pl.updateAmount(Session["uId"].ToString());
+                cl.deleteAllCart(Session["uId"].ToString());
+                Label5.Text = "ההזמנה בוצעה בהצלחה";
+            }
+            else
+            {
+                Label5.Text = "לא כל הפריטים במלאי-לא ניתן לבצע הזמנה";
+            }
         }
     }
 }

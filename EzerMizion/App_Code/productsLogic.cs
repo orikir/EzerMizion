@@ -25,6 +25,16 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, proCode);
             d.excuteQuery(sql);
         }
+        public bool getDifference(string userId)
+        {//return the differece between how many products in stock to how many the customer wants
+            string sql = String.Format("SELECT products.quantity-cart.amount AS stock FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
+            for (int i=0; i< d.excuteQuery(sql).Tables[0].Rows.Count; i++)
+            {
+                if (Int32.Parse(d.excuteQuery(sql).Tables[0].Rows[i].ItemArray.GetValue(0).ToString()) < 0)
+                    return false;
+            }
+            return true;
+        }
         public void updateAmount(string uId)
         {//update product amount
             string sql = string.Format(("UPDATE products INNER JOIN cart ON products.proCode = cart.proCode SET products.quantity =  products.quantity-cart.amount WHERE cart.userId='{0}'"), uId);
