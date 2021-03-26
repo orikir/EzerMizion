@@ -60,13 +60,12 @@
 
         .btnPay {
         text-align: center;
-        margin: 10% 5% 1% 5%;
+        margin:  1% 5% 1% 5%;
         border:none;
-        padding: 5% 0% 5% 0%;
+        padding: 10% 5% 10% 5%;
         background: red;
         color: white;
         font-weight: 600;
-        width: 120%;
         height: 90%;
         cursor: pointer;
         }
@@ -133,7 +132,7 @@
                             <div class="row form-group">
                             <!-- Expiry-->
                                 <div class="col-md-1">
-                                    <asp:Label ID="Label3" class="control-label vStyle" runat="server" Text=":תוקף"></asp:Label>
+                                    <asp:Label ID="Label3" class="control-label vStyle"  runat="server" Text="תוקף:"></asp:Label>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:DropDownList ID="Month" class="form-control" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Black">
@@ -154,19 +153,20 @@
                                 </div>
                             </div>
                             <!-- Submit -->
-                            <div class="row ">
-                                <div class="col-md-2"> </div>
-                                <div class="col-md-8">
-                                    <div class="row">
+                           
+                        </div>
+                         <div class="row form-group ">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">
+                                    <div class="col-6">
                                         <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
-                                    </div>
-                                    <div class="row">
+                                            <br />
                                         <asp:Label ID="Label5" class="control-label " runat="server" Text=""></asp:Label>
                                     </div>
+                                    
                                 </div>
-                                <div class="col-md-2"> </div>
+                                <div class="col-md-4"> </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

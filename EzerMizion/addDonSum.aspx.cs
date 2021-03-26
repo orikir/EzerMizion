@@ -92,14 +92,6 @@ namespace EzerMizion
 
         }
 
-        protected void priInfoBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void donSumBtn_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -100,7 +100,7 @@
             direction: rtl;
             border-bottom-color: gray;
             border-bottom: 3%;
-            font-size: 80%
+            font-size: 100%
         }
 
         .register-heading {
@@ -174,8 +174,8 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
                                 <div class="row">
-                                    <asp:Button ID="priInfoBtn" CssClass="btnMenu" BorderColor="Red" runat="server" Text="2. פרטים אישיים" />
-                                    <asp:Button ID="paymentBtn" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה " />
+                                    <asp:Label ID="Label2" CssClass="btnMenu" BorderColor="Red" runat="server" Text="2. פרטים אישיים"></asp:Label>
+                                    <asp:Label ID="Label4" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה " ></asp:Label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-3"></div>

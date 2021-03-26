@@ -80,7 +80,7 @@
             background-color: red;
             color: white;
             font-weight: 600;
-            width: 30%;
+            width: 31%;
             cursor: pointer;
         }
 
@@ -98,7 +98,7 @@
             direction: rtl;
             border-bottom: 3%;
             border-bottom-style: double;
-            font-size: 80%
+            font-size: 100%
         }
 
         .register-heading {
@@ -175,8 +175,9 @@
                                 <center>
                                 <td>
                                     <div class="row rowF">
-                                        <asp:Button ID="priInfoBtn" OnClick="priInfoBtn_Click" CssClass="btnMenu" BorderColor="gray" runat="server" Text="2. פרטים אישיים"/>
-                                        <asp:Button ID="paymentBtn" OnClick="paymentBtn_Click" CssClass="btnMenu " BorderColor="red" runat="server" Text="1. סכום תרומה "/>
+                                        <asp:Label ID="Label2" CssClass="btnMenu" BorderColor="gray" runat="server" Text="2. פרטים אישיים"></asp:Label>
+                                        <asp:Label ID="Label4" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה " ></asp:Label>
+                                        
                                     </div>
                                      <div class=" row">
                                             <div class="col-12">
@@ -188,9 +189,9 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="dSum" ValidationExpression="\d+(?:,\d{1,2})?" ErrorMessage="הזנת ערך לא חוקי"></asp:RegularExpressionValidator>
                                                 
                                     <div class="row rowF">
-                                        <asp:Button ID="bdika" CssClass="btnDon" runat="server" Text="180 - בדיקת מח עצם" OnClick="bdika_Click" />
-                                        <asp:Button ID="lego" CssClass="btnDon" runat="server" Text="ערכת לגו - 250 " OnClick="lego_Click" />
-                                        <asp:Button ID="wish" CssClass="btnDon" runat="server" Text="הגשמת משאלה - 540 " OnClick="wish_Click" />
+                                        <asp:Button ID="bdika" CssClass="btnDon" runat="server" Text="₪180 - בדיקת מח עצם" OnClick="bdika_Click" />
+                                        <asp:Button ID="lego" CssClass="btnDon" runat="server" Text="₪ערכת לגו - 250 " OnClick="lego_Click" />
+                                        <asp:Button ID="wish" CssClass="btnDon" runat="server" Text="₪הגשמת משאלה - 540 " OnClick="wish_Click" />
                                     </div>
                                     <div class="row rowF">
                                         <div class="col-12">
