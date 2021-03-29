@@ -9,10 +9,10 @@ namespace idfWebService.App_Code
     public class diseasesLogic
     {
         DAL d = new DAL();
-        public bool isSick(string id)
-        {//return true if the soldier has diseases which make him unable to donate
+        public bool isHealthy(string id)
+        {//return true if the soldier has no diseases which make him unable to donate
             string sql = String.Format("SELECT dAs.solId FROM dAs WHERE dAs.solId ='{0}'", id);
-            return (d.excuteQuery(sql).Tables[0].Rows.Count!= 0);
+            return (d.excuteQuery(sql).Tables[0].Rows.Count== 0);
         }
     }
 }

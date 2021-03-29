@@ -73,9 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\DAL.cs" />
-    <Content Include="App_Code\soldiersLogic.cs" />
-    <Content Include="App_Code\solStatusLogic.cs" />
-    <Content Include="App_Code\diseasesLogic.cs" />
+    <Compile Include="App_Code\soldiersLogic.cs" />
+    <Compile Include="App_Code\solStatusLogic.cs" />
+    <Compile Include="App_Code\diseasesLogic.cs" />
     <Compile Include="idfWebService.asmx.cs">
       <DependentUpon>idfWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
