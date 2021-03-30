@@ -11,12 +11,14 @@
         .register-left {
             text-align: center;
             color: #000;
-            padding-top: 15%;
-            padding-bottom: 0%;
+           /padding-top: 15%;
+           / padding-bottom: 0%;
             direction: rtl;
             border-top-left-radius: 10% 50%;
             border-bottom-left-radius: 10% 50%;
-            background-color: white;
+            background-color:#d91e21;
+            padding: 12% 0% 0% 0%;
+            
         }
 
             .register-left input {
@@ -40,11 +42,11 @@
         }
 
         .register-left img {
-            margin-top: 15%;
-            margin-bottom: 5%;
-            width: 25%;
-            -webkit-animation: mover 2s infinite alternate;
-            animation: mover 1s infinite alternate;
+           margin:0% 0% 5%;
+            width: 100%;
+            height:10%;
+            border-top-left-radius: 2% 70%;
+            border-bottom-left-radius: 1% 30%;
         }
 
         .register-left p {
@@ -61,15 +63,15 @@
         .btnRegister {
             position: center;
             text-align: center;
-            margin: 10% 10% 1% 10%;
+            margin: 15% 15% 1% 15%;
             border-color:red;
             border-style:double;
             padding: 3% 0% 3% 0%;
             background: white;
             color: #000;
             font-weight: 600;
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 110%;
             cursor: pointer;
         }
 
@@ -111,7 +113,7 @@
         }
 
         .tColor {
-            color: red;
+            color: white;
         }
 
         .vStyle {
@@ -156,10 +158,17 @@
         .rowF {
             margin: 5% 0% 2% 0%;
         }
+        .row{
+            margin:0% 1% 0% 1%
+        }
 
         .line {
             width: 100%;
             height: 100%;
+        }
+        image{
+            
+            margin: 5% 0% 2% 0%;
         }
     </style>
 </asp:Content>
@@ -204,7 +213,7 @@
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="תעודת זהות לא תקנית" CssClass="vStyle" ValidationExpression="\d{9}" ControlToValidate="id"></asp:RegularExpressionValidator>
                                     </div>
                                 </div>
-                                <div class="row form-group">
+                                <div class="form-group row ">
                                     <div class=" col-md-6">
                                         <!-- CVV -->
                                         <asp:TextBox ID="cardCvv" class="form-control" runat="server" placeholder="CVV*" Text=""></asp:TextBox>
@@ -234,17 +243,17 @@
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6">
                                         <div class="row">
-                                            <asp:Button ID="continue" runat="server" Text="המשך" OnClick="continue_Click" type="submit" class="btnRegister" value="register" />
+                                            <asp:Button ID="continue" runat="server" Text="אישור" OnClick="continue_Click" type="submit" class="btnRegister" />
                                         </div>
                                         <div class="row">
                                             <asp:Label ID="alarm_lable" CssClass="" runat="server" Text=""></asp:Label>
                                         </div>
 
                                     </div>
-                                    <div class="col-md-4"></div>
+                                    <div class="col-md-3"></div>
                                 </div>
 
                             </div>
@@ -255,9 +264,7 @@
             </div>
             <div class="col-3 register-left">
                 <div class="re-box">
-                    <h3>תרמו לעזר מציון</h3>
-                    <p>אתם 30 שניות מלהצטרף למעגל הנתינה שלנו!</p>
-                    <br />
+                    <asp:Image ID="Image1" CssClass="register-left img" src="Photos/saveLife2.jpg"  runat="server" />
                     <a href="donHistory.aspx" class="tColor">רשימת התרומות שלך</a>
                 </div>
             </div>

@@ -60,7 +60,7 @@
 
         .btnRegister {
             text-align: center;
-            margin: 5% 13% 5% 7%;
+            margin: 5% 7% 5% 7%;
             border-color: red;
             border-style: double;
             padding: 1% 0% 1% 0%;

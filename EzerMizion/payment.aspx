@@ -11,8 +11,7 @@
         .pay-left {
             text-align: center;
             color: #000;
-            padding-top: 15%;
-            padding-bottom: 15%;
+            padding: 25% -5% 15% -5%;
             direction: rtl;
             border-top-left-radius: 10% 50%;
             border-bottom-left-radius: 10% 50%;
@@ -22,7 +21,7 @@
             .pay-left input {
                 border: none;
                 border-radius: 1.5rem;
-                padding: 2%;
+               // padding: 2%;
                 width: 60%;
                 background: #f8f9fa;
                 font-weight: bold;
@@ -40,11 +39,11 @@
         }
 
         .pay-left img {
-            margin-top: 15%;
-            margin-bottom: 5%;
-            width: 25%;
-            -webkit-animation: mover 2s infinite alternate;
-            animation: mover 1s infinite alternate;
+            margin:15% 0% 5%;
+            width: 100%;
+            height:10%;
+            /-webkit-animation: mover 2s infinite alternate;
+            /animation: mover 1s infinite alternate;
         }
 
         .pay-left p {
@@ -60,13 +59,15 @@
 
         .btnPay {
         text-align: center;
-        margin:  1% 5% 1% 5%;
+        margin:  1% 1% 1% 25%;
         border:none;
-        padding: 10% 5% 10% 5%;
+        padding: 5% 5% 10% 5%;
         background: red;
         color: white;
         font-weight: 600;
-        height: 90%;
+        height: 70%;
+        width:60%;
+
         cursor: pointer;
         }
 
@@ -155,32 +156,24 @@
                             <!-- Submit -->
                            
                         </div>
-                         <div class="row form-group ">
+                         <div class="row  ">
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4">
-                                    <div class="col-6">
                                         <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
                                             <br />
                                         <asp:Label ID="Label5" class="control-label " runat="server" Text=""></asp:Label>
-                                    </div>
-                                    
                                 </div>
                                 <div class="col-md-4"> </div>
                             </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 pay-left">
+            <div class="col-md-3 pay-left ">
                 <div class="re-box">
-                    <h3>-</h3>
-                    <p>!</p>
-                    <br>
-                    <div id="pay-link1" class="text-center">
-                        <a href="LoginForm.aspx" class="tColor">להתחברות לחץ כאן</a>
-                    </div>
-                    <br />
+                    
+                    <asp:Image ID="Image2" CssClass="pay-left img" src="Photos/shop.jpg"  runat="server" />
+                    <p>רפואה שלמה!</p>
                 </div>
-
             </div>
         </div>
 
