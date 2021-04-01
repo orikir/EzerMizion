@@ -11,7 +11,7 @@ namespace EzerMizion.App_Code
     public class DAL
     {
         OleDbConnection myConnection;
-        const string FILE_NAME = "DataBaseEM.accdb";
+        const string FILE_NAME = "DatabaseWS.accdb";
         private SqlCommand command = new SqlCommand();
 
         public DAL()

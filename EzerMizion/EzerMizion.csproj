@@ -81,6 +81,7 @@
     <Content Include="addDonSum.aspx" />
     <Content Include="addPro.aspx" />
     <Content Include="App_Data\DatabaseEM.accdb" />
+    <Content Include="boneMarrow.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -222,7 +223,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="shoppingCart.aspx" />
-    <None Include="Web References\idfWebService\idfWebService.disco" />
+    <None Include="Web References\idfLocalhost\idfWebService.disco" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -265,7 +266,15 @@
       <DependentUpon>addPro.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\cartLogic.cs" />
+    <Compile Include="App_Code\donBMLogic.cs" />
     <Compile Include="App_Code\orgLogic.cs" />
+    <Compile Include="boneMarrow.aspx.cs">
+      <DependentUpon>boneMarrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boneMarrow.aspx.designer.cs">
+      <DependentUpon>boneMarrow.aspx</DependentUpon>
+    </Compile>
     <Compile Include="info1.aspx.cs">
       <DependentUpon>info1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -306,7 +315,7 @@
     <Compile Include="shoppingCart.aspx.designer.cs">
       <DependentUpon>shoppingCart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Web References\idfWebService\Reference.cs">
+    <Compile Include="Web References\idfLocalhost\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -389,11 +398,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
-    <None Include="Web References\idfWebService\idfWebService.wsdl" />
-    <Content Include="Web References\idfWebService\Reference.map">
+    <None Include="Web References\idfLocalhost\idfWebService.wsdl" />
+    <None Include="Web References\idfLocalhost\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -416,14 +425,14 @@
   <ItemGroup>
     <WebReferenceUrl Include="https://localhost:44381/idfWebService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\idfWebService\</RelPath>
+      <RelPath>Web References\idfLocalhost\</RelPath>
       <UpdateFromURL>https://localhost:44381/idfWebService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>EzerMizion_idfWebService_idfWebService</CachedSettingsPropName>
+      <CachedSettingsPropName>EzerMizion_idfLocalhost_idfWebService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

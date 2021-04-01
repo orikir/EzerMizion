@@ -27,9 +27,9 @@ namespace EzerMizion.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44381/idfWebService.asmx")]
-        public string EzerMizion_idfWebService_idfWebService {
+        public string EzerMizion_idfLocalhost_idfWebService {
             get {
-                return ((string)(this["EzerMizion_idfWebService_idfWebService"]));
+                return ((string)(this["EzerMizion_idfLocalhost_idfWebService"]));
             }
         }
     }

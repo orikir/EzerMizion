@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EzerMizion.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="EzerMizion_idfWebService_idfWebService" Type="(Web Service URL)" Scope="Application">
+    <Setting Name="EzerMizion_idfLocalhost_idfWebService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://localhost:44381/idfWebService.asmx</Value>
     </Setting>
   </Settings>
