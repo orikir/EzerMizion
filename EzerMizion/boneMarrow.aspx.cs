@@ -36,13 +36,13 @@ namespace EzerMizion
 
         protected void update_Click(object sender, EventArgs e)
         {//
-            string date = date1.Text;
+            DateTime date = DateTime.Today;
             string id;
             DataSet ds;
             for (int i=0; i<ws.numOfSol();i++)
             {
                 id = ws.getId(i);
-                ds=ws.selectSol(id,DateTime.Parse(date));
+                ds=ws.selectSol(id,date);
                 if (ds!=null)
                 {
                     string fn = ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
@@ -62,6 +62,18 @@ namespace EzerMizion
         protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            {
+                ws.updateSol(GridView1.Rows[e.RowIndex].Cells[7].Text);
+                string status=ws.getStatus(GridView1.Rows[e.RowIndex].Cells[7].Text);
+                dbm.updateStatus(GridView1.Rows[e.RowIndex].Cells[7].Text, status);
+                GridView1.EditIndex = -1;
+                GridView1.DataSource = dbm.allDonations();
+                GridView1.DataBind();
+            }
         }
     }
 }

@@ -25,5 +25,10 @@ namespace EzerMizion.App_Code
             DataSet ds = d.excuteQuery(sql);
             return true;
         }
+        public void updateStatus(string id, string status)
+        {//update soldier status according to what his last status
+            string sql = string.Format("UPDATE donBoneMarrow SET donBoneMarrow.donStatus = '{0}' WHERE donBoneMarrow.donId ='{1}'", status, id);
+            d.excuteQuery(sql);
+        }
     }
 }

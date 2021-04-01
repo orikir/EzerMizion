@@ -25,9 +25,8 @@
     </div>
     <div class="byDate">
         <asp:Button ID="Button2" runat="server" Text="עידכון טבלה" OnClick="update_Click" ForeColor="Red" />
-        <asp:TextBox ID="date1" runat="server" Text=""></asp:TextBox>
     </div>
-    <asp:GridView ID="GridView1"  runat="server" BackColor="White" BorderColor="black" width="1000px" BorderStyle="None" BorderWidth="1px" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" CellPadding="4" >
+    <asp:GridView ID="GridView1"  runat="server" BackColor="White"  OnRowDeleting="GridView1_RowDeleting"  BorderColor="Black" width="1000px" BorderStyle="None" BorderWidth="1px" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" CellPadding="4" >
         <Columns>
             
             <asp:BoundField DataField="donDate" HeaderText="תאריך שינוי סטטוס" />
@@ -39,6 +38,9 @@
             <asp:BoundField DataField="donStatus" HeaderText="סטטוס" />
             <asp:BoundField DataField="donId"  HeaderText="תעודת זהות" />
             <asp:BoundField DataField="donCOde" HeaderText="קוד תורם" />
+            <asp:CommandField ButtonType="Button" ShowDeleteButton="True" DeleteText="עריכה" />
+
+
         </Columns>
         <FooterStyle BackColor="#99CCCC" CssClass="text-center" ForeColor="Red" />
         <HeaderStyle BackColor="Red"  Font-Bold="True" CssClass="text-center" ForeColor="white" />

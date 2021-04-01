@@ -68,6 +68,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -100,6 +114,12 @@
   <wsdl:message name="getIdSoapOut">
     <wsdl:part name="parameters" element="tns:getIdResponse" />
   </wsdl:message>
+  <wsdl:message name="getStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:getStatus" />
+  </wsdl:message>
+  <wsdl:message name="getStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:getStatusResponse" />
+  </wsdl:message>
   <wsdl:portType name="idfWebServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -120,6 +140,10 @@
     <wsdl:operation name="getId">
       <wsdl:input message="tns:getIdSoapIn" />
       <wsdl:output message="tns:getIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <wsdl:input message="tns:getStatusSoapIn" />
+      <wsdl:output message="tns:getStatusSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="idfWebServiceSoap" type="tns:idfWebServiceSoap">
@@ -169,6 +193,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap:operation soapAction="http://tempuri.org/getStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="idfWebServiceSoap12" type="tns:idfWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -210,6 +243,15 @@
     </wsdl:operation>
     <wsdl:operation name="getId">
       <soap12:operation soapAction="http://tempuri.org/getId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap12:operation soapAction="http://tempuri.org/getStatus" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

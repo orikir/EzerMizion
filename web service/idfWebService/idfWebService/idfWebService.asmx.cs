@@ -64,6 +64,12 @@ namespace idfWebService
             string id= sl.getId(i);
             return id;
         }
-        
+        [WebMethod]
+        public string getStatus(string id)
+        {//return donation status of the soldier with the current id
+            string status = ssl.getStatus(id).Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
+            return status;
+        }
+
     }
 }
