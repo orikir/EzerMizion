@@ -15,9 +15,9 @@ namespace idfWebService.App_Code
             string sql = String.Format("SELECT solStatus.donStatus FROM solStatus WHERE solStatus.id ='{0}'", id);
             return d.excuteQuery(sql);
         }
-        public void updateStatus(string id, string status)
+        public void updateStatus(string id, int st)
         {//update soldier status according to what his last status
-            string sql = string.Format("UPDATE solStatus SET solStatus.donStatus = '{0}' WHERE solStatus.id ='{1}'", status, id);
+            string sql = string.Format("UPDATE solStatus SET solStatus.donStatus = '{0}' WHERE solStatus.id ='{1}'", st, id);
             d.excuteQuery(sql);
         }
     }

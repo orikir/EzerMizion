@@ -30,8 +30,6 @@ namespace EzerMizion.idfLocalhost {
     [System.Web.Services.WebServiceBindingAttribute(Name="idfWebServiceSoap", Namespace="http://tempuri.org/")]
     public partial class idfWebService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback HelloWorldOperationCompleted;
-        
         private System.Threading.SendOrPostCallback selectSolOperationCompleted;
         
         private System.Threading.SendOrPostCallback updateSolOperationCompleted;
@@ -81,9 +79,6 @@ namespace EzerMizion.idfLocalhost {
         }
         
         /// <remarks/>
-        public event HelloWorldCompletedEventHandler HelloWorldCompleted;
-        
-        /// <remarks/>
         public event selectSolCompletedEventHandler selectSolCompleted;
         
         /// <remarks/>
@@ -97,33 +92,6 @@ namespace EzerMizion.idfLocalhost {
         
         /// <remarks/>
         public event getStatusCompletedEventHandler getStatusCompleted;
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string HelloWorld() {
-            object[] results = this.Invoke("HelloWorld", new object[0]);
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void HelloWorldAsync() {
-            this.HelloWorldAsync(null);
-        }
-        
-        /// <remarks/>
-        public void HelloWorldAsync(object userState) {
-            if ((this.HelloWorldOperationCompleted == null)) {
-                this.HelloWorldOperationCompleted = new System.Threading.SendOrPostCallback(this.OnHelloWorldOperationCompleted);
-            }
-            this.InvokeAsync("HelloWorld", new object[0], this.HelloWorldOperationCompleted, userState);
-        }
-        
-        private void OnHelloWorldOperationCompleted(object arg) {
-            if ((this.HelloWorldCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.HelloWorldCompleted(this, new HelloWorldCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/selectSol", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -158,23 +126,25 @@ namespace EzerMizion.idfLocalhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateSol", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void updateSol(string id) {
+        public void updateSol(string id, int st) {
             this.Invoke("updateSol", new object[] {
-                        id});
+                        id,
+                        st});
         }
         
         /// <remarks/>
-        public void updateSolAsync(string id) {
-            this.updateSolAsync(id, null);
+        public void updateSolAsync(string id, int st) {
+            this.updateSolAsync(id, st, null);
         }
         
         /// <remarks/>
-        public void updateSolAsync(string id, object userState) {
+        public void updateSolAsync(string id, int st, object userState) {
             if ((this.updateSolOperationCompleted == null)) {
                 this.updateSolOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateSolOperationCompleted);
             }
             this.InvokeAsync("updateSol", new object[] {
-                        id}, this.updateSolOperationCompleted, userState);
+                        id,
+                        st}, this.updateSolOperationCompleted, userState);
         }
         
         private void OnupdateSolOperationCompleted(object arg) {
@@ -242,10 +212,10 @@ namespace EzerMizion.idfLocalhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getStatus", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string getStatus(string id) {
+        public int getStatus(string id) {
             object[] results = this.Invoke("getStatus", new object[] {
                         id});
-            return ((string)(results[0]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
@@ -285,32 +255,6 @@ namespace EzerMizion.idfLocalhost {
                 return true;
             }
             return false;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void HelloWorldCompletedEventHandler(object sender, HelloWorldCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class HelloWorldCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal HelloWorldCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
         }
     }
     
@@ -414,10 +358,10 @@ namespace EzerMizion.idfLocalhost {
         }
         
         /// <remarks/>
-        public string Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
     }

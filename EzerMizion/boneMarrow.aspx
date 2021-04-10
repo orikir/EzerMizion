@@ -26,11 +26,11 @@
     <div class="byDate">
         <asp:Button ID="Button2" runat="server" Text="עידכון טבלה" OnClick="update_Click" ForeColor="Red" />
     </div>
-    <asp:GridView ID="GridView1"  runat="server" BackColor="White"  OnRowDeleting="GridView1_RowDeleting"  BorderColor="Black" width="1000px" BorderStyle="None" BorderWidth="1px" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" CellPadding="4" >
+    <asp:GridView ID="GridView1"  runat="server" BackColor="White"   OnRowCommand="GridView1_RowCommand"  BorderColor="Black" width="1000px" BorderStyle="None" BorderWidth="1px" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" CellPadding="4" >
         <Columns>
             
-            <asp:BoundField DataField="donDate" HeaderText="תאריך שינוי סטטוס" />
-            <asp:BoundField DataField="phoneNum" HeaderText="מספר טלפון" />
+            <asp:BoundField DataField="donDate" DataFormatString="{0:d}" HeaderText="תאריך שינוי סטטוס" />
+            <asp:BoundField DataField="phoneNum" DataFormatString="" HeaderText="מספר טלפון" />
             <asp:BoundField DataField="birthday" DataFormatString="{0:d}" HeaderText="תאריך לידה" />
             <asp:BoundField DataField="lastName" HeaderText="שם משפחה" />
             <asp:BoundField DataField="firstName" HeaderText="שם פרטי" />
@@ -38,7 +38,7 @@
             <asp:BoundField DataField="donStatus" HeaderText="סטטוס" />
             <asp:BoundField DataField="donId"  HeaderText="תעודת זהות" />
             <asp:BoundField DataField="donCOde" HeaderText="קוד תורם" />
-            <asp:CommandField ButtonType="Button" ShowDeleteButton="True" DeleteText="עריכה" />
+            <asp:ButtonField ButtonType="Button"  Text="עדכון סטטוס" />
 
 
         </Columns>

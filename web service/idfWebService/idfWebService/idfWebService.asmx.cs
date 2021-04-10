@@ -21,11 +21,7 @@ namespace idfWebService
         diseasesLogic dl = new diseasesLogic();
         solStatusLogic ssl = new solStatusLogic();
         soldiersLogic sl = new soldiersLogic();
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
+        
         [WebMethod]
         public DataSet selectSol(string id, DateTime newD)
         {//select fit soldier(healthe and new)
@@ -36,22 +32,21 @@ namespace idfWebService
                 {
                     return sl.soldierDetails(id);
                 }
-                else 
-                    return null;
+                else
+                {
+                    ssl.updateStatus(id, 4);//סימון החייל בצה"ל כלא כשיר
+                    return null;//אין צורך בהוספתו למאגר
+                }
+                    
             }
             return null;
         }
-        
+
         [WebMethod]
-        public void updateSol(string id)
+        public void updateSol(string id, int st)
         {//update soldier status
-            string status = ssl.getStatus(id).Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
-            if (status.Equals("תורם פוטנציאלי"))
-            {
-                ssl.updateStatus(id, "נמצא מתאים");
-            }
-            else
-                ssl.updateStatus(id, "תרם");
+            ssl.updateStatus(id, st);
+
         }
         [WebMethod]
         public int numOfSol()
@@ -61,13 +56,13 @@ namespace idfWebService
         [WebMethod]
         public string getId(int i)
         {//return id of a soldier
-            string id= sl.getId(i);
+            string id = sl.getId(i);
             return id;
         }
         [WebMethod]
-        public string getStatus(string id)
+        public int getStatus(string id)
         {//return donation status of the soldier with the current id
-            string status = ssl.getStatus(id).Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
+            int status = Int32.Parse( ssl.getStatus(id).Tables[0].Rows[0].ItemArray.GetValue(0).ToString());
             return status;
         }
 

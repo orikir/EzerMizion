@@ -76,10 +76,7 @@
                                     {%>
                             <a class="nav-link" href="DonationsList.aspx">תרומות</a>
                             <%}
-                                else
-                                {%>
-                            <a class="nav-link"></a>
-                            <%}
+                                
                                 }
 
                             %>
@@ -91,6 +88,14 @@
                                 { %>
                             <a class="nav-link" href="shoppingCart.aspx">עגלת קניות</a>
                             <%}
+                                else
+                                {
+                                    if (Session["uType"] == "manager")
+                                    {%>
+                            <a class="nav-link" href="boneMarrow.aspx">מח עצם</a>
+                            <%}
+                                
+                                }
 
                             %>
 

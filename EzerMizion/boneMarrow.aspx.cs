@@ -50,7 +50,7 @@ namespace EzerMizion
                     string pn = ds.Tables[0].Rows[0].ItemArray.GetValue(2).ToString();
                     string bd = ds.Tables[0].Rows[0].ItemArray.GetValue(3).ToString();
                     string bt = ds.Tables[0].Rows[0].ItemArray.GetValue(4).ToString();
-                    string ds1 = "תורם פוטנציאלי";
+                    int ds1 = 0;
                     dbm.insertNewDon(fn, ln, pn, DateTime.Parse(bd), bt, ds1, id);
                     GridView1.DataSource = dbm.byBlood(DropDownList1.Text);
                     GridView1.DataBind();
@@ -63,17 +63,20 @@ namespace EzerMizion
         {
 
         }
+        
 
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            int index = Convert.ToInt32(e.CommandArgument);
+            int st = ws.getStatus(GridView1.Rows[index].Cells[7].Text);
+            if (st < 3)
             {
-                ws.updateSol(GridView1.Rows[e.RowIndex].Cells[7].Text);
-                string status=ws.getStatus(GridView1.Rows[e.RowIndex].Cells[7].Text);
-                dbm.updateStatus(GridView1.Rows[e.RowIndex].Cells[7].Text, status);
-                GridView1.EditIndex = -1;
-                GridView1.DataSource = dbm.allDonations();
-                GridView1.DataBind();
+                dbm.updateStatus(GridView1.Rows[index].Cells[7].Text, st+1);
+                ws.updateSol(GridView1.Rows[index].Cells[7].Text, st+1);
             }
+            GridView1.EditIndex = -1;
+            GridView1.DataSource = dbm.allDonations();
+            GridView1.DataBind();
         }
     }
 }

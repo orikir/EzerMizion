@@ -110,6 +110,7 @@
     <Content Include="Photos\saveLife.jpg" />
     <Content Include="Photos\saveLife2.jpg" />
     <Content Include="Photos\shop.jpg" />
+    <Content Include="productDetails.aspx" />
     <Content Include="ProductsList.aspx" />
     <Content Include="rentEq.aspx" />
     <Content Include="HomeP.aspx" />
@@ -302,6 +303,13 @@
     </Compile>
     <Compile Include="payment.aspx.designer.cs">
       <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productDetails.aspx.cs">
+      <DependentUpon>productDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productDetails.aspx.designer.cs">
+      <DependentUpon>productDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
