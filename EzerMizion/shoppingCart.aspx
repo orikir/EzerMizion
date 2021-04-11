@@ -258,7 +258,7 @@
                                 </tbody>
                             </table>
                             <div class="btn-cart-totals">
-                                <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text="בצע בדיקת מלאי"></asp:Label>
                                 <asp:Button ID="checkout" class=" btnC" ForeColor="White" runat="server" Text="אישור ומעבר לתשלום" OnClick="checkout_Click" />
                             </div>
                             <!-- /.btn-cart-totals -->
@@ -314,11 +314,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                        <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                                        <asp:Button ID="test" runat="server" CommandName='<%# Eval("proCode")%>' Text="בדיקת מלאי" class="mCS_img_loaded" BorderColor="Red" CssClass="btnD" OnClick="test_Click" />
                                     </div>
                                     <div class="col-md-1">
                                         <div class="product-content">
-                                            <asp:Label ID="pName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
+                                            <asp:Label ID="proName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
                                             <asp:Label ID="proCode" class="code" runat="server" Text='<%#Eval("proCode") %>'></asp:Label>
                                             <div class="price">
                                                 ₪<asp:Label ID="pPrice" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
