@@ -54,10 +54,24 @@ namespace EzerMizion
             string dSum = Request.QueryString["dSum"];
             donorsLogic dl = new donorsLogic();
             {
-                if (dl.newDonor2(id.Text, selectOrg.Text, double.Parse(dSum), DateTime.Today, cardNum.Text, Month.Text, Year.Text, ownerId.Text, cardCvv.Text))
-                    alarm_lable.Text = "התרומה התקבלה בהצלחה";
+                //בדיקת תוקף כרטיס
+                if (Int32.Parse(Year.Text) < Int32.Parse(DateTime.Now.Year.ToString()))
+                {//אם השנה הנוכחית אחרי שנה שהוכנסה 
+                    alarm_lable.Text = "כרטיס לא בתוקף-לא ניתן לבצע תרומהה";
+                }
                 else
-                    alarm_lable.Text = "יש להירשם לפני ביצוע תרומה";
+                if ((Int32.Parse(Year.Text) == Int32.Parse(DateTime.Now.Year.ToString())) && (Int32.Parse(Month.Text) <= Int32.Parse(DateTime.Now.Month.ToString())))
+                {//אם אותה שנה אבל חודש נוכחי מאוחר מחודש שהוכנס
+                    alarm_lable.Text = "כרטיס לא בתוקף-לא ניתן לבצע תרומה";
+                }
+                else
+                {
+                    if (dl.newDonor2(id.Text, selectOrg.Text, double.Parse(dSum), DateTime.Today, cardNum.Text, Month.Text, Year.Text, ownerId.Text, cardCvv.Text))
+                        alarm_lable.Text = "התרומה התקבלה בהצלחה";
+                    else
+                        alarm_lable.Text = "יש להירשם לפני ביצוע תרומה";
+                }
+                
             }
             
         }

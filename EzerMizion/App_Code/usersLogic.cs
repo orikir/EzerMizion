@@ -30,6 +30,11 @@ namespace EzerMizion.App_Code
             string sql = String.Format("SELECT usName FROM users WHERE users.usName ='{0}' AND users.id='{1}'", name, id);//בדיקה האם שם המשתמש תואם את תעודת הזהות
             return dal.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
+        public string getName(string id)
+        {//השיטה מחזירה את שם המשתמש
+            string sql = String.Format("SELECT firstName FROM users WHERE users.id='{0}'", id);
+            return dal.excuteQuery(sql).Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
+        }
         public bool isManager(string id)
         {//מקבלת תעודת זהות מחזירה אמת אם המשתמש מנהל ושקר אחרת
             string sql = String.Format("SELECT isManager FROM users WHERE(((users.isManager) = True) AND((users.id) ='{0}'))", id);

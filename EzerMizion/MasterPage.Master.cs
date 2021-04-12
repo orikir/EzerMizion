@@ -11,7 +11,7 @@ namespace EzerMizion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            Label1.Text = Session["uName"].ToString() + " שלום ";
         }
     }
 }

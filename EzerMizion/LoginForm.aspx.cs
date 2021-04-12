@@ -22,6 +22,7 @@ namespace EzerMizion
             {
                 Label1.Text = "you have successfully loggin";
                 Session["uId"] = id.Text;
+                Session["uName"] = ul.getName(id.Text);
                 if (ul.isManager(id.Text))
                 {
                     Session["uType"] = "manager";

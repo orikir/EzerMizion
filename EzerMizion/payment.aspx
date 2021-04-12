@@ -21,7 +21,7 @@
             .pay-left input {
                 border: none;
                 border-radius: 1.5rem;
-               // padding: 2%;
+                // padding: 2%;
                 width: 60%;
                 background: #f8f9fa;
                 font-weight: bold;
@@ -39,9 +39,9 @@
         }
 
         .pay-left img {
-            margin:15% 0% 5%;
+            margin: 15% 0% 5%;
             width: 100%;
-            height:10%;
+            height: 10%;
             /-webkit-animation: mover 2s infinite alternate;
             /animation: mover 1s infinite alternate;
         }
@@ -58,17 +58,16 @@
         }
 
         .btnPay {
-        text-align: center;
-        margin:  1% 1% 1% 25%;
-        border:none;
-        padding: 5% 5% 10% 5%;
-        background: red;
-        color: white;
-        font-weight: 600;
-        height: 70%;
-        width:60%;
-
-        cursor: pointer;
+            text-align: center;
+            margin: 1% 1% 1% 25%;
+            border: none;
+            padding: 5% 5% 10% 5%;
+            background: red;
+            color: white;
+            font-weight: 600;
+            height: 70%;
+            width: 60%;
+            cursor: pointer;
         }
 
         .pay-heading {
@@ -99,7 +98,8 @@
         .part {
             margin: 0% 0.5% 0% 0.5%;
         }
-        .vStyle{
+
+        .vStyle {
             direction: rtl;
             float: right;
         }
@@ -117,7 +117,7 @@
                             <div class="row form-group">
                                 <div class=" col-md-6">
                                     <asp:Label ID="Label1" class="control-label vStyle" runat="server" Text=" תעודת זהות של בעל הכרטיס"></asp:Label>
-                                    <asp:TextBox ID="ownerId" class="form-control" placeholder="תעודת זהות של בעל הכרטיס *"  runat="server" Text=""></asp:TextBox>
+                                    <asp:TextBox ID="ownerId" class="form-control" placeholder="תעודת זהות של בעל הכרטיס *" runat="server" Text=""></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="ownerId"></asp:RequiredFieldValidator>
                                     <br />
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="vStyle" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="ownerId"></asp:RegularExpressionValidator>
@@ -131,9 +131,9 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                            <!-- Expiry-->
+                                <!-- Expiry-->
                                 <div class="col-md-1">
-                                    <asp:Label ID="Label3" class="control-label vStyle"  runat="server" Text="תוקף:"></asp:Label>
+                                    <asp:Label ID="Label3" class="control-label vStyle" runat="server" Text="תוקף:"></asp:Label>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:DropDownList ID="Month" class="form-control" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Black">
@@ -145,37 +145,40 @@
                                         <asp:ListItem> בחר שנה</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
-                            <!-- CVV -->
+                                <!-- CVV -->
                                 <div class=" col-md-1">
                                     <asp:Label ID="Label4" class="control-label " runat="server" Text="CVV"></asp:Label>
                                 </div>
                                 <div class="col-md-4">
                                     <asp:TextBox ID="cardCvv" placeholder="CVV*" class="form-control" runat="server" Text=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שלוש ספרות בגב הכרטיס" ControlToValidate="cardCvv"></asp:RequiredFieldValidator>
+                                    <br />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="vStyle" ErrorMessage="מספר לא תקני" ValidationExpression="\d{3}" ControlToValidate="cardCvv"></asp:RegularExpressionValidator>
                                 </div>
-                            </div>
-                            <!-- Submit -->
-                           
                         </div>
-                         <div class="row  ">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-4">
-                                        <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
-                                            <br />
-                                        <asp:Label ID="Label5" class="control-label " runat="server" Text=""></asp:Label>
-                                </div>
-                                <div class="col-md-4"> </div>
-                            </div>
+                        <!-- Submit -->
+
+                    </div>
+                    <div class="row  ">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
+                            <br />
+                            <asp:Label ID="Label5" class="control-label " runat="server" Text=""></asp:Label>
+                        </div>
+                        <div class="col-md-4"></div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 pay-left ">
-                <div class="re-box">
-                    
-                    <asp:Image ID="Image2" CssClass="pay-left img" src="Photos/shop.jpg"  runat="server" />
-                    <p>רפואה שלמה!</p>
-                </div>
+        </div>
+        <div class="col-md-3 pay-left ">
+            <div class="re-box">
+
+                <asp:Image ID="Image2" CssClass="pay-left img" src="Photos/shop.jpg" runat="server" />
+                <p>רפואה שלמה!</p>
             </div>
         </div>
+    </div>
 
     </div>
 
