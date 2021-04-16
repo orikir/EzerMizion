@@ -100,9 +100,9 @@
     <Content Include="Photos\bed.jpg" />
     <Content Include="Photos\chair.png" />
     <Content Include="Photos\halichon.jpg" />
-    <Content Include="Photos\header_helping_hand.png" />
-    <Content Include="Photos\header_medal1.png" />
-    <Content Include="Photos\header_people.png" />
+    <Content Include="Photos\header_helping_hand.jpg" />
+    <Content Include="Photos\header_medal1.jpg" />
+    <Content Include="Photos\header_people.jpg" />
     <Content Include="Photos\kabaim.jpg" />
     <Content Include="Photos\logo -icon.ico" />
     <Content Include="Photos\oxigen.jpg" />
