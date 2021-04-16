@@ -76,7 +76,7 @@ namespace EzerMizion
             string s = (item.FindControl("stock") as Label).Text;
             if (Int32.Parse(s) <= 1)
             {
-                Label2.Text = " אין מספיק במלאי מסוג המוצר: " + proName+" -על מנת להמשיך הסר/הורד מכמות המוצר ";
+                Label2.Text = " אין מספיק במלאי מסוג המוצר: " + proName + " -על מנת להמשיך הסר/הורד מכמות המוצר ";
 
             }
             else
@@ -93,26 +93,31 @@ namespace EzerMizion
 
         protected void checkout_Click(object sender, EventArgs e)
         {
-            if (Label2.Text.Equals(" ") &&cartSum.Text!=null )
-                {
-                    Response.Redirect("payment.aspx");
-                }
-            
+
+            if (cartSum.Text != null && checkStock())
+            {
+                Response.Redirect("payment.aspx");
+            }
+
         }
 
-        protected void test_Click(object sender, EventArgs e)
+        public bool checkStock()
         {
-            RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
-            string proName = (item.FindControl("proName") as Label).Text;
-            string s = (item.FindControl("stock") as Label).Text;
-            if (Int32.Parse(s) <= 1)
+            bool tf1 = true;
+            foreach (RepeaterItem item in Repeater1.Items)
             {
-                Label2.Text = " אין מספיק במלאי מסוג המוצר " + proName + " על מנת להמשיך הסר/הורד מכמות המוצר ";
+                string proCode = (item.FindControl("proCode") as Label).Text;
+                string s = (item.FindControl("stock") as Label).Text;
+                Label lab = (item.FindControl("Label1") as Label);
+                if (Int32.Parse(s) <= 1)
+                {
+                    lab.Text = "אין במלאי";
+                    tf1 = false;
+                }
+
             }
-            else
-            {
-                Label2.Text = " ";
-            }
+            return tf1;
+
         }
 
     }

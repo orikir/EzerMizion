@@ -84,7 +84,8 @@ namespace EzerMizion
 
         protected void continue_Click(object sender, EventArgs e)
         {
-            Response.Redirect("addDonPInfo.aspx?dSum=" + dSum.Text);
+            if (!dSum.Text.Equals("0"))
+                Response.Redirect("addDonPInfo.aspx?dSum=" + dSum.Text);
         }
 
         protected void paymentBtn_Click(object sender, EventArgs e)

@@ -24,6 +24,11 @@
             width: 40%;
             height: 40%;
         }
+        .p{
+            border: groove;
+            color:black ;
+            border-color:red;
+        }
        
     </style>
 </asp:Content>
@@ -32,44 +37,13 @@
         <div class="row">
             <img src="Photos/saveLife.jpg" class="rowImage" />
         </div>
-        <div class="row header " runat="server">
-            <div class="col-3"></div>
-            <div class="col-2 ">
-                <img src="Photos/header_helping_hand.png" class="photoD" />
-                 <div class="subTitle">
-                            <div class="title">180 ש"ח</div>
-                            <div class="subTitle ">
-                                <asp:Label ID="Label2" runat="server" class="subTitle" Text="עלות בדיקת דגימה"></asp:Label>
-                            </div>
-                        </div>
-            </div>
-            <div class="col-2">
-                <img src="Photos/header_medal1.png" class="photoD" />
-                  <div class="titles">
-                            <div class="title">3,833</div>
-                            <div class="subTitle backoffice">
-                                <asp:Label ID="Label1" runat="server" class="subTitle" Text="השתלות שבוצעו עד היום"></asp:Label>
-                            </div>
-                        </div>
-            </div>
-            <div class="col-2">
-                <img src="Photos/header_people.png" class="photoD" />
-                <div class="titles">
-                    <div class="title">1,054,739</div>
-                    <div class="subTitle backoffice">
-                        <asp:Label ID="Label3" runat="server" class="subTitle" Text="תורמים פוטנציאליים במאגר"></asp:Label>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3"></div>
-        </div>
-        
+       
         <div class="col-md-3"></div>
-            <div class="col-md-6" style="direction: rtl; text-align: justify;">
+            <div class="p col-md-6" style="direction: rtl; text-align: justify; ">
                 <h2 style="direction: rtl; text-align: center;">המאגר והישגיו</h2>
                 <br>
                 <h6>המאגר צבר במהלך השנים הישגים רבים ומשמעותיים:</h6>
-                <p>
+                <p  >
                     <br />
                     המאגר הלאומי של "עזר מציון" הינו המאגר השישי בגודלו בעולם והנו המאגר היהודי הגדול ביותר. מאז הקמתו בשנת 1998 הצטרפו אליו למעלה מ-1,054,739 תורמים פוטנציאליים.
         <br />
@@ -88,4 +62,36 @@
             </div>
             <div class="col-md-3"></div>
         </div>
+     <div class="row header " runat="server">
+            <div class="col-3"></div>
+            <div class="col-2 ">
+                <img src="Photos/header_helping_hand.png" class="photoD" />
+                 <div class="subTitle">
+                            <div class="title">180 ש"ח</div>
+                            <div class="subTitle ">
+                                <asp:Label ID="Label2" runat="server" class="subTitle" Text="עלות בדיקת דגימה"></asp:Label>
+                            </div>
+                        </div>
+            </div>
+            <div class="col-2">
+                <img src="Photos/header_medal1.png"  class="photoD" />
+                  <div class="titles">
+                            <div class="title">3,833</div>
+                            <div class="subTitle backoffice">
+                                <asp:Label ID="Label1" runat="server" class="subTitle" Text="השתלות שבוצעו עד היום"></asp:Label>
+                            </div>
+                        </div>
+            </div>
+            <div class="col-2">
+                <img src="Photos/header_people.png"  class="photoD" />
+                <div class="titles">
+                    <div class="title">1,054,739</div>
+                    <div class="subTitle backoffice">
+                        <asp:Label ID="Label3" runat="server" class="subTitle" Text="תורמים פוטנציאליים במאגר"></asp:Label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        
 </asp:Content>
