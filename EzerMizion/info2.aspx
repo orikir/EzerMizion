@@ -1,11 +1,47 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="info2.aspx.cs" Inherits="EzerMizion.info2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <style>
+        .rowImage {
+            padding:  0% 25% 0% 25%;
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            margin: 1% 0% 1% 0%;
+            background-color: #f8f9fa;
+            direction: rtl;
+            position: center;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: large;
+        }
+
+        .photoD {
+            margin: 5% 0% 0% 0%;
+            padding: 2% 0% 2% 0%;
+            width: 40%;
+            height: 40%;
+        }
+
+        .p {
+            border: groove;
+            color: black;
+            border-color: red;
+            background-color:white;
+        }
+    </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"  >
+    <div >
+         <div class="row" >
+            <img src="Photos/logo2.png"  class="rowImage" />
+        </div>
+    <div class="row" style="background-color:#e21616; background-blend-mode: color-burn">
+        
         <div class="col-md-3"></div>
-        <div class="col-md-6" style="direction: rtl; text-align: justify;">
+        <div class="p col-md-6" style="direction: rtl; text-align: justify;">
             <h2 style="direction: rtl; text-align: center;">מי אנחנו?</h2>
             <br>
             <h6>ארגון אחד - עשרות דרכים לעזור</h6>
@@ -23,4 +59,7 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+    </div>
+   
+   
 </asp:Content>
