@@ -14,8 +14,6 @@
            /padding-top: 15%;
            / padding-bottom: 0%;
             direction: rtl;
-            border-top-left-radius: 10% 50%;
-            border-bottom-left-radius: 10% 50%;
             background-color:#d91e21;
             padding: 12% 0% 0% 0%;
             
@@ -42,11 +40,9 @@
         }
 
         .register-left img {
-           margin:0% 0% 5%;
+           margin:10%% 0% 5%;
             width: 100%;
             height:10%;
-            border-top-left-radius: 2% 70%;
-            border-bottom-left-radius: 1% 30%;
         }
 
         .register-left p {

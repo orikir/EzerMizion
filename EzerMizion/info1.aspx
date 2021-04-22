@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .rowImage {
-            padding: 3% 0% 1% 0%;
+            padding: 1% 0% 1% 0%;
             width: 100%;
             height: 100%;
         }
@@ -40,11 +40,9 @@
 
         <div class="col-md-3"></div>
         <div class="p col-md-6" style="direction: rtl; text-align: justify;">
-            <h2 style="direction: rtl; text-align: center;">המאגר והישגיו</h2>
-            <br>
+            <h2 style="direction: rtl; text-align: center; padding:3%;">המאגר והישגיו</h2>
             <h6>המאגר צבר במהלך השנים הישגים רבים ומשמעותיים:</h6>
             <p>
-                <br />
                 המאגר הלאומי של "עזר מציון" הינו המאגר השישי בגודלו בעולם והנו המאגר היהודי הגדול ביותר. מאז הקמתו בשנת 1998 הצטרפו אליו למעלה מ-1,054,739 תורמים פוטנציאליים.
         <br />
                 המאגר חבר בארגון העולמי של מאגרי מח העצם BMDW ׁׁ(פרוט: Bone Marrow World Wide) ובנה לעצמו מוניטין של מאגר איכותי ויעיל, המספק מענה מהיר לכל פונה.

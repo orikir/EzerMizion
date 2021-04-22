@@ -9,8 +9,6 @@
 
         .adding-right {
             background: #f8f9fa;
-            border-top-left-radius: 10% 50%;
-            border-bottom-left-radius: 10% 50%;
         }
 
         .adding .adding-form {
@@ -19,16 +17,17 @@
         }
 
         .btnadding {
-            margin-top: 10%;
-            margin-left: 25%;
+            margin-top: 5%;
+            margin-left: 30%;
             margin-right: 50%;
-            border: none;
-            border-radius: 1.5rem;
-            padding: 2%;
+            border-color:red;
+            border-style:double;
+            padding: 1% 1% 2% 1%;
             background: white;
             color: #000;
             font-weight: 600;
-            width: 25%;
+            width: 20%;
+            height:50%;
             direction: rtl;
         }
 

@@ -10,7 +10,12 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
-
+    <style>
+        .space{
+            padding-right: 1%;
+            padding-left: 1%;
+        }
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -28,19 +33,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a>
-                            <% 
-                                if (Session["uType"] == "no")
-                                { %>
-                            <a class="nav-link" href="LoginForm.aspx">התחברות</a>
-                            <%}
-                                else
-                                {%>
-                            <a class="nav-link"  href="logout.aspx">התנתקות</a>
-                            <%} %>
-                        </a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a>
                             <% if (Session["uType"] == "ordinary")
@@ -101,11 +94,24 @@
 
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a>
+                            <% 
+                                if (Session["uType"] == "no")
+                                { %>
+                            <a class="nav-link" href="LoginForm.aspx">התחברות</a>
+                            <%}
+                                else
+                                {%>
+                            <a class="nav-link"  href="logout.aspx">התנתקות</a>
+                            <%} %>
+                        </a>
+                    </li>
 
                 </ul>
             </div>
-            <div>
-                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+            <div class="space">
+                <asp:Label ID="Label1" runat="server"  Text=""></asp:Label>
             </div>
         </nav>
         <div>

@@ -14,8 +14,6 @@
             padding-top: 15%;
             padding-bottom: 0%;
             direction: rtl;
-            border-top-left-radius: 10% 50%;
-            border-bottom-left-radius: 10% 50%;
             background-color: white;
         }
 

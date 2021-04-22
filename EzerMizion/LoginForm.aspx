@@ -47,10 +47,11 @@
             height: 28%;
             width: 38%;
             top: -10%;
-            border-radius: 60%;
+            border-radius: 70%;
             background: #f8f9fa;
             padding: 2%;
             text-align: center;
+
         }
 
         .brand_logo {
@@ -59,7 +60,8 @@
             border-radius: 50%;
             border: 3px solid white;
             background: #e7e9eb;
-            padding: 1% 2% 1% 2%;
+            padding: 1% -4% 1% -4%;
+            margin:1% 2% 1% 1%;
         }
 
         .form_container {
