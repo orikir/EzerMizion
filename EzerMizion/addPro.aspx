@@ -45,6 +45,7 @@
 
         .btnUp1 {
             /margin: 1% 2% 1% 2%;
+            background-color:white;
             border: none;
             padding: 1% 10% 1% 0;
             color: #000;

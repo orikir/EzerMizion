@@ -161,8 +161,9 @@
             }
 
         .cart-totals {
-            border-radius: 3%;
-            background: #e5e5e5;
+            border-color:red;
+            border-style:double;
+            background-color: #f8f9fa ;
             padding: 5%;
         }
 
@@ -235,6 +236,10 @@
             height: 60%;
             cursor: pointer;
         }
+        .button{
+            border:none;
+            background-color:red;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -275,21 +280,21 @@
                         <div class="row" style="text-align: center;">
                             <div class="col-md-2"></div>
                             <div class="col-md-2">
-                                <a>מחיר כולל</a>
+                                <a class="label">מחיר כולל</a>
                             </div>
                             <div class="col-md-3">
-                                <a>כמות</a>
+                                <a class="label">כמות</a>
                             </div>
                             <div class="col-md-2">
-                                <a>זמינות</a>
+                                <a class="label">זמינות</a>
                             </div>
                             <div class="col-md-3">
-                                <a>מוצר</a>
+                                <a class="label">מוצר</a>
                             </div>
                             
                         </div>
                         <div class="row">
-                            <asp:Button ID="Button1" runat="server" Text="" Height="1px" Width="100%" BorderColor="White" />
+                            <asp:Button ID="Button1" runat="server" Text="" Height="1px" CssClass="button" Width="100%" BorderColor="White" />
                         </div>
                         <asp:Repeater ID="Repeater1" runat="server">
                             <ItemTemplate>

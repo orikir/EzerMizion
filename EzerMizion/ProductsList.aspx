@@ -7,20 +7,22 @@
             position: center;
             text-align: center;
             margin-top: 0%;
-            border-radius: 1.5rem;
             padding: 0.5%;
-            background: #000000;
             color: white;
+            border-color:white;
+            border-style:double;
+            background: red;
             font-weight: 600;
             width: 20%;
-            cursor: pointer;
+            height:50%;
+            direction: rtl;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <td>
         <center>
-            <asp:GridView ID="GridView1" runat="server" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" AutoGenerateColumns="False" Width="921px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" Height="729px" CellSpacing="2">
+            <asp:GridView ID="GridView1" runat="server" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" AutoGenerateColumns="False" Width="921px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor=" White" BorderColor="White"   BorderWidth="3px" CellPadding="4" ForeColor=" Black" Height="729px" CellSpacing="2">
                 <Columns>
                     
                     <asp:CommandField ButtonType="Button" ShowDeleteButton="True" DeleteText="מחיקה" />
@@ -40,7 +42,7 @@
                     
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
-                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" CssClass="text-center" />
+                <HeaderStyle BackColor="red" Font-Bold="True" ForeColor="White" CssClass="text-center" />
                 <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
                 <RowStyle BackColor="White" CssClass="text-center" />
                 <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
