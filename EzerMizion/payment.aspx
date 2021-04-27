@@ -7,15 +7,20 @@
             margin-top: 3%;
             padding: 3%;
         }
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+           color: black ;
+        }
 
         .pay-left {
             text-align: center;
-            color: #000;
-            padding: 25% -5% 15% -5%;
+            color: black;
+            text-emphasis-style:double-circle;
+            padding-top: 12%;
+            padding-bottom: 10%;
             direction: rtl;
-            border-top-left-radius: 10% 50%;
-            border-bottom-left-radius: 10% 50%;
-            background-color: white;
+            background-color:white;
         }
 
             .pay-left input {
@@ -39,7 +44,7 @@
         }
 
         .pay-left img {
-            margin: 15% 0% 5%;
+           
             width: 100%;
             height: 10%;
             /-webkit-animation: mover 2s infinite alternate;

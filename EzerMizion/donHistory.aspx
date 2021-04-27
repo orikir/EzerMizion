@@ -8,13 +8,18 @@
         .h3d{
             margin-top: 2%
         }
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+           color: white ;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <center>
         <h3 class="h3d">היסטוריית תרומות</h3>
-            <asp:GridView ID="GridView2" runat="server" CssClass="design" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView2" runat="server" CssClass="design" BackColor="#CCCCCC" BorderColor="White" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="donSum" HeaderText="סכום תרומה" />
                     <asp:BoundField DataField="orgName" HeaderText=":תרם מטעם" />
@@ -27,7 +32,7 @@
                 <FooterStyle BackColor="Red" />
                 <HeaderStyle BackColor="Red" Font-Bold="True" ForeColor="White" CssClass="text-center" />
                 <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                <RowStyle BackColor="White" CssClass="text-center" />
+                <RowStyle BackColor="#f0f0f0" CssClass="text-center" />
                 <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F1F1F1" />
                 <SortedAscendingHeaderStyle BackColor="#808080" />

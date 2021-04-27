@@ -8,10 +8,18 @@
             margin: 1em;
             text-transform: capitalize;
             font-size: 1.7em;
+            color:white
+        }
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 100%;
+           color: black ;
         }
 
         .product-grid4, .product-grid4 .product-image4 {
-            position: relative
+            position: relative;
+            
+            padding-top:2%
         }
 
         .product-grid4 {
@@ -21,11 +29,13 @@
             overflow: hidden;
             z-index: 1;
             margin-bottom: 3%;
-            transition: all .3s ease 0s
+            transition: all .3s ease 0s;
+            background-color:white;
         }
 
             .product-grid4:hover {
                 box-shadow: 0 0 10px rgba(0,0,0,.2);
+                  
             }
 
             .product-grid4 .product-image4 a {

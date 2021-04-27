@@ -17,7 +17,9 @@
         }
 
         body {
-            background-color: white;
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+           color: black ;
         }
 
         .tColor {

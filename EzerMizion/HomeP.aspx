@@ -5,11 +5,18 @@
         .firstRow {
             margin: 2% 0% 2% 0%;
         }
-        
+        .first{
+            margin-top: 2%
+        }
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+           color: black ;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="container">
+     <div class="container first">
      <div class="jumbotron   ">
         <div class="row">
             <div class="col-md-6">

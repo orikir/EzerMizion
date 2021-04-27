@@ -7,14 +7,18 @@
             margin-top: 3%;
             padding: 3%;
         }
-
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+           color: black ;
+        }
         .register-left {
             text-align: center;
             color: #000;
            /padding-top: 15%;
            / padding-bottom: 0%;
             direction: rtl;
-            background-color:#d91e21;
+            background-color: #c91e24;
             padding: 12% 0% 0% 0%;
             
         }

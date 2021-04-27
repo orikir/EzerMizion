@@ -10,25 +10,31 @@
 
         .header {
             margin: 1% 0% 1% 0%;
-            background-color: #f8f9fa;
             direction: rtl;
             position: center;
             text-align: center;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: large;
+            color: white;
         }
 
         .photoD {
             margin: 5% 0% 0% 0%;
             padding: 2% 0% 2% 0%;
             width: 40%;
-            height: 40%;
+            height: 45%;
+        }
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+           color: black ;
         }
 
         .p {
             border: groove;
             color: black;
             border-color: red;
+            background-color:white
         }
     </style>
 </asp:Content>

@@ -31,6 +31,11 @@
             border-color: red;
             background-color:white;
         }
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+           color: black ;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"  >
@@ -38,7 +43,7 @@
          <div class="row" >
             <img src="Photos/logo2.png"  class="rowImage" />
         </div>
-    <div class="row" style="background-color:#e21616; background-blend-mode: color-burn">
+    <div class="row" >
         
         <div class="col-md-3"></div>
         <div class="p col-md-6" style="direction: rtl; text-align: justify;">

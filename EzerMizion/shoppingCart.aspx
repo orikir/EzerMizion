@@ -8,9 +8,14 @@
         .cart-wrap {
             padding: 10% 0;
         }
-
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+           color: black ;
+        }
         .main-heading {
             margin-bottom: 5%;
+            margin-top: 1%;
             text-align: center;
             font-size: x-small;
         }
@@ -240,6 +245,9 @@
             border:none;
             background-color:red;
         }
+        .t{
+            background-color:white;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -272,7 +280,7 @@
                     </div>
                     <!-- /.cart-totals -->
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 t">
                     <div class="main-heading ">
                         <h3>עגלת קניות</h3>
                     </div>
