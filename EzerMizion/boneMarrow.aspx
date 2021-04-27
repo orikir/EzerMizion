@@ -2,14 +2,26 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        .vStyle{
+        .vStyle {
             direction: rtl;
+            color: white
+        }
+
+        .by {
+            margin: 2% 0 2% 0
+        }
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 170%;
         }
     </style>
+
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center>
-     <div class="byDate">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" style="background-image: url('Photos/cover.jpg');">
+    <div   >
+        <center>
+    
+     <div class="by">
         <asp:Button ID="Button1" runat="server" Text="חיפוש" OnClick="byBlood" ForeColor="Red" />
         <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
             <asp:ListItem>O+</asp:ListItem>
@@ -21,9 +33,9 @@
             <asp:ListItem>AB+</asp:ListItem>
             <asp:ListItem>AB-</asp:ListItem>
         </asp:DropDownList>
-        <asp:Label ID="Label1" class="vStyle" runat="server" Text="סוג דם:"></asp:Label>
+        <asp:Label ID="Label1" class="vStyle" runat="server" Text=":חפש לפי סוג דם"></asp:Label>
     </div>
-    <div class="byDate">
+    <div class="by">
         <asp:Button ID="Button2" runat="server" Text="עידכון טבלה" OnClick="update_Click" ForeColor="Red" />
     </div>
     <asp:GridView ID="GridView1"  runat="server" BackColor="White"   OnRowCommand="GridView1_RowCommand"  BorderColor="Black" width="1000px" BorderStyle="None" BorderWidth="1px" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" CellPadding="4" >
@@ -53,5 +65,7 @@
         <SortedDescendingHeaderStyle BackColor="#002876" />
         </asp:GridView>
     </center>
+    </div>
+
 
 </asp:Content>

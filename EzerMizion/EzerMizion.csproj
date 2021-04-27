@@ -98,13 +98,16 @@
     <Content Include="logout.aspx" />
     <Content Include="payment.aspx" />
     <Content Include="Photos\bed.jpg" />
+    <Content Include="Photos\bG.png" />
     <Content Include="Photos\chair.png" />
+    <Content Include="Photos\cover.jpg" />
     <Content Include="Photos\halichon.jpg" />
     <Content Include="Photos\header_helping_hand.jpg" />
     <Content Include="Photos\header_medal1.jpg" />
     <Content Include="Photos\header_people.jpg" />
     <Content Include="Photos\kabaim.jpg" />
     <Content Include="Photos\logo -icon.ico" />
+    <Content Include="Photos\logo1_ezer_.jpg" />
     <Content Include="Photos\oxigen.jpg" />
     <Content Include="Photos\pageDon.jpg" />
     <Content Include="Photos\saveLife.jpg" />

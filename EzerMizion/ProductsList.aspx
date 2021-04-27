@@ -2,11 +2,14 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
+        .m{
+            margin: 1% 5% 1% 5%;
+        }
         .btnadding {
             border-width: medium;
             position: center;
             text-align: center;
-            margin-top: 0%;
+            margin: 2% 1% 1% 1% ;
             padding: 0.5%;
             color: white;
             border-color:white;
@@ -17,12 +20,18 @@
             height:50%;
             direction: rtl;
         }
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 170%;
+           color: white;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <td>
         <center>
-            <asp:GridView ID="GridView1" runat="server" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" AutoGenerateColumns="False" Width="921px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor=" White" BorderColor="White"   BorderWidth="3px" CellPadding="4" ForeColor=" Black" Height="729px" CellSpacing="2">
+            <asp:Button ID="addP" CssClass="btnadding" runat="server" Text="להוספת מוצר לחץ כאן" OnClick="addP_Click" />
+            <asp:GridView ID="GridView1" runat="server"   CssClass=" m"  OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" AutoGenerateColumns="False" Width="921px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor=" White" BorderColor="White"   BorderWidth="3px" CellPadding="4" ForeColor=" Black" Height="729px" CellSpacing="2">
                 <Columns>
                     
                     <asp:CommandField ButtonType="Button" ShowDeleteButton="True" DeleteText="מחיקה" />
@@ -39,11 +48,10 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     
-                    
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
-                <HeaderStyle BackColor="red" Font-Bold="True" ForeColor="White" CssClass="text-center" />
-                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                <HeaderStyle  BackColor="red" Font-Bold="True" ForeColor="White" CssClass=" m text-center" />
+                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left"  />
                 <RowStyle BackColor="White" CssClass="text-center" />
                 <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F1F1F1" />
@@ -51,7 +59,7 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#383838" />
             </asp:GridView>
-            <asp:Button ID="addP" CssClass="btnadding" runat="server" Text="להוספת מוצר לחץ כאן" OnClick="addP_Click" />
+            
         </center>
     </td>
 
