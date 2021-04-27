@@ -39,10 +39,12 @@ namespace EzerMizion
             DateTime date = DateTime.Today;
             string id;
             DataSet ds;
+            bool b;
             for (int i=0; i<ws.numOfSol();i++)
             {
                 id = ws.getId(i);
-                ds=ws.selectSol(id,date);
+                b = dbm.isIN(id);
+                ds=ws.selectSol(id,b);
                 if (ds!=null)
                 {
                     string fn = ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();

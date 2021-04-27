@@ -30,6 +30,7 @@ namespace idfWebService.App_Code
             string sql = String.Format("SELECT soldiers.id FROM soldiers");
             return (d.excuteQuery(sql).Tables[0].Rows[i].ItemArray.GetValue(0).ToString());
         }
+        
 
     }
 }

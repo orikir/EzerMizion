@@ -95,26 +95,26 @@ namespace EzerMizion.idfLocalhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/selectSol", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataSet selectSol(string id, System.DateTime newD) {
+        public System.Data.DataSet selectSol(string id, bool b) {
             object[] results = this.Invoke("selectSol", new object[] {
                         id,
-                        newD});
+                        b});
             return ((System.Data.DataSet)(results[0]));
         }
         
         /// <remarks/>
-        public void selectSolAsync(string id, System.DateTime newD) {
-            this.selectSolAsync(id, newD, null);
+        public void selectSolAsync(string id, bool b) {
+            this.selectSolAsync(id, b, null);
         }
         
         /// <remarks/>
-        public void selectSolAsync(string id, System.DateTime newD, object userState) {
+        public void selectSolAsync(string id, bool b, object userState) {
             if ((this.selectSolOperationCompleted == null)) {
                 this.selectSolOperationCompleted = new System.Threading.SendOrPostCallback(this.OnselectSolOperationCompleted);
             }
             this.InvokeAsync("selectSol", new object[] {
                         id,
-                        newD}, this.selectSolOperationCompleted, userState);
+                        b}, this.selectSolOperationCompleted, userState);
         }
         
         private void OnselectSolOperationCompleted(object arg) {

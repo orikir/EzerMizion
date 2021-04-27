@@ -23,10 +23,9 @@ namespace idfWebService
         soldiersLogic sl = new soldiersLogic();
         
         [WebMethod]
-        public DataSet selectSol(string id, DateTime newD)
+        public DataSet selectSol(string id, bool b)
         {//select fit soldier(healthe and new)
-            DateTime d = sl.getEnlistmentDate(id);
-            if (d > newD)
+            if (!b)//אם החייל עוד לא במאגר
             {
                 if (dl.isHealthy(id))
                 {

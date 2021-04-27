@@ -30,7 +30,12 @@ namespace EzerMizion.App_Code
             string sql = string.Format("UPDATE donBoneMarrow SET  donBoneMarrow.donStatus = {0}, donBoneMarrow.donDate=#{1}# WHERE donBoneMarrow.donId ='{2}'", status,DateTime.Today, id);
             d.excuteQuery(sql);
         }
-        
+        public bool isIN(string id)
+        {
+            string sql = String.Format("SELECT donId FROM donBoneMarrow WHERE donId='{0}'", id);
+            return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
+
+        }
 
     }
 }
