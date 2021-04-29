@@ -25,7 +25,23 @@ namespace EzerMizion
                 if (!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))
                     alarm_lable.Text = "user already exsist";
                 else
+                {
                     alarm_lable.Text = "you have successfully registered";
+                    Session["uId"] = id.Text;
+                    Session["uName"] = ul.getName(id.Text);
+                    if (ul.isManager(id.Text))
+                    {
+                        Session["uType"] = "manager";
+                        Response.Redirect("HomeP.aspx");
+                    }
+
+                    else
+                    {
+                        Session["uType"] = "ordinary";
+                        Response.Redirect("HomeP.aspx");
+                    }
+                }
+                    
             }
 
         }

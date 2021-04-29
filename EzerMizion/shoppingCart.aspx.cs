@@ -50,9 +50,11 @@ namespace EzerMizion
             string quan = (item.FindControl("quantity") as Label).Text;
             string proCode = (item.FindControl("proCode") as Label).Text;
             string s = (item.FindControl("stock") as Label).Text;
+            Label lab = (item.FindControl("Label1") as Label);
             if (Int32.Parse(s) > 0)
             {
                 Label2.Text = " ";
+                lab.Text = "";
             }
             if (Int32.Parse(quan) > 1)
             {
@@ -62,6 +64,7 @@ namespace EzerMizion
             {//when the amount is 1, and the user click on minus the amount become 0
                 cl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
                 Label2.Text = " ";
+                lab.Text = " ";
             }
             cartSum.Text = cl.sumCart(Session["uId"].ToString());
             Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
@@ -74,14 +77,17 @@ namespace EzerMizion
             string proCode = (item.FindControl("proCode") as Label).Text;
             string proName = (item.FindControl("proName") as Label).Text;
             string s = (item.FindControl("stock") as Label).Text;
+            Label lab = (item.FindControl("Label1") as Label);
             if (Int32.Parse(s) <= 1)
             {
                 Label2.Text = " אין מספיק במלאי מסוג המוצר: " + proName + " -על מנת להמשיך הסר/הורד מכמות המוצר ";
+                lab.Text = "אין במלאי";
 
             }
             else
             {
                 Label2.Text = " ";
+                lab.Text = "";
                 cl.updateAmount(1, Int32.Parse(proCode), Session["uId"].ToString());
             }
 

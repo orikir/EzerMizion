@@ -223,9 +223,9 @@
                                     </div>
                                     <div class=" col-md-6">
                                         <asp:TextBox ID="cardNum" class="form-control " runat="server" placeholder="מספר כרטיס*" Text=""></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי (14) ספרות" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי (8-16) ספרות" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
                                         <br />
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני" ValidationExpression="\d{14}" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני-הקש 8-16 ספרות" ValidationExpression="^[0-9]{8,16}$" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
                                     </div>
                                 </div>
                                 <div class="row">

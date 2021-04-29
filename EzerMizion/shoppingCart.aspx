@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="shoppingCart.aspx.cs"  UnobtrusiveValidationMode="None" Inherits="EzerMizion.shoppingCart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="shoppingCart.aspx.cs" UnobtrusiveValidationMode="None" Inherits="EzerMizion.shoppingCart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -8,11 +8,13 @@
         .cart-wrap {
             padding: 10% 0;
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 120%;
-           color: black ;
+            background-image: url('Photos/bG.png');
+            background-size: 120%;
+            color: black;
         }
+
         .main-heading {
             margin-bottom: 5%;
             margin-top: 1%;
@@ -58,15 +60,15 @@
             }
 
             .table-cart tr td .img-product {
-                width: 72px;
-                float: left;
+                width: 50%;
+                float: none;
                 margin-left: 8px;
                 margin-right: 31px;
                 line-height: 63px;
             }
 
                 .table-cart tr td .img-product img {
-                    width: 100%;
+                    width: 50%;
                 }
 
             .table-cart tr td .name-product {
@@ -86,37 +88,37 @@
             }
 
             .table-cart tr td .quanlity {
-                position: relative;
+                position: center;
             }
 
         .product-count .qtyminus,
         .product-count .qtyplus {
-            width: 10%;
-            height: 10%;
+            width: 20%;
+            height: 20%;
             padding: 0 1% 1% 1%;
             text-align: center;
-            font-size: 100%;
-            / border-radius:30% 30%;
+            font-size: 90%;
             line-height: 150%;
             color: #000;
-            font-weight: 600;
+            font-weight: 500;
         }
 
 
         .product-count .qtyminus {
-            border-radius: 3px 0 0 3px;
+            border-radius: 1% 0 0 1%;
             border: 50px #000;
         }
 
         .product-count .qtyplus {
-            border-radius: 0 3px 3px 0;
+            border-radius: 0 1% 1% 0;
             border: 50px #000;
         }
 
         .product-count .qty {
-            width: 70%;
+            width: 40%;
             text-align: center;
             border: none;
+            font-weight: 400;
         }
 
 
@@ -135,15 +137,15 @@
         }
 
 
-            .coupon-box form input {
-                display: inline-block;
-                width: 40%;
-                margin-right: 3%;
-                //height: 70%;
-                border: solid 1px #cccccc;
-                padding: 2% 10%;
-                font-size: 100%;
-            }
+        .coupon-box form input {
+            display: inline-block;
+            width: 40%;
+            margin-right: 3%;
+            //height: 70%;
+            border: solid 1px #cccccc;
+            padding: 2% 10%;
+            font-size: 100%;
+        }
 
         input:focus {
             outline: none;
@@ -155,7 +157,7 @@
             color: #fff;
             padding: 2% 10%;
             display: inline-block;
-            border: solid 1px ;
+            border: solid 1px;
         }
 
             .round-black-btn:hover,
@@ -166,9 +168,9 @@
             }
 
         .cart-totals {
-            border-color:red;
-            border-style:double;
-            background-color: #f8f9fa ;
+            border-color: red;
+            border-style: double;
+            background-color: #f8f9fa;
             padding: 5%;
         }
 
@@ -194,7 +196,7 @@
                         text-align: right;
                     }
 
-                   
+
                 .cart-totals table tr.total-row td {
                     padding-top: 25px;
                 }
@@ -217,7 +219,8 @@
         .code {
             color: white;
         }
-        .btnD{
+
+        .btnD {
             text-align: center;
             border: none;
             padding: 5% 0% 5% 0%;
@@ -228,7 +231,8 @@
             height: 90%;
             cursor: pointer;
         }
-        .btnC{
+
+        .btnC {
             text-align: center;
             color: white;
             margin: 10% 10% 1% 10%;
@@ -241,12 +245,14 @@
             height: 60%;
             cursor: pointer;
         }
-        .button{
-            border:none;
-            background-color:red;
+
+        .button {
+            border: none;
+            background-color: red;
         }
-        .t{
-            background-color:white;
+
+        .t {
+            background-color: white;
         }
     </style>
 </asp:Content>
@@ -258,15 +264,14 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="cart-totals">
-                        <h3 style="text-align:center">סיכום עגלת קניות</h3>
+                        <h3 style="text-align: center">סיכום עגלת קניות</h3>
                         <form action="#" method="get" accept-charset="utf-8">
                             <table>
                                 <tbody>
                                     <tr class="total-row">
-                                        <td class="price-total">
-                                            ₪<asp:Label ID="cartSum" runat="server" Text=""></asp:Label>
+                                        <td class="price-total">₪<asp:Label ID="cartSum" runat="server" Text=""></asp:Label>
                                         </td>
-                                        <td style="direction:rtl">סה"כ לתשלום:</td>
+                                        <td style="direction: rtl">סה"כ לתשלום:</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -286,20 +291,24 @@
                     </div>
                     <div class="table-cart">
                         <div class="row" style="text-align: center;">
-                            <div class="col-md-2"></div>
+                            <div class="col-md-2">
+                            </div>
                             <div class="col-md-2">
                                 <a class="label">מחיר כולל</a>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <a class="label">כמות</a>
                             </div>
                             <div class="col-md-2">
                                 <a class="label">זמינות</a>
                             </div>
+                            <div class="col-md-1">
+                                <a class="label">מחיר</a>
+                            </div>
                             <div class="col-md-3">
                                 <a class="label">מוצר</a>
                             </div>
-                            
+
                         </div>
                         <div class="row">
                             <asp:Button ID="Button1" runat="server" Text="" Height="1px" CssClass="button" Width="100%" BorderColor="White" />
@@ -309,38 +318,41 @@
                                 <div class="row display-flex align-center" style="text-align: center;">
                                     <div class="col-md-2">
                                         <asp:Button ID="delete" runat="server" CommandName='<%# Eval("proCode")%>' Text="הסרה" class="mCS_img_loaded" CssClass="btnD" OnClick="delete_Click" />
-                                        
                                     </div>
                                     <div class="col-md-2">
                                         <div class="total">
                                             ₪<asp:Label ID="totalP" runat="server" Text='<%#Eval("total") %>'></asp:Label>
                                         </div>
-                                        <div >
-                                            <asp:Label ID="stock"  runat="server" Text='<%#Eval("stock") %>'></asp:Label>
+                                        <div>
+                                            <asp:Label ID="stock" runat="server" ForeColor="White" Text='<%#Eval("stock") %>'></asp:Label>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 product-count">
+                                    <div class="col-md-2 product-count">
                                         <div class="count-inlineflex">
                                             <asp:Button ID="minus" class="qtyminus" runat="server" Text="-" OnClick="minus_Click" />
                                             <asp:Label ID="quantity" class="qty" runat="server" Text='<%#Eval("amount") %>'></asp:Label>
-                                            <asp:Button ID="plus" class="qtyplus" runat="server" Text="+"  OnClick="plus_Click" />
+                                            <asp:Button ID="plus" class="qtyplus" runat="server" Text="+" OnClick="plus_Click" />
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <asp:Label ID="Label1" class="" ForeColor="Red" runat="server" Text=""></asp:Label>
                                     </div>
                                     <div class="col-md-1">
-                                        <div class="product-content">
-                                            <asp:Label ID="proName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
-                                            <asp:Label ID="proCode" class="code" runat="server" Text='<%#Eval("proCode") %>'></asp:Label>
-                                            <div class="price">
-                                                ₪<asp:Label ID="pPrice" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
-                                            </div>
+                                        <div class="price">
+                                            ₪<asp:Label ID="pPrice" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>
                                         </div>
                                     </div>
-                                    <div class="col-md-2 ">
+                                    <div class="col-md-1">
+                                        <div class="product-content">
+                                            <asp:Label ID="proName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
+                                            
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 ">
                                         <div class="img-product">
-                                            <asp:ImageButton ID="ImageButton2" class="mCS_img_loaded" runat="server" Width="100" hight="100" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
+                                            <asp:Label ID="proCode" class="code" runat="server" Text='<%#Eval("proCode") %>'></asp:Label>
+                                            <asp:ImageButton ID="ImageButton2" class="mCS_img_loaded" runat="server" Width="70" hight="70" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
                                         </div>
                                     </div>
                                 </div>

@@ -7,20 +7,21 @@
             margin-top: 3%;
             padding: 3%;
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 120%;
-           color: black ;
+            background-image: url('Photos/bG.png');
+            background-size: 120%;
+            color: black;
         }
 
         .pay-left {
             text-align: center;
             color: black;
-            text-emphasis-style:double-circle;
+            text-emphasis-style: double-circle;
             padding-top: 12%;
             padding-bottom: 10%;
             direction: rtl;
-            background-color:white;
+            background-color: white;
         }
 
             .pay-left input {
@@ -44,7 +45,6 @@
         }
 
         .pay-left img {
-           
             width: 100%;
             height: 10%;
             /-webkit-animation: mover 2s infinite alternate;
@@ -128,11 +128,11 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="vStyle" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="ownerId"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class=" col-md-6">
-                                    <asp:Label ID="Label2" class="control-label vStyle" runat="server" Text="מספר כרטיס"></asp:Label>
-                                    <asp:TextBox ID="cardNum" class="form-control " runat="server" Text="" placeholder="מספר כרטיס*"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
+                                    <asp:Label ID="Label2"  class="control-label vStyle" runat="server" Text="מספר כרטיס"></asp:Label>
+                                    <asp:TextBox ID="cardNum" class="form-control"  minlength="8" maxlength="16" runat="server" Text="" placeholder="מספר כרטיס*"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי (8-16) ספרות" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
                                     <br />
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני" ValidationExpression="\d{14}" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני-הקש 8-16 ספרות" ValidationExpression="^[0-9]{8,16}$" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -142,12 +142,12 @@
                                 </div>
                                 <div class="col-md-3">
                                     <asp:DropDownList ID="Month" class="form-control" runat="server" OnSelectedIndexChanged="Month_SelectedIndexChanged" ForeColor="Black">
-                                        <asp:ListItem>בחר חודש </asp:ListItem>
+                                        <asp:ListItem>בחר חודש</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:DropDownList ID="Year" class="form-control" runat="server" OnSelectedIndexChanged="Year_SelectedIndexChanged" ForeColor="Black">
-                                        <asp:ListItem> בחר שנה</asp:ListItem>
+                                        <asp:ListItem>בחר שנה</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                                 <!-- CVV -->
@@ -160,30 +160,30 @@
                                     <br />
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="vStyle" ErrorMessage="מספר לא תקני" ValidationExpression="\d{3}" ControlToValidate="cardCvv"></asp:RegularExpressionValidator>
                                 </div>
-                        </div>
-                        <!-- Submit -->
+                            </div>
+                            <!-- Submit -->
 
-                    </div>
-                    <div class="row  ">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                            <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
-                            <br />
-                            <asp:Label ID="Label5" class="control-label " runat="server" Text=""></asp:Label>
                         </div>
-                        <div class="col-md-4"></div>
+                        <div class="row  ">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <asp:Button ID="submit" class="btnPay" runat="server" Text="אישור תשלום" OnClick="submit_Click" />
+                                <br />
+                                <asp:Label ID="Label5" class="control-label " runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 pay-left ">
-            <div class="re-box">
+            <div class="col-md-3 pay-left ">
+                <div class="re-box">
 
-                <asp:Image ID="Image2" CssClass="pay-left img" src="Photos/shop.jpg" runat="server" />
-                <p>רפואה שלמה!</p>
+                    <asp:Image ID="Image2" CssClass="pay-left img" src="Photos/shop.jpg" runat="server" />
+                    <p>רפואה שלמה!</p>
+                </div>
             </div>
         </div>
-    </div>
 
     </div>
 
