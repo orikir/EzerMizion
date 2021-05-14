@@ -15,6 +15,7 @@ namespace EzerMizion
         cartLogic cl = new cartLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 if ((Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
@@ -26,7 +27,7 @@ namespace EzerMizion
                     }
                 }
             }
-
+            checkStock();
         }
 
         protected void delete_Click(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace EzerMizion
                 Label2.Text = " ";
                 lab.Text = " ";
             }
+
             cartSum.Text = cl.sumCart(Session["uId"].ToString());
             Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
             Repeater1.DataBind();
@@ -89,10 +91,9 @@ namespace EzerMizion
                 Label2.Text = " ";
                 lab.Text = "";
                 cl.updateAmount(1, Int32.Parse(proCode), Session["uId"].ToString());
+                Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
+                Repeater1.DataBind();
             }
-
-            Repeater1.DataSource = cl.getCart(Session["uId"].ToString());
-            Repeater1.DataBind();
             cartSum.Text = cl.sumCart(Session["uId"].ToString());
 
         }
