@@ -9,7 +9,7 @@ namespace EzerMizion.App_Code
     public class productsLogic
     {
         DAL d = new DAL();
-       
+        branchesLogic bl = new branchesLogic();
         public DataSet allProducts()
         {
             string sql = " SELECT products.proCode, products.proName, products.isInStock, products.quantity, branches.branchName, products.proPhoto, products.proPrice FROM branches INNER JOIN products ON branches.branchCode = products.branchCode";
@@ -50,7 +50,7 @@ namespace EzerMizion.App_Code
             {
                 if (!isExsist(proName, branchName))
                 {
-                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode, proPhoto) VALUES('{0}', '{1}', '{2}', '{3}','{4}')", proName, quantity, price, getBranchCode(branchName), photo);
+                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode, proPhoto) VALUES('{0}', '{1}', '{2}', '{3}','{4}')", proName, quantity, price, bl.getBranchCode(branchName), photo);
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -62,7 +62,7 @@ namespace EzerMizion.App_Code
         }
         public bool isExsist(string name, string branchName)
         {//check if the product is already exist
-            string sql = String.Format("SELECT branchCode FROM products WHERE branchCode ='{0}' AND proName ='{1}' ", getBranchCode(branchName), name);
+            string sql = String.Format("SELECT branchCode FROM products WHERE branchCode ='{0}' AND proName ='{1}' ", bl.getBranchCode(branchName), name);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
         }
         public bool checkBranchName(string branchName)

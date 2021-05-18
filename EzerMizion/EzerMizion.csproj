@@ -331,7 +331,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Content Include="App_Code\branchesLogic.cs" />
+    <Compile Include="App_Code\branchesLogic.cs" />
     <Compile Include="App_Code\DAL.cs" />
     <Compile Include="App_Code\donorsLogic.cs" />
     <Compile Include="App_Code\ordersLogic.cs" />

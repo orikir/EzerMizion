@@ -71,7 +71,8 @@
         <div class="col-2 ">
             <img src="Photos/header_helping_hand.jpg" class="photoD" />
             <div class="subTitle">
-                <div class="title">180 ש"ח</div>
+                <div class="title">
+                    <asp:Label ID="Label6" runat="server" Text="180 ₪"></asp:Label></div>
                 <div class="subTitle ">
                     <asp:Label ID="Label2" runat="server" class="subTitle" Text="עלות בדיקת דגימה"></asp:Label>
                 </div>
@@ -80,7 +81,9 @@
         <div class="col-2">
             <img src="Photos/header_medal1.jpg" class="photoD" />
             <div class="titles">
-                <div class="title">3,833</div>
+                <div class="title">
+                    <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+                </div>
                 <div class="subTitle backoffice">
                     <asp:Label ID="Label1" runat="server" class="subTitle" Text="השתלות שבוצעו עד היום"></asp:Label>
                 </div>
@@ -89,7 +92,9 @@
         <div class="col-2">
             <img src="Photos/header_people.jpg" class="photoD" />
             <div class="titles">
-                <div class="title">1,054,739</div>
+                <div class="title">
+                    <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+                </div>
                 <div class="subTitle backoffice">
                     <asp:Label ID="Label3" runat="server" class="subTitle" Text="תורמים פוטנציאליים במאגר"></asp:Label>
                 </div>

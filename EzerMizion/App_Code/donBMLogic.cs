@@ -20,7 +20,7 @@ namespace EzerMizion.App_Code
             return d.excuteQuery(sql);
         }
         public bool insertNewDon(string fn, string ln, string pn, DateTime bd, string bt, int ds1, string id)
-        {
+        {//return true after the new donor has added
             string sql = String.Format("INSERT INTO donBoneMarrow (firstName, lastName, phoneNum, birthday, bloodType, donStatus, donId )  VALUES ('{0}','{1}','{2}',#{3}#,'{4}',{5},'{6}')",fn, ln,pn,bd,bt,ds1,id);
             DataSet ds = d.excuteQuery(sql);
             return true;
@@ -31,9 +31,21 @@ namespace EzerMizion.App_Code
             d.excuteQuery(sql);
         }
         public bool isIN(string id)
-        {
+        {//return true if he is bone marrow donor
             string sql = String.Format("SELECT donId FROM donBoneMarrow WHERE donId='{0}'", id);
             return d.excuteQuery(sql).Tables[0].Rows.Count != 0;
+
+        }
+        public int donated()
+        {//return number of donors
+            string sql = String.Format("SELECT donId FROM donBoneMarrow WHERE donStatus={0}", int.Parse("3"));
+            return d.excuteQuery(sql).Tables[0].Rows.Count;
+
+        }
+        public int potential()
+        {//return number of potential donors
+            string sql = String.Format("SELECT donId FROM donBoneMarrow WHERE donStatus={0} OR donStatus={1}" , int.Parse("1"), int.Parse("2"));
+            return d.excuteQuery(sql).Tables[0].Rows.Count ;
 
         }
 
