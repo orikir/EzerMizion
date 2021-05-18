@@ -21,7 +21,7 @@
         .photoD {
             margin: 5% 0% 0% 0%;
             padding: 2% 0% 2% 0%;
-            width: 40%;
+            width: 45%;
             height: 45%;
         }
         body {
@@ -31,7 +31,7 @@
         }
 
         .p {
-            border: groove;
+            border:dotted;
             color: black;
             border-color: red;
             background-color:white
@@ -39,12 +39,11 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
+    <div class="row ">
         <div class="row">
             <img src="Photos/saveLife.jpg" class="rowImage" />
         </div>
-
-        <div class="col-md-3"></div>
+        <div class="p col-md-3"></div>
         <div class="p col-md-6" style="direction: rtl; text-align: justify;">
             <h2 style="direction: rtl; text-align: center; padding:3%;">המאגר והישגיו</h2>
             <h6>המאגר צבר במהלך השנים הישגים רבים ומשמעותיים:</h6>
@@ -64,12 +63,12 @@
                 מאגר "עזר מציון" מקושר למרבית מאגרי מח העצם האחרים בעולם באמצעות ממשק תקשורת מתקדם המאפשר זמינות ומענה מיידי לכל חולה בעולם (EMDIS).
             </p>
         </div>
-        <div class="col-md-3"></div>
+        <div class=" p col-md-3"></div>
     </div>
     <div class="row header " runat="server">
         <div class="col-3"></div>
         <div class="col-2 ">
-            <img src="Photos/header_helping_hand.jpg" class="photoD" />
+            <img src="Photos/header_helping_hand.png" class="photoD" />
             <div class="subTitle">
                 <div class="title">
                     <asp:Label ID="Label6" runat="server" Text="180 ₪"></asp:Label></div>
@@ -79,7 +78,7 @@
             </div>
         </div>
         <div class="col-2">
-            <img src="Photos/header_medal1.jpg" class="photoD" />
+            <img src="Photos/header_medal1.png" class="photoD" />
             <div class="titles">
                 <div class="title">
                     <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
@@ -90,7 +89,7 @@
             </div>
         </div>
         <div class="col-2">
-            <img src="Photos/header_people.jpg" class="photoD" />
+            <img src="Photos/header_people.png" class="photoD" />
             <div class="titles">
                 <div class="title">
                     <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
