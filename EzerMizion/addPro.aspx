@@ -2,6 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
+        body {
+           background-image: url('Photos/bG.png');
+           background-size: 120%;
+        }
         .adding {
             margin-top: 1%;
             padding: 3%;
