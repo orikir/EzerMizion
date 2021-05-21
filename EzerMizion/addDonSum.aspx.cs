@@ -12,7 +12,8 @@ namespace EzerMizion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!(Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
+                Response.Redirect("HomeP.aspx");
         }
 
         protected void bdika_Click(object sender, EventArgs e)
@@ -70,17 +71,7 @@ namespace EzerMizion
             }
             dSum.Text = (Double.Parse(dSum.Text) * 2).ToString();
         }
-        protected void submit_Click(object sender, EventArgs e)
-        {
-            donorsLogic dl = new donorsLogic();
-            {/*
-                if (dl.newDonor(id.Text, orgName.Text, double.Parse(dSum.Text), DateTime.Today))
-                    alarm_lable.Text = "התרומה התקבלה בהצלחה";
-                else
-                    alarm_lable.Text = "יש להתחבר לפני ביצוע תרומה";
-            }*/
-            }
-        }
+        
 
         protected void continue_Click(object sender, EventArgs e)
         {

@@ -11,7 +11,6 @@ namespace EzerMizion
 {
     public partial class shoppingCart : System.Web.UI.Page
     {
-        productsLogic pl = new productsLogic();
         cartLogic cl = new cartLogic();
         protected void Page_Load(object sender, EventArgs e)
         {

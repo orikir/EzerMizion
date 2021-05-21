@@ -170,6 +170,10 @@
             
             margin: 5% 0% 2% 0%;
         }
+        body
+        {
+            text-align:right;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -218,14 +222,16 @@
                                         <!-- CVV -->
                                         <asp:TextBox ID="cardCvv" class="form-control" runat="server" placeholder="CVV*" Text=""></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שלוש ספרות בגב הכרטיס" ControlToValidate="cardCvv"></asp:RequiredFieldValidator>
-                                        <br />
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="vStyle" ErrorMessage="מספר לא תקני" ValidationExpression="\d{3}" ControlToValidate="cardCvv"></asp:RegularExpressionValidator>
-                                    </div>
+                                        <div class="row" >
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="vStyle" ErrorMessage="מספר לא תקני" ValidationExpression="\d{3}" ControlToValidate="cardCvv"></asp:RegularExpressionValidator>
+                                        </div>
+                                        </div>
                                     <div class=" col-md-6">
                                         <asp:TextBox ID="cardNum" class="form-control " runat="server" placeholder="מספר כרטיס*" Text=""></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי (8-16) ספרות" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
-                                        <br />
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני-הקש 8-16 ספרות" ValidationExpression="^[0-9]{8,16}$" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
+                                        <div class="row"> 
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני(8-16) ספרות" ValidationExpression="^[0-9]{8,16}$" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -246,17 +252,17 @@
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
                                         <div class="row">
                                             <asp:Button ID="continue" runat="server" Text="אישור" OnClick="continue_Click" type="submit" class="btnRegister" />
                                         </div>
-                                        <div class="row">
+                                        <div class="row" style="float:right">
                                             <asp:Label ID="alarm_lable" CssClass="" runat="server" Text=""></asp:Label>
                                         </div>
 
                                     </div>
-                                    <div class="col-md-3"></div>
+                                    <div class="col-md-2"></div>
                                 </div>
 
                             </div>

@@ -14,21 +14,8 @@ namespace EzerMizion
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            orgLogic ol = new orgLogic();
-            DataSet ds = ol.getOrgsName();
-            /* if (!IsPostBack)
-             {
-                 selectOrg.DataSource = ds;
-                 selectOrg.DataBind();
-
-                 selectOrg.DataTextField = "orgName";
-                 selectOrg.DataValueField = "orgCode";
-
-
-                 selectOrg.DataBind();
-                 selectOrg.Items.Insert(0, "בחר");
-             }*/
-            
+            if (!(Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
+                Response.Redirect("HomeP.aspx");
             if (!IsPostBack )
                 {
                 for (int a = 1; a <= 12; a++)
@@ -42,12 +29,6 @@ namespace EzerMizion
                      
 
             }
-                else
-                {/*
-                    if (!(Session["uType"].Equals("ordinary")))
-                        Response.Redirect("HomeP.aspx");
-                */}
-            
         }
         protected void continue_Click(object sender, EventArgs e)
         {
