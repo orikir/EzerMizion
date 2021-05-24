@@ -16,14 +16,14 @@ namespace EzerMizion
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack && (Session["uType"].Equals("ordinary")))
-            {
-                for (int a = 1; a <= 12; a++)
+            {//הכנסת ערכים לרשימות חודש ושנה בתוקף כרטיס
+                for (int i = 1; i <= 12; i++)
                 {
-                    Month.Items.Insert(a, a.ToString());
+                    Month.Items.Insert(i, i.ToString());
                 }
-                for (int a = DateTime.Now.Year; a <= 2030; a++)
+                for (int i = DateTime.Now.Year; i <= DateTime.Now.Year+10; i++)
                 {
-                    Year.Items.Add(new ListItem(a.ToString(), a.ToString()));
+                    Year.Items.Add(new ListItem(i.ToString(), i.ToString()));
                 }
 
             }

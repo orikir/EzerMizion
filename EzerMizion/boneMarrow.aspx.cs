@@ -16,8 +16,14 @@ namespace EzerMizion
         donBMLogic dbm = new donBMLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = dbm.allDonations();
-            GridView1.DataBind();
+            if ((Session["uType"].Equals("manager")))
+            {
+                GridView1.DataSource = dbm.allDonations();
+                GridView1.DataBind();
+            }
+            else
+                Response.Redirect("HomeP.aspx");
+
         }
 
         protected void byBlood(object sender, EventArgs e)
@@ -35,7 +41,7 @@ namespace EzerMizion
         }
 
         protected void update_Click(object sender, EventArgs e)
-        {//
+        {//עדכון טבלת התורמים במאגר
             DateTime date = DateTime.Today;
             string id;
             DataSet ds;
@@ -68,7 +74,7 @@ namespace EzerMizion
         
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
+        {//עדכון סטטוס תורם
             int index = Convert.ToInt32(e.CommandArgument);
             int st = ws.getStatus(GridView1.Rows[index].Cells[7].Text);
             if (st < 3)
