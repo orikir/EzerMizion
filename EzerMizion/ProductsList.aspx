@@ -31,11 +31,13 @@
     <td>
         <center>
             <asp:Button ID="addP" CssClass="btnadding" runat="server" Text="להוספת מוצר לחץ כאן" OnClick="addP_Click" />
+            <br />
+           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
             <asp:GridView ID="GridView1" runat="server"   CssClass=" m"  OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" AutoGenerateColumns="False" Width="921px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor=" White" BorderColor="White"   BorderWidth="3px" CellPadding="4" ForeColor=" Black" Height="729px" CellSpacing="2">
                 <Columns>
                     
                     <asp:CommandField ButtonType="Button" ShowDeleteButton="True" DeleteText="מחיקה" />
-                    <asp:CommandField ButtonType="Button" ShowEditButton="True" EditText="עריכת מחיר" />
+                    <asp:CommandField ButtonType="Button" ShowEditButton="True" EditText="עריכת מחיר" CancelText="ביטול" DeleteText="יקה" UpdateText="עדכן" />
                     <asp:CheckBoxField HeaderText="? האם במלאי" DataField="isInStock" ReadOnly="true" />
                     <asp:BoundField HeaderText="כמות" DataField="quantity" ReadOnly="true" />
                     <asp:BoundField HeaderText="שם סניף" DataField="branchName" ReadOnly="true" />

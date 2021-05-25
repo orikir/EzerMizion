@@ -132,8 +132,11 @@
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-12">
-                                        <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
-                                        <asp:Label ID="alarm_lable" runat="server" CssClass="labStyle" Text=""></asp:Label>
+                                        <center>
+                                            <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
+                                            <asp:Label ID="alarm_lable" runat="server" CssClass="labStyle" Text=""></asp:Label>
+                                        </center>
+                                        
                                     </div>
                                     
                                 </div>

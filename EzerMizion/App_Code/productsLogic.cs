@@ -42,7 +42,7 @@ namespace EzerMizion.App_Code
         }
         public void deletePro(string proCode)
         {//delete product
-            string sql = string.Format(("DELETE * FROM products WHERE proCode={0}"), proCode);
+            string sql = string.Format(("DELETE * FROM products WHERE proCode={0}"), Int32.Parse(proCode));
             d.excuteQuery(sql);
         }
         public bool newPro(string proName, string quantity, double price, string branchName, string photo)

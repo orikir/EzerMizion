@@ -17,6 +17,7 @@ namespace EzerMizion
             {
                 GridView1.DataSource = pl.allProducts();
                 GridView1.DataBind();
+                Label1.Text = "";
             }
             else
             {
@@ -38,7 +39,21 @@ namespace EzerMizion
             //כשיש אפשרות עריכה בעצם נוספת תיבת טקס וממנה צריך לקחת את הנתון
             string price = ((TextBox)(GridView1.Rows[e.RowIndex].Cells[5].Controls[0])).Text;
             //עדכון הנתונים במסד הנתונים
-            pl.updatePro(double.Parse(price),Int32.Parse( GridView1.Rows[e.RowIndex].Cells[6].Text));
+            try
+            {
+                if (double.Parse(price) < 1)
+                    Label1.Text = "לא ניתן לערוך מחיר מוצר-המחיר שהוכנס אינו תקני";
+                else
+                {
+                    pl.updatePro(double.Parse(price), Int32.Parse(GridView1.Rows[e.RowIndex].Cells[6].Text));
+                    Label1.Text = "";
+                }
+                   
+            }
+            catch
+            {
+                Label1.Text = "לא ניתן לערוך מחיר מוצר-המחיר שהוכנס אינו תקני";
+            }
             //יציאה ממצב עריכה
             GridView1.EditIndex = -1;
             GridView1.DataSource = pl.allProducts();
@@ -57,6 +72,7 @@ namespace EzerMizion
             GridView1.EditIndex = -1;
             GridView1.DataSource = pl.allProducts();
             GridView1.DataBind();
+            Label1.Text = "";
         }
 
         protected void addP_Click(object sender, EventArgs e)
@@ -66,10 +82,12 @@ namespace EzerMizion
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            pl.deletePro(GridView1.Rows[e.RowIndex].Cells[0].Text);
+            
+            pl.deletePro(GridView1.Rows[e.RowIndex].Cells[6].Text);
             GridView1.EditIndex = -1;
             GridView1.DataSource = pl.allProducts();
             GridView1.DataBind();
+            Label1.Text = "";
         }
     }
 }

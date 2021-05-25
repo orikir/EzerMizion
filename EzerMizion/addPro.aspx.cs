@@ -32,10 +32,31 @@ namespace EzerMizion
                 }
                 else
                 {
-                    if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text))
-                        alarm_lable.Text = "המוצר קיים";
-                    else
-                        alarm_lable.Text = "המוצר נוסף בהצלחה";
+                    try
+                    {
+                        if ((Double.Parse(proPrice.Text) > 0) && (Int32.Parse(quantity.Text) >= 0))
+                        {
+                            alarm_lable.Text = "";
+                            try
+                            {
+                                if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text))
+                                    alarm_lable.Text = "המוצר קיים";
+                                else
+                                    alarm_lable.Text = "המוצר נוסף בהצלחה";
+                            }
+                            catch
+                            {
+                                alarm_lable.Text = "שגיאה-לא ניתן להוסיף מוצר";
+                            }
+                        }
+                        else
+                            alarm_lable.Text = "לא כל הערכים המוכנסים תקינים";
+                    }
+                    catch
+                    {
+                        alarm_lable.Text = "לא כל הערכים המוכנסים תקינים";
+                    }
+                   
                 }
                      
                
