@@ -17,17 +17,15 @@ namespace EzerMizion
             if (!(Session["uType"].Equals("manager") || Session["uType"].Equals("ordinary")))
                 Response.Redirect("HomeP.aspx");
             if (!IsPostBack )
+            {//הכנסת ערכים לרשימות חודש ושנה בתוקף כרטיס
+                for (int i = 1; i <= 12; i++)
                 {
-                for (int a = 1; a <= 12; a++)
-                    {
-                        Month.Items.Insert(a, a.ToString());
-                    }
-                    for (int a = DateTime.Now.Year; a <= 2030; a++)
-                    {
-                        Year.Items.Add(new ListItem(a.ToString(), a.ToString()));
-                    }
-                     
-
+                    Month.Items.Insert(i, i.ToString());
+                }
+                for (int i = DateTime.Now.Year; i <= DateTime.Now.Year + 10; i++)
+                {
+                    Year.Items.Add(new ListItem(i.ToString(), i.ToString()));
+                }
             }
         }
         protected void continue_Click(object sender, EventArgs e)

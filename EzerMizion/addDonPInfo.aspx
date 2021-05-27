@@ -7,20 +7,19 @@
             margin-top: 3%;
             padding: 3%;
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 120%;
-           color: black ;
+            background-image: url('Photos/bG.png');
+            background-size: 120%;
+            color: black;
         }
+
         .register-left {
             text-align: center;
             color: #000;
-           /padding-top: 15%;
-           / padding-bottom: 0%;
             direction: rtl;
             background-color: #c91e24;
             padding: 12% 0% 0% 0%;
-            
         }
 
             .register-left input {
@@ -44,9 +43,9 @@
         }
 
         .register-left img {
-           margin:10%% 0% 5%;
+            margin: 10%% 0% 5%;
             width: 100%;
-            height:10%;
+            height: 10%;
         }
 
         .register-left p {
@@ -64,8 +63,8 @@
             position: center;
             text-align: center;
             margin: 15% 15% 1% 15%;
-            border-color:red;
-            border-style:double;
+            border-color: red;
+            border-style: double;
             padding: 3% 0% 3% 0%;
             background: white;
             color: #000;
@@ -95,7 +94,7 @@
             border-left: none;
             background-color: #f8f9fa;
             color: black;
-            border-bottom-style:double;
+            border-bottom-style: double;
             font-weight: 600;
             width: 48%;
             height: 50%;
@@ -158,21 +157,22 @@
         .rowF {
             margin: 5% 0% 2% 0%;
         }
-        .row{
-            margin:0% 1% 0% 1%
+
+        .row {
+            margin: 0% 1% 0% 1%
         }
 
         .line {
             width: 100%;
             height: 100%;
         }
-        image{
-            
+
+        image {
             margin: 5% 0% 2% 0%;
         }
-        body
-        {
-            text-align:right;
+
+        body {
+            text-align: right;
         }
     </style>
 </asp:Content>
@@ -188,19 +188,19 @@
                             <div class="col-md-10">
                                 <div class="row">
                                     <asp:Label ID="Label2" CssClass="btnMenu" BorderColor="Red" runat="server" Text="2. פרטים אישיים"></asp:Label>
-                                    <asp:Label ID="Label4" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה " ></asp:Label>
+                                    <asp:Label ID="Label4" CssClass="btnMenu " BorderColor="Red" runat="server" Text="1. סכום תרומה "></asp:Label>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-3"></div>
                                     <div class="col-md-6">
-                                        <asp:DropDownList ID="selectOrg" CssClass="form-control"  runat="server" DataMember="DefaultView" DataSourceID="SqlDataSource1" DataTextField="orgName" OnSelectedIndexChanged="selectOrg_SelectedIndexChanged" onchange="selectOrg_SelectedIndexChanged" Rows="1" DataValueField="orgName" ViewStateMode="Inherit" AutoPostBack="true">
+                                        <asp:DropDownList ID="selectOrg" CssClass="form-control" runat="server" DataMember="DefaultView" DataSourceID="SqlDataSource1" DataTextField="orgName" OnSelectedIndexChanged="selectOrg_SelectedIndexChanged" onchange="selectOrg_SelectedIndexChanged" Rows="1" DataValueField="orgName" ViewStateMode="Inherit" AutoPostBack="true">
                                             <asp:ListItem>בחר סניף</asp:ListItem>
                                         </asp:DropDownList>
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" SelectCommand="SELECT [orgName] FROM [organizations]"></asp:SqlDataSource>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש לבחור שם ארגון" ControlToValidate="selectOrg"></asp:RequiredFieldValidator>
                                     </div>
                                     <div class="col-3">
-                                       <asp:Label ID="Label1" class=" vStyle" runat="server" Text=":בחר מוסד "></asp:Label> 
+                                        <asp:Label ID="Label1" class=" vStyle" runat="server" Text=":בחר מוסד "></asp:Label>
                                     </div>
                                 </div>
                                 <div class=" form-group row">
@@ -222,14 +222,14 @@
                                         <!-- CVV -->
                                         <asp:TextBox ID="cardCvv" class="form-control" runat="server" placeholder="CVV*" Text=""></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שלוש ספרות בגב הכרטיס" ControlToValidate="cardCvv"></asp:RequiredFieldValidator>
-                                        <div class="row" >
+                                        <div class="row">
                                             <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="vStyle" ErrorMessage="מספר לא תקני" ValidationExpression="\d{3}" ControlToValidate="cardCvv"></asp:RegularExpressionValidator>
                                         </div>
-                                        </div>
+                                    </div>
                                     <div class=" col-md-6">
                                         <asp:TextBox ID="cardNum" class="form-control " runat="server" placeholder="מספר כרטיס*" Text=""></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
-                                        <div class="row"> 
+                                        <div class="row">
                                             <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני(8-16) ספרות" ValidationExpression="^[0-9]{8,16}$" ControlToValidate="cardNum"></asp:RegularExpressionValidator>
                                         </div>
                                     </div>
@@ -257,7 +257,7 @@
                                         <div class="row">
                                             <asp:Button ID="continue" runat="server" Text="אישור" OnClick="continue_Click" type="submit" class="btnRegister" />
                                         </div>
-                                        <div class="row" style="float:right">
+                                        <div class="row" style="float: right">
                                             <asp:Label ID="alarm_lable" CssClass="" runat="server" Text=""></asp:Label>
                                         </div>
 
@@ -273,7 +273,7 @@
             </div>
             <div class="col-3 register-left">
                 <div class="re-box">
-                    <asp:Image ID="Image1" CssClass="register-left img" src="Photos/saveLife2.jpg"  runat="server" />
+                    <asp:Image ID="Image1" CssClass="register-left img" src="Photos/saveLife2.jpg" runat="server" />
                     <a href="donHistory.aspx" class="tColor">רשימת התרומות שלך</a>
                 </div>
             </div>

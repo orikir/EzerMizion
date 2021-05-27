@@ -30,7 +30,7 @@ namespace EzerMizion
         }
 
         protected void delete_Click(object sender, EventArgs e)
-        {
+        {//הסרת מוצר מעגלת הקניות
             RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
             string s = (item.FindControl("stock") as Label).Text;
             string proCode = ((sender as Button).CommandName).ToString();
@@ -45,7 +45,7 @@ namespace EzerMizion
         }
 
         protected void minus_Click(object sender, EventArgs e)
-        {
+        {//הקטנת כמות
             RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
             string quan = (item.FindControl("quantity") as Label).Text;
             string proCode = (item.FindControl("proCode") as Label).Text;
@@ -73,7 +73,7 @@ namespace EzerMizion
         }
 
         protected void plus_Click(object sender, EventArgs e)
-        {
+        {//הגדלת כמות
             RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
             string proCode = (item.FindControl("proCode") as Label).Text;
             string proName = (item.FindControl("proName") as Label).Text;
@@ -99,16 +99,14 @@ namespace EzerMizion
 
         protected void checkout_Click(object sender, EventArgs e)
         {
-
             if (cartSum.Text != null && checkStock())
             {
                 Response.Redirect("payment.aspx");
             }
-
         }
 
         public bool checkStock()
-        {
+        {//בדיקת מלאי מוצר
             bool tf1 = true;
             foreach (RepeaterItem item in Repeater1.Items)
             {

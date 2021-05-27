@@ -12,13 +12,12 @@ namespace EzerMizion
     {
         donorsLogic dl = new donorsLogic();
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {//הצגת רשימת תרומות של המשתמש
             if (!Session["uType"].Equals("ordinary"))
                 Response.Redirect("HomeP.aspx");
             GridView2.DataSource = dl.donHistory(Session["uId"].ToString());
             GridView2.DataBind();
         }
-
 
         protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
         {

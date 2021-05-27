@@ -39,22 +39,17 @@ namespace EzerMizion
         {
 
         }
-
         protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
         }
-
-
-        
         protected void byDate(object sender, EventArgs e)
-        {
+        {//הצגת תרומות לפי טווח  תאריכים
             if (TextBox1.Text!=null && TextBox2!=null)
             {
                 GridView1.DataSource = dl.getByDate((DateTime.Parse(TextBox1.Text)), (DateTime.Parse(TextBox2.Text)));
                 GridView1.DataBind();
             }
         }
-
     }
 }

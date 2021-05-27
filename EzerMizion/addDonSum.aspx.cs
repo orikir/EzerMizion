@@ -62,7 +62,6 @@ namespace EzerMizion
                 sum /= 2;
             dSum.Text = (sum).ToString();
         }
-
         protected void plus_Click(object sender, EventArgs e)
         {
             if (dSum.Text.Equals(""))
@@ -71,19 +70,10 @@ namespace EzerMizion
             }
             dSum.Text = (Double.Parse(dSum.Text) * 2).ToString();
         }
-        
-
         protected void continue_Click(object sender, EventArgs e)
         {
             if (!dSum.Text.Equals("0"))
                 Response.Redirect("addDonPInfo.aspx?dSum=" + dSum.Text);
         }
-
-        protected void paymentBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

@@ -20,28 +20,12 @@ namespace EzerMizion.App_Code
             string sql = "SELECT users.firstName, users.lastName, donors.donCode, donors.id, donors.donSum, donors.donDate, organizations.orgName FROM organizations INNER JOIN(users INNER JOIN donors ON users.id = donors.id) ON organizations.orgCode = donors.orgCode";
             return d.excuteQuery(sql);
         }
-        public DataSet getByMonthAndYear(string dMonth, string dYear)
-        {
-            string sql = String.Format(" SELECT users.firstName, users.lastName, donors.donCode, donors.id, donors.donSum, donors.donDate, organizations.orgName FROM organizations INNER JOIN(users INNER JOIN donors ON users.id = donors.id) ON organizations.orgCode = donors.orgCode WHERE(((Month([donors]![donDate])) ='{0}') AND((Year([donors]![donDate])) ='{1}'))", dMonth, dYear);
-            return d.excuteQuery(sql);
-        }
         public DataSet getByDate(DateTime s, DateTime f)
-        {
+        {//מחזירה רשימת תרומות שהתבצעו בטווח התאריכים שהתקבל
             string sql = String.Format(" SELECT users.firstName, users.lastName, donors.donCode, donors.id, donors.donSum, donors.donDate, organizations.orgName FROM organizations INNER JOIN(users INNER JOIN donors ON users.id = donors.id) ON organizations.orgCode = donors.orgCode WHERE(((([donors]![donDate]))>#{0}#) AND((([donors]![donDate]))<#{1}#))", s, f);
             return d.excuteQuery(sql);
         }
 
-        public bool newDonor(string id, string orgName, double dSum, DateTime donDate)
-        {//creating new donor and adding it to the donor's table
-            if (checkId(id))
-            {
-                string sql = String.Format("INSERT INTO donors (id, orgCode,donSum, donDate) VALUES ('{0}', '{1}', '{2}', #{3}#) ", id, getOrgCode(orgName), dSum, donDate);
-                d.excuteQuery(sql);
-                return true;
-            }
-            else
-                return false;
-        }
         public bool newDonor2(string id, string orgName, double dSum, DateTime donDate, string cardNum, string cardMonth, string cardYear, string ownerId, string cardCode)
         {//creating new donor and adding it to the donor's table
             if (checkId(id))

@@ -18,10 +18,10 @@ namespace EzerMizion
         }
 
         protected void submit_Click(object sender, EventArgs e)
-        {
+        {//הוספת מוצר
             productsLogic pl = new productsLogic();
             {
-                //save image name
+                //שמירת שם התמונה
                 string imageName = photo.Text;
                 //מחזיר את הנתיב של התיקיה בשרת
                 string path = Server.MapPath(@"~/Photos/");
@@ -56,11 +56,7 @@ namespace EzerMizion
                     {
                         alarm_lable.Text = "לא כל הערכים המוכנסים תקינים";
                     }
-                   
                 }
-                     
-               
-
             }
         }
 

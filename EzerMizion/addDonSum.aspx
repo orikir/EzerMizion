@@ -7,11 +7,13 @@
             margin-top: 3%;
             padding: 3%;
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 120%;
-           color: black ;
+            background-image: url('Photos/bG.png');
+            background-size: 120%;
+            color: black;
         }
+
         .register-left {
             text-align: center;
             color: #000;
@@ -155,9 +157,10 @@
         .rowF {
             margin: 5% 3% 0% 3%;
         }
+
         .rowImage {
-            width:100%;
-            height:50%;
+            width: 100%;
+            height: 50%;
         }
     </style>
 </asp:Content>

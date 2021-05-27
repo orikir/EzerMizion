@@ -4,14 +4,16 @@
     <style>
         .register {
             background: -webkit-linear-gradient(left, #f8f9fa, #f8f9fa);
-            margin-top:5%;
+            margin-top: 5%;
             padding: 3%;
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 120%;
-           color: black ;
+            background-image: url('Photos/bG.png');
+            background-size: 120%;
+            color: black;
         }
+
         .register-left {
             text-align: center;
             color: #000;
@@ -141,7 +143,7 @@
                                     <div class="form-group">
                                         <asp:Button ID="submit" runat="server" Text="הירשם" OnClick="submit_Click" type="submit" class="btnRegister" value="Register" />
                                     </div>
-                                    <asp:Label ID="alarm_lable"  runat="server" Text=""></asp:Label>
+                                    <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
                                 </div>
                                 <div class="col-4"></div>
                             </div>

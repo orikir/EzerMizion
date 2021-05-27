@@ -34,16 +34,13 @@ namespace EzerMizion
                         Session["uType"] = "manager";
                         Response.Redirect("HomeP.aspx");
                     }
-
                     else
                     {
                         Session["uType"] = "ordinary";
                         Response.Redirect("HomeP.aspx");
                     }
-                }
-                    
+                }   
             }
-
         }
     }
 }

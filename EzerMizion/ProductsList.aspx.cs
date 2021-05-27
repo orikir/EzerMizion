@@ -27,15 +27,14 @@ namespace EzerMizion
         }
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
+        {//כפתור עריכה-פותח תיבת טקסט
             GridView1.EditIndex = e.NewEditIndex;
             GridView1.DataSource = pl.allProducts();
             GridView1.DataBind();
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-
+        {//עדכון מחיר מוצר
             //כשיש אפשרות עריכה בעצם נוספת תיבת טקס וממנה צריך לקחת את הנתון
             string price = ((TextBox)(GridView1.Rows[e.RowIndex].Cells[5].Controls[0])).Text;
             //עדכון הנתונים במסד הנתונים
@@ -68,7 +67,7 @@ namespace EzerMizion
         }
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
+        {//כפתור ביטול
             GridView1.EditIndex = -1;
             GridView1.DataSource = pl.allProducts();
             GridView1.DataBind();
@@ -81,8 +80,7 @@ namespace EzerMizion
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            
+        {//כפתור מחיקה  
             pl.deletePro(GridView1.Rows[e.RowIndex].Cells[6].Text);
             GridView1.EditIndex = -1;
             GridView1.DataSource = pl.allProducts();

@@ -2,28 +2,30 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        .m{
+        .m {
             margin: 1% 5% 1% 5%;
         }
+
         .btnadding {
             border-width: medium;
             position: center;
             text-align: center;
-            margin: 2% 1% 1% 1% ;
+            margin: 2% 1% 1% 1%;
             padding: 0.5%;
             color: white;
-            border-color:white;
-            border-style:double;
+            border-color: white;
+            border-style: double;
             background: red;
             font-weight: 600;
             width: 20%;
-            height:50%;
+            height: 50%;
             direction: rtl;
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 170%;
-           color: white;
+            background-image: url('Photos/bG.png');
+            background-size: 170%;
+            color: white;
         }
     </style>
 </asp:Content>

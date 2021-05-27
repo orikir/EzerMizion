@@ -15,16 +15,19 @@
             width: 20%;
             cursor: pointer;
         }
-        .m{
+
+        .m {
             margin: 1% 5% 1% 5%;
         }
+
         .byDate {
             margin: 2.5%;
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 170%;
-           color: white ;
+            background-image: url('Photos/bG.png');
+            background-size: 170%;
+            color: white;
         }
     </style>
 </asp:Content>

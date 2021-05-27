@@ -345,7 +345,7 @@
                                     <div class="col-md-1">
                                         <div class="product-content">
                                             <asp:Label ID="proName" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
-                                            
+
 
                                         </div>
                                     </div>

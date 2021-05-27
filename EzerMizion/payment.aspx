@@ -128,8 +128,8 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="vStyle" ErrorMessage="תעודת זהות לא תקנית" ValidationExpression="\d{9}" ControlToValidate="ownerId"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class=" col-md-6">
-                                    <asp:Label ID="Label2"  class="control-label vStyle" runat="server" Text="מספר כרטיס"></asp:Label>
-                                    <asp:TextBox ID="cardNum" class="form-control"  minlength="8" maxlength="16" runat="server" Text="" placeholder="מספר כרטיס*"></asp:TextBox>
+                                    <asp:Label ID="Label2" class="control-label vStyle" runat="server" Text="מספר כרטיס"></asp:Label>
+                                    <asp:TextBox ID="cardNum" class="form-control" minlength="8" MaxLength="16" runat="server" Text="" placeholder="מספר כרטיס*"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס מספר כרטיס אשראי (8-16) ספרות" ControlToValidate="cardNum"></asp:RequiredFieldValidator>
                                     <br />
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="vStyle" ErrorMessage="מספר הכרטיס לא תקני-הקש 8-16 ספרות" ValidationExpression="^[0-9]{8,16}$" ControlToValidate="cardNum"></asp:RegularExpressionValidator>

@@ -5,18 +5,19 @@
         .design {
             margin-top: 2%
         }
-        .h3d{
+
+        .h3d {
             margin-top: 2%
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 120%;
-           color: white ;
+            background-image: url('Photos/bG.png');
+            background-size: 120%;
+            color: white;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <center>
         <h3 class="h3d">היסטוריית תרומות</h3>
             <asp:GridView ID="GridView2" runat="server" CssClass="design" BackColor="#CCCCCC" BorderColor="White" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2" Width="1103px" AutoGenerateColumns="False">

@@ -17,9 +17,9 @@
         }
 
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 120%;
-           color: black ;
+            background-image: url('Photos/bG.png');
+            background-size: 120%;
+            color: black;
         }
 
         .tColor {
@@ -35,7 +35,7 @@
         .login-box {
             position: center;
             margin: 8% 0 10% 0;
-            padding-bottom:2%;
+            padding-bottom: 2%;
             border-radius: 1rem;
             background-color: #f8f9fa;
         }
@@ -53,7 +53,6 @@
             background: #f8f9fa;
             padding: 2%;
             text-align: center;
-
         }
 
         .brand_logo {
@@ -63,13 +62,14 @@
             border: 3px solid white;
             background: #e7e9eb;
             padding: 1% -4% 1% -4%;
-            margin:1% 2% 1% 1%;
+            margin: 1% 2% 1% 1%;
         }
 
         .form_container {
             margin-top: 20%;
         }
-        .vStyle{
+
+        .vStyle {
             direction: rtl;
             float: right;
         }
@@ -90,13 +90,13 @@
                     <div class=" form_container">
                         <form class="form ">
                             <div class="form-group">
-                                <asp:Label ID="Label2" runat="server" class="tColor" style="float: right;" Text="שם משתמש:"></asp:Label><br>
+                                <asp:Label ID="Label2" runat="server" class="tColor" Style="float: right;" Text="שם משתמש:"></asp:Label><br>
                                 <asp:TextBox ID="us_name" type="text" name="us_name" class="form-control" runat="server" MaxLength="20"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם משתמש" ControlToValidate="us_name"></asp:RequiredFieldValidator>
-                                </div>
+                            </div>
                             <br />
                             <div class="form-group">
-                                <asp:Label ID="Label3" runat="server" class="tColor" style="float: right;" Text="תעודת זהות:"></asp:Label><br>
+                                <asp:Label ID="Label3" runat="server" class="tColor" Style="float: right;" Text="תעודת זהות:"></asp:Label><br>
                                 <asp:TextBox ID="id" type="text" name="id" class="form-control" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תעודת זהות" ControlToValidate="id"></asp:RequiredFieldValidator>
                                 <br />

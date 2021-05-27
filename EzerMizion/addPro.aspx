@@ -3,9 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 120%;
+            background-image: url('Photos/bG.png');
+            background-size: 120%;
         }
+
         .adding {
             margin-top: 1%;
             padding: 3%;
@@ -24,14 +25,14 @@
             margin-top: 5%;
             margin-left: 30%;
             margin-right: 50%;
-            border-color:red;
-            border-style:double;
+            border-color: red;
+            border-style: double;
             padding: 1% 1% 2% 1%;
             background: white;
             color: #000;
             font-weight: 600;
             width: 20%;
-            height:50%;
+            height: 50%;
             direction: rtl;
         }
 
@@ -49,7 +50,7 @@
 
         .btnUp1 {
             /margin: 1% 2% 1% 2%;
-            background-color:white;
+            background-color: white;
             border: none;
             padding: 1% 10% 1% 0;
             color: #000;
@@ -115,7 +116,6 @@
                                     <div class="col-2">
                                         <asp:Label runat="server" ID="bLabel" CssClass=" vStyle" Text="בחר סניף:"> </asp:Label>
                                     </div>
-
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-5">
@@ -127,7 +127,6 @@
                                         <asp:TextBox ID="photo" runat="server" class="form-control" placeholder="תמונה *" value=""></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס שם תמונה" ControlToValidate="quantity"></asp:RequiredFieldValidator>
                                     </div>
-
                                     <div class="col-2"></div>
                                 </div>
                                 <div class="row form-group">
@@ -136,11 +135,8 @@
                                             <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />
                                             <asp:Label ID="alarm_lable" runat="server" CssClass="labStyle" Text=""></asp:Label>
                                         </center>
-                                        
                                     </div>
-                                    
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -148,6 +144,5 @@
             </div>
         </div>
     </div>
-
     </div>
 </asp:Content>

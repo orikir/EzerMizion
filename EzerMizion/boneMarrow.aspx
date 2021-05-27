@@ -10,15 +10,16 @@
         .by {
             margin: 2% 0 2% 0
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 170%;
+            background-image: url('Photos/bG.png');
+            background-size: 170%;
         }
     </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div   >
+    <div>
         <center>
     
      <div class="by">

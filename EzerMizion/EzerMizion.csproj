@@ -76,7 +76,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddDonor.aspx" />
     <Content Include="addDonPInfo.aspx" />
     <Content Include="addDonSum.aspx" />
     <Content Include="addPro.aspx" />
@@ -89,7 +88,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DonationsList.aspx" />
-    <Content Include="donChart.aspx" />
     <Content Include="donHistory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="info1.aspx" />
@@ -237,13 +235,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddDonor.aspx.cs">
-      <DependentUpon>AddDonor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddDonor.aspx.designer.cs">
-      <DependentUpon>AddDonor.aspx</DependentUpon>
-    </Compile>
     <Compile Include="addDonPInfo.aspx.cs">
       <DependentUpon>addDonPInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -332,13 +323,6 @@
     </Compile>
     <Compile Include="DonationsList.aspx.designer.cs">
       <DependentUpon>DonationsList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="donChart.aspx.cs">
-      <DependentUpon>donChart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="donChart.aspx.designer.cs">
-      <DependentUpon>donChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="donHistory.aspx.cs">
       <DependentUpon>donHistory.aspx</DependentUpon>

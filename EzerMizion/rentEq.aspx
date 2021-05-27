@@ -8,18 +8,18 @@
             margin: 1em;
             text-transform: capitalize;
             font-size: 1.7em;
-            color:white
+            color: white
         }
+
         body {
-           background-image: url('Photos/bG.png');
-           background-size: 100%;
-           color: black ;
+            background-image: url('Photos/bG.png');
+            background-size: 100%;
+            color: black;
         }
 
         .product-grid4, .product-grid4 .product-image4 {
             position: relative;
-            
-            padding-top:2%
+            padding-top: 2%
         }
 
         .product-grid4 {
@@ -30,12 +30,11 @@
             z-index: 1;
             margin-bottom: 3%;
             transition: all .3s ease 0s;
-            background-color:white;
+            background-color: white;
         }
 
             .product-grid4:hover {
                 box-shadow: 0 0 10px rgba(0,0,0,.2);
-                  
             }
 
             .product-grid4 .product-image4 a {
@@ -57,7 +56,7 @@
             }
 
             .product-grid4 .pic-2 {
-                position:absolute;
+                position: absolute;
                 top: 0;
                 left: 0;
                 opacity: 0;
@@ -70,7 +69,7 @@
 
             .product-grid4 .product-discount-label, .product-grid4 .product-new-label {
                 color: #fff;
-                background-color: red; 
+                background-color: red;
                 font-size: 13px;
                 font-weight: 800;
                 text-transform: uppercase;
@@ -118,7 +117,7 @@
                 color: red;
                 font-size: 17px;
                 font-weight: 700;
-                margin: 3% 1% 3% 1% ;
+                margin: 3% 1% 3% 1%;
                 display: block
             }
 
@@ -136,14 +135,13 @@
             .product-grid4 .add-to-cart {
                 border: 1px solid #e5e5e5;
                 display: inline-block;
-                padding: 10px 20px ;
+                padding: 10px 20px;
                 color: #888;
                 font-weight: 600;
                 font-size: 14px;
                 border-radius: 4px;
                 transition: all .3s;
                 margin-bottom: 1%;
-                
             }
 
             .product-grid4:hover .add-to-cart {
@@ -156,7 +154,6 @@
             .product-grid4 .add-to-cart:hover {
                 background-color: #505050;
                 box-shadow: 0 0 10px rgba(0,0,0,.5)
-
             }
 
         @media only screen and (max-width:990px) {
@@ -176,15 +173,15 @@
                         <div class="product-grid4">
                             <div class="product-image4">
                                 <a href="#">
-                                    <asp:Image ID="Image1" class="pic-1" runat="server"  ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
-                                    <asp:Image ID="Image2" class="pic-2" runat="server"  ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
+                                    <asp:Image ID="Image1" class="pic-1" runat="server" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
+                                    <asp:Image ID="Image2" class="pic-2" runat="server" ImageUrl='<%#Eval("proPhoto", "Photos/{0}") %>' />
                                 </a>
                             </div>
                             <div class="product-content">
                                 <asp:Label ID="Label1" class="title" runat="server" Text='<%#Eval("proName") %>'></asp:Label>
-                                <asp:Label ID="Label2" class="price" runat="server" Text='<%#Eval("proPrice") %>' ></asp:Label>₪
+                                <asp:Label ID="Label2" class="price" runat="server" Text='<%#Eval("proPrice") %>'></asp:Label>₪
                             </div>
-                            <asp:Button ID="addTcart" class="add-to-cart" runat="server" OnClientClick = "return confirm('המוצר נוסף בהצלחה!');" CommandName='<%# Eval("proCode")%>' Text="הוסף לעגלה" OnClick="addTcart_Click" />
+                            <asp:Button ID="addTcart" class="add-to-cart" runat="server" OnClientClick="return confirm('המוצר נוסף בהצלחה!');" CommandName='<%# Eval("proCode")%>' Text="הוסף לעגלה" OnClick="addTcart_Click" />
                         </div>
                     </div>
                 </ItemTemplate>

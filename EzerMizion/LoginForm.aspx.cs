@@ -39,8 +39,6 @@ namespace EzerMizion
             {
                 Label1.Text = "שם משתמש ו/או תעודת זהות שגויים";
             }
-
-
         }
     }
 }

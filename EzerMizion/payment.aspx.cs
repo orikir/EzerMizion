@@ -25,7 +25,6 @@ namespace EzerMizion
                 {
                     Year.Items.Add(new ListItem(i.ToString(), i.ToString()));
                 }
-
             }
             else
             {
@@ -78,9 +77,7 @@ namespace EzerMizion
                         }
                     }
                 }
-
             }
-            
         }
     }
 }
