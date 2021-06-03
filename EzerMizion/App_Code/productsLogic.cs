@@ -15,18 +15,13 @@ namespace EzerMizion.App_Code
             string sql = " SELECT products.proCode, products.proName, products.isInStock, products.quantity, branches.branchName, products.proPhoto, products.proPrice FROM branches INNER JOIN products ON branches.branchCode = products.branchCode";
             return d.excuteQuery(sql);
         }
-        public DataSet oneProduct(int proCode)
-        {//מחזירה פרטי מוצר בעל קוד המוצר שהתקבל
-            string sql = string.Format(" SELECT  proName, proPhoto, proPrice FROM products WHERE proCode={0}", proCode);
-            return d.excuteQuery(sql);
-        }
         public void updatePro(double price, int proCode)
         {//update product price according to what the user entered
             string sql = string.Format(("UPDATE products SET proPrice={0} WHERE proCode={1}"), price, proCode);
             d.excuteQuery(sql);
         }
         public bool getDifference(string userId)
-        {//return the differece between how many products in stock to how many the customer wants
+        {//return true if there is enough products in stock
             string sql = String.Format("SELECT products.quantity-cart.amount AS stock FROM products INNER JOIN cart ON products.proCode=cart.proCode WHERE cart.userId ='{0}'", userId);
             for (int i=0; i< d.excuteQuery(sql).Tables[0].Rows.Count; i++)
             {
