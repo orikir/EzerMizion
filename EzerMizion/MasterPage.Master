@@ -33,7 +33,24 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a>
+                            <% if (Session["uType"] == "ordinary")
+                                { %>
+                            <a class="nav-link" style="color:red" href="addDonSum.aspx">לתרומה לחץ כאן</a>
+                            <%}
+                                else
+                                {
+                                    if (Session["uType"] == "manager")
+                                    {%>
+                            <a class="nav-link" href="DonationsList.aspx">רשימת תרומות</a>
+                            <%}
+                                
+                                }
+
+                            %>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a>
                             <% if (Session["uType"] == "ordinary")
@@ -57,24 +74,7 @@
                             %>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a>
-                            <% if (Session["uType"] == "ordinary")
-                                { %>
-                            <a class="nav-link" href="addDonSum.aspx">תרומה</a>
-                            <%}
-                                else
-                                {
-                                    if (Session["uType"] == "manager")
-                                    {%>
-                            <a class="nav-link" href="DonationsList.aspx">תרומות</a>
-                            <%}
-                                
-                                }
-
-                            %>
-                        </a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a>
                             <% if (Session["uType"] == "ordinary")
@@ -111,7 +111,7 @@
                 </ul>
             </div>
             <div class="space">
-                <asp:Label ID="Label1" runat="server"  Text=""></asp:Label>
+                <asp:Label ID="Label1" ForeColor="Black" runat="server"  Text=""></asp:Label>
             </div>
         </nav>
         <div>

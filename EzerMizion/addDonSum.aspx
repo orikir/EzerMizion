@@ -148,7 +148,7 @@
             background-color: white;
             color: black;
             font-weight: 600;
-            width: 8%;
+            width: 15%;
             height: 100%;
             font-size: 150%;
             margin-right: 2%;
@@ -186,9 +186,9 @@
                                     </div>
                                      <div class=" row">
                                             <div class="col-12">
-                                                <asp:Button ID="minus" class="btnPM" runat="server" Text="-" OnClick="minus_Click" />
+                                                <asp:Button ID="minus" class="btnPM" runat="server" Text="חילוק" OnClick="minus_Click" />
                                                 <asp:TextBox ID="dSum" MaxLength="20" runat="server" class=" dSum"  Text="0"></asp:TextBox>
-                                                <asp:Button ID="plus" class="btnPM" runat="server" Text="+" OnClick="plus_Click" />
+                                                <asp:Button ID="plus" class="btnPM" runat="server" Text="הכפלה" OnClick="plus_Click" />
                                             </div>
                                     </div>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="dSum" ValidationExpression="\d+(?:,\d{1,2})?" ErrorMessage="הזנת ערך לא חוקי"></asp:RegularExpressionValidator>

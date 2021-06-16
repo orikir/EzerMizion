@@ -25,6 +25,7 @@
      <div class="by">
         <asp:Button ID="Button1" runat="server" Text="חיפוש" OnClick="byBlood" ForeColor="Red" />
         <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+            <asp:ListItem>כל התורמים</asp:ListItem>
             <asp:ListItem>O+</asp:ListItem>
             <asp:ListItem>O-</asp:ListItem>
             <asp:ListItem>A+</asp:ListItem>
@@ -52,8 +53,6 @@
             <asp:BoundField DataField="donId"  HeaderText="תעודת זהות" />
             <asp:BoundField DataField="donCOde" HeaderText="קוד תורם" />
             <asp:ButtonField ButtonType="Button"  Text="עדכון סטטוס" />
-
-
         </Columns>
         <FooterStyle BackColor="#99CCCC" CssClass="text-center" ForeColor="Red" />
         <HeaderStyle BackColor="Red"  Font-Bold="True" CssClass="text-center" ForeColor="white" />

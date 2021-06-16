@@ -64,7 +64,7 @@ namespace EzerMizion
             {//when the amount is 1, and the user click on minus the amount become 0
                 cl.deleteFromCart(Int32.Parse(proCode), Session["uId"].ToString());
                 Label2.Text = " ";
-                lab.Text = " ";
+                lab.Text = "";
             }
 
             cartSum.Text = cl.sumCart(Session["uId"].ToString());
@@ -99,7 +99,7 @@ namespace EzerMizion
 
         protected void checkout_Click(object sender, EventArgs e)
         {
-            if (cartSum.Text != null && checkStock())
+            if (!cartSum.Text.Equals("") && checkStock())
             {
                 Response.Redirect("payment.aspx");
             }

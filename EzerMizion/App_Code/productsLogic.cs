@@ -67,5 +67,10 @@ namespace EzerMizion.App_Code
             string s = ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
             return s;
         }
+        public string oneProduct(int proCode)
+        {//מחזירה פרטי מוצר בעל קוד המוצר שהתקבל
+            string sql = string.Format(" SELECT  proName FROM products WHERE proCode={0}", proCode);
+            return d.excuteQuery(sql).Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
+        }
     }
 }

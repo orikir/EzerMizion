@@ -30,8 +30,17 @@ namespace EzerMizion
         {
             if (DropDownList1.Text != null )
             {
-                GridView1.DataSource = dbm.byBlood(DropDownList1.Text);
-                GridView1.DataBind();
+                if(DropDownList1.Text.Equals("כל התורמים"))
+                {
+                    GridView1.DataSource = dbm.allDonations();
+                    GridView1.DataBind();
+                }
+                else
+                {
+                    GridView1.DataSource = dbm.byBlood(DropDownList1.Text);
+                    GridView1.DataBind();
+                }
+                
             }
         }
 

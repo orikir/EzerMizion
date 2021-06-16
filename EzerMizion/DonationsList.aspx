@@ -42,6 +42,8 @@
                 <asp:Label ID="Label3" class=" vStyle" runat="server" Text="תאריך התחלה"></asp:Label>
                 <asp:TextBox ID="TextBox1" runat="server"  TextMode="Date"></asp:TextBox>
                 <asp:Label ID="Label1" class=" vStyle" runat="server" Text="תאריך סיום"></asp:Label>
+                <br />
+                 <asp:Label ID="Label2" class=" vStyle" runat="server" Text=""></asp:Label>
              </div>
             
             <asp:GridView ID="GridView1" runat="server" CssClass="m" BackColor="#f0f0f0" BorderColor="White"   BorderWidth="3px" CellPadding="4" ForeColor=" Black" CellSpacing="2" Width="1200px" AutoGenerateColumns="False">

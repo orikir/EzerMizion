@@ -256,9 +256,11 @@
                                     <div class="col-md-8">
                                         <div class="row">
                                             <asp:Button ID="continue" runat="server" Text="אישור" OnClick="continue_Click" type="submit" class="btnRegister" />
+                                            <br />
+                                            <asp:Label ID="alarm_lable" style="padding-left: 20%" runat="server" Text=""></asp:Label>
                                         </div>
-                                        <div class="row" style="float: right">
-                                            <asp:Label ID="alarm_lable" CssClass="" runat="server" Text=""></asp:Label>
+                                        <div class="row">
+                                            
                                         </div>
 
                                     </div>
