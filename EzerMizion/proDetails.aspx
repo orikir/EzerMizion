@@ -16,7 +16,7 @@
 
 
         <script type="text/javascript">
-            $(window).on( function () {
+            $(window).on(function () {
                 $('#myModal').modal('show');
             });
         </script>
@@ -55,3 +55,42 @@
     </div>
 </asp:Content>
 
+        <span aria-hidden="true">×
+							</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <!-- Data passed is displayed
+							in this part of the
+							modal body -->
+                    <h6 id="modal_body"></h6>
+                    <button type="button"
+                        class="btn btn-success btn-sm"
+                        data-toggle="modal"
+                        data-target="#exampleModal"
+                        id="submit">
+                        Submit
+					
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(".clickMe").click(function () {
+            var name = $(this).attr("rel");
+
+
+            var marks = $("#marks").val();
+            var str = "You Have Entered "
+                + "Name: " + name
+                + " and Marks: " + marks;
+            $("#modal_body").html(str);
+        });
+    </script>
+
+</asp:Content>

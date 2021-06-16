@@ -40,12 +40,17 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("DELETE * FROM products WHERE proCode={0}"), Int32.Parse(proCode));
             d.excuteQuery(sql);
         }
+        public void stockTrue()
+        {//update product amount
+            string sql = string.Format(("UPDATE products SET products.isInStock = True WHERE (products.quantity) > 0"));
+            d.excuteQuery(sql);
+        }
         public bool newPro(string proName, string quantity, double price, string branchName, string photo)
         {//creating new product and adding it to the product's table
             {
                 if (!isExsist(proName, branchName))
                 {//אם המוצר לא קיים, תתבצע הוספה
-                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode, proPhoto) VALUES('{0}', '{1}', '{2}', '{3}','{4}')", proName, quantity, price, bl.getBranchCode(branchName), photo);
+                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode, proPhoto) VALUES('{0}', '{1}', '{2}', '{3}','{4}')", proName, Int32.Parse(quantity), price, bl.getBranchCode(branchName), photo);
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -54,6 +59,7 @@ namespace EzerMizion.App_Code
                     return false;
                 }
             }
+
         }
         public bool isExsist(string name, string branchName)
         {//check if the product is already exist

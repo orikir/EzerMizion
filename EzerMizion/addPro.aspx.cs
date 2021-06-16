@@ -57,6 +57,7 @@ namespace EzerMizion
                         alarm_lable.Text = "לא כל הערכים המוכנסים תקינים";
                     }
                 }
+                pl.stockTrue();
             }
         }
 
