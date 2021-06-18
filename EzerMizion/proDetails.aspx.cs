@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EzerMizion.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,14 +10,12 @@ namespace EzerMizion
 {
     public partial class proDetails : System.Web.UI.Page
     {
+        productsLogic pl = new productsLogic();
         protected void Page_Load(object sender, EventArgs e)
         {
+            string proCode = Request.Params["proCode"];
 
-        }
-
-        protected void d_Click(object sender, EventArgs e)
-        {
-            Label3.Text =" 0";
+            Label1.Text = pl.oneProduct(Int32.Parse(proCode));
         }
     }
 }

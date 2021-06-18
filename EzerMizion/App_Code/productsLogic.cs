@@ -75,7 +75,7 @@ namespace EzerMizion.App_Code
         }
         public string oneProduct(int proCode)
         {//מחזירה פרטי מוצר בעל קוד המוצר שהתקבל
-            string sql = string.Format(" SELECT  proName FROM products WHERE proCode={0}", proCode);
+            string sql = string.Format(" SELECT  desc FROM products WHERE proCode={0}", proCode);
             return d.excuteQuery(sql).Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
         }
     }

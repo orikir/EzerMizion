@@ -33,10 +33,13 @@ namespace EzerMizion
             cl.intoCart( Int32.Parse(proCode), Session["uId"].ToString()); 
         }
 
-        //protected void d_Click(object sender, EventArgs e)
-        //{
-        //    string proCode = ((sender as Button).CommandName).ToString();
-        //    Label3.Text = pl.oneProduct(Int32.Parse(proCode));
-        //}
+        protected void d_Click(object sender, EventArgs e)
+        {
+            string proCode = ((sender as Button).CommandName).ToString();
+
+            Response.Redirect(("proDetails.aspx?proCode=" + proCode));
+
+            //Label3.Text = pl.oneProduct(Int32.Parse(proCode));
+        }
     }
 }
