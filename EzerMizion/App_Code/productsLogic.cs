@@ -45,12 +45,12 @@ namespace EzerMizion.App_Code
             string sql = string.Format(("UPDATE products SET products.isInStock = True WHERE (products.quantity) > 0"));
             d.excuteQuery(sql);
         }
-        public bool newPro(string proName, string quantity, double price, string branchName, string photo)
+        public bool newPro(string proName, string quantity, double price, string branchName, string photo, string proDesc)
         {//creating new product and adding it to the product's table
             {
                 if (!isExsist(proName, branchName))
                 {//אם המוצר לא קיים, תתבצע הוספה
-                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode, proPhoto) VALUES('{0}', '{1}', '{2}', '{3}','{4}')", proName, Int32.Parse(quantity), price, bl.getBranchCode(branchName), photo);
+                    string sql = String.Format("INSERT INTO products (proName,quantity,proPrice,branchCode, proPhoto, proDesc) VALUES('{0}', '{1}', '{2}', '{3}','{4}','{5}')", proName, Int32.Parse(quantity), price, bl.getBranchCode(branchName), photo, proDesc);
                     DataSet ds = d.excuteQuery(sql);
                     return true;
                 }
@@ -75,7 +75,7 @@ namespace EzerMizion.App_Code
         }
         public string oneProduct(int proCode)
         {//מחזירה פרטי מוצר בעל קוד המוצר שהתקבל
-            string sql = string.Format(" SELECT  desc FROM products WHERE proCode={0}", proCode);
+            string sql = string.Format(" SELECT  proDesc FROM products WHERE proCode={0}", proCode);
             return d.excuteQuery(sql).Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
         }
     }

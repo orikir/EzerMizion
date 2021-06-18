@@ -130,6 +130,12 @@
                                     <div class="col-2"></div>
                                 </div>
                                 <div class="row form-group">
+                                    <div class=" col-10">
+                                        <asp:TextBox ID="proDesc" runat="server" MaxLength="255" class="form-control" Height="110%" placeholder="תיאור מוצר *" value=""></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" CssClass="vStyle" ErrorMessage="יש להכניס תיאור מוצר" ControlToValidate="proDesc"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
                                     <div class="col-12">
                                         <center>
                                             <asp:Button ID="submit" runat="server" Text="הוספה" OnClick="submit_Click" type="submit" class="btnadding" value="adding" />

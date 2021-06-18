@@ -39,7 +39,7 @@ namespace EzerMizion
                             alarm_lable.Text = "";
                             try
                             {
-                                if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text))
+                                if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text, proDesc.Text))
                                     alarm_lable.Text = "המוצר קיים";
                                 else
                                     alarm_lable.Text = "המוצר נוסף בהצלחה";
