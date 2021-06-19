@@ -45,39 +45,47 @@ namespace EzerMizion
         protected void submit_Click(object sender, EventArgs e)
         {
             cartLogic cl = new cartLogic();
-            if (!pl.getDifference(Session["uId"].ToString()))
+            try
             {
-                Label5.Text = "לא כל הפריטים במלאי-לא ניתן לבצע הזמנה";
-            }
-            else
-            {//בדיקת תוקף כרטיס
-                if(Year.Text.Equals("בחר שנה")|| Month.Text.Equals("בחר חודש"))
+                if (!pl.getDifference(Session["uId"].ToString()))
                 {
-                    Label5.Text = "לא הוכנס תוקף-לא ניתן לבצע הזמנה";
+                    Label5.Text = "לא כל הפריטים במלאי-לא ניתן לבצע הזמנה";
                 }
                 else
-                {
-                    if (Int32.Parse(Year.Text) < Int32.Parse(DateTime.Now.Year.ToString()))
-                    {//אם השנה הנוכחית אחרי שנה שהוכנסה 
-                        Label5.Text = "כרטיס לא בתוקף-לא ניתן לבצע הזמנה";
+                {//בדיקת תוקף כרטיס
+                    if (Year.Text.Equals("בחר שנה") || Month.Text.Equals("בחר חודש"))
+                    {
+                        Label5.Text = "לא הוכנס תוקף-לא ניתן לבצע הזמנה";
                     }
                     else
                     {
-                        if ((Int32.Parse(Year.Text) == Int32.Parse(DateTime.Now.Year.ToString())) && (Int32.Parse(Month.Text) <= Int32.Parse(DateTime.Now.Month.ToString())))
-                        {//אם אותה שנה אבל חודש נוכחי מאוחר מחודש שהוכנס
+                        if (Int32.Parse(Year.Text) < Int32.Parse(DateTime.Now.Year.ToString()))
+                        {//אם השנה הנוכחית אחרי שנה שהוכנסה 
                             Label5.Text = "כרטיס לא בתוקף-לא ניתן לבצע הזמנה";
                         }
                         else
-                        {//אם התאריך שהוכנס אחרי תאריך נוכחי-כרטיס בתוקף 
-                            ol.toOrder(Session["uId"].ToString(), cardNum.Text, Month.Text, Year.Text, ownerId.Text, cardCvv.Text, DateTime.Now);
-                            ol.toOP(Session["uId"].ToString());
-                            pl.updateAmount(Session["uId"].ToString());
-                            cl.deleteAllCart(Session["uId"].ToString());
-                            Label5.Text = "ההזמנה בוצעה בהצלחה";
+                        {
+                            if ((Int32.Parse(Year.Text) == Int32.Parse(DateTime.Now.Year.ToString())) && (Int32.Parse(Month.Text) <= Int32.Parse(DateTime.Now.Month.ToString())))
+                            {//אם אותה שנה אבל חודש נוכחי מאוחר מחודש שהוכנס
+                                Label5.Text = "כרטיס לא בתוקף-לא ניתן לבצע הזמנה";
+                            }
+                            else
+                            {//אם התאריך שהוכנס אחרי תאריך נוכחי-כרטיס בתוקף 
+                                ol.toOrder(Session["uId"].ToString(), cardNum.Text, Month.Text, Year.Text, ownerId.Text, cardCvv.Text, DateTime.Now);
+                                ol.toOP(Session["uId"].ToString());
+                                pl.updateAmount(Session["uId"].ToString());
+                                cl.deleteAllCart(Session["uId"].ToString());
+                                Label5.Text = "ההזמנה בוצעה בהצלחה";
+                            }
                         }
                     }
                 }
             }
+            catch
+            {
+                Label5.Text = "שגיאה-לא ניתן לבצע הזמנה";
+            }
+            
         }
     }
 }

@@ -21,43 +21,51 @@ namespace EzerMizion
         {//הוספת מוצר
             productsLogic pl = new productsLogic();
             {
-                //שמירת שם התמונה
-                string imageName = photo.Text;
-                //מחזיר את הנתיב של התיקיה בשרת
-                string path = Server.MapPath(@"~/Photos/");
-                //בדיקה שקובץ התמונה שהמשתמש הזין לא קיים כבר במערכת 
-                if (!File.Exists(path + imageName))
+                try
                 {
-                    alarm_lable.Text = "יש להעלות את התמונה קודם";
-                }
-                else
-                {
-                    try
+                    //שמירת שם התמונה
+                    string imageName = photo.Text;
+                    //מחזיר את הנתיב של התיקיה בשרת
+                    string path = Server.MapPath(@"~/Photos/");
+                    //בדיקה שקובץ התמונה שהמשתמש הזין לא קיים כבר במערכת 
+                    if (!File.Exists(path + imageName))
                     {
-                        if ((Double.Parse(proPrice.Text) > 0) && (Int32.Parse(quantity.Text) >= 0))
+                        alarm_lable.Text = "יש להעלות את התמונה קודם";
+                    }
+                    else
+                    {
+                        try
                         {
-                            alarm_lable.Text = "";
-                            try
+                            if ((Double.Parse(proPrice.Text) > 0) && (Int32.Parse(quantity.Text) >= 0))
                             {
-                                if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text, proDesc.Text))
-                                    alarm_lable.Text = "המוצר קיים";
-                                else
-                                    alarm_lable.Text = "המוצר נוסף בהצלחה";
+                                alarm_lable.Text = "";
+                                try
+                                {
+                                    if (!pl.newPro(proName.Text, quantity.Text, double.Parse(proPrice.Text), branchName.Text, photo.Text, proDesc.Text))
+                                        alarm_lable.Text = "המוצר קיים";
+                                    else
+                                        alarm_lable.Text = "המוצר נוסף בהצלחה";
+                                }
+                                catch
+                                {
+                                    alarm_lable.Text = "שגיאה-לא ניתן להוסיף מוצר";
+                                }
                             }
-                            catch
-                            {
-                                alarm_lable.Text = "שגיאה-לא ניתן להוסיף מוצר";
-                            }
+                            else
+                                alarm_lable.Text = "לא כל הערכים המוכנסים תקינים";
                         }
-                        else
+                        catch
+                        {
                             alarm_lable.Text = "לא כל הערכים המוכנסים תקינים";
+                        }
                     }
-                    catch
-                    {
-                        alarm_lable.Text = "לא כל הערכים המוכנסים תקינים";
-                    }
+                    pl.stockTrue();
                 }
-                pl.stockTrue();
+                catch
+                {
+                    lblMessage.Text = "שגיאה";
+                }
+                
             }
         }
 
@@ -73,14 +81,22 @@ namespace EzerMizion
             //מחזיר את הנתיב של התיקיה בשרת
             string path = Server.MapPath(@"~/Photos/");
             //בדיקה שקובץ התמונה שהמשתמש הזין לא קיים כבר במערכת 
-            if (File.Exists(path + imageName))
-                lblMessage.Text = "הקובץ כבר קיים במערכת";
-            else
+            try
             {
-                //שמירה של קובץ התמונה בתיקיה של האתר
-                FileUpload1.PostedFile.SaveAs(path + imageName);
-                lblMessage.Text = "הקובץ נשמר בהצלחה";
+                if (File.Exists(path + imageName))
+                    lblMessage.Text = "הקובץ כבר קיים במערכת";
+                else
+                {
+                    //שמירה של קובץ התמונה בתיקיה של האתר
+                    FileUpload1.PostedFile.SaveAs(path + imageName);
+                    lblMessage.Text = "הקובץ נשמר בהצלחה";
+                }
             }
+            catch
+            {
+                lblMessage.Text = "שגיאה-לא ניתן לשמור את הקובץ";
+            }
+            
         }
     }
 }

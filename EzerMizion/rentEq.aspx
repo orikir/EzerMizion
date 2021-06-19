@@ -185,7 +185,7 @@
                             <asp:Button ID="d" runat="server" class="add-to-cart"   OnClientClick='<%# "myFunction(\"" + Eval("proCode") + "\"); return false;" %>'  CommandName='<%# Eval("proCode")%>' Text="תיאור מוצר" />
                             <script>
                                 function myFunction(myCode) {
-                                  var myWindow = window.open("proDetails.aspx?proCode="+myCode, "_blank",'scrollbars=no,resizable=no,width=400,height=500');
+                                    var myWindow = window.open("proDetails.aspx?proCode=" + myCode, "_blank", 'scrollbars=no,resizable=no,width=400,height=300 left=' + (screen.width / 2 - 200)+ ',top=' +( screen.height / 2-150));
                                 }
                             </script>
                             <asp:Button ID="addTcart" class="add-to-cart" runat="server" OnClientClick="return confirm('המוצר נוסף בהצלחה!');" CommandName='<%# Eval("proCode")%>' Text="הוסף לעגלה" OnClick="addTcart_Click" />

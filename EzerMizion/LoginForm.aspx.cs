@@ -18,27 +18,35 @@ namespace EzerMizion
         protected void loggin_Click(object sender, EventArgs e)
         {
             usersLogic ul = new usersLogic();
-            if (ul.isUser(id.Text, us_name.Text))
+            try
             {
-                Label1.Text = "you have successfully loggin";
-                Session["uId"] = id.Text;
-                Session["uName"] = ul.getName(id.Text);
-                if (ul.isManager(id.Text))
+                if (ul.isUser(id.Text, us_name.Text))
                 {
-                    Session["uType"] = "manager";
-                    Response.Redirect("HomeP.aspx");
-                }
+                    Label1.Text = "you have successfully loggin";
+                    Session["uId"] = id.Text;
+                    Session["uName"] = ul.getName(id.Text);
+                    if (ul.isManager(id.Text))
+                    {
+                        Session["uType"] = "manager";
+                        Response.Redirect("HomeP.aspx");
+                    }
 
+                    else
+                    {
+                        Session["uType"] = "ordinary";
+                        Response.Redirect("HomeP.aspx");
+                    }
+                }
                 else
                 {
-                    Session["uType"] = "ordinary";
-                    Response.Redirect("HomeP.aspx");
+                    Label1.Text = "שם משתמש ו/או תעודת זהות שגויים";
                 }
             }
-            else
+            catch
             {
-                Label1.Text = "שם משתמש ו/או תעודת זהות שגויים";
+                Label1.Text = "שגיאה-נסו שנית";
             }
+           
         }
     }
 }

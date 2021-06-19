@@ -45,17 +45,24 @@ namespace EzerMizion
         }
         protected void byDate(object sender, EventArgs e)
         {//הצגת תרומות לפי טווח  תאריכים
-            if (TextBox1.Text!=null && TextBox2.Text!=null)
+            try
             {
-                if (DateTime.Parse(TextBox2.Text) >= (DateTime.Now)|| DateTime.Parse(TextBox1.Text) > DateTime.Parse(TextBox2.Text))
-                    Label2.Text = "טווח התאריכים לא חוקי";
-                else
+                if (TextBox1.Text != null && TextBox2.Text != null)
                 {
-                    Label2.Text = "";
-                    GridView1.DataSource = dl.getByDate((DateTime.Parse(TextBox1.Text)), (DateTime.Parse(TextBox2.Text)));
-                    GridView1.DataBind();
+                    if (DateTime.Parse(TextBox2.Text) >= (DateTime.Now) || DateTime.Parse(TextBox1.Text) > DateTime.Parse(TextBox2.Text))
+                        Label2.Text = "טווח התאריכים לא חוקי";
+                    else
+                    {
+                        Label2.Text = "";
+                        GridView1.DataSource = dl.getByDate((DateTime.Parse(TextBox1.Text)), (DateTime.Parse(TextBox2.Text)));
+                        GridView1.DataBind();
+                    }
+
                 }
-                
+            }
+            catch
+            {
+                Label2.Text = "שגיאה";
             }
         }
     }

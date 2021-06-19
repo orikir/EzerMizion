@@ -18,29 +18,37 @@ namespace EzerMizion
         protected void submit_Click(object sender, EventArgs e)
         {
             usersLogic ul = new usersLogic();
-            if (DateTime.Parse(birthDay.Text)>=(DateTime.Now))
-                message.Text = "תאריך לא חוקי";
-            else
+            try
             {
-                if (!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))
-                    alarm_lable.Text = "user already exsist";
+                if (DateTime.Parse(birthDay.Text) >= (DateTime.Now))
+                    message.Text = "תאריך לא חוקי";
                 else
                 {
-                    alarm_lable.Text = "you have successfully registered";
-                    Session["uId"] = id.Text;
-                    Session["uName"] = ul.getName(id.Text);
-                    if (ul.isManager(id.Text))
-                    {
-                        Session["uType"] = "manager";
-                        Response.Redirect("HomeP.aspx");
-                    }
+                    if (!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))
+                        alarm_lable.Text = "המשתמש קיים";
                     else
                     {
-                        Session["uType"] = "ordinary";
-                        Response.Redirect("HomeP.aspx");
+                        alarm_lable.Text = "הרישום בוצע בצלחה!";
+                        Session["uId"] = id.Text;
+                        Session["uName"] = ul.getName(id.Text);
+                        if (ul.isManager(id.Text))
+                        {
+                            Session["uType"] = "manager";
+                            Response.Redirect("HomeP.aspx");
+                        }
+                        else
+                        {
+                            Session["uType"] = "ordinary";
+                            Response.Redirect("HomeP.aspx");
+                        }
                     }
-                }   
+                }
             }
+            catch
+            {
+                alarm_lable.Text = "שגיאה-נסו שנית";
+            }
+            
         }
     }
 }
