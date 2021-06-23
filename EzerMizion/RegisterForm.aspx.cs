@@ -24,6 +24,7 @@ namespace EzerMizion
                     message.Text = "תאריך לא חוקי";
                 else
                 {
+                    message.Text = "";
                     if (!(ul.newUser(id.Text, first_name.Text, last_name.Text, DateTime.Parse(birthDay.Text), phone_num.Text, user_name.Text)))
                         alarm_lable.Text = "המשתמש קיים";
                     else

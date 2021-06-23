@@ -11,9 +11,27 @@
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
     <style>
-        .space{
+        .space {
             padding-right: 1%;
             padding-left: 1%;
+        }
+
+
+        .btn {
+            background-color: white;
+            color: black;
+            width:15%;
+            margin: 0.1% 0.1% 1% 0.1%;
+        }
+
+        .lab {
+            float: left;
+            margin: 0 0% 0 1%;
+        }
+
+        .nav-item {
+            //margin:0 1% 0 1%;
+            width: 20%
         }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -23,97 +41,104 @@
     <form id="form1" runat="server">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light  " style="direction: rtl;">
-            <div>
-                <a class="navbar-brand" href="#">עזר מציון </a>
-                <img src="Photos/logo.png" style="width: 40px; height: 40px;" />
+            <div class="col-2">
+                <a class="navbar-brand" style="float: right" href="#">עזר מציון </a>
+                <img src="Photos/logo.png" style="float: right; width: 40px; height: 40px;" />
+
             </div>
-            <div>
-                <ul class="navbar-nav  " style="direction: rtl;">
+            <div class="col-8">
+                <center>
+                    <ul class="navbar-nav  " style="direction: rtl;">
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a>
-                            <% if (Session["uType"] == "ordinary")
-                                { %>
-                            <a class="nav-link" style="color:red" href="addDonSum.aspx">לתרומה לחץ כאן</a>
-                            <%}
-                                else
-                                {
-                                    if (Session["uType"] == "manager")
+                        <li class="nav-item active">
+                            <a class="nav-link" href="HomeP.aspx">דף בית<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a>
+                                <% if (Session["uType"] == "ordinary")
+                                    { %>
+                                <a class="nav-link" style="color: red" href="addDonSum.aspx">לתרומה לחץ כאן</a>
+                                <%}
+                                    else
+                                    {
+                                        if (Session["uType"] == "manager")
+                                        {%>
+                                <a class="nav-link" href="DonationsList.aspx">רשימת תרומות</a>
+                                <%}
+
+                                    }
+
+                                %>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a>
+                                <% if (Session["uType"] == "ordinary")
+                                    { %>
+                                <a class="nav-link" href="rentEq.aspx">מוצרים</a>
+                                <%}
+                                    else
+                                    {
+                                        {
+                                            if (Session["uType"] == "manager")
+                                            {%>
+                                <a class="nav-link" href="ProductsList.aspx">רשימת מוצרים</a>
+                                <%}
+                                    else
                                     {%>
-                            <a class="nav-link" href="DonationsList.aspx">רשימת תרומות</a>
-                            <%}
-                                
-                                }
+                                <a class="nav-link"></a>
+                                <%}
+                                        }
+                                    }
 
-                            %>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a>
-                            <% if (Session["uType"] == "ordinary")
-                                { %>
-                            <a class="nav-link" href="rentEq.aspx">מוצרים</a>
-                            <%}
-                            else
-                            {
-                                {
-                                    if (Session["uType"] == "manager")
+                                %>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a>
+                                <% if (Session["uType"] == "ordinary")
+                                    { %>
+                                <a class="nav-link" href="shoppingCart.aspx">עגלת קניות</a>
+                                <%}
+                                    else
+                                    {
+                                        if (Session["uType"] == "manager")
+                                        {%>
+                                <a class="nav-link" href="boneMarrow.aspx">מח עצם</a>
+                                <%}
+
+                                    }
+
+                                %>
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a>
+                                <% 
+                                    if (Session["uType"] == "no")
+                                    { %>
+                                <a class="nav-link" href="LoginForm.aspx">התחברות</a>
+                                <%}
+                                    else
                                     {%>
-                            <a class="nav-link" href="ProductsList.aspx">רשימת מוצרים</a>
-                            <%}
-                            else
-                            {%>
-                            <a class="nav-link"></a>
-                            <%}
-                                }
-                            }
+                                <a class="nav-link" href="logout.aspx">התנתקות</a>
+                                <%} %>
+                            </a>
+                        </li>
 
-                            %>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a>
-                            <% if (Session["uType"] == "ordinary")
-                                { %>
-                            <a class="nav-link" href="shoppingCart.aspx">עגלת קניות</a>
-                            <%}
-                                else
-                                {
-                                    if (Session["uType"] == "manager")
-                                    {%>
-                            <a class="nav-link" href="boneMarrow.aspx">מח עצם</a>
-                            <%}
-                                
-                                }
-
-                            %>
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a>
-                            <% 
-                                if (Session["uType"] == "no")
-                                { %>
-                            <a class="nav-link" href="LoginForm.aspx">התחברות</a>
-                            <%}
-                                else
-                                {%>
-                            <a class="nav-link"  href="logout.aspx">התנתקות</a>
-                            <%} %>
-                        </a>
-                    </li>
-
-                </ul>
+                    </ul>
+                </center>
             </div>
-            <div class="space">
-                <asp:Label ID="Label1" ForeColor="Black" runat="server"  Text=""></asp:Label>
+            
+            <div class="col-2">
+                <asp:Label ID="Label1" ForeColor="Black" CssClass="lab" runat="server" Text=""></asp:Label>
             </div>
         </nav>
+        <div >
+                <asp:Button ID="Button1" Visible="false" CssClass="btn" runat="server" OnClick="Button1_Click" Text="" />
+        </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

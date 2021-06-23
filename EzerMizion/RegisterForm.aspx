@@ -102,7 +102,7 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading ">רישום</h3>
                         <div class=" register-form">
-                            <div class="row">
+                            <div class="row" >
 
                                 <div class="col-6">
                                     <div class="form-group">
@@ -142,8 +142,9 @@
                                 <div class="col-4 align-content-center">
                                     <div class="form-group">
                                         <asp:Button ID="submit" runat="server" Text="הירשם" OnClick="submit_Click" type="submit" class="btnRegister" value="Register" />
+                                        <asp:Label ID="alarm_lable" runat="server" CssClass="vStyle" Text=""></asp:Label>
                                     </div>
-                                    <asp:Label ID="alarm_lable" runat="server" Text=""></asp:Label>
+                                    
                                 </div>
                                 <div class="col-4"></div>
                             </div>
