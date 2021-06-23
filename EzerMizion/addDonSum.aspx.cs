@@ -72,7 +72,7 @@ namespace EzerMizion
         }
         protected void continue_Click(object sender, EventArgs e)
         {
-            if (!dSum.Text.Equals("0"))
+            if (!dSum.Text.Equals("0")&& !dSum.Text.Equals("")&& dSum.Text!=null)
                 Response.Redirect("addDonPInfo.aspx?dSum=" + dSum.Text);
         }
     }
