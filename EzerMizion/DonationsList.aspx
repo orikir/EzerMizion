@@ -38,7 +38,7 @@
             <div class="byDate">
                 
                 <asp:Button ID="Button1" runat="server" Text="חיפוש" OnClick="byDate" ForeColor="Red" />
-                <asp:TextBox ID="TextBox2" runat="server"  TextMode="Date"></asp:TextBox>
+                <asp:TextBox ID="TextBox2" runat="server"   TextMode="Date"></asp:TextBox>
                 <asp:Label ID="Label3" class=" vStyle" runat="server" Text="תאריך התחלה"></asp:Label>
                 <asp:TextBox ID="TextBox1" runat="server"  TextMode="Date"></asp:TextBox>
                 <asp:Label ID="Label1" class=" vStyle" runat="server" Text="תאריך סיום"></asp:Label>

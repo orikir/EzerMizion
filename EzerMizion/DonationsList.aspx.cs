@@ -49,7 +49,7 @@ namespace EzerMizion
             {
                 if (TextBox1.Text != null && TextBox2.Text != null)
                 {
-                    if (DateTime.Parse(TextBox2.Text) >= (DateTime.Now) || DateTime.Parse(TextBox1.Text) > DateTime.Parse(TextBox2.Text))
+                    if (DateTime.Parse(TextBox2.Text) > (DateTime.Now) || DateTime.Parse(TextBox1.Text) > DateTime.Parse(TextBox2.Text))
                         Label2.Text = "טווח התאריכים לא חוקי";
                     else
                     {

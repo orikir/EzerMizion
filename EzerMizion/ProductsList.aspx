@@ -39,7 +39,7 @@
                 <Columns>
                     
                     <asp:CommandField ButtonType="Button" ShowDeleteButton="True" DeleteText="מחיקה" />
-                    <asp:CommandField ButtonType="Button" ShowEditButton="True" EditText="עריכת מחיר" CancelText="ביטול" DeleteText="יקה" UpdateText="עדכן" />
+                    <asp:CommandField ButtonType="Button" ShowEditButton="True" EditText="עריכת מחיר" CancelText="ביטול" DeleteText="מחיקה" UpdateText="עדכן" />
                     <asp:CheckBoxField HeaderText="? האם במלאי" DataField="isInStock" ReadOnly="true" />
                     <asp:BoundField HeaderText="כמות" DataField="quantity" ReadOnly="true" />
                     <asp:BoundField HeaderText="שם סניף" DataField="branchName" ReadOnly="true" />

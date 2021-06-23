@@ -67,7 +67,7 @@ namespace EzerMizion
                     string pn = ds.Tables[0].Rows[0].ItemArray.GetValue(2).ToString();
                     string bd = ds.Tables[0].Rows[0].ItemArray.GetValue(3).ToString();
                     string bt = ds.Tables[0].Rows[0].ItemArray.GetValue(4).ToString();
-                    int ds1 = 0;
+                    int ds1 = 1;
                     dbm.insertNewDon(fn, ln, pn, DateTime.Parse(bd), bt, ds1, id);
                     GridView1.DataSource = dbm.byBlood(DropDownList1.Text);
                     GridView1.DataBind();
@@ -81,16 +81,36 @@ namespace EzerMizion
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {//עדכון סטטוס תורם
-            int index = Convert.ToInt32(e.CommandArgument);
-            int st = ws.getStatus(GridView1.Rows[index].Cells[7].Text);
-            if (st < 3)
+            try
             {
-                dbm.updateStatus(GridView1.Rows[index].Cells[7].Text, st+1);
-                ws.updateSol(GridView1.Rows[index].Cells[7].Text, st+1);
+                int index = Convert.ToInt32(e.CommandArgument);
+                int st = ws.getStatus(GridView1.Rows[index].Cells[7].Text);
+                if (st < 3)
+                {
+                    dbm.updateStatus(GridView1.Rows[index].Cells[7].Text, st + 1);
+                    ws.updateSol(GridView1.Rows[index].Cells[7].Text, st + 1);
+                }
             }
+            catch
+            {
+                Label2.Text = "אירעה שגיאה נסה שנית מאוחר יותר";
+            }
+            //DropDownList ddp = (DropDownList)(GridView1.Rows[index].Cells[10].FindControl("selectSta") as DropDownList);
+            //string selV = ddp.SelectedItem.Value;
+            //int st = dbm.codeToSta(selV);
+            //dbm.updateStatus(GridView1.Rows[index].Cells[7].Text, st);
+            //ws.updateSol(GridView1.Rows[index].Cells[7].Text, st );
             GridView1.EditIndex = -1;
             GridView1.DataSource = dbm.allDonations();
             GridView1.DataBind();
         }
+
+        protected void selectSta_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            int index = Convert.ToInt32(e);
+            DropDownList ddp = (DropDownList)(GridView1.Rows[index].Cells[10].FindControl("selectSta") as DropDownList);
+            ddp.Text = ddp.SelectedValue;
+        }
+
     }
 }

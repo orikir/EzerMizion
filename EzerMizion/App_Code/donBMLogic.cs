@@ -16,7 +16,7 @@ namespace EzerMizion.App_Code
         }
         public DataSet byBlood(string b)
         {//return the donation's table
-            string sql = String.Format("SELECT * FROM donBoneMarrow WHERE bloodType='{0}'", b) ;
+            string sql = String.Format("SELECT donBoneMarrow.donCode, donBoneMarrow.donId, donStatus.donStatus, donBoneMarrow.bloodType, donBoneMarrow.donDate, donBoneMarrow.firstName, donBoneMarrow.lastName, donBoneMarrow.phoneNum, donBoneMarrow.birthday FROM donStatus INNER JOIN donBoneMarrow ON donStatus.statusCode = donBoneMarrow.donStatus WHERE bloodType='{0}'", b) ;
             return d.excuteQuery(sql);
         }
         public bool insertNewDon(string fn, string ln, string pn, DateTime bd, string bt, int ds1, string id)
@@ -48,6 +48,11 @@ namespace EzerMizion.App_Code
             return d.excuteQuery(sql).Tables[0].Rows.Count ;
 
         }
+        public int codeToSta(string dStatus)
+        {//return code of status
+            string sql = String.Format("SELECT statusCode FROM donStatus WHERE donStatus='{0}'", dStatus);
+            return Int32.Parse( d.excuteQuery(sql).Tables[0].Rows[0].ItemArray.GetValue(0).ToString());
 
+        }
     }
 }

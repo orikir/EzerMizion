@@ -22,7 +22,7 @@ namespace EzerMizion.App_Code
         }
         public DataSet getByDate(DateTime s, DateTime f)
         {//מחזירה רשימת תרומות שהתבצעו בטווח התאריכים שהתקבל
-            string sql = String.Format(" SELECT users.firstName, users.lastName, donors.donCode, donors.id, donors.donSum, donors.donDate, organizations.orgName FROM organizations INNER JOIN(users INNER JOIN donors ON users.id = donors.id) ON organizations.orgCode = donors.orgCode WHERE(((([donors]![donDate]))>#{0}#) AND((([donors]![donDate]))<#{1}#))", s, f);
+            string sql = String.Format(" SELECT users.firstName, users.lastName, donors.donCode, donors.id, donors.donSum, donors.donDate, organizations.orgName FROM organizations INNER JOIN(users INNER JOIN donors ON users.id = donors.id) ON organizations.orgCode = donors.orgCode WHERE(((([donors]![donDate]))>=#{0}#) AND((([donors]![donDate]))<=#{1}#))", s, f);
             return d.excuteQuery(sql);
         }
 
